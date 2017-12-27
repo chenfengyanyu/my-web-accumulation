@@ -1,0 +1,22 @@
+/* 
+	Widget specific styles go here
+*/
+#rankingTable tbody tr td,
+#rankingTable thead tr th,
+#rankingTable thead tr th:first-child{
+	padding: 14px !important;
+}
+#rankingTable thead tr th{
+	padding-right: 18px !important;
+}
+#rankingTable thead tr th:first-child{
+	min-width: 170px;
+}
+
+.dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_paginate{
+	margin: 5px !important;
+	padding: 0;
+}
+.dataTables_paginate ul{
+	padding: 0;
+}

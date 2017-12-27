@@ -1,0 +1,18 @@
+<!-- FULLHEIGHT LAYOUT -->
+<template name="_fullHeightLayout">
+	{{>sideBar}}
+	<!-- START PAGE-CONTAINER -->
+	<div class="page-container">
+		{{>header}}
+		<!-- START PAGE CONTENT WRAPPER -->
+		<div class="page-content-wrapper full-height">
+			<!-- START PAGE CONTENT -->
+			<div class="content full-height full-width">
+				{{> Template.dynamic template=main}}
+			</div>
+			{{>footer}}
+		</div>
+	</div>
+	{{>quickView}}
+	{{>overlaySearch}}
+</template>

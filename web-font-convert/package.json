@@ -1,0 +1,27 @@
+{
+  "name": "web-font-convert",
+  "version": "1.0.0",
+  "description": "convert ttf to eot,convert ttf to woff,and convert ttf to svg",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenfengyanyu/web-font-convert.git"
+  },
+  "keywords": [
+    "web-font-convert"
+  ],
+  "author": "jartto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chenfengyanyu/web-font-convert/issues"
+  },
+  "homepage": "https://github.com/chenfengyanyu/web-font-convert#readme",
+  "dependencies": {
+    "fontmin": "^0.9.6",
+    "imagemin": "^5.2.2",
+    "imagemin-svgo": "^5.2.0"
+  }
+}

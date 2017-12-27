@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="100%" height="100%" version="1.1"
+xmlns="http://www.w3.org/2000/svg">
+
+<!-- 三角形 -->
+<polygon points="640,351 600,210 770,20" style="fill:#FF9800; stroke:#795548;stroke-width:2"/>
+<!-- 四边形 -->
+<polygon points="420,100 500,210 410,320 323,234" style="fill:#cccccc;stroke:#000000;stroke-width:1"/>
+<!-- 五角星 -->
+<polygon points="100,10 40,180 190,60 10,60 160,180" style="fill:#F44336;stroke:#F44336;fill-rule:nonzero;" />
+
+</svg>
+

@@ -1,0 +1,59 @@
+/* Start TODO LIST */
+.task{
+	cursor: pointer;
+}
+.task:hover .hidden{
+    display: block!important;
+}
+.task-list-title{
+	align-items: center;
+	display: flex;
+}
+.task-list-title, .checkbox{
+	padding: 10px 20px;
+}
+.todolist-widget .checkbox{
+	width:20%;
+}
+/* Strikethrough
+http://codepen.io/EdenSG/pen/jPENoE
+*/
+.strikethrough {
+	display: inline-block;
+	position: relative;
+	opacity: .7;
+}
+
+.strikethrough:after {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 1px;
+	margin-top: -12px;
+	background: #626262;
+	transform-origin: center left;
+	animation: strikethrough 1s 0.3s cubic-bezier(.55, 0, .1, 1) 1;
+	transition: transform 0.3s cubic-bezier(.55, 0, .1, 1);
+}
+
+/* Keyframes for initial animation */
+
+@keyframes strikethrough {
+	from {
+			transform: scaleX(0);
+	}
+	to {
+			transform: scaleX(1);
+	}
+}
+.task-list{
+    background: url(../img/left-border.jpg) repeat-y calc(80%);
+    width: 100%;
+
+}
+
+.checkbox.text-center label::after{
+	left: 1.2px;
+}
+/* END TODO LIST */

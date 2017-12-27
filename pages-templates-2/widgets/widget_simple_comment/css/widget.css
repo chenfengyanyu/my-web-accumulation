@@ -1,0 +1,6 @@
+/* 
+	Widget specific styles go here
+*/
+textarea {
+    resize: none;
+}

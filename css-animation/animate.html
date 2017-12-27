@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画库</title>
+	<link rel="stylesheet" type="text/css" href="magic.css"/>
+	<script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+	<style>
+	body,html{ background: #000; width: 100%;height: 100%;}
+		*{margin: 0;padding: 0;list-style: none;}
+		#site_title{color: #f35626;background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
+  -webkit-background-clip: text;-webkit-text-fill-color: transparent;font-size: 30px;width: 200px;height: 40px;text-align: center;margin:100px auto;}
+  .btn{  display: block;
+  float: left;
+  margin: 10px 10px 10px 0px;
+  padding: 12px 18px;
+  background: rgba(0, 0, 0, 0.298039);
+  border: 2px solid rgb(255, 255, 255);
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  color: rgb(255, 255, 255);
+  border-radius: 4px;
+  cursor: pointer;text-decoration: none;}
+
+	</style>
+</head>
+<body>
+	<div id="site_title">magic.css</div>
+	<a href="javascript:;" class="btn" data-type='magic'>magic</a>
+	<a href="javascript:;" class="btn" data-type='openDownLeft'>openDownLeft</a>
+	<a href="javascript:;" class="btn" data-type='openDownRight'>openDownRight</a>
+	<a href="javascript:;" class="btn" data-type='openUpLeft'>openUpLeft </a>
+	<a href="javascript:;" class="btn" data-type='openUpRight'>openUpRight </a>
+	<a href="javascript:;" class="btn" data-type='openDownLeftRetourn'>openDownLeftRetourn</a>
+	<a href="javascript:;" class="btn" data-type='openDownRightRetourn'>openDownRightRetourn</a>
+	<a href="javascript:;" class="btn" data-type='openUpLeftRetourn'>openUpLeftRetourn</a>
+	<a href="javascript:;" class="btn" data-type='openUpRightRetourn'>openUpRightRetourn</a>
+	<a href="javascript:;" class="btn" data-type='openDownLeftOut'>openDownLeftOut</a>
+	<a href="javascript:;" class="btn" data-type='openDownRightOut'>openDownRightOut</a>
+	<a href="javascript:;" class="btn" data-type='openUpLeftOut'>openUpLeftOut</a>
+	<a href="javascript:;" class="btn" data-type='openUpRightOut'>openUpRightOut</a>
+	<a href="javascript:;" class="btn" data-type='perspectiveDown'>perspectiveDown</a>
+	<a href="javascript:;" class="btn" data-type='perspectiveLeft'>perspectiveLeft</a>
+	<a href="javascript:;" class="btn" data-type='perspectiveRight'>perspectiveRight</a>
+	<a href="javascript:;" class="btn" data-type='perspectiveUp'>perspectiveUp</a>
+	<a href="javascript:;" class="btn" data-type='perspectiveDownRetourn'>perspectiveDownRetourn</a>
+	<a href="javascript:;" class="btn" data-type='perspectiveRightRetourn'>perspectiveRightRetourn</a>
+	<a href="javascript:;" class="btn" data-type='perspectiveUpRetourn'>perspectiveUpRetourn</a>
+	<a href="javascript:;" class="btn" data-type='puffIn'>puffIn</a>
+	<a href="javascript:;" class="btn" data-type='puffOut'>puffOut</a>
+	<a href="javascript:;" class="btn" data-type='rotateDown'>rotateDown</a>
+	<a href="javascript:;" class="btn" data-type='rotateLeft'>rotateLeft</a>
+	<a href="javascript:;" class="btn" data-type='rotateRight'>rotateRight</a>
+	<a href="javascript:;" class="btn" data-type='rotateUp'>rotateUp</a>
+	<a href="javascript:;" class="btn" data-type='slideDown'>slideDown</a>
+	<a href="javascript:;" class="btn" data-type='slideLeft'>slideLeft</a>
+	<a href="javascript:;" class="btn" data-type='slideRight'>slideRight</a>
+	<a href="javascript:;" class="btn" data-type='slideUp'>slideUp</a>
+	<a href="javascript:;" class="btn" data-type='slideDownRetourn'>slideDownRetourn</a>
+	<a href="javascript:;" class="btn" data-type='slideLeftRetourn'>slideLeftRetourn</a>
+	<a href="javascript:;" class="btn" data-type='slideRightRetourn'>slideRightRetourn</a>
+	<a href="javascript:;" class="btn" data-type='slideUpRetourn'>slideUpRetourn</a>
+	<a href="javascript:;" class="btn" data-type='swap'>swap</a>
+	<a href="javascript:;" class="btn" data-type='twisterInDown'>twisterInDown</a>
+	<a href="javascript:;" class="btn" data-type='twisterInUp'>twisterInUp</a>
+	<a href="javascript:;" class="btn" data-type='vanishIn'>vanishIn</a>
+	<a href="javascript:;" class="btn" data-type='vanishOut'>vanishOut</a>
+	<a href="javascript:;" class="btn" data-type='swashOut'>swashOut</a>
+	<a href="javascript:;" class="btn" data-type='swashIn'>swashIn</a>
+	<a href="javascript:;" class="btn" data-type='foolishOut'>foolishOut</a>
+	<a href="javascript:;" class="btn" data-type='foolishIn'>foolishIn</a>
+	<a href="javascript:;" class="btn" data-type='holeOut'>holeOut</a>
+	<a href="javascript:;" class="btn" data-type='tinRightOut'>tinRightOut</a>
+	<a href="javascript:;" class="btn" data-type='tinLeftOut'>tinLeftOut</a>
+	<a href="javascript:;" class="btn" data-type='tinUpOut'>tinUpOut</a>
+	<a href="javascript:;" class="btn" data-type='tinDownOut'>tinDownOut</a>
+	<a href="javascript:;" class="btn" data-type='tinRightIn '>tinRightIn </a>
+	<a href="javascript:;" class="btn" data-type='tinLeftIn '>tinLeftIn </a>
+	<a href="javascript:;" class="btn" data-type='tinUpIn '>tinUpIn </a>
+	<a href="javascript:;" class="btn" data-type='tinDownIn '>tinDownIn </a>
+	<a href="javascript:;" class="btn" data-type='bombRightOut '>bombRightOut </a>
+	<a href="javascript:;" class="btn" data-type='bombLeftOut '>bombLeftOut </a>
+	<a href="javascript:;" class="btn" data-type='boingInUp '>boingInUp </a>
+	<a href="javascript:;" class="btn" data-type='boingOutDown '>boingOutDown </a>
+	<a href="javascript:;" class="btn" data-type='spaceOutUp '>spaceOutUp </a>
+	<a href="javascript:;" class="btn" data-type='spaceOutRight '>spaceOutRight </a>
+	<a href="javascript:;" class="btn" data-type='spaceOutDown '>spaceOutDown </a>
+	<a href="javascript:;" class="btn" data-type='spaceOutLeft '>spaceOutLeft </a>
+	<a href="javascript:;" class="btn" data-type='spaceInUp '>spaceInUp </a>
+	<a href="javascript:;" class="btn" data-type='spaceInDown  '>spaceInDown  </a>
+	<a href="javascript:;" class="btn" data-type='spaceInLeft  '>spaceInLeft  </a>
+	<script type="text/javascript">
+	  function testAnim(x) {
+	    $('#site_title').removeClass().addClass(x + ' magictime').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+	      $(this).removeClass();
+	    });
+	  };
+    $('.btn').on('click',function(){
+    	var src = $(this).attr('data-type');
+    	testAnim(src);
+    })
+	</script>
+
+</body>
+</html>

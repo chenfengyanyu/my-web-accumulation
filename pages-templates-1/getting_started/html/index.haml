@@ -1,0 +1,574 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html;charset=UTF-8", "http-equiv" => "content-type"}/
+    %meta{:charset => "utf-8"}/
+    %title Pages - Admin Dashboard UI Kit
+    %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", :name => "viewport"}/
+    %link{:href => "pages/ico/60.png", :rel => "apple-touch-icon"}
+      %link{:href => "pages/ico/76.png", :rel => "apple-touch-icon", :sizes => "76x76"}
+        %link{:href => "pages/ico/120.png", :rel => "apple-touch-icon", :sizes => "120x120"}
+          %link{:href => "pages/ico/152.png", :rel => "apple-touch-icon", :sizes => "152x152"}
+            %meta{:content => "yes", :name => "apple-mobile-web-app-capable"}
+              %meta{:content => "yes", :name => "apple-touch-fullscreen"}
+                %meta{:content => "default", :name => "apple-mobile-web-app-status-bar-style"}
+                  %meta{:content => "", :name => "description"}/
+                  %meta{:content => "", :name => "author"}/
+                  / BEGIN Vendor CSS
+                  %link{:href => "assets/plugins/pace/pace-theme-flash.css", :rel => "stylesheet", :type => "text/css"}/
+                  %link{:href => "assets/plugins/bootstrapv3/css/bootstrap.min.css", :rel => "stylesheet", :type => "text/css"}/
+                  %link{:href => "assets/plugins/font-awesome/css/font-awesome.css", :rel => "stylesheet", :type => "text/css"}/
+                  %link{:href => "assets/plugins/jquery-scrollbar/jquery.scrollbar.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+                  %link{:href => "assets/plugins/bootstrap-select2/select2.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+                  %link{:href => "assets/plugins/switchery/css/switchery.min.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+                  / BEGIN Pages CSS
+                  %link{:href => "pages/css/pages-icons.css", :rel => "stylesheet", :type => "text/css"}
+                    %link.main-stylesheet{:href => "pages/css/pages.css", :rel => "stylesheet", :type => "text/css"}/
+                    /[if lte IE 9]
+                      <link href="pages/css/ie9.css" rel="stylesheet" type="text/css" />
+                    :javascript
+                      window.onload = function() {
+                          // fix for windows 8
+                          if (navigator.appVersion.indexOf("Windows NT 6.2") != -1)
+                              document.head.innerHTML += ''
+                      }
+                        %body.fixed-header
+    / BEGIN SIDEBAR
+    .page-sidebar{"data-pages" => "sidebar"}
+      #appMenu.sidebar-overlay-slide.from-top
+      / BEGIN SIDEBAR HEADER
+      .sidebar-header
+        %img.brand{:alt => "logo", "data-src" => "assets/img/logo_white.png", "data-src-retina" => "assets/img/logo_white_2x.png", :height => "25", :src => "assets/img/logo_white.png", :width => "93"}
+          .sidebar-header-controls
+            %button.btn.btn-xs.sidebar-slide-toggle.btn-link.m-l-20{"data-pages-toggle" => "#appMenu", :type => "button"}
+              %i.fa.fa-angle-down.fs-16
+            %button.btn.btn-link.visible-lg-inline{"data-toggle-pin" => "sidebar", :type => "button"}
+              %i.fa.fs-12
+      / END SIDEBAR HEADER
+      / BEGIN SIDEBAR MENU
+      .sidebar-menu
+        %ul.menu-items
+          %li.m-t-30
+            %a.detailed{:href => "#"}
+              %span.title Page 1
+              %span.details 234 notifications
+            %span.icon-thumbnail
+              %i.pg-mail
+          %li
+            %a{:href => "#"}
+              %span.title Page 2
+            %span.icon-thumbnail
+              %i.pg-social
+          %li
+            %a{:href => "javascript:;"}
+              %span.title Page 3
+              %span.arrow
+            %span.icon-thumbnail
+              %i.pg-grid
+            %ul.sub-menu
+              %li
+                %a{:href => "#"} Sub Page 1
+                %span.icon-thumbnail sp
+              %li
+                %a{:href => "#"} Sub Page 2
+                %span.icon-thumbnail sp
+              %li
+                %a{:href => "#"} Sub Page 3
+                %span.icon-thumbnail sp
+        .clearfix
+      / END SIDEBAR MENU
+    / END SIDEBAR
+    / START PAGE-CONTAINER
+    .page-container
+      / START PAGE HEADER WRAPPER
+      / START HEADER
+      .header
+        / START MOBILE CONTROLS
+        / LEFT SIDE
+        .pull-left.full-height.visible-sm.visible-xs
+          / START ACTION BAR
+          .sm-action-bar
+            %a.btn-link.toggle-sidebar{"data-toggle" => "sidebar", :href => "#"}
+              %span.icon-set.menu-hambuger
+          / END ACTION BAR
+        / RIGHT SIDE
+        .pull-right.full-height.visible-sm.visible-xs
+          / START ACTION BAR
+          .sm-action-bar
+            %a.btn-link{"data-toggle" => "quickview", "data-toggle-element" => "#quickview", :href => "#"}
+              %span.icon-set.menu-hambuger-plus
+          / END ACTION BAR
+        / END MOBILE CONTROLS
+        .pull-left.sm-table
+          .header-inner
+            .brand.inline
+              %img{:alt => "logo", "data-src" => "assets/img/logo.png", "data-src-retina" => "assets/img/logo_2x.png", :height => "25", :src => "assets/img/logo.png", :width => "93"}
+            / BEGIN NOTIFICATION DROPDOWN
+            %ul.notification-list.no-margin.hidden-sm.hidden-xs.b-grey.b-l.b-r.no-style.p-l-30.p-r-20
+              %li.p-r-15.inline
+                .dropdown
+                  %a#notification-center.icon-set.globe-fill{"data-toggle" => "dropdown", :href => "javascript:;"}
+                    %span.bubble
+                  .dropdown-menu.notification-toggle{"aria-labelledby" => "notification-center", :role => "menu"}
+                    .notification-panel
+                      / START Notification Body
+                      .notification-body.scrollable
+                        / START Notification Item
+                        .notification-item.clearfix
+                          .heading
+                            %a.text-danger{:href => "#"}
+                              %i.fa.fa-exclamation-triangle.m-r-10
+                              %span.bold 98% Server Load
+                              %span.fs-12.m-l-10 Take Action
+                            %span.pull-right.time
+                              2 mins ago
+                          .option
+                            %a.mark{:href => "#"}
+                        / END Notification Item
+                      / END Notification Body
+                      / START Notification Footer
+                      .notification-footer.text-center
+                        %a{:href => "#"} Read all notifications
+                        %a.portlet-refresh.text-black.pull-right{"data-toggle" => "refresh", :href => "#"}
+                          %i.pg-refresh_new
+                      / END Notification Footer
+              %li.p-r-15.inline
+                %a.icon-set.clip{:href => "#"}
+              %li.p-r-15.inline
+                %a.icon-set.grid-box{:href => "#"}
+            / END NOTIFICATION DROPDOWN
+            %a.search-link{"data-toggle" => "search", :href => "#"}
+              %i.pg-search>
+              Type anywhere to
+              %span.bold search
+        .pull-right
+          .header-inner
+            %a.btn-link.icon-set.menu-hambuger-plus.m-l-20.sm-no-margin.hidden-sm.hidden-xs{"data-toggle" => "quickview", "data-toggle-element" => "#quickview", :href => "#"}
+        .pull-right
+          / START User Info
+          .visible-lg.visible-md.m-t-10
+            .pull-left.p-r-10.p-t-10.fs-16.font-heading
+              %span.semi-bold David
+              %span.text-master Nest
+            .thumbnail-wrapper.d32.circular.inline.m-t-5
+              %img{:alt => "", "data-src" => "assets/img/profiles/avatar.jpg", "data-src-retina" => "assets/img/profiles/avatar_small2x.jpg", :height => "32", :src => "assets/img/profiles/avatar.jpg", :width => "32"}
+          / END User Info
+      / END HEADER
+      / END PAGE HEADER WRAPPER
+      / START PAGE CONTENT WRAPPER
+      .page-content-wrapper
+        / START PAGE CONTENT
+        .content
+          / START JUMBOTRON
+          .jumbotron{"data-pages" => "parallax"}
+            .container-fluid.container-fixed-lg.sm-p-l-20.sm-p-r-20
+              .inner
+                / START BREADCRUMB
+                %ul.breadcrumb
+                  %li
+                    %p Pages
+                  %li
+                    %a.active{:href => "#"} Barebone template
+                / END BREADCRUMB
+          / END JUMBOTRON
+          / START CONTAINER FLUID
+          .container-fluid.container-fixed-lg
+            / BEGIN PlACE PAGE CONTENT HERE
+            / END PLACE PAGE CONTENT HERE
+          / END CONTAINER FLUID
+        / END PAGE CONTENT
+        / START FOOTER
+        .container-fluid.container-fixed-lg.footer
+          .copyright.sm-text-center
+            %p.small.no-margin.pull-left.sm-pull-reset
+              %span.hint-text Copyright © 2014
+              = succeed "." do
+                %span.font-montserrat REVOX
+              %span.hint-text All rights reserved.
+              %span.sm-block
+                %a.m-l-10.m-r-10{:href => "#"} Terms of use
+                |
+                %a.m-l-10{:href => "#"} Privacy Policy
+            %p.small.no-margin.pull-right.sm-pull-reset
+              %a{:href => "#"} Hand-crafted
+              %span.hint-text &amp; Made with Love ®
+            .clearfix
+        / END FOOTER
+      / END PAGE CONTENT WRAPPER
+    / END PAGE CONTAINER
+    / START QUICKVIEW
+    #quickview.quickview-wrapper{"data-pages" => "quickview"}
+      / Nav tabs
+      %ul.nav.nav-tabs
+        %li
+          %a{"data-toggle" => "tab", :href => "#quickview-notes"} Notes
+        %li
+          %a{"data-toggle" => "tab", :href => "#quickview-alerts"} Alerts
+        %li.active
+          %a{"data-toggle" => "tab", :href => "#quickview-chat"} Chat
+      %a.btn-link.quickview-toggle{"data-toggle" => "quickview", "data-toggle-element" => "#quickview"}
+        %i.pg-close
+      / Tab panes
+      .tab-content
+        / BEGIN Notes !
+        #quickview-notes.tab-pane.fade.in.no-padding
+          #note-views.view-port.clearfix.quickview-notes
+            / BEGIN Note List !
+            #quick-note-list.view.list
+              .toolbar.clearfix
+                %ul.pull-right
+                  %li
+                    %a.delete-note-link{:href => "#"}
+                      %i.fa.fa-trash-o
+                  %li
+                    %a.new-note-link{"data-navigate" => "view", "data-view-animation" => "push", "data-view-port" => "#note-views", :href => "#"}
+                      %i.fa.fa-plus
+                %button.btn-remove-notes.btn.btn-xs.btn-block{:style => "display:none"}
+                  %i.fa.fa-times
+                  Delete
+              %ul
+                / BEGIN Note Item !
+                %li{"data-navigate" => "view", "data-noteid" => "1", "data-view-animation" => "push", "data-view-port" => "#note-views"}
+                  .left
+                    / BEGIN Note Action !
+                    .checkbox.check-warning.no-margin
+                      %input#qncheckbox1{:type => "checkbox", :value => "1"}
+                        %label{:for => "qncheckbox1"}
+                    / END Note Action !
+                    / BEGIN Note Preview Text !
+                    %p.note-preview Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+                    / BEGIN Note Preview Text !
+                  / BEGIN Note Details !
+                  .right.pull-right
+                    / BEGIN Note Date !
+                    %span.date 12/12/14
+                    %a{:href => "#"}
+                      %i.fa.fa-chevron-right
+                    / END Note Date !
+                  / END Note Details !
+                / END Note List !
+            / END Note List !
+            #quick-note.view.note
+              %div
+                %ul.toolbar
+                  %li
+                    %a.close-note-link{"data-navigate" => "view", "data-view-animation" => "push", "data-view-port" => "#note-views", :href => "#"}
+                      %i.pg-arrow_left
+                  %li
+                    %a.Bold{:href => "#"}
+                      %i.fa.fa-bold
+                  %li
+                    %a.Italic{:href => "#"}
+                      %i.fa.fa-italic
+                  %li
+                    %a{:href => "#"}
+                      %i.fa.fa-link
+                .body
+                  %div
+                    .top
+                      %span 21st april 2014 2:13am
+                    .content
+                      .quick-note-editor.full-width.full-height.js-input{:contenteditable => "true"}
+        / END Notes !
+        / BEGIN Alerts !
+        #quickview-alerts.tab-pane.fade.no-padding
+          #alerts.view-port.clearfix
+            / BEGIN Alerts View !
+            .view.bg-white
+              / BEGIN View Header !
+              .navbar.navbar-default.navbar-sm
+                .navbar-inner
+                  / BEGIN Header Controler !
+                  %a.inline.action.p-l-10.link.text-master{"data-navigate" => "view", "data-view-animation" => "push-parrallax", "data-view-port" => "#chat", :href => "javascript:;"}
+                    %i.pg-more
+                  / END Header Controler !
+                  .view-heading
+                    Notications
+                  / BEGIN Header Controler !
+                  %a.inline.action.p-r-10.pull-right.link.text-master{:href => "#"}
+                    %i.pg-search
+                  / END Header Controler !
+              / END View Header !
+              / BEGIN Alert List !
+              .list-view.boreded.no-top-border{"data-init-list-view" => "ioslist"}
+                / BEGIN List Group !
+                .list-view-group-container
+                  / BEGIN List Group Header!
+                  .list-view-group-header.text-uppercase
+                    Calendar
+                  / END List Group Header!
+                  %ul
+                    / BEGIN List Group Item!
+                    %li.alert-list
+                      / BEGIN Alert Item Set Animation using data-view-animation !
+                      %a{"data-navigate" => "view", "data-view-animation" => "push-parrallax", "data-view-port" => "#chat", :href => "javascript:;"}
+                        %p.col-xs-height.col-middle
+                          %span.text-warning.fs-10
+                            %i.fa.fa-circle
+                        %p.p-l-10.col-xs-height.col-middle.col-xs-9.overflow-ellipsis.fs-12
+                          %span.text-master David Nester Birthday
+                        %p.p-r-10.col-xs-height.col-middle.fs-12.text-right
+                          %span.text-warning
+                            Today
+                            %br/
+                          %span.text-master All Day
+                      / END Alert Item!
+                      / BEGIN List Group Item!
+                    / END List Group Item!
+                / END List Group !
+              / END Alert List !
+            / EEND Alerts View !
+        / END Alerts !
+        #quickview-chat.tab-pane.fade.in.active.no-padding
+          #chat.view-port.clearfix
+            .view.bg-white
+              / BEGIN View Header !
+              .navbar.navbar-default
+                .navbar-inner
+                  / BEGIN Header Controler !
+                  %a.inline.action.p-l-10.link.text-master{"data-navigate" => "view", "data-view-animation" => "push-parrallax", "data-view-port" => "#chat", :href => "javascript:;"}
+                    %i.pg-plus
+                  / END Header Controler !
+                  .view-heading
+                    Chat List
+                    .fs-11 Show All
+                  / BEGIN Header Controler !
+                  %a.inline.action.p-r-10.pull-right.link.text-master{:href => "#"}
+                    %i.pg-more
+                  / END Header Controler !
+              / END View Header !
+              .list-view.boreded.no-top-border{"data-init-list-view" => "ioslist"}
+                .list-view-group-container
+                  .list-view-group-header.text-uppercase
+                    a
+                  %ul
+                    / BEGIN Chat User List Item  !
+                    %li.chat-user-list.clearfix
+                      %a{"data-navigate" => "view", "data-view-animation" => "push-parrallax", "data-view-port" => "#chat", :href => "#"}
+                        %span.col-xs-height.col-middle
+                          %span.thumbnail-wrapper.d32.circular.bg-success
+                            %img.col-top{:alt => "", "data-src" => "assets/img/profiles/1.jpg", "data-src-retina" => "assets/img/profiles/1x.jpg", :height => "34", :src => "assets/img/profiles/1x.jpg", :width => "34"}
+                        %p.p-l-10.col-xs-height.col-middle.col-xs-12
+                          %span.text-master ava flores
+                          %span.text-master.hint-text.fs-12 Hello there
+                    / END Chat User List Item  !
+                .list-view-group-container
+                  .list-view-group-header.text-uppercase b
+                  %ul
+                    / BEGIN Chat User List Item  !
+                    %li.chat-user-list.clearfix
+                      %a{"data-navigate" => "view", "data-view-animation" => "push-parrallax", "data-view-port" => "#chat", :href => "#"}
+                        %span.col-xs-height.col-middle
+                          %span.thumbnail-wrapper.d32.circular.bg-success
+                            %img.col-top{:alt => "", "data-src" => "assets/img/profiles/2.jpg", "data-src-retina" => "assets/img/profiles/2x.jpg", :height => "34", :src => "assets/img/profiles/2x.jpg", :width => "34"}
+                        %p.p-l-10.col-xs-height.col-middle.col-xs-12
+                          %span.text-master bella mccoy
+                          %span.text-master.hint-text.fs-12 Hello there
+                    / END Chat User List Item  !
+                    / BEGIN Chat User List Item  !
+                    %li.chat-user-list.clearfix
+                      %a{"data-navigate" => "view", "data-view-animation" => "push-parrallax", "data-view-port" => "#chat", :href => "#"}
+                        %span.col-xs-height.col-middle
+                          %span.thumbnail-wrapper.d32.circular.bg-success
+                            %img.col-top{:alt => "", "data-src" => "assets/img/profiles/3.jpg", "data-src-retina" => "assets/img/profiles/3x.jpg", :height => "34", :src => "assets/img/profiles/3x.jpg", :width => "34"}
+                        %p.p-l-10.col-xs-height.col-middle.col-xs-12
+                          %span.text-master bob stephens
+                          %span.text-master.hint-text.fs-12 Hello there
+                    / END Chat User List Item  !
+            / BEGIN Conversation View  !
+            .view.chat-view.bg-white.clearfix
+              / BEGIN Header  !
+              .navbar.navbar-default
+                .navbar-inner
+                  %a.link.text-master.inline.action.p-l-10{"data-navigate" => "view", "data-view-animation" => "push-parrallax", "data-view-port" => "#chat", :href => "javascript:;"}
+                    %i.pg-arrow_left
+                  .view-heading
+                    John Smith
+                    .fs-11.hint-text Online
+                  %a.link.text-master.inline.action.p-r-10.pull-right{:href => "#"}
+                    %i.pg-more
+              / END Header  !
+              / BEGIN Conversation  !
+              #my-conversation.chat-inner
+                / BEGIN From Me Message  !
+                .message.clearfix
+                  .chat-bubble.from-me
+                    Hello there
+                / END From Me Message  !
+                / BEGIN From Them Message  !
+                .message.clearfix
+                  .profile-img-wrapper.m-t-5.inline
+                    %img.col-top{:alt => "", "data-src" => "assets/img/profiles/avatar_small.jpg", "data-src-retina" => "assets/img/profiles/avatar_small2x.jpg", :height => "30", :src => "assets/img/profiles/avatar_small.jpg", :width => "30"}
+                  .chat-bubble.from-them
+                    Hey
+                / END From Them Message  !
+                / BEGIN From Me Message  !
+                .message.clearfix
+                  .chat-bubble.from-me
+                    Did you check out Pages framework ?
+                / END From Me Message  !
+                / BEGIN From Me Message  !
+                .message.clearfix
+                  .chat-bubble.from-me
+                    Its an awesome chat
+                / END From Me Message  !
+                / BEGIN From Them Message  !
+                .message.clearfix
+                  .profile-img-wrapper.m-t-5.inline
+                    %img.col-top{:alt => "", "data-src" => "assets/img/profiles/avatar_small.jpg", "data-src-retina" => "assets/img/profiles/avatar_small2x.jpg", :height => "30", :src => "assets/img/profiles/avatar_small.jpg", :width => "30"}
+                  .chat-bubble.from-them
+                    Yea
+                / END From Them Message  !
+              / BEGIN Conversation  !
+              / BEGIN Chat Input  !
+              .b-t.b-grey.bg-white.clearfix.p-l-10.p-r-10
+                .row
+                  .col-xs-1.p-t-15
+                    %a.link.text-master{:href => "#"}
+                      %i.fa.fa-plus-circle
+                  .col-xs-8.no-padding
+                    %input.form-control.chat-input{"data-chat-conversation" => "#my-conversation", "data-chat-input" => "", :placeholder => "Say something", :type => "text"}
+                  .col-xs-2.link.text-master.m-l-10.m-t-15.p-l-10.b-l.b-grey.col-top
+                    %a.link.text-master{:href => "#"}
+                      %i.pg-camera
+              / END Chat Input  !
+            / END Conversation View  !
+    / END QUICKVIEW
+    / START OVERLAY
+    .overlay{"data-pages" => "search", :style => "display: none"}
+      / BEGIN Overlay Content !
+      .overlay-content.has-results.m-t-20
+        / BEGIN Overlay Header !
+        .container-fluid
+          / BEGIN Overlay Logo !
+          %img.overlay-brand{:alt => "logo", "data-src" => "assets/img/logo.png", "data-src-retina" => "assets/img/logo_2x.png", :height => "22", :src => "assets/img/logo.png", :width => "78"}
+            / END Overlay Logo !
+            / BEGIN Overlay Close !
+            %a.close-icon-light.overlay-close.text-black.fs-16{:href => "#"}
+              %i.pg-close
+            / END Overlay Close !
+        / END Overlay Header !
+        .container-fluid
+          / BEGIN Overlay Controls !
+          %input#overlay-search.no-border.overlay-search.bg-transparent{:autocomplete => "off", :placeholder => "Search...", :spellcheck => "false"}
+            %br
+              .inline-block
+                .checkbox.right
+                  %input#checkboxn{:checked => "checked", :type => "checkbox", :value => "1"}
+                    %label{:for => "checkboxn"}
+                      %i.fa.fa-search
+                      Search within page
+              .inline-block.m-l-10
+                %p.fs-13 Press enter to search
+              / END Overlay Controls !
+        / BEGIN Overlay Search Results, This part is for demo purpose, you can add anything you like !
+        .container-fluid
+          %span
+            %strong suggestions :
+          %span#overlay-suggestions
+          %br
+            .search-results.m-t-40
+              %p.bold Pages Search Results
+              .row
+                .col-md-6
+                  / BEGIN Search Result Item !
+                  %div
+                    / BEGIN Search Result Item Thumbnail !
+                    .thumbnail-wrapper.d48.circular.bg-success.text-white.inline.m-t-10
+                      %div
+                        %img{:alt => "", "data-src" => "assets/img/profiles/avatar.jpg", "data-src-retina" => "assets/img/profiles/avatar2x.jpg", :height => "50", :src => "assets/img/profiles/avatar.jpg", :width => "50"}
+                    / END Search Result Item Thumbnail !
+                    .p-l-10.inline.p-t-5
+                      %h5.m-b-5
+                        %span.semi-bold.result-name ice cream
+                        on pages
+                      %p.hint-text via john smith
+                  / END Search Result Item !
+                  / BEGIN Search Result Item !
+                  %div
+                    / BEGIN Search Result Item Thumbnail !
+                    .thumbnail-wrapper.d48.circular.bg-success.text-white.inline.m-t-10
+                      %div T
+                    / END Search Result Item Thumbnail !
+                    .p-l-10.inline.p-t-5
+                      %h5.m-b-5
+                        %span.semi-bold.result-name ice cream
+                        related topics
+                      %p.hint-text via pages
+                  / END Search Result Item !
+                  / BEGIN Search Result Item !
+                  %div
+                    / BEGIN Search Result Item Thumbnail !
+                    .thumbnail-wrapper.d48.circular.bg-success.text-white.inline.m-t-10
+                      %div
+                        %i.fa.fa-headphones.large-text
+                    / END Search Result Item Thumbnail !
+                    .p-l-10.inline.p-t-5
+                      %h5.m-b-5
+                        %span.semi-bold.result-name ice cream
+                        music
+                      %p.hint-text via pagesmix
+                  / END Search Result Item !
+                .col-md-6
+                  / BEGIN Search Result Item !
+                  %div
+                    / BEGIN Search Result Item Thumbnail !
+                    .thumbnail-wrapper.d48.circular.bg-info.text-white.inline.m-t-10
+                      %div
+                        %i.fa.fa-facebook.large-text
+                    / END Search Result Item Thumbnail !
+                    .p-l-10.inline.p-t-5
+                      %h5.m-b-5
+                        %span.semi-bold.result-name ice cream
+                        on facebook
+                      %p.hint-text via facebook
+                  / END Search Result Item !
+                  / BEGIN Search Result Item !
+                  %div
+                    / BEGIN Search Result Item Thumbnail !
+                    .thumbnail-wrapper.d48.circular.bg-complete.text-white.inline.m-t-10
+                      %div
+                        %i.fa.fa-twitter.large-text
+                    / END Search Result Item Thumbnail !
+                    .p-l-10.inline.p-t-5
+                      %h5.m-b-5
+                        Tweats on
+                        %span.semi-bold.result-name ice cream
+                      %p.hint-text via twitter
+                  / END Search Result Item !
+                  / BEGIN Search Result Item !
+                  %div
+                    / BEGIN Search Result Item Thumbnail !
+                    .thumbnail-wrapper.d48.circular.text-white.bg-danger.inline.m-t-10
+                      %div
+                        %i.fa.fa-google-plus.large-text
+                    / END Search Result Item Thumbnail !
+                    .p-l-10.inline.p-t-5
+                      %h5.m-b-5
+                        Circles on
+                        %span.semi-bold.result-name ice cream
+                      %p.hint-text via google plus
+                  / END Search Result Item !
+        / END Overlay Search Results !
+      / END Overlay Content !
+    / END OVERLAY
+    / BEGIN VENDOR JS
+    %script{:src => "assets/plugins/pace/pace.min.js", :type => "text/javascript"}
+    %script{:src => "assets/plugins/jquery/jquery-1.8.3.min.js", :type => "text/javascript"}
+    %script{:src => "assets/plugins/modernizr.custom.js", :type => "text/javascript"}
+    %script{:src => "assets/plugins/jquery-ui/jquery-ui.min.js", :type => "text/javascript"}
+    %script{:src => "assets/plugins/bootstrapv3/js/bootstrap.min.js", :type => "text/javascript"}
+    %script{:src => "assets/plugins/jquery/jquery-easy.js", :type => "text/javascript"}
+    %script{:src => "assets/plugins/jquery-unveil/jquery.unveil.min.js", :type => "text/javascript"}
+    %script{:src => "assets/plugins/jquery-bez/jquery.bez.min.js"}
+    %script{:src => "assets/plugins/jquery-ios-list/jquery.ioslist.min.js", :type => "text/javascript"}
+    %script{:src => "assets/plugins/imagesloaded/imagesloaded.pkgd.min.js"}
+    %script{:src => "assets/plugins/jquery-actual/jquery.actual.min.js"}
+    %script{:src => "assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js"}
+    / END VENDOR JS
+    / BEGIN CORE TEMPLATE JS
+    %script{:src => "pages/js/pages.js", :type => "text/javascript"}
+    / END CORE TEMPLATE JS
+    / BEGIN PAGE LEVEL JS
+    %script{:src => "assets/js/scripts.js", :type => "text/javascript"}
+    / END PAGE LEVEL JS

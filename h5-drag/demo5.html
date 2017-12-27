@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>demo5-angularjs-3</title>
+</head>
+<style>
+  #drag1 {
+    display: inline-block;
+    position: absolute;
+  }
+</style>
+<body data-ng-app="app">
+  <div style="width:100%;height:1000px;border:1px solid #aaa">
+      <img id="drag1" dragdrop src="img/1.png" width="150" />
+  </div>
+</body>
+<script src="https://cdn.bootcss.com/angular.js/1.6.5/angular.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  angular.module('app', []);
+  angular.module('app').directive('dragdrop', dragDrop);
+  dragDrop.$inject = [];
+  function dragDrop() {
+    var DDO = {
+      restrict: 'A',
+      link: (scope, element, attrs) => {
+        var el = element[0];
+        el.draggable = true;
+
+        el.addEventListener(
+          'dragstart',
+          function (e) {
+            let style = window.getComputedStyle(e.target, null);
+            e.dataTransfer.setData('Text/plain',
+              (parseInt(style.getPropertyValue('left')) - e.clientX) + ',' + (parseInt(style.getPropertyValue('top')) - e.clientY)
+            );
+            console.log(e.clientX, 'start');
+          }, false
+        );
+
+        el.addEventListener('dragover', function (e) {
+          e.preventDefault();
+          return false;
+        }, false);
+
+        document.body.addEventListener('drop', function (e) {
+          let offset = e.dataTransfer.getData('Text/plain').split(',');
+          console.log(e.clientX, 'drop',offset);
+          el.style.left = (e.clientX + parseInt(offset[0])) + 'px';
+          el.style.top = (e.clientY + parseInt(offset[1])) + 'px';
+          e.preventDefault();
+          return false;
+        }, false);
+
+      }
+    }
+    return DDO;
+  }
+</script>
+
+</html>

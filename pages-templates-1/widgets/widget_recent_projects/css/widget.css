@@ -1,0 +1,9 @@
+.nav-tabs-simple > li:after{
+	background: #ececec;
+}
+.nav-tabs > li > a{
+	padding: 8px 7px;
+}
+.nav-tabs-simple:after{
+	border-bottom: 0;
+}

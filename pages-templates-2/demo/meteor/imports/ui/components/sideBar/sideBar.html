@@ -1,0 +1,325 @@
+<template name="sideBar">
+	<!-- BEGIN SIDEBAR -->
+	<div class="page-sidebar" data-pages="sidebar">
+		<!-- BEGIN SIDEBAR MENU TOP TRAY CONTENT-->
+		<div class="sidebar-overlay-slide from-top" id="appMenu">
+			<div class="row">
+			  <div class="col-xs-6 no-padding">
+			    <a href="#" class="p-l-40"><img src="/img/demo/social_app.svg" alt="socail"></a>
+			  </div>
+			  <div class="col-xs-6 no-padding">
+			    <a href="#" class="p-l-10"><img src="/img/demo/email_app.svg" alt="socail"></a>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-xs-6 m-t-20 no-padding">
+			    <a href="#" class="p-l-40"><img src="/img/demo/calendar_app.svg" alt="socail"></a>
+			  </div>
+			  <div class="col-xs-6 m-t-20 no-padding">
+			    <a href="#" class="p-l-10"><img src="/img/demo/add_more.svg" alt="socail"></a>
+			  </div>
+			</div>
+		</div>
+		<!-- BEGIN SIDEBAR HEADER -->
+		<div class="sidebar-header">
+			<img src="/img/logo_white.png" alt="logo" class="brand" data-src="/img/logo_white.png"
+			     data-src-retina="/img/logo_white_2x.png" width="78" height="22">
+
+			<div class="sidebar-header-controls">
+				<button data-pages-toggle="#appMenu" class="btn btn-xs sidebar-slide-toggle btn-link m-l-20"
+				        type="button"><i class="fa fa-angle-down fs-16"></i>
+				</button>
+				<button data-toggle-pin="sidebar" class="btn btn-link visible-lg-inline" type="button"><i
+						class="fa fs-12"></i>
+				</button>
+			</div>
+		</div>
+		<!-- END SIDEBAR HEADER -->
+		<!-- BEGIN SIDEBAR MENU -->
+		<div class="sidebar-menu">
+			<ul class="menu-items">
+				<li class="m-t-30 ">
+					<a href="/" class="detailed">
+						<span class="title">Dashboard</span>
+						<span class="details">12 New Updates</span>
+					</a>
+					<span class="icon-thumbnail {{isActivePath '/' class='bg-success'}}"><i class="pg-home"></i></span>
+				</li>
+				{{!--Not Implemented Yet
+					Email
+				}}
+				  <li class="">
+					<a href="/email" class="detailed">
+					  <span class="title">Email</span>
+					  <span class="details">234 New Emails</span>
+					</a>
+					<span class="icon-thumbnail "><i class="pg-mail"></i></span>
+				  </li>
+				  {{--}}
+				  <li class="">
+		            <a href="http://pages.revox.io/dashboard/latest/html/widget.html" target="_blank" class="detailed">
+		              <span class="title">Widgets</span>
+		              <span class="details">22 items</span>
+		            </a>
+		            <span class="icon-thumbnail">W</span>
+		          </li>				  
+				  <li class="">
+					<a href="/social"><span class="title">Social</span></a>
+					  <span class="icon-thumbnail {{isActivePath '/social' class='bg-success'}}"><i
+							  class="pg-social"></i></span>
+				  </li>
+				  <li class="{{isActivePath regex='calendar/' class='open active'}}">
+					<a href="#"><span class="title">Calendar</span>
+					<span class="arrow {{isActivePath regex='calendar/' class='open'}}"></span></a>
+					<span class="icon-thumbnail {{isActivePath 'calendar/' class='bg-success'}}"><i class="pg-calender"></i></span>
+		            <ul class="sub-menu">
+		              <li class="">
+		                <a href="/calendar/calendarApp">Basic</a>
+		                <span class="icon-thumbnail">c</span>
+		              </li>
+		              <li class="">
+		                <a href="/calendar/calendarAppLang">Languages</a>
+		                <span class="icon-thumbnail">L</span>
+		              </li>
+		              <li class="">
+		                <a href="/calendar/calendarAppMonth">Month</a>
+		                <span class="icon-thumbnail">M</span>
+		              </li>
+		              <li class="">
+		                <a href="/calendar/calendarAppLazy">Lazy load</a>
+		                <span class="icon-thumbnail">La</span>
+		              </li>
+		              <li class="pages.revox.io/dashboard/2.1.0/doc/#calendar" target="_blank">
+		                <a href="#">Documentation</a>
+		                <span class="icon-thumbnail">D</span>
+		              </li>
+		            </ul>
+				  </li>
+				  <li class="">
+					<a href="/builder">
+					  <span class="title">Builder</span>
+					</a>
+					<span class="icon-thumbnail {{isActivePath '/builder' class='bg-success'}}"><i class="pg-layouts"></i></span>
+				  </li>
+				<li class="{{isActivePath regex='layouts/' class='open active'}}">
+					<a href="#"><span class="title">Layouts</span>
+					<span class="arrow {{isActivePath regex='layouts/' class='open'}}"></span></a>
+					<span class="icon-thumbnail {{isActivePath regex='layouts/' class='bg-success'}}"><i class="pg-layouts2"></i></span>
+					<ul class="sub-menu">
+					  <li class="">
+					    <a href="/blank">Default</a>
+					    <span class="icon-thumbnail">dl</span>
+					  </li>
+					  <li class="">
+					    <a href="/layouts/secondary-layout">Secondary</a>
+					    <span class="icon-thumbnail">sl</span>
+					  </li>
+					  <li class="">
+					    <a href="/layouts/boxed-layout">Boxed</a>
+					    <span class="icon-thumbnail">bl</span>
+					  </li>
+					  <li class="">
+					    <a href="/layouts/horizontal-layout">Horizontal Menu</a>
+					    <span class="icon-thumbnail">hm</span>
+					  </li>
+					   <li class="">
+					    <a href="/builder">Columns</a>
+					    <span class="icon-thumbnail">cl</span>
+					  </li>
+					</ul>
+				</li>
+				<li class="{{isActivePath regex='ui/' class='open active'}}">
+					<a href="#"><span class="title">UI Elements</span>
+						<span class="arrow {{isActivePath regex='ui/' class='open'}}"></span></a>
+					<span class="icon-thumbnail {{isActivePath regex='ui/' class='bg-success'}}">Ui</span>
+					<ul class="sub-menu">
+						<li class="">
+							<a href="/ui/color">Color</a>
+							<span class="icon-thumbnail">c</span>
+						</li>
+						<li class="">
+							<a href="/ui/typo">Typography</a>
+							<span class="icon-thumbnail">t</span>
+						</li>
+						<li class="">
+							<a href="/ui/icons">Icons</a>
+							<span class="icon-thumbnail">i</span>
+						</li>
+						<li class="">
+							<a href="/ui/buttons">Buttons</a>
+							<span class="icon-thumbnail">b</span>
+						</li>
+						<li class="">
+							<a href="/ui/notifications">Notifications</a>
+							<span class="icon-thumbnail">n</span>
+						</li>
+						<li class="">
+							<a href="/ui/modals">Modals</a>
+							<span class="icon-thumbnail">m</span>
+						</li>
+						<li class="">
+							<a href="/ui/progress">Progress &amp; Activity</a>
+							<span class="icon-thumbnail">pa</span>
+						</li>
+						<li class="">
+							<a href="/ui/tabs_accordian">Tabs &amp; Accordions</a>
+							<span class="icon-thumbnail">ta</span>
+						</li>
+						<li class="">
+							<a href="/ui/sliders">Sliders</a>
+							<span class="icon-thumbnail">s</span>
+						</li>
+						<li class="">
+							<a href="/ui/treeview">Tree View</a>
+							<span class="icon-thumbnail">tv</span>
+						</li>
+						<li class="">
+							<a href="/ui/nestables">Nestable</a>
+							<span class="icon-thumbnail">ns</span>
+						</li>
+					</ul>
+				</li>
+				<li class="{{isActivePath regex='form' class='open active'}}">
+					<a href="#">
+						<span class="title">Forms</span><span class="arrow {{isActivePath regex='form' class='open'}}"></span>
+					</a>
+					<span class="icon-thumbnail {{isActivePath regex='form' class='bg-success'}}"><i
+							class="pg-form"></i></span>
+					<ul class="sub-menu">
+						<li class="">
+							<a href="/formElements">Form Elements</a>
+							<span class="icon-thumbnail">fe</span>
+						</li>
+						<li class="">
+							<a href="/formLayouts">Form Layouts</a>
+							<span class="icon-thumbnail">fl</span>
+						</li>
+						<li class="">
+							<a href="/formWizard">Form Wizard</a>
+							<span class="icon-thumbnail">fw</span>
+						</li>
+					</ul>
+				</li>
+				<li class="">
+					<a href="/portlets">
+						<span class="title">Portlets</span>
+					</a>
+					<span class="icon-thumbnail {{isActivePath '/portlets' class='bg-success'}}"><i class="pg-grid"></i></span>
+				</li>
+				<li class="">
+					<a href="/views">
+					  <span class="title">Views</span>
+					</a>
+					<span class="icon-thumbnail {{isActivePath '/views' class='bg-success'}}"><i class="pg pg-ui"></i></span>
+		        </li>
+				<li class="">
+					<a href="#"><span class="title">Tables</span>
+						<span class=" arrow"></span></a>
+					<span class="icon-thumbnail {{isActivePath regex='table/' class='bg-success'}}"><i
+							class="pg-tables"></i></span>
+					<ul class="sub-menu">
+						<li class="">
+							<a href="/table/basic">Basic Tables</a>
+							<span class="icon-thumbnail">bt</span>
+						</li>
+						<li class="">
+							<a href="/table/data">Data Tables</a>
+							<span class="icon-thumbnail">dt</span>
+						</li>
+					</ul>
+				</li>
+				<li class="{{isActivePath regex='maps/' class='open active'}}">
+					<a href="#"><span class="title">Maps</span>
+						<span class=" arrow {{isActivePath regex='maps/' class='open'}}"></span></a>
+					<span class="icon-thumbnail {{isActivePath regex='maps/' class='bg-success'}}"><i class="pg-map"></i></span>
+					<ul class="sub-menu">
+						<li class="">
+							<a href="/maps/gmap">Google Maps</a>
+							<span class="icon-thumbnail">gm</span>
+						</li>
+						<li class="">
+							<a href="/maps/vector">Vector Maps</a>
+							<span class="icon-thumbnail">vm</span>
+						</li>
+					</ul>
+				</li>
+				<li class="">
+					<a href="/charts"><span class="title">Charts</span></a>
+					<span class="icon-thumbnail {{isActivePath '/charts' class='bg-success'}}"><i class="pg-charts"></i></span>
+				</li>
+				<li class="">
+					<a href="#"><span class="title">Extra</span>
+						<span class=" arrow"></span></a>
+					<span class="icon-thumbnail"><i class="pg-bag"></i></span>
+					<ul class="sub-menu">
+						<li class="">
+							<a href="error/404">404 Page</a>
+							<span class="icon-thumbnail">pg</span>
+						</li>
+						<li class="">
+							<a href="error/500">500 Page</a>
+							<span class="icon-thumbnail">pg</span>
+						</li>
+						<li class="">
+							<a href="/invoice">Invoice</a>
+							<span class="icon-thumbnail">in</span>
+						</li>
+						<li class="">
+							<a href="/blank">Blank Page</a>
+							<span class="icon-thumbnail">bp</span>
+						</li>
+						<li class="">
+							<a href="/login">Login</a>
+							<span class="icon-thumbnail">l</span>
+						</li>
+						<li class="">
+							<a href="/register">Register</a>
+							<span class="icon-thumbnail">re</span>
+						</li>
+						<li class="">
+							<a href="/lock">Lockscreen</a>
+							<span class="icon-thumbnail">ls</span>
+						</li>
+						<li class="">
+							<a href="/gallery">Gallery</a>
+							<span class="icon-thumbnail">gl</span>
+						</li>
+						<li class="">
+							<a href="/timeline">Timeline</a>
+							<span class="icon-thumbnail">t</span>
+						</li>
+					</ul>
+				</li>
+				<li class="">
+					<a href="#"><span class="title">Menu Levels</span>
+						<span class="arrow"></span></a>
+					<span class="icon-thumbnail"><i class="pg-menu_lv"></i></span>
+					<ul class="sub-menu">
+						<li>
+							<a href="#">Level 1</a>
+							<span class="icon-thumbnail">L1</span>
+						</li>
+						<li>
+							<a href="#"><span class="title">Level 2</span>
+								<span class="arrow"></span></a>
+							<span class="icon-thumbnail">L2</span>
+							<ul class="sub-menu">
+								<li>
+									<a href="#">Sub Menu</a>
+									<span class="icon-thumbnail">Sm</span>
+								</li>
+								<li>
+									<a href="u#">Sub Menu</a>
+									<span class="icon-thumbnail">Sm</span>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<div class="clearfix"></div>
+		</div>
+		<!-- END SIDEBAR MENU -->
+	</div>
+	<!-- END SIDEBAR -->
+</template>

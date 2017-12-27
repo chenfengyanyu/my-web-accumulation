@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title>Pages - Widgets</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="apple-touch-icon" href="../pages/ico/60.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../pages/ico/76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../pages/ico/120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../pages/ico/152.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <link href="../assets/plugins/bootstrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/plugins//jquery-scrollbar/jquery.scrollbar.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../pages/css/pages-icons.css" rel="stylesheet" type="text/css">
+    <link href="../assets/plugins/select2/css/select2.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link class="main-stylesheet" href="../pages/css/pages.css" rel="stylesheet" type="text/css" />
+    <link href="css/widget.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="fixed-header dashboard ">
+    <!-- START PAGE-CONTAINER -->
+    <div class="page-container no-padding ">
+      <!-- START PAGE CONTENT WRAPPER -->
+      <div class="page-content-wrapper container-xs-height full-height">
+        <!-- START PAGE CONTENT -->
+        <div class="content sm-gutter no-padding col-xs-height col-middle">
+          <!-- START CONTAINER FLUID -->
+          <div class="container-fluid padding-25 sm-padding-10">
+            <!-- START ROW -->
+            <div class="row">
+              <div class="col-md-12 m-b-10">
+                <div class=" panel no-border no-margin widget-loader-circle todolist-widget">
+                  <div class="panel-heading clearfix p-l-30">
+                    <div class="row">
+                      <div class="clearfix">
+                        <div class="pull-left img-holder"><img class="p-t-10" src="img/revox-logo.svg"></div>
+                        <div class="pull-left col-xs-10 col-sm-5 col-sm-5 p-l-10">
+                          <p class="no-margin p-l-5">Generate Map</p>
+                          <select class="full-width" data-init-plugin="select2">
+                            <option>
+                              Sales for Revox admin
+                            </option>
+                            <option>
+                              Sales for Web-arch
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel-body bg-master-light no-padding">
+                    <div class="map-body">
+                      <div class="full-height full-width" id="map"></div>
+                      <div class="pull-bottom m-l-20 m-b-35">
+                        <div class="btn-group btn-group-vertical" data-toggle="buttons-radio">
+                          <button class="btn btn-default btn-xs" id="map-zoom-in"><i class="fa fa-plus"></i></button>
+                          <button class="btn btn-default btn-xs" id="map-zoom-out"><i class="fa fa-minus"></i></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- END ROW -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- BEGIN VENDOR JS -->
+    <script src="../assets/plugins/jquery/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="../assets/plugins/modernizr.custom.js" type="text/javascript"></script>
+    <script src="../assets/plugins//jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp" type="text/javascript"></script>
+    <script src="../assets/plugins/select2/js/select2.min.js" type="text/javascript"></script>
+    <!-- END VENDOR JS -->
+    <!-- BEGIN CORE TEMPLATE JS -->
+    <script src="../pages/js/pages.js"></script>
+    <!-- END CORE TEMPLATE JS -->
+    <!-- BEGIN PAGE LEVEL JS -->
+    <script src="js/widget.js"></script>
+    <!-- END PAGE LEVEL JS -->
+  </body>
+</html>

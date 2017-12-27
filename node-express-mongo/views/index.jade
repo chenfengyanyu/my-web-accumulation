@@ -1,0 +1,63 @@
+extends layout
+block title
+  title index
+
+block content
+    script.
+        var d = !{JSON.stringify(temp||'')}
+    form.form-inline(role='form',action='http://127.0.0.1:3000/add',method='POST')
+      .form-group
+        label(for='name') Name
+        p.col-sm-2.form-control-static Name
+        .col-md-3
+          input.form-control#name(type='text',placeholder='name',name='name',value='#{temp.name}')
+      .form-group
+        label(for='phone') Phone
+        p.col-sm-2.form-control-static Phone
+        .col-md-3
+          input.form-control#phone(type='text',placeholder='phone',name='phone',value='#{temp.phone}')
+      
+      .form-group
+        .col-md-offset-2.col-md-3
+          if  temp.updateFlag
+            input(type='hidden',name='uid',value='#{temp.id}')
+            button.btn.btn-danger(type='submit') Update
+          else 
+            button.btn.btn-danger(type='submit') Add
+      p
+      table.table.table-condensed.table-striped
+        tr
+        - var arrs = ['#','Name','Phone','operate']
+        - for (var i = 0; i < arrs.length; i++)
+            th #{arrs[i]}
+        - each item , index in args
+          tr
+            td #{index}
+            td 
+              a(href='/users?id=#{item._id}') #{item.name}
+            td #{item.phone}
+            td 
+              a(href='/delete?id=#{item._id}') delete
+              a.col-sm-2(href='/add?id=#{item._id}') update
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+<!-- GLOBAL LAYOUT -->
+<template name="_defaultLayout">
+	{{>sideBar}}
+	<!-- START PAGE-CONTAINER -->
+	<div class="page-container">
+		{{>header}}
+		<!-- START PAGE CONTENT WRAPPER -->
+		<div class="page-content-wrapper">
+			<!-- START PAGE CONTENT -->
+			<div class="content {{isActivePath "/" class="sm-gutter"}} ">
+				{{> Template.dynamic template=main}}
+			</div>
+			{{>footer}}
+		</div>
+	</div>
+	{{>quickView}}
+	{{>overlaySearch}}
+</template>

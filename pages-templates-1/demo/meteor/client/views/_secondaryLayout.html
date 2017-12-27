@@ -1,0 +1,20 @@
+<!-- SECONDARY LAYOUT -->
+<template name="_secondaryLayout">
+	{{>sideBar}}
+	<!-- START PAGE-CONTAINER -->
+	<div class="page-container">
+		{{>header}}
+		<!-- START PAGE CONTENT WRAPPER -->
+		<div class="page-content-wrapper full-height">
+			<!-- START PAGE CONTENT -->
+			<div class="content full-height {{isActivePath "/" class="sm-gutter"}} ">
+				{{>secondayMainMenu}}
+				<div class="inner-content full-height">
+				{{> Template.dynamic template=main}}
+				</div>
+			</div>
+		</div>
+	</div>
+	{{>quickView}}
+	{{>overlaySearch}}
+</template>
