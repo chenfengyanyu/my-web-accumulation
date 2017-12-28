@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>周边检索</title>
+	<link rel="stylesheet" href="lib/bootstrap.min.css">
+	<link href=" css/style.css" rel="stylesheet">
+</head>
+
+<body>
+	<div id="fengMap" ></div>
+	<!--操作按钮-->
+	<div class="btns">
+		<label>半径：</label><input type="text" name="" id="radius" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">&nbsp;米
+		<button class="btn btn-default">周边查询</button>
+	</div>
+	
+	<!--搜索出来的数据显示在table-->
+	<div id="table-container">
+		<div class="title"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></div>
+		<table class="table table-bordered table-hover" id="table">
+			<thead>
+				<tr>
+					<th>行号</th>
+					<th>模型id</th>
+					<th>模型名称</th>
+					<th>楼层id</th>
+					<th>x</th>
+					<th>y</th>
+					<th>z</th>
+				</tr>
+			</thead>
+			<tbody id="table-body">
+			</tbody>
+		</table>
+	</div>
+	<script src="lib/jquery-2.1.4.min.js"></script>
+	<script src="lib/fengmap.min.js"></script>
+	<script src="lib/bootstrap.min.js"></script>
+    <script>
+    	//获取版本号,设置title
+		document.title = '周边查询V' + fengmap.VERSION;
+
+		//定义全局map变量
+		var map;
+		var fmapID = '10347';
+		var res = [];
+		var polygonLayer = null;
+
+		window.onload = function() {
+			map = new fengmap.FMMap({
+				//渲染dom
+				container: document.getElementById('fengMap'),
+				//地图数据位置
+				mapServerURL: './data/' + fmapID,
+				//主题数据位置
+				mapThemeURL: 'data/theme',
+				//设置主题
+				defaultThemeName: '3007',
+				// 默认比例尺级别设置为20级 
+				defaultMapScaleLevel: 20,
+				//开发者申请应用下web服务的key
+				key: '请输入您的KEY',
+				//开发者申请应用名称
+				appName: '请输入您的appName',
+			});
+
+			//打开Fengmap服务器的地图数据和主题
+			map.openMapById(fmapID);
+
+			//地图加载完成事件
+			map.on('loadComplete',function() {
+				//添加LocationMarker
+				addLocationMarker(map.center);
+
+			});
+
+			var oTable_container = document.querySelector('#table-container');
+
+			function peripheralSearch(gid, coord, radius) {
+				// var gid=1;  //可以传三种值:1、楼层2、数组[1,2,3],3、'all'查询全部
+				var conditions = {
+					//查询的坐标点
+					mapCoord: coord,
+					//查询的范围半径 
+					radius: radius,
+					// 要查询的类型  	
+					nodeType: fengmap.FMNodeType.MODEL
+				}
+
+				map.search(gid, conditions, function(data) {
+					//输出查询结果
+					//console.log(data);
+					if (data != null && data.length > 0) {
+						res = data;
+						filldata(data);
+						oTable_container.style.display = 'block';
+					} else {
+						oTable_container.style.display = 'none';
+					}
+				});
+			}
+
+			//添加Marker
+			function addMarkers(gid, X, Y) {
+				var group = map.getFMGroup(gid);
+
+				//返回当前层中第一个imageMarkerLayer,如果没有，则自动创建
+				var layer = group.getOrCreateLayer('imageMarker');
+
+				var im = new fengmap.FMImageMarker({
+					x: X,
+					y: Y,
+					url: 'image/blueImageMarker.png',
+					size: 32,
+					callback: function() {
+						// 在图片载入完成后，设置 "一直可见"
+						// im.alwaysShow();
+					}
+				});
+				layer.addMarker(im);
+			};
+
+			//创建圆形标注
+			function addCircleMaker(gid, radius) {
+				var group = map.getFMGroup(gid);
+				//创建PolygonMarkerLayer
+				if (!polygonLayer) {
+					polygonLayer = new fengmap.FMPolygonMarkerLayer();
+					group.addLayer(polygonLayer);
+				} else {
+					polygonLayer.removeAll();
+				}
+				var circleMaker = new fengmap.FMPolygonMarker({
+					//设置颜色
+					color: '#3CF9DF',
+					//设置透明度
+					alpha: .3,
+					//设置边框线的宽度
+					lineWidth: 3,
+					//设置高度
+					height: 6,
+					points: {
+						//设置为圆形
+						type: 'circle',
+						//设置此形状的中心坐标
+						center: {
+							x: map.center.x,
+							y: map.center.y
+						},
+						//设置半径
+						radius: radius,
+						//设置段数，默认为40段
+						segments: 40,
+					}
+				});
+				polygonLayer.addMarker(circleMaker);
+			};
+
+			//创建定位点标注
+			function addLocationMarker(coord) {
+				var locationMarker = new fengmap.FMLocationMarker({
+					url: 'image/pointer.png',
+					//设置图片显示尺寸
+					size: 46,
+					//设置图片高度，默认是5
+					height: 10,
+				});
+
+				map.addLocationMarker(locationMarker);
+
+				locationMarker.setPosition({
+					//设置定位点的x坐标
+					x: coord.x,
+					//设置定位点的y坐标
+					y: coord.y,
+					//设置定位点所在楼层
+					groupID: map.groupIDs[0],
+					//设置定位点的高于楼层多少
+					zOffset: 1,
+				});
+			};
+
+			var oBtn = document.querySelector('.btn');
+
+			//周边检索按钮
+			oBtn.onclick = function() {
+				//清除Markers
+				removeMarkers(); 
+				var oRadius = document.querySelector('#radius').value;
+				//添加圆形标注
+				addCircleMaker(map.groupIDs[0], oRadius); 
+				//查询一楼，以地图中心点为搜索中心点查询附近MODEL
+				peripheralSearch(map.groupIDs[0], map.center, oRadius);
+				this.classList.add('btn-primary');
+			};
+
+			//删除Marker
+			function removeMarkers() {
+				//获取多楼层Marker
+				map.callAllLayersByAlias('imageMarker',
+				function(layer) {
+					layer.removeAll();
+				});
+			};
+
+			//定位跳转
+			function moveTo(coord) {
+				map.visibleGroupIDs = [coord.groupID];
+				map.focusGroupID = coord.groupID;
+				map.moveTo(coord);
+			};
+
+			//填充表格数据
+			function filldata(data) {
+				var oTable = document.querySelector('#table');
+				var oTableBody = document.querySelector('#table-body');
+				var aTr = oTable.getElementsByTagName('tr');
+				oTableBody.innerHTML = '';
+				var tr = '';
+				for (var i in data) {
+					i = parseInt(i);
+					var model = data[i];
+					addMarkers(model.groupID, model.mapCoord.x, model.mapCoord.y);
+					if (i % 2 == 0) {
+						tr += '<tr class="active"><td>' + (i + 1) + '</td><td>' + (model.ID == undefined ? "空": model.ID) + '</td><td>' + (!model.name ? "空": model.name) + '</td><td>' + model.groupID + '</td><td>' + model.mapCoord.x + '</td><td>' + model.mapCoord.y + '</td><td>' + model.mapCoord.z + '</td></tr>';
+					} else {
+						tr += '<tr class="bg-success"><td>' + (i + 1) + '</td><td>' + (model.ID == undefined ? "空": model.ID) + '</td><td>' + (!model.name ? "空": model.name) + '</td><td>' + model.groupID + '</td><td>' + model.mapCoord.x + '</td><td>' + model.mapCoord.y + '</td><td>' + model.mapCoord.z + '</td></tr>';
+					}
+				}
+				oTableBody.innerHTML = tr;
+				//点击某一行数据联动
+				for (var i = 0; i < aTr.length; i++) { (function(i) {
+						aTr[i].onclick = function() {
+							var index = i;
+							if (index <= 0) return;
+							var x = parseFloat(this.cells[4].innerText);
+							var y = parseFloat(this.cells[5].innerText);
+							var z = parseFloat(this.cells[6].innerText);
+							var gid = parseInt(this.cells[3].innerText);
+							var id = parseInt(this.cells[1].innerText);
+							var index = parseInt(this.cells[0].innerText);
+
+							var coord = {
+								x: x,
+								y: y,
+								z: z,
+								groupID: gid
+							};
+							//定位跳转
+							moveTo(coord); 
+							var model = res[index - 1];
+							map.storeSelect(model, true, false);
+						}
+					})(i);
+				}
+			};
+		};
+	</script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>根据起点终点规划路径</title>
+	<link rel="stylesheet" href="lib/bootstrap.min.css">
+	<link href=" css/style.css" rel="stylesheet">
+</head>
+<body>
+	<div id="fengMap" ></div>
+	
+	<div id="prompt" >顺序选取起终点</div>
+	<!--信息提示-->
+	<div id="message" class="alert alert-warning hidden">
+		<a href="#" class="close" data-dismiss="alert">&times;</a>
+		<strong>警告！</strong>起点和终点不能在同一个模型上。
+	</div>
+	<script src="lib/jquery-2.1.4.min.js"></script>
+	<script src="lib/fengmap.min.js"></script>
+	<script src="lib/bootstrap.min.js"></script>
+	<script>
+		//获取版本号,设置title
+		document.title = '根据起点终点规划路径V' + fengmap.VERSION;
+
+		//定义全局map变量
+		var map;
+		var fmapID = '10347';
+		// 导航对象
+		var navi; 
+
+		window.onload = function() {
+			map = new fengmap.FMMap({
+				//渲染dom
+				container: document.getElementById('fengMap'),
+				//地图数据位置
+				mapServerURL: './data/' + fmapID,
+				//主题数据位置
+				mapThemeURL: 'data/theme',
+				//设置主题
+				defaultThemeName: '3007',
+				// 默认比例尺级别设置为20级
+				defaultMapScaleLevel: 20,
+				//开发者申请应用下web服务的key
+				key: '请输入您的KEY',
+				//开发者申请应用名称
+				appName: '请输入您的appName',
+			});
+
+			//打开Fengmap服务器的地图数据和主题
+			map.openMapById(fmapID);
+
+			//地图加载完成回调
+			map.on('loadComplete',function() {
+				//初始化导航对象
+				navi = new fengmap.FMNavigation({
+					map: map,
+					// 设置导航线的样式
+					lineStyle: {
+						//设置线为导航线样式
+						lineType: fengmap.FMLineType.FMARROW,
+						lineWidth: 6,
+						//设置线的颜色
+						// godColor: '#FF0000',
+						//设置边线的颜色   
+						// godEdgeColor: '#920000',   
+					}
+				});
+			});
+
+			// 点击计数
+			var clickCount = 0;
+
+			//判断起点是否是同一处坐标
+			var lastCoord = null;
+
+			//点击地图事件。开始选点开始后，点击地图一次为起点，第二次点击为终点
+			map.on('mapClickNode', function(event) {
+				if (event.nodeType == fengmap.FMNodeType.MODEL) {
+					var modelLabel = event.label;
+					var coord;
+
+					// 如果拾取的模型没有Label对象，则使用模型中心点的坐标
+					// 有则使用与模型对应的Label对象的坐标。
+					if (!modelLabel) {
+						coord = {
+							x: event.mapCoord.x,
+							y: event.mapCoord.y,
+							groupID: event.groupID
+						}
+					} else {
+						coord = {
+							x: modelLabel.mapCoord.x,
+							y: modelLabel.mapCoord.y,
+							groupID: event.groupID
+						};
+					}
+
+					//第三次点击清除路径，重现设置起点起点
+					if (clickCount == 2) { 
+						navi.clearAll();
+						clickCount = 0;
+						lastCoord = null;
+					}
+
+					//第一次点击添加起点
+					if (clickCount == 0) { 
+						lastCoord = coord;
+						navi.setStartPoint({
+							x: coord.x,
+							y: coord.y,
+							groupID: coord.groupID,
+							url: 'image/start.png',
+							size: 32
+						});
+					} else if (clickCount == 1) { //添加终点并画路线
+						//判断起点和终点是否相同
+						if (lastCoord.x == coord.x) {
+							$('#message').attr("class", "alert alert-warning");
+							return;
+						} else {
+							$('#message').attr("class", "alert alert-warning hidden");
+						}
+
+						navi.setEndPoint({
+							x: coord.x,
+							y: coord.y,
+							groupID: coord.groupID,
+							url: 'image/end.png',
+							size: 32
+						});
+
+						// 画导航线
+						navi.drawNaviLine();
+					}
+					clickCount++;
+				}
+			})
+		};
+	</script>
+</body>
+</html>

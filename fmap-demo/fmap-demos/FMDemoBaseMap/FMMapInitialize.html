@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>地图初始化设置</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div id="fengMap" ></div>
+	<div id="prompt" ></div>
+	
+	<script src="lib/jquery-2.1.4.min.js"></script>
+	<script src="lib/fengmap.min.js"></script>
+	<script>
+		//获取版本号,设置title
+		document.title = '地图初始化设置V' + fengmap.VERSION; 
+
+		//定义全局map变量
+		var map;
+		var fmapID = '10347';
+
+		window.onload = function() {
+			map = new fengmap.FMMap({
+				//渲染dom
+				container: document.getElementById('fengMap'),
+				//地图数据位置。如果不设置，则加载蜂鸟云上的对应数据
+				mapServerURL: './data/' + fmapID,
+				//主题数据位置
+				mapThemeURL: './data/theme',
+				//设置主题
+				defaultThemeName: '3007',
+				//对不可见图层启用透明设置 默认为true
+				focusAlphaMode: true,
+				//开启聚焦层切换的动画显示
+				focusAnimateMode: false,
+				//对不聚焦图层启用透明设置，当focusAlphaMode = true时有效
+				focusAlpha: 0.1,
+				//开启2维，3维切换的动画显示
+				viewModeAnimateMode: false,
+				//地图定位跳转动画设置
+				moveToAnimateMode: false,
+				// [16, 23], 比例尺级别范围， 16级到23级
+				mapScaleLevelRange: [16, 23],
+				// [200, 4000]， 自定义比例尺范围，单位（厘米）
+				// mapScaleRange: [200, 4000],
+				// 默认比例尺级别设置为20级
+				defaultMapScaleLevel: 20,
+				// 默认自定义比例尺为 1：1000（厘米）
+				// defaultMapScale: 1000,
+				//支持单击模型高亮，false为单击时模型不高亮
+				modelSelectedEffect: true,
+				//初始显示楼层，默认[1]
+				defaultVisibleGroups: [1],
+				//初始聚焦楼层,默认1
+				defaultFocusGroup: 1,
+				//初始二维还是三维状态,默认是3D状态
+				defaultViewMode: fengmap.FMViewMode.MODE_3D,
+				//两楼层间的高度
+				defaultGroupSpace: 40,
+				//默认的地图中心设置
+				// defaultViewCenter: {x: 12961582.417, y: 4861877.766},
+				//开发者申请应用下web服务的key
+				key: '请输入您的KEY',
+				//开发者申请应用名称
+				appName: '请输入您的appName',
+				//设置地图默认状态。defaultControlsPose值可为方向枚举、角度值、或特定角度的Json对象的任意一种。如设置二维模式下正北显示：
+				//方向枚举型。可设置正南、正北、正东、正西、东南、西南等方向值。具体可参考fengmap.ControlsPoseEnum类。
+				defaultControlsPose: fengmap.FMDirection.NORTH,
+				//最大倾斜角
+				defaultMaxTiltAngle: 80,
+				//设置倾斜角，默认倾斜角为45度
+				defaultTiltAngle: 45,
+				//如果需自定义地图角度，可使用如下JSON对象。此JSON对象用户可根据在浏览器中手动拖动的地图状态，然后在调试界面内使用fengmap.MapUtil.getControlsInfo() 获取。
+				// defaultControlsPose: {
+				//     target:"66.370,150.000,-38.260",
+				//      position:"66.370,698.433,-38.261"
+				//}
+			});
+
+			//打开Fengmap服务器的地图数据和主题
+			map.openMapById(fmapID, function(error){
+				//打印错误信息
+				console.log(error);
+			});
+			
+			map.on('loadComplete',function() {
+				//设置旋转角度
+				map.rotateAngle = 60; 
+				var groupLayer = map.getFMGroup(1);
+				var gpos = groupLayer.mapCoord;
+				var oPrompt = document.getElementById('prompt');
+				oPrompt.innerHTML = '<h3>地图初始状态设置为：</h3><p>地图中心点：<span id="center">x:' + gpos.x + ',  y:' + gpos.y + '</span></p><p>旋转角度：<span id="rotate-angle">' + Math.round(map.rotateAngle) + '</span></p><p>倾斜角度：<span id="tilt-angle">' + map.tiltAngle.toFixed(1) + '</span></p><p>显示级别：<span  id="scaleLevel">' + map.mapScaleLevel + '</span></p>';
+			});
+		};
+	</script>
+</body>
+</html>

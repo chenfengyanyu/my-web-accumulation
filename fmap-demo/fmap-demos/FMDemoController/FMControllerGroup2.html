@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>楼层切换</title>
+	<link href="lib/bootstrap.min.css" rel="stylesheet">
+    	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div id="fengMap" ></div>
+
+	<script src="lib/fengmap.min.js"></script>
+	<script src="lib/jquery-2.1.4.min.js"></script>
+	<script src="lib/bootstrap.min.js"></script>
+	<script>
+		//获取版本号,设置title
+		document.title = '楼层切换V' + fengmap.VERSION;
+
+		//定义全局map变量
+		var map;
+		var fmapID = '10347';
+
+		window.onload = function() {
+			//楼层控制控件配置参数
+			var ctlOpt = new fengmap.controlOptions({
+				//默认在右下角
+				position: fengmap.controlPositon.RIGHT_BOTTOM,
+				//默认显示楼层的个数
+				showBtnCount: 7,
+				//位置x,y的偏移量
+				offset: {
+					x: 20,
+					y: 10
+				}
+			});
+
+			var groupControl;
+			map = new fengmap.FMMap({
+				//渲染dom
+				container: document.getElementById('fengMap'),
+				//地图数据位置
+				mapServerURL: './data/' + fmapID,
+				//主题数据位置
+				mapThemeURL: './data/theme',
+				//设置主题
+				defaultThemeName: '3007',
+				// 默认比例尺级别设置为20级
+				defaultMapScaleLevel: 20,
+				//是否对不可见图层启用透明设置 默认为true
+				focusAlphaMode: true,
+				//对不聚焦图层启用透明设置，当focusAlphaMode = true时有效
+				focusAlpha: 0.1,
+				//开发者申请应用下web服务的key
+				key: '请输入您的KEY',
+				//开发者申请应用名称
+				appName: '请输入您的appName',
+			});
+
+			//打开Fengmap服务器的地图数据和主题
+			map.openMapById(fmapID);
+
+			//地图加载完成回掉方法
+			map.on('loadComplete',function() {
+				//创建楼层(按钮型)，创建时请在地图加载后(loadComplete回调)创建。
+				//不带单/双层楼层控制按钮,初始时只有1个按钮,点击后可弹出其他楼层按钮
+				groupControl = new fengmap.buttonGroupsControl(map, ctlOpt);
+
+				//楼层控件是否可点击，默认为true
+				groupControl.enableExpand=true;
+				
+				//保持多层和楼层切换一致
+				groupControl.onChange(function(groups, allLayer) {
+					//groups 表示当前要切换的楼层ID数组,
+					//allLayer表示当前楼层是单层状态还是多层状态。
+				});
+			});
+		};
+	</script>
+</body>
+</html>

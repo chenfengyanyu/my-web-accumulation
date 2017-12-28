@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>点标注动画</title>
+	<link rel="stylesheet" href="lib/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div id="fengMap" ></div>
+	<!--操作按钮-->
+	<button class="btn btn-default btn-primary animation" id="btn1">动画开启</button>
+	
+	<script src="lib/jquery-2.1.4.min.js"></script>
+	<script src="lib/fengmap.min.js"></script>
+	<script>
+		//获取版本号,设置title
+		document.title = '点标注动画V' + fengmap.VERSION;
+
+		//定义全局map变量
+		var map;
+		var fmapID = '10347';
+		// 控制是否开启跳跃
+		var animation = true;
+		var im;
+		var jump;
+
+		$(function() {
+			map = new fengmap.FMMap({
+				//渲染dom
+				container: document.getElementById('fengMap'),
+				//地图数据位置
+				mapServerURL: './data/' + fmapID,
+				//主题数据位置
+				mapThemeURL: 'data/theme',
+				//设置主题
+				defaultThemeName: '3007',
+				// 默认比例尺级别设置为20级 
+				defaultMapScaleLevel: 20,
+				//开发者申请应用下web服务的key
+				key: '请输入您的KEY',
+				//开发者申请应用名称
+				appName: '请输入您的appName',
+			});
+
+			//打开Fengmap服务器的地图数据和主题
+			map.openMapById(fmapID);
+
+			//地图加载完成事件
+			map.on('loadComplete',function() {
+				addMarker();
+			});
+
+			//为第一层的模型添加自定义标注图层
+			function addMarker() {
+				var group = map.getFMGroup(map.groupIDs[0]);
+
+				//返回当前层中第一个imageMarkerLayer,如果没有，则自动创建
+				var layer = group.getOrCreateLayer('imageMarker');
+
+				im = new fengmap.FMImageMarker({
+					name: '测试ImageMarker',
+					//图片路径
+					url: 'image/blueImageMarker.png',
+					size: 32,
+					callback: function() {
+						im.alwaysShow();
+						if (animation) {
+							jump = im.jump({
+								times: 0,
+								duration: 1,
+								delay: 0.5,
+								height: 10
+							});
+						}
+					}
+				});
+				layer.addMarker(im);
+			}
+
+			//是否开启跳跃
+			$('#btn1').click(function() {
+				animation = !animation;
+
+				if (animation) {
+					// times为次数，0为无限循环。
+					// duration为跳跃一次所使用的时间，默认为1.
+					// delay为每次跳跃的间隔，默认为0.
+					//  height为跳跃的高度，默认为8米。
+					jump = im.jump({
+						times: 0,
+						duration: 1,
+						delay: 0.5,
+						height: 10
+					});
+					$(this).addClass('btn-primary');
+					$(this).empty().text("动画开启");
+				} else {
+					// 停止跳动
+					im.stopJump(jump);
+					$(this).removeClass('btn-primary');
+					$(this).empty().text("动画关闭");
+				}
+			});
+		});
+	</script>
+</body>
+</html>

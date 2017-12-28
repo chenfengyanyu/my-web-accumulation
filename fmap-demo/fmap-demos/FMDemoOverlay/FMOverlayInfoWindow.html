@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>信息窗</title>
+	<link rel="stylesheet" href="lib/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div id="fengMap" ></div>
+	<script src="lib/jquery-2.1.4.min.js"></script>
+	<script src="lib/fengmap.min.js"></script>
+	<script src="js/createBubble.js"></script>
+	<script>
+		//获取版本号,设置title
+		document.title='信息窗V'+fengmap.VERSION;
+
+		//定义全局map变量
+		var map;
+		var fmapID = '10347';
+		var eventID = null;
+		var bubbleObj = null;
+
+		window.onload = function() {
+			map = new fengmap.FMMap({
+				//渲染dom
+				container: document.getElementById('fengMap'),
+				//地图数据位置
+				mapServerURL: './data/' + fmapID,
+				//主题数据位置
+				mapThemeURL: 'data/theme',
+				//设置主题
+				defaultThemeName: '3007',
+				// 默认比例尺级别设置为20级 
+				defaultMapScaleLevel: 20,
+				//对不可见图层启用透明设置 默认为true
+				focusAlphaMode: true,
+				//关闭聚焦层切换的动画显示
+				focusAnimateMode: false,
+				//对不聚焦图层启用透明设置，当focusAlphaMode = true时有效
+				focusAlpha: 0.1,
+				//开启2维，3维切换的动画显示   
+				viewModeAnimateMode: true,
+				//开发者申请应用下web服务的key
+				key: '请输入您的KEY',
+				//开发者申请应用名称
+				appName: '请输入您的appName',
+			});
+
+			//打开Fengmap服务器的地图数据和主题
+			map.openMapById(fmapID);
+
+			//地图加载完成事件
+			map.on('loadComplete',function() {
+				var coord = [
+					{x: 12961602.0165240,y: 4861822.60057364,name: '图标内容一'},
+					{x: 12961654.3629438,y: 4861871.821671825,name: '图标内容二'}
+				];
+				addMarker(coord[0]);
+				addMarker(coord[1]);
+
+				//初始化气泡对象
+				bubbleObj = new createBubble(map); 
+			});
+
+			//地图点击事件
+			map.on('mapClickNode',function(event) {
+				//如果点击的是ImageMarker
+				if (event.nodeType == fengmap.FMNodeType.IMAGE_MARKER) {
+					if (!bubbleObj || !map) return;
+					eventID = event.eventInfo.eventID;
+					var position = {
+						//设置气泡的x坐标
+						x: event.target.x,
+						//设置气泡的y坐标
+						y: event.target.y,
+						//设置气泡的高度
+						z: map.getGroupHeight(map.focusGroupID) + map.layerLocalHeight,
+						//设置气泡的自定义属性
+						name: event.target.name
+					};
+					bubbleObj.bubbledomEvent(position);
+				}
+
+				//如果点击的不是ImageMarker，则关闭所有的气泡
+				if (eventID !== event.eventInfo.eventID && event.nodeType !== fengmap.FMNodeType.IMAGE_MARKER) {
+					bubbleObj.closeBubble();
+				}
+			});
+
+			//添加Marker
+			function addMarker(coord) {
+				var group = map.getFMGroup(map.groupIDs[0]);
+
+				//返回当前层中第一个imageMarkerLayer,如果没有，则自动创建
+				var layer = group.getOrCreateLayer('imageMarker');
+
+				var im = new fengmap.FMImageMarker({
+					name: coord.name,
+					x: coord.x,
+					y: coord.y,
+					url: 'image/blueImageMarker.png',
+					//设置图片路径
+					size: 32,
+					//设置图片显示尺寸
+					callback: function() {
+					}
+				});
+				layer.addMarker(im);
+			};
+		};
+	</script>
+</body>
+</html>

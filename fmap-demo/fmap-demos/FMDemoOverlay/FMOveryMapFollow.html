@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>定位点视野跟随</title>
+	<link rel="stylesheet" href="lib/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div id="fengMap" ></div>
+	
+	<!--操作按钮-->
+	<button class="btn btn-default animation" id="btn1">按模拟轨迹移动定位</button>
+
+	<script src="lib/jquery-2.1.4.min.js"></script>
+	<script src="lib/fengmap.min.js"></script>
+	<script>
+		//获取版本号,设置title
+		document.title = '定位点视野跟随V' + fengmap.VERSION;
+
+		//定义全局map变量
+		var map;
+		var fmapID = '10347';
+		var count = 0;
+		var locationMarker = null;
+		var defaultGroupID = 1;
+
+		$(function() {
+			map = new fengmap.FMMap({
+				//渲染dom
+				container: document.getElementById('fengMap'),
+				//地图数据位置
+				mapServerURL: './data/' + fmapID,
+				//主题数据位置
+				mapThemeURL: 'data/theme',
+				//设置主题
+				defaultThemeName: '3007',
+				// 默认比例尺级别设置为20级 
+				defaultMapScaleLevel: 20,
+				//开发者申请应用下web服务的key
+				key: '请输入您的KEY',
+				//开发者申请应用名称
+				appName: '请输入您的appName',
+			});
+
+			//打开Fengmap服务器的地图数据和主题
+			map.openMapById(fmapID);
+
+			//地图加载完成事件
+			map.on('loadComplete',function() {
+
+				//添加定位点标注，并设置定位点坐标为地图中心点
+				addLocationMarker(map.center);
+			});
+
+			//创建定位点标注
+			function addLocationMarker(coord) {
+				locationMarker = new fengmap.FMLocationMarker({
+					url: 'image/pointer.png',
+					//设置图片显示尺寸
+					size: 46,
+					//设置图片高度，默认是5
+					height: 10,
+					callback: function() {
+						// 设置LocationMarker的，初始方向
+						locationMarker.direction = -90; 
+					}
+				});
+
+				map.addLocationMarker(locationMarker);
+
+				locationMarker.setPosition({
+					//设置定位点的x坐标
+					x: coord.x,
+					//设置定位点的y坐标
+					y: coord.y,
+					//设置定位点所在楼层
+					groupID: defaultGroupID,
+					//设置定位点的高于楼层多少
+					zOffset: 1,
+				});
+			};
+
+			//移动的方法
+			function moveTo(coord) {
+				//改变locMarker的x值
+				locationMarker.x = coord.x; 
+				//改变locMarker的y值
+				locationMarker.y = coord.y; 
+				map.moveTo({
+					//改变中心点x的位置
+					x: coord.x,
+					//改变中心点y的位置
+					y: coord.y,
+					//默认时间是0.3秒
+					time: 1,
+					callback: function() {
+						// console.log('moveTo Complete!');
+					}
+				});
+			};
+
+			//定位点视野跟随
+			$("#btn1").on('click', function() {
+				count++;
+				if (count > 5) {
+					count = 1;
+				}
+				//定位坐标点
+				var showdata = [
+					{x: 12961605,y: 4861850,z: 56},
+					{x: 12961610,y: 4861850,z: 56},
+					{x: 12961615,y: 4861850,z: 56},
+					{x: 12961620,y: 4861850,z: 56},
+					{x: 12961625,y: 4861850,z: 56}
+				];
+				var tmp = showdata[count - 1];
+				moveTo(tmp);
+			});
+		});
+	</script>
+</body>
+</html>

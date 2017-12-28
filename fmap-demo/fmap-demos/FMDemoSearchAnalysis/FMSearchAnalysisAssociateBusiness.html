@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>业务关联查询</title>
+	<link rel="stylesheet" href="lib/bootstrap.min.css">
+	<link href=" css/style.css" rel="stylesheet">
+</head>
+<body>
+	<div id="fengMap" ></div>
+	<!--搜索框-->
+	<div class="search">
+		<input type="text" value="" placeholder="搜索"  id="seachText">
+		<ul id="hotwords" class="hotwords" style="display:none">
+		</ul>
+	</div>
+	<!--搜索出来的数据显示-->
+	<div  id="cardInfo">
+		<div class="title"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></div>
+		<div class="roomInfor"></div>
+	</div>
+	
+	<script src="lib/jquery-2.1.4.min.js"></script>
+	<script src="lib/fengmap.min.js"></script>
+	<script src="lib/bootstrap.min.js"></script>
+	<script>
+		//获取版本号,设置title
+		document.title = '业务关联查询V' + fengmap.VERSION;
+
+		//定义全局map变量
+		var map;
+		var fmapID = '10347';
+		var searchAnalyser;
+		var layer = null;
+
+		window.onload = function() {
+			map = new fengmap.FMMap({
+				//渲染dom
+				container: document.getElementById('fengMap'),
+				//地图数据位置
+				mapServerURL: './data/' + fmapID,
+				//主题数据位置
+				mapThemeURL: 'data/theme',
+				//设置主题
+				defaultThemeName: '3007',
+				// 默认比例尺级别设置为20级 
+				defaultMapScaleLevel: 20,
+				//开发者申请应用下web服务的key
+				key: '请输入您的KEY',
+				//开发者申请应用名称
+				appName: '请输入您的appName',
+			});
+
+			//打开Fengmap服务器的地图数据和主题
+			map.openMapById(fmapID);
+
+			//地图加载完成回调
+			map.on('loadComplete',function() {
+				//获取搜索类
+				searchAnalyser = map.searchAnalyser; 
+			});
+
+			var oSeachText = document.querySelector('#seachText');
+			var oCardInfo = document.querySelector('#cardInfo');
+			var oTable_container = document.querySelector('#table-container');
+			var oHotwords = document.querySelector('#hotwords');
+
+			//根据FID查询
+			function findCoordinate(fid) {
+				//设置查询地图元素类型
+				var searchReq = new fengmap.FMSearchRequest(fengmap.FMNodeType.MODEL); 
+				searchReq.FID(fid);
+				searchAnalyser.query(searchReq,
+				function(request, result) {
+					//result 为查询到的结果集。
+					var models = result[0];
+					if (models != null) {
+						$.getJSON("data/data.json", function(result) {
+							var data = result;
+							for (var i = 0; i < data.length; i++) {
+								if (data[i].FID == fid) {
+									filldata(models, data[i]);
+									//显示信息
+									oCardInfo.style.display = 'block'; 
+									//隐藏搜索下拉框
+									oHotwords.style.display = 'none'; 
+								}
+							}
+						});
+						oHotwords.style.display = 'none';
+					} else {
+						oHotwords.style.display = 'none';
+					}
+				});
+			}
+
+			//添加Marker
+			function addMarkers(gid, X, Y) {
+				removeMarkers();
+				var group = map.getFMGroup(gid);
+
+				//返回当前层中第一个imageMarkerLayer,如果没有，则自动创建
+				var layer = group.getOrCreateLayer('imageMarker');
+
+				var im = new fengmap.FMImageMarker({
+					x: X,
+					y: Y,
+					url: 'image/blueImageMarker.png',
+					size: 32,
+					callback: function() {
+						im.alwaysShow();
+					}
+				});
+				layer.addMarker(im);
+			};
+
+			//定位跳转
+			function moveTo(coord) {
+				//设置可见楼层
+				map.visibleGroupIDs = [coord.groupID]; 
+				//设置楼层焦点层
+				map.focusGroupID = coord.groupID; 
+				map.moveTo(coord);
+			};
+
+			//显示信息
+			var oRoomInfor = document.querySelectorAll('.roomInfor')[0];
+			function filldata(data, result) {
+				oRoomInfor.innerHTML = '';
+				var coord = {
+					x: data.mapCoord.x,
+					y: data.mapCoord.y,
+					z: data.mapCoord.z,
+					groupID: data.groupID
+				}
+				moveTo(coord);
+
+				//地图上当前设置的模型元素处于高亮状态。
+				//如果最后一个参数设置为true,storeSelect(model,true,true)，表示之前的和当前的模型都处于高亮转态。可使用map.selectNull()方法清除。
+				map.storeSelect(data, true, false);
+
+				addMarkers(data.groupID, data.mapCoord.x, data.mapCoord.y);
+				oRoomInfor.innerHTML = ' <h4><strong>' + result.NAME + '</strong></h4><p><label>FID:</label>' + result.FID + '</p><p><label>GROUP:</label>' + result.GROUP + '</p><p><label>TYPE:</label>' + result.TYPE + '</p>';
+			}
+
+			//删除Marker
+			function removeMarkers() {
+				//获取多楼层Marker
+				map.callAllLayersByAlias('imageMarker',function(layer) {
+					layer.removeAll();
+				});
+			};
+
+			//监听关键字查询店铺
+			oSeachText.addEventListener('keyup', function(e) {
+				oHotwords.innerHTML = '';
+				var keyword = this.value.toUpperCase();
+				if (keyword && keyword !== '搜索') {
+					$.getJSON("data/data.json", function(result) {
+						var data = result;
+						var listData = [];
+						for (var i = 0; i < data.length; i++) {
+							var res = data[i].NAME.indexOf(keyword);
+							if (res > -1) {
+								listData.push(data[i]);
+							}
+						}
+
+						if (listData && listData.length > 0) {
+							oHotwords.style.display = 'block';
+							createLi(listData);
+						} else {
+							oHotwords.style.display = 'none';
+						}
+					})
+				}
+			});
+
+			//创建提示下拉框
+			var createLi = function(data) {
+				var li = '';
+				for (var i in data) {
+					var dataLi = data[i];
+					li += '<li data-id="' + dataLi.FID + '">' + (!dataLi.NAME ? "空": dataLi.NAME) + '</li>';
+				}
+				oHotwords.innerHTML = li;
+				var aLi = oHotwords.getElementsByTagName('li');
+				for (var i = 0; i < aLi.length; i++) { (function(i) {
+						aLi[i].onclick = function() {
+							var index = i;
+							oSeachText.value = this.innerHTML;
+							var fid = this.attributes["data-id"].nodeValue;
+							findCoordinate(fid);
+							oHotwords.style.display = 'none';
+						}
+					})(i);
+				}
+			}
+
+			//关闭按钮
+			var oTitle = document.querySelectorAll('.title')[0];
+			oTitle.onclick = function() {
+				oCardInfo.style.display = 'none';
+				oRoomInfor.innerHTML = '';
+			};
+
+		};
+	</script>
+</body>
+</html>

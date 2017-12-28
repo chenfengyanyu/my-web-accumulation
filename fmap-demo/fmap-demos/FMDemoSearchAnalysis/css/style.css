@@ -1,0 +1,172 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+#fengMap {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+}
+
+.search {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 6px;
+    margin: 0 auto;
+    width: 99%;
+}
+
+.search input[type=text] {
+    font-size: 14px;
+    width: 100%;
+    padding: 4px 8px;
+    outline: none;
+    color: #333;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: right center;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.075);
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+#table-container {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    bottom: 0px;
+    background-color: #f1f2f7;
+    display: none;
+    overflow-y: auto;
+    font-size: 14px;
+}
+
+#table-container table {
+    background-color: white;
+}
+
+#table-container td:last-child {
+    cursor: pointer;
+}
+
+#control-panel {
+    position: absolute;
+    bottom: 205px;
+    left: 2%;
+    z-index: 300;
+}
+
+#control-panel label {
+    font-weight: 100;
+}
+
+.title {
+    width: 30px;
+    float: right;
+    right: 0px;
+    cursor: pointer;
+}
+
+.btns {
+    position: absolute;
+    left: 2%;
+    top: 2%;
+}
+.btns input[type=text] {
+    font-size: 16px;
+    width: 50%;
+    padding: 4px 8px;
+    outline: none;
+    color: #333;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: right center;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.075);
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.btns button {
+    margin-left: 2px;
+}
+
+@media screen and (max-width: 768px) {
+    #table-container {
+        font-size: 12px;
+    }
+}
+
+/* 搜索下拉框 */
+#hotwords {
+    background: #fff;
+    position: absolute;
+    top: 35px;
+    margin: 0 auto;
+    width: 100%;
+    max-height: 250px;
+    overflow: auto;
+    overflow-x: hidden;
+   /*  border: #D9D9D9 1px solid; */
+    border-top: 0;
+}
+
+#hotwords li {
+    list-style: none;
+    margin-left: -30px;
+	cursor:pointer;
+}
+
+#hotwords li:hover {
+    color: #92d7ff;
+}
+
+#search {
+    margin: 0;
+    margin-top: -2px;
+}
+
+#cardInfo{
+    position: absolute;
+    left: 2%;
+    bottom: 0;
+    width: auto;
+    padding: 6px 20px;
+    background: rgba(255,255,255,.5);
+    display: none;
+    border-radius: 4px;
+}
+#cardInfo .glyphicon{
+        right: -25px;
+        font-weight:100;
+        font-size: 12px;
+}
+#cardInfo p {
+    line-height: 18px;
+    margin: 0;
+}
+
+#cardInfo .infor_img {
+    float: left;
+    width: auto;
+    max-width: 200px;
+    max-height: 180px;
+}
+#cardInfo .infor_img img{width: 100%; height: 100%; overflow: hidden;}
+.roomInfor {
+    float: left;
+    text-indent: 0.5em;
+}
+#prompt{
+    position: absolute;
+    left: 2%；
+    bottom:2%;
+}

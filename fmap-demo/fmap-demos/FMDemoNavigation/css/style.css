@@ -1,0 +1,88 @@
+html, body
+{
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: "Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu
+}
+
+#fengMap
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+}
+
+#prompt
+{
+    position: absolute;
+    left: 2%;
+    bottom: 2%;
+}
+
+#path_info
+{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(255,255,255,.3);
+    max-height: 150px;
+    overflow: auto;
+    text-indent: 2em;
+    padding: 10px 0;
+}
+
+#path_info h4
+{
+    font-weight: 500;
+}
+
+#path_info .glyphicon
+{
+    float: right;
+    right: 2%;
+}
+
+#path_info .title
+{
+    position: absolute;
+    width: 30px;
+    float: right;
+    right: 0px;
+    cursor: pointer;
+}
+
+#path_info p
+{
+    cursor: pointer;
+}
+
+#path_info ul
+{
+    padding: 10px 0;
+    width: auto;
+}
+
+#path_info ul li
+{
+    line-height: 24px;
+    list-style: none;
+    cursor: pointer;
+}
+
+#description
+{
+    position: absolute;
+    left: 2%;
+    top: 2%;
+    padding: 10px 25px;
+    background: rgba(255,255,255,.5);
+    border-radius:4px;
+}
+#message{
+    position: absolute;
+    top:0;
+    width: 100%;
+}

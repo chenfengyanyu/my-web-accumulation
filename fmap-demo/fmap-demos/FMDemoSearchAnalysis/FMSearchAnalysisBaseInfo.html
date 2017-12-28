@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>地图基本信息查询</title>
+	<link rel="stylesheet" href="lib/bootstrap.min.css">
+	<link href=" css/style.css" rel="stylesheet">
+</head>
+<body>
+	<div id="fengMap" ></div>
+	<!--搜索框-->
+	<div class="search">
+		<input type="text" name="" id="seachText" value="火锅" placeholder="火锅" disabled="disabled">
+	</div>
+	
+	<!--搜索出来的数据显示在table-->
+	<div id="table-container">
+		<div class="title"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></div>
+		<table class="table table-bordered table-hover" id="table">
+			<thead>
+				<tr>
+					<th>行号</th>
+					<th>模型id</th>
+					<th>模型名称</th>
+					<th>楼层id</th>
+					<th>x</th>
+					<th>y</th>
+					<th>z</th>
+				</tr>
+			</thead>
+			<tbody id="table-body">
+			</tbody>
+		</table>
+	</div>
+	<script src="lib/jquery-2.1.4.min.js"></script>
+	<script src="lib/fengmap.min.js"></script>
+	<script src="lib/bootstrap.min.js"></script>
+	<script>
+		//获取版本号,设置title
+		document.title = '地图基本信息查询V' + fengmap.VERSION;
+
+		//定义全局map变量
+		var map;
+		var fmapID = '10347';
+		var searchAnalyser;
+		var res = [];
+
+		window.onload = function() {
+			map = new fengmap.FMMap({
+				//渲染dom
+				container: document.getElementById('fengMap'),
+				//地图数据位置
+				mapServerURL: './data/' + fmapID,
+				//主题数据位置
+				mapThemeURL: 'data/theme',
+				//设置主题
+				defaultThemeName: '3007',
+				// 默认比例尺级别设置为20级 
+				defaultMapScaleLevel: 20,
+				//设置初始显示楼层，数组格式，可单个，可多个
+				defaultVisibleGroups: [4],
+				//初始聚焦楼层
+				defaultFocusGroup: 4,
+				//开发者申请应用下web服务的key
+				key: '请输入您的KEY',
+				//开发者申请应用名称
+				appName: '请输入您的appName',
+			});
+
+			//打开Fengmap服务器的地图数据和主题
+			map.openMapById(fmapID);
+
+			//地图加载完成回调
+			map.on('loadComplete',function() {
+				//获取搜索类
+				searchAnalyser = map.searchAnalyser; 
+				var keyword = $('#seachText').val();
+				//根据关键字执行搜索
+				findKeyword(keyword); 
+			});
+
+			var oTable_container = document.querySelector('#table-container');
+
+			//关键字搜索
+			function findKeyword(keyword) {
+				var request = {
+					//设置查询地图元素类型
+					nodeType: fengmap.FMNodeType.MODEL,
+					keyword: keyword
+				};
+
+				//查询出所有楼层的地图元素的"keyword= keyword"的对象集合。
+				fengmap.MapUtil.search(map, 'all', request, function(results) {
+					//result 为查询到的结果集。
+					var models = results;
+					res = results;
+					if (models != null && models.length > 0) {
+						filldata(models);
+						oTable_container.style.display = 'block';
+					} else {
+						oTable_container.style.display = 'none';
+					}
+				});
+			};
+
+			//添加Marker
+			function addMarkers(gid, X, Y) {
+				var group = map.getFMGroup(gid);
+
+				//返回当前层中第一个imageMarkerLayer,如果没有，则自动创建
+				var layer = group.getOrCreateLayer('imageMarker');
+				var im = new fengmap.FMImageMarker({
+					x: X,
+					y: Y,
+					url: 'image/blueImageMarker.png',
+					size: 32,
+					callback: function() {
+						im.alwaysShow();
+					}
+				});
+				layer.addMarker(im);
+			};
+
+			//定位跳转
+			function moveTo(coord) {
+				//设置可见楼层
+				map.visibleGroupIDs = [coord.groupID]; 
+				//设置楼层焦点层
+				map.focusGroupID = coord.groupID; 
+				map.moveTo(coord);
+			};
+
+			//填充表格数据
+			function filldata(data, result) {
+				var oTable = document.querySelector('#table');
+				var oTableBody = document.querySelector('#table-body');
+				var aTr = oTable.getElementsByTagName('tr');
+				oTableBody.innerHTML = '';
+				var tr = '';
+				for (var i in data) {
+					i = parseInt(i);
+					var model = data[i];
+					addMarkers(model.groupID, model.mapCoord.x, model.mapCoord.y);
+					if (i % 2 == 0) {
+						tr += '<tr class="active"><td>' + (i + 1) + '</td><td>' + (model.ID == undefined ? "空": model.ID) + '</td><td>' + (!model.name ? "空": model.name) + '</td><td>' + model.groupID + '</td><td>' + model.mapCoord.x + '</td><td>' + model.mapCoord.y + '</td><td>' + model.mapCoord.z + '</td></tr>';
+					} else {
+						tr += '<tr class="bg-success"><td>' + (i + 1) + '</td><td>' + (model.ID == undefined ? "空": model.ID) + '</td><td>' + (!model.name ? "空": model.name) + '</td><td>' + model.groupID + '</td><td>' + model.mapCoord.x + '</td><td>' + model.mapCoord.y + '</td><td>' + model.mapCoord.z + '</td></tr>';
+					}
+				}
+				oTableBody.innerHTML = tr;
+
+				//点击某一行数据,联动
+				for (var i = 0; i < aTr.length; i++) { (function(i) {
+						aTr[i].onclick = function() {
+							var index = i;
+							if (index <= 0) return;
+							var x = parseFloat(this.cells[4].innerText);
+							var y = parseFloat(this.cells[5].innerText);
+							var z = parseFloat(this.cells[6].innerText);
+							var gid = parseInt(this.cells[3].innerText);
+							var id = parseInt(this.cells[1].innerText);
+							var index = parseInt(this.cells[0].innerText);
+
+							var coord = {
+								x: x,
+								y: y,
+								z: z,
+								groupID: gid
+							};
+							moveTo(coord); //定位跳转
+							var model = res[index - 1];
+							//地图上当前设置的模型元素处于高亮状态。
+							//如果最后一个参数设置为true,storeSelect(model,true,true)，表示之前的和当前的模型都处于高亮转态。可使用map.selectNull()方法清除。
+							map.storeSelect(model, true, false);
+						}
+					})(i);
+				}
+			}
+
+			//关闭按钮
+			var oTitle = document.querySelectorAll('.title')[0];
+			oTitle.onclick = function() {
+				oTable_container.style.display = 'none';
+			};
+		};
+	</script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>图片点标注</title>
+	<link rel="stylesheet" href="lib/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div id="fengMap" ></div>
+	<!--操作按钮-->
+	<div class="operating">
+		<button class="btn btn-default">添加图片标注</button>
+		<button class="btn btn-default">更换所用图片</button>
+		<button class="btn btn-default">删除图片标注</button>
+	</div>
+	
+	<script src="lib/jquery-2.1.4.min.js"></script>
+	<script src="lib/fengmap.min.js"></script>
+	<script>
+		//获取版本号,设置title
+		document.title='图片点标注V'+fengmap.VERSION;
+
+		//定义全局map变量
+		var map;
+		var fmapID = '10347';
+		//控制添加图片标注
+		var addMarker = true; 
+		//控制改变图片标注
+		var changeMarker = false; 
+		var im;
+		var layer = null;
+
+		window.onload = function() {
+			map = new fengmap.FMMap({
+				//渲染dom
+				container: document.getElementById('fengMap'),
+				//地图数据位置
+				mapServerURL: './data/' + fmapID,
+				//主题数据位置
+				mapThemeURL: 'data/theme',
+				//设置主题
+				defaultThemeName: '3007',
+				// 默认比例尺级别设置为20级 
+				defaultMapScaleLevel: 20,
+				//开发者申请应用下web服务的key
+				key: '请输入您的KEY',
+				//开发者申请应用名称
+				appName: '请输入您的appName',
+			});
+
+			//打开Fengmap服务器的地图数据和主题
+			map.openMapById(fmapID);
+
+			//添加Marker
+			function addMarkers() {
+				var group = map.getFMGroup(map.groupIDs[0]);
+
+				//返回当前层中第一个imageMarkerLayer,如果没有，则自动创建
+				layer = group.getOrCreateLayer('imageMarker');
+
+				//图标标注对象，默认位置为该楼层中心点
+				im = new fengmap.FMImageMarker({
+					//设置图片路径
+					url: 'image/blueImageMarker.png',
+					//设置图片显示尺寸
+					size: 32,
+					callback: function() {
+						// 在图片载入完成后，设置 "一直可见"
+						im.alwaysShow();
+					}
+				});
+
+				layer.addMarker(im);
+			};
+
+			var aBtn = document.querySelectorAll('.btn');
+			//添加图片标注方法
+			aBtn[0].onclick = function() {
+				if (addMarker) {
+					addMarkers();
+					addMarker = false;
+					changeMarker = true;
+					this.classList.add('btn-primary');
+				}
+			};
+
+			//更换所用图片
+			aBtn[1].onclick = function() {
+				if (changeMarker) {
+					//修改Marker图片
+					im.url = 'image/redImageMarker.png' 
+					this.classList.add('btn-primary');
+					aBtn[0].classList.remove('btn-primary');
+					changeMarker = false;
+				}
+			};
+
+			//删除图片标注
+			aBtn[2].onclick = function() {
+				addMarker = true;
+				//删除Marker
+				layer.removeAll();
+				$(this).siblings().removeClass('btn-primary');
+			};
+		};
+	</script>
+</body>
+</html>
