@@ -3,6 +3,7 @@ const electron = require('electron')
 const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
+const globalShortcut = require('electron').globalShortcut;
 
 const path = require('path')
 const url = require('url')
@@ -33,15 +34,42 @@ function createWindow () {
     mainWindow = null
   })
 
+  // 打开文件和目录
   // var win = mainWindow  // BrowserWindow in which to show the dialog
   // const dialog = require('electron').dialog;
   // console.log(dialog.showOpenDialog({ properties: [ 'openFile', 'openDirectory', 'multiSelections' ]}));
-}
 
+  // 打开信息窗
+  // const dialog = require('electron').dialog;
+  // console.log(dialog.showMessageBox({
+  //   browserWindow: mainWindow,
+  //   options: {
+  //     type: 'error',
+  //     title: 'Jartto',
+  //     message: 'Hello World',
+  //   }
+  // }));
+  // dialog.showErrorBox('Jartto', 'Hello world')
+  
+}
+const dialog = require('electron').dialog;
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow)
+app.on('ready', function(){
+  createWindow();
+  // Register a 'ctrl+x' shortcut listener.
+  var ret = globalShortcut.register('ctrl+x', function() {
+    dialog.showErrorBox('Jartto', 'ctrl+x is pressed')
+  })
+
+  if (!ret) {
+    dialog.showErrorBox('Jartto', 'registration failed')
+  }
+
+  // Check whether a shortcut is registered.
+  console.log(globalShortcut.isRegistered('ctrl+x'));
+})
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
@@ -59,6 +87,14 @@ app.on('activate', function () {
     createWindow()
   }
 })
+
+app.on('will-quit', function() {
+  // Unregister a shortcut.
+  globalShortcut.unregister('ctrl+x');
+
+  // Unregister all shortcuts.
+  globalShortcut.unregisterAll();
+});
 
 // app.dock.hide();
 // app.dock.setMenu(menu);

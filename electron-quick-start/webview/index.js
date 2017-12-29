@@ -14,6 +14,7 @@ window.onload = function() {
   webview.addEventListener("dom-ready", function() {
     // webview.openDevTools();
     console.log(webview.getTitle());
+    // alert('haha');
   });
   
 }
