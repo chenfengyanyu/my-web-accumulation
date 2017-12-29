@@ -32,6 +32,10 @@ function createWindow () {
     // when you should delete the corresponding element.
     mainWindow = null
   })
+
+  // var win = mainWindow  // BrowserWindow in which to show the dialog
+  // const dialog = require('electron').dialog;
+  // console.log(dialog.showOpenDialog({ properties: [ 'openFile', 'openDirectory', 'multiSelections' ]}));
 }
 
 // This method will be called when Electron has finished
@@ -55,6 +59,9 @@ app.on('activate', function () {
     createWindow()
   }
 })
+
+// app.dock.hide();
+// app.dock.setMenu(menu);
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
