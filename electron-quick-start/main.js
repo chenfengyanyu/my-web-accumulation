@@ -18,7 +18,7 @@ function createWindow () {
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'webview/index.html'),
+    pathname: path.join(__dirname, 'ipc/index.html'),
     protocol: 'file:',
     slashes: true
   }))
@@ -99,5 +99,14 @@ app.on('will-quit', function() {
 // app.dock.hide();
 // app.dock.setMenu(menu);
 
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.
+// In main process.
+const ipcMain = require('electron').ipcMain;
+ipcMain.on('asynchronous-message', function(event, arg) {
+  console.log(arg);  // prints "ping"
+  event.sender.send('asynchronous-reply', 'pong');
+});
+
+ipcMain.on('synchronous-message', function(event, arg) {
+  console.log(arg);  // prints "ping"
+  event.returnValue = 'pong';
+});
