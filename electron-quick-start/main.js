@@ -69,7 +69,16 @@ app.on('ready', function(){
 
   // Check whether a shortcut is registered.
   console.log(globalShortcut.isRegistered('ctrl+x'));
+
+  // 不知道啥意思
+  require('electron').powerMonitor.on('suspend', function() {
+    console.log('The system is going to sleep');
+  });
+  require('electron').powerMonitor.on('on-ac', function() {
+    console.log('The system is using AC power');
+  });
 })
+
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
