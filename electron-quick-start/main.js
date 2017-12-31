@@ -24,7 +24,8 @@ function createWindow () {
   }))
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+  mainWindow.webContents.toggleDevTools();
+  mainWindow.webContents.inspectServiceWorker();
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
@@ -52,10 +53,12 @@ function createWindow () {
   // dialog.showErrorBox('Jartto', 'Hello world')
   
 }
+
 const dialog = require('electron').dialog;
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-// Some APIs can only be used after this event occurs.
+const Menu = electron.Menu;
+const Tray = electron.Tray;
+var appIcon = null;
+
 app.on('ready', function(){
   createWindow();
   // Register a 'ctrl+x' shortcut listener.
@@ -70,13 +73,36 @@ app.on('ready', function(){
   // Check whether a shortcut is registered.
   console.log(globalShortcut.isRegistered('ctrl+x'));
 
-  // 不知道啥意思
+  // 能源区变化，系统挂起和恢复，交流电和电池切换时
   require('electron').powerMonitor.on('suspend', function() {
     console.log('The system is going to sleep');
   });
   require('electron').powerMonitor.on('on-ac', function() {
     console.log('The system is using AC power');
   });
+
+  // protocol使用
+  // var protocol = electron.protocol;
+  // protocol.registerFileProtocol('atom', function(request, callback) {
+  //   console.log(111);
+  //   var url = request.url.substr(7);
+  //   callback({path: path.normalize(__dirname + '/' + url)});
+  // }, function (error) {
+  //   if (error)
+  //     console.error('Failed to register protocol')
+  // });
+
+  // 页头系统托盘图标
+  appIcon = new Tray(path.normalize(__dirname + '/image/icon.png'));
+  var contextMenu = Menu.buildFromTemplate([
+    { label: '菜单一', type: 'radio' },
+    { label: '菜单二', type: 'radio' },
+    { label: '菜单三', type: 'radio', checked: true },
+    { label: '关于', type: 'radio' }
+  ]);
+  
+  appIcon.setToolTip('这是系统托盘！');
+  appIcon.setContextMenu(contextMenu);
 })
 
 
