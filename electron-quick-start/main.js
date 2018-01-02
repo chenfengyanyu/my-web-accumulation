@@ -18,7 +18,7 @@ function createWindow () {
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'webFrame/index.html'),
+    pathname: path.join(__dirname, 'clipboard/index.html'),
     protocol: 'file:',
     slashes: true
   }))
