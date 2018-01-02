@@ -16,9 +16,13 @@ function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({width: 800, height: 600})
 
+  // var electronScreen = electron.screen;
+  // var size = electronScreen.getPrimaryDisplay().workAreaSize;
+  // mainWindow = new BrowserWindow({ width: size.width, height: size.height });
+
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'clipboard/index.html'),
+    pathname: path.join(__dirname, 'shell/index.html'),
     protocol: 'file:',
     slashes: true
   }))
@@ -133,6 +137,12 @@ app.on('will-quit', function() {
 
 // app.dock.hide();
 // app.dock.setMenu(menu);
+
+// 启动shell
+// var shell = electron.shell;
+// shell.beep();
+// // shell.openItem('/Users/Jartto/Documents/my-demo');
+// shell.openExternal('http://jartto.wang');
 
 // In main process.
 const ipcMain = require('electron').ipcMain;
