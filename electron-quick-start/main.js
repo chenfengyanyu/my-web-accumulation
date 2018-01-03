@@ -1,8 +1,10 @@
 const electron = require('electron')
 // Module to control application life.
 const app = electron.app
+// const { app } = require('electron');
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
+// const { BrowserWindow } = require('electron');
 const globalShortcut = require('electron').globalShortcut;
 
 const path = require('path')
@@ -15,20 +17,27 @@ let mainWindow
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({width: 800, height: 600})
+  // and load the index.html of the app.
+  mainWindow.loadURL(url.format({
+    pathname: path.join(__dirname, 'webview/index.html'),
+    protocol: 'file:',
+    slashes: true
+  }))
 
   // var electronScreen = electron.screen;
   // var size = electronScreen.getPrimaryDisplay().workAreaSize;
   // mainWindow = new BrowserWindow({ width: size.width, height: size.height });
 
-  // and load the index.html of the app.
-  mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'shell/index.html'),
-    protocol: 'file:',
-    slashes: true
-  }))
-
+  // offline
+  // mainWindow = new BrowserWindow({ width: 0, height: 0, show: false });
+  // mainWindow.loadURL(url.format({
+  //     pathname: path.join(__dirname, 'offline/index.html'),
+  //     protocol: 'file:',
+  //     slashes: true
+  //   }))
+  
   // Open the DevTools.
-  mainWindow.webContents.toggleDevTools();
+  // mainWindow.webContents.toggleDevTools();
   mainWindow.webContents.inspectServiceWorker();
 
   // Emitted when the window is closed.
@@ -62,6 +71,7 @@ const dialog = require('electron').dialog;
 const Menu = electron.Menu;
 const Tray = electron.Tray;
 var appIcon = null;
+var onlineStatusWindow;
 
 app.on('ready', function(){
   createWindow();
