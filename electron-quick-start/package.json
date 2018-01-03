@@ -17,6 +17,7 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
+    "asar": "^0.14.0",
     "electron": "~1.7.8"
   },
   "dependencies": {
