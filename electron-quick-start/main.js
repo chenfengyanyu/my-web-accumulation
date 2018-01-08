@@ -108,6 +108,7 @@ app.on('ready', function(){
 
   // 页头系统托盘图标
   appIcon = new Tray(path.normalize(__dirname + '/image/icon.png'));
+  // appIcon2 = new Tray(path.normalize(__dirname + '/image/icon.png'));
   var contextMenu = Menu.buildFromTemplate([
     { label: '菜单一', type: 'radio' },
     { label: '菜单二', type: 'radio' },
@@ -116,6 +117,7 @@ app.on('ready', function(){
   ]);
   
   appIcon.setToolTip('这是系统托盘！');
+  appIcon.setTitle('这里是歌词！');
   appIcon.setContextMenu(contextMenu);
 })
 
