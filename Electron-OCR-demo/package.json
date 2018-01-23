@@ -1,0 +1,28 @@
+{
+  "name": "electron-ocr-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "electron",
+    "demo"
+  ],
+  "author": "jartto",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "electron": "^1.7.10",
+    "electron-compilers": "^5.9.0",
+    "electron-reload": "^1.2.2"
+  },
+  "dependencies": {
+    "electron-compile": "^6.4.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
+}
