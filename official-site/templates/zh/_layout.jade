@@ -1,0 +1,175 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    //- meta(name='viewport', content='width=1000,initial-scale=1,user-scalable=no,minimum-scale=1,maximum-scale=1,shrink-to-fit=no')
+    //- meta(name='viewport', content='width=1200')
+    meta(name='viewport', content='width=1200')
+    meta(http-equiv='cache-control',content='no-cache')
+    meta(http-equiv='X-UA-Compatible', content='IE=EmulateIE10')
+    meta(name='renderer',content='webkit')
+    meta(property='og:title', content='Sensoro')
+    meta(property='og:description', content='Yunzi is as small as a wristwatch and simple to deploy. It knows its precise position, understands its environmental conditions and seamlessly interacts with apps on your mobile device.')
+    meta(name='Description',content='连接数字与物理世界，致力于物联网世界打造。在60多个国家部署50万台“云子”传感器（支持苹果iBeacon，亚太区唯一支持谷歌Eddystone认证），通过自主研发的超低功耗通信基站进行全球升级。作为全球排名前三的蓝牙信标公司，SENSORO正在打造一个包含前端传感器、物联网基站，以及大数据分析和营销为一体的覆盖全球的物联网生态。')
+    meta(name='keywords', content='IoT，iBeacon, 云子，基站，Eddystone, Beacon，蓝牙，物联网，升哲，智能传感器，智慧城市，物联网解决方案，iBeacon 解决方案，微信摇一摇，智慧楼宇，智能导览，室内定位，信息推送，低功耗，推广营销，SCRM，数字营销')
+    title SENSORO 北京升哲科技有限公司丨Connect All in IoT
+    link(rel='shortcut icon',href='/zh/assets/image/favicon.ico',type='image/x-icon')
+    link(rel='stylesheet', href='/zh/assets/lib/bootstrap.min.css')
+    link(rel='stylesheet', href='/zh/assets/lib/swiper.min.css')
+    link(rel='stylesheet', href='/zh/assets/css/base.css')
+    block header
+    <!--[if lte IE 8]><script src="/zh/assets/js/ie6-warning.js"></script><![endif]-->
+  body#top(data-spy='scroll',data-target='#myScrollspy',style='overflow-x:hidden')
+    section.header
+      div
+        ul.menu_left
+          li
+            a(href='/zh/index')
+              img(src='/zh/assets/image/logo.png',height='18')
+          li
+            a(href='/zh/alpha') 低功耗广域网
+          li
+            a(href='http://x.sensoro.com/home') 云子SCRM
+          li
+            a(href='/zh/yunzi') iBeacon传感器
+          li
+            a(href='/zh/case') 客户案例
+        ul.menu_right
+          li
+            a(href='/zh/dev') 开发者中心
+          li
+            a(href='/zh/order') 
+              img(src="/zh/assets/image/buy.png",style="width:20px;")
+          li
+            a(href='/zh/auth') 
+              img(src="/zh/assets/image/auth.png",style="width:19px;")
+          li
+            a(href='/en/') 
+              span(style="border-radius: 2px;background: #555;padding: 5px 10px;") EN
+    #white
+      block content   
+  section.footer
+    .warp
+      .logo
+        img(src='/zh/assets/image/logo.png',width='200')
+      .menu
+        ol
+          dl 
+            a(href="/zh") 首页
+          dl 
+            a(href="/zh/order") 订购
+          dl 
+            a(href="/zh/case") 客户案例
+        ol
+          dl 
+            a(href="/zh/alpha") 低功耗广域网
+          dl 
+            a(href="http://x.sensoro.com/home",target="_blank") 云子SCRM
+          dl 
+            a(href="/zh/yunzi") iBeacon传感器
+        ol
+          dl 
+            a(href="/zh/airsync") 微信蓝牙开发板
+          dl 
+            a(href="/zh/dev") 开发者文档
+          dl 
+            a(href="/zh/terms") 用户协议
+        ol
+          dl 
+            a(href="https://www.lagou.com/gongsi/38944.html",target="_blank") 工作机会
+          dl 
+            a(href="/zh/contact") 联系我们
+          dl 
+            a(href="/zh/about") 关于我们
+      ul.share
+          li
+            a.iconfont(href='https://www.facebook.com/pages/SensoroInc/1500312196891356',target='_blank') &#xe616;
+          li
+            a.iconfont(href='https://twitter.com/SENSOROGLOBAL',target='_blank') &#xe634;
+          li
+            a.iconfont.show_qrcode(href='javascript:void(0)') &#x3433;
+              img.wx_code(src='/zh/assets/image/qrcode_wx.jpeg',width='80')
+          li
+            a.iconfont(href='https://github.com/sensoro',target='_blank') &#xe6ed;
+      .clean
+    small 
+      | Copyright © 2016 SENSORO Co.,Ltd. 保留所有权利。iBeacon 是苹果公司的注册商标。
+      a.copyright(href='http://www.miibeian.gov.cn/',target='_blank') 京ICP备14023593号
+  script(src='/zh/assets/lib/jquery.min.js')
+  block scripts
+  script.
+    var _mtac = {};
+    (function() {
+      var mta = document.createElement('script');
+      mta.src = 'https://pingjs.qq.com/h5/stats.js?v2.0.2';
+      mta.setAttribute('name', 'MTAH5');
+      mta.setAttribute('sid', '500376791');
+      mta.setAttribute('cid', '500376793');
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(mta, s);
+    })();
+  script.
+    //- $(window).resize(function() {
+    //-   //- window.location.reload(true);
+    //- });
+    $(function(){
+      var cur = window.location.href;
+      var newarrs = [
+        {
+          order:0,
+          keywords:['index']
+        }, {
+          order:1,
+          keywords:['alpha']
+        }, {
+          order:2,
+          keywords:['xsensoro']
+        }, {
+          order:3,
+          keywords:['yunzi','box','usb','compare']
+        }, {
+          order:4,
+          keywords:['case','articles']
+        }, {
+          order:5,
+          keywords:['dev','api']
+        }
+      ]
+      $.each(newarrs,function(i,n){
+       for(var i=0;i<n.keywords.length;i++){
+        if(cur.indexOf('/zh/'+n.keywords[i]) >- 1){
+          if(n.order == 5){
+            $('.menu_right li').eq(0).addClass('active');
+          }else{
+            $('.menu_left li').eq(n.order).addClass('active');
+          }
+        }
+       }
+      })
+      $('.show_qrcode').mouseenter(function(){
+        $(this).find('img').css('opacity','1');
+      }).mouseleave(function(){
+        $(this).find('img').css('opacity','0');
+      })
+    })
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

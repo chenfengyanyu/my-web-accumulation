@@ -1,0 +1,389 @@
+extends _layout
+append header
+	link(rel='stylesheet', href='/zh/assets/css/index.css')
+block content
+	section.index_banner
+		#index_banner_warp
+			#index_one_page
+				#trigger0
+				#p8
+					h3 SENSORO
+					span 为全球客户提供超低成本的物联网解决方案
+				img#p0(src='/zh/assets/image/index/p0.jpg', data-p='left@50%@top@50%', height='370', width='500', data-t='0,0', data-fix='-250')
+				img#p1(src='/zh/assets/image/index/p1.png', data-p='left@52%@top@-12%', height='21', width='200', data-t='-188,-160', data-fix='-188')
+				img#p2(src='/zh/assets/image/index/p2.png', data-p='left@60%@top@-25%', height='34', width='200', data-t='-188,-130', data-fix='-188')
+				img#p3(src='/zh/assets/image/index/p3.png', data-p='left@-15%@top@80%', height='108', width='108', data-t='-190,-92', data-fix='-190')
+				img#p4(src='/zh/assets/image/index/p4.png', data-p='left@75%@top@120%', height='65', width='138', data-t='-210,37', data-fix='-210')
+				img#p5(src='/zh/assets/image/index/p5.png', data-p='left@12%@top@120%', height='34', width='325', data-t='-188,121', data-fix='-188')
+				img#p6(src='/zh/assets/image/index/p6.png', data-p='left@-20%@top@20%', height='192', width='94', data-t='-47,-85', data-fix='-47')
+				img#p7(src='/zh/assets/image/index/p7.png', data-p='left@118%@top@35%', height='275', width='132', data-t='75,-146', data-fix='75') 
+	section.mobile_banner
+		.box
+			img(src='/zh/assets/image/index/machine.png',width='1000')
+			.text
+				h3 SENSORO
+				span 为全球客户提供超低成本的物联网解决方案
+	section.index_dynamic
+		iframe(src='/zh/assets/js/index_bg.svg',width='100%',height='100%')
+		div 
+			| 在物联网时代，我们预见到了低功耗传感器、社交网络与数字营销，以及物联网通信技术将在全球范围内相融合发展的趋势，推出了基于低功耗广域物联网 （ Low Power Wide Area Network ）技术的革命性解决方案。
+	.bg_gradient_box
+		section.index_wan
+			h3 α Space 低功耗广域网
+			.warp
+				.describe.my_animate(data-move-x='-120px')
+					.list.first
+						div
+							i.iconfont &#xe663;
+						p
+							strong 低功耗 
+							| 传感器采用 4 节 AA 电池，每 5 分钟通讯一次，可持续工作一年以上。
+					.list
+						div
+							i.iconfont &#xe613;
+						p
+							strong 远距离
+							| 1KM 室内复杂环境 － 10KM 空旷环境，信号持续稳定，覆盖范围广泛。
+					.list
+						div
+							i.iconfont &#xe6c8;
+						p
+							strong 低成本
+							| 免费 ISM 频段、可电池供电、无侵入式部署、超远传输距离，部署施工成本超低。
+					.btn_item
+						a(href='/zh/alpha') 了解更多
+						a.empty(href='/zh/case#alpha') 查看案例
+				.product.my_animate(data-move-x='120px')
+					img(src='/zh/assets/image/index/product2.png',width='208',height='605')
+		section.index_scrm
+			h3 云子SCRM 数字营销
+			.warp
+				.left.my_animate(data-move-x='-100px')
+					.swiper-container
+						.swiper-wrapper
+							.swiper-slide
+								img(src='/zh/assets/image/index/a1.png',width='635',height='373')
+							.swiper-slide
+								img(src='/zh/assets/image/index/d1.png',width='635',height='373')
+							.swiper-slide
+								img(src='/zh/assets/image/index/b1.png',width='635',height='373')
+							.swiper-slide
+								img(src='/zh/assets/image/index/c1.png',width='635',height='373')
+					.swiper-pagination
+					.iphone_box
+						.limit
+							.swiper-container
+								.swiper-wrapper
+									.swiper-slide
+										img(src='/zh/assets/image/index/a2.png',width='135',height='238')
+									.swiper-slide
+										img(src='/zh/assets/image/index/d2.png',width='135',height='238')
+									.swiper-slide
+										img(src='/zh/assets/image/index/b2.png',width='135',height='238')
+									.swiper-slide
+										img(src='/zh/assets/image/index/c2.png',width='135',height='238')
+				.right.my_animate(data-move-x='100px')
+					ul#js_scrm
+						li
+							.focus
+								i.iconfont &#xe600;
+							span 轻应用
+						li
+							div
+								i.iconfont &#xe617;
+							span 营销推送
+						li
+							div
+								i.iconfont &#xe61b;
+							span 社交图谱
+						li
+							div
+								i.iconfont &#xe6b2;
+							span 数据管理
+					p 
+						| 这是一套全新的社会化客户关系管理工具，提供丰富多样的应用模板及自动化营销工具，帮助商户积累顾客的基本信息及行为数据，与定向推送配合实现精准化个性化的数字营销。
+					.btn_item.blue
+						a(href='http://x.sensoro.com') 了解更多
+						a.empty(href='/zh/case#scrm') 查看案例
+		section.index_wan
+			h3 iBeacon 蓝牙传感器
+			.warp
+				.describe.my_animate(data-move-x='-120px')
+					.list.first
+						div
+							//- i.iconfont &#xe663;
+							img(src='/zh/assets/image/index/icon05.png',width='30')
+						p
+							strong 权威认证 
+							| SENSORO 是 Apple iBeacon 认证的设备制造商，也是 Google Eddystone 亚太地区的合作伙伴。
+					.list
+						div
+							//- i.iconfont &#xe613;
+							img(src='/zh/assets/image/index/icon06.png',width='28')
+						p
+							strong 三种传感器
+							| 云子、云盒、云标，选用 Nordic 超低功耗芯片蓝牙芯片，满足多样化的部署需求。
+					.list
+						div
+							//- i.iconfont &#xe6c8;
+							img(src='/zh/assets/image/index/icon07.png',width='30')
+						p
+							strong 开发者服务
+							| 提供配置工具、巡检工具、部署工具以及完整的移动端 SDK 与 RESTful API，可轻松实现定制性开发。
+					.btn_item
+						a(href='/zh/yunzi') 了解更多
+						a.empty(href='/zh/order') 立即购买
+				.product.my_animate(data-move-x='120px')
+					img.fixPosition(src='/zh/assets/image/index/beacon.png',width='450')
+	section.index_focus
+		.swiper-container
+			.swiper-wrapper
+				.swiper-slide
+					.focus_desc
+						h3 我们的征途，是星辰大海，SENSORO完成1000万美元融资。
+						span NOKIA•新世界•曼图资本
+					.imgbox1
+				.swiper-slide
+					.focus_desc
+						h3 SENSORO成为谷歌Eddystone Beacon领域全亚洲地区唯一官方合作伙伴。
+						span Google
+						a(href='/zh/articles/eid') 查看客户案例
+							i
+					.imgbox2
+				.swiper-slide
+					.focus_desc
+						h3 国博让“珍宝”说话，历史艺术数字化大跨越
+						span 国家博物馆
+						a(href='/zh/articles/museum') 查看客户案例
+							i
+					.imgbox3
+				.swiper-slide
+					.focus_desc
+						h3 SENSORO第一台IoT基站北京首落地
+						span NOKIA
+					.imgbox4
+			.swiper-pagination
+	section.index_customer
+		h3 合作伙伴及客户
+		div 
+			img(src='/zh/assets/image/index/customer.png')
+	section.base_contact
+		ul
+			a(href='/zh/contact#alpha')
+				li
+					img(src='/zh/assets/image/index/icon08.png',width='29.45',height='30')
+					h3 接入低功耗广域网
+					i 低功耗广域网需要设计，部署，及后期运营与维护等流程。
+			a(href='/zh/contact#scrm')
+				li
+					img(src='/zh/assets/image/index/icon09.png',width='31.97',height='25')
+					h3 使用云子SCRM
+					i 云子SCRM为不同企业制定了服务方案，可以根据您的需求选择合适你的方案。
+			a(href='/zh/contact#other')
+				li
+					img(src='/zh/assets/image/index/icon10.png',width='34.38',height='30')
+					h3 业务定制咨询
+					i 如有任何疑问或定制化需求，请联系 SENSORO 商务团队。
+		.btn_item.center.fix_margin
+			a(href='/zh/contact') 联系我们
+	section.index_address
+		ul
+			li
+				h3 中国北京
+				span 客服电话：400-686-3180
+				span 工作时间：周一至周五 10:00-12:30 14:00-18:30
+				span 邮箱：beijing@sensoro.com
+				span 地址：北京市朝阳区望京街10号 望京SOHO 1号楼 B座 2801/2807
+			li
+				h3 中国上海（功夫国际孵化器）
+				span 客服电话：021-50180837
+				span 工作时间：周一至周五 9:00-12:00 13:00-18:00
+				span 邮箱：applynow@kfstartups.com
+				span 地址：上海市浦东新区纳贤路800号科海大楼B座7楼
+			li
+				h3 中国深圳
+				span 客服电话：0755-26905091
+				span 工作时间：周一至周五 10:00-12:30 13:30-19:00
+				span 邮箱：shenzhen@sensoro.com
+				span 地址：深圳市南山区桃园路 田厦金牛广场B座2738室
+			li
+				h3 美国西雅图
+				span 客服电话：+1(425)802-4936
+				span 工作时间：周一至周五 10:00-12:30 14:00-18:30
+				span 邮箱：seattle@sensoro.com
+				span 地址：320 Westlake Ave N Floor 4, Seattle WA. 98109
+block append scripts
+	script(src='/zh/assets/lib/jquery.smoove.min.js')
+	script(src='/zh/assets/lib/swiper.min.js')
+	script(src='/zh/assets/lib/TweenMax.min.js')
+	script(src='/zh/assets/lib/scroll.min.js')
+	script(src='/zh/assets/lib/animation.gsap.min.js')
+	script.
+		$(document).ready(function(){
+			var heightPx = window.innerHeight,
+			widthPx = window.innerWidth,
+			x1 = 0,
+			y1 = 0,
+			x2 = 0,
+			y2 = 0,
+			sceneArr = [],
+			startArr = [],
+			baseScroll=2700+heightPx/2-370/2;
+			console.log(widthPx,heightPx);
+			//ie9兼容处理
+			function fixIE9Bugs(){
+			 if(navigator.appName == 'Microsoft Internet Explorer' && navigator.appVersion.match(/9./i)=='9.'){
+			 	//- alert('test');
+			 	$('.index_banner').css('display','none');
+			 	$('.mobile_banner').css('display','block');
+			 } 
+			}
+			//初始化场外位置并转化为像素
+			function percentToPx(){
+				$('#index_one_page img').each(function(i,ele){
+					var dp = $(this).attr('data-p');
+					var id = $(this).attr('id');
+					var temp = dp.split('@');
+					x1 = parseInt(temp[1])*widthPx/100;
+					y1 = parseInt(temp[3])*heightPx/100;
+					var str = '{'+temp[0]+':"'+x1+'px",'+temp[2]+':"'+y1+'px"}';
+					startArr.push({x:x1,y:y1});
+					//- console.log(startArr);
+					$('#'+id).css(eval('('+ str +')'));
+				})
+			}
+			// 计算移动坐标以及适配
+			function moveDistance(){
+				$('#index_one_page img').each(function(i,ele){
+					var dt = $(this).attr('data-t');
+					var temp = dt.split(',');
+					x2 = widthPx/2 + parseInt(temp[0]);
+					y2 = heightPx/2 + parseInt(temp[1]);
+					sceneArr.push({x:x2-startArr[i].x,y:y2-startArr[i].y});
+				})
+			}
+			//初始化场景动画
+			function startScene(){
+				var controller = new ScrollMagic.Controller();
+				var scene0 = new ScrollMagic.Scene({triggerElement: '#trigger0', duration: 3000}).setTween('#p0', 1, {opacity: 1, ease: Linear.easeNone}).setPin('#p0', {pushFollowers: false});
+				var sceneArrs = [scene0];
+				for(var i = 1;i<8;i++){
+					var scene = new ScrollMagic.Scene({triggerElement: '#trigger0', duration: 3000}).setTween('#p'+i, 1, {x:sceneArr[i].x , y:sceneArr[i].y,rotation:0, ease: Linear.easeNone}).setPin('#p'+i, {pushFollowers: false});
+					sceneArrs.push(scene);
+				}
+				controller.addScene(sceneArrs);
+			}
+			//设置元件固定高度位置
+			function fixImgPos(){
+				var fixRatio = [135,-25,5,43,172,256,50,-11];
+				for(var i=0;i<fixRatio.length;i++){
+					$('#p'+i).css({'top':(baseScroll+fixRatio[i])+'px'});
+				}
+			}
+			//重置元件固定高度
+			function resetImgPos(){
+				$('#p0').css({'top':'50%'});
+				$('#p1,#p2,#p6,#p7').css({'top':''});
+				for(var i=3;i<6;i++){
+					$('#p'+i).css({'top':startArr[i].y+'px'});
+				}
+			}
+			//滚动监听
+			$(window).scroll(function(){
+			//- setInterval(function() {
+				var tempHeightPx = window.innerHeight,
+				tempWidthPx = window.innerWidth,
+				scrollTop = $(document).scrollTop();
+				//- console.log(scrollTop);
+				if(scrollTop>2700){
+					$('#index_one_page').addClass('index_one_page');
+					$('#index_one_page img').each(function(i,e){
+						$(e).addClass($(e).attr('id'));
+						$(e).css('marginLeft',$(e).attr('data-fix')+'px');
+						fixImgPos();
+					})
+					$('#p8').addClass('p8');
+				}else if(scrollTop < 2700){
+					$('#index_one_page').removeClass('index_one_page');
+					$('#index_one_page img').each(function(i,e){
+						$(e).removeClass($(e).attr('id'));
+						$(e).css('marginLeft','');
+						resetImgPos();
+					})
+					$('#p8').removeClass('p8');
+				}
+			//- }, 10);
+			});
+			//集体初始化
+			function initAnimation(){
+				fixIE9Bugs();
+				//初始化容器高度
+				$('.index_banner').height(2700+window.innerHeight);
+				$('.index_dynamic').height(widthPx*290/1279);
+				//缓动动画初始化
+				$('.my_animate').smoove({offset  : '15%',opacity : 40});
+				//tab初始化
+				var mySwiper1 = new Swiper('.index_scrm .swiper-container', {
+					autoplay: 4000,//可选选项，自动滑动
+					pagination : '.index_scrm .swiper-pagination',
+					paginationClickable :true,
+					onSlideChangeEnd:function(swiper){
+					// console.log(swiper.activeIndex);
+						$('#js_scrm li').find('div').removeClass('focus');
+						$('#js_scrm li').find('div').eq(swiper.activeIndex).addClass('focus');
+					},
+					onInit: function(swiper){
+						//- console.log(swiper);
+						$('#js_scrm li').on('click',function(){
+							$(this).parent().find('div').removeClass('focus');
+							$(this).find('div').addClass('focus');
+							$('#js_scrm li').each( function (i, n) {
+								if($(this).find('div').hasClass('focus')){
+									//- swiper.swipeTo(i);
+									swiper.slideTo(i);
+								}
+							});
+						})
+					}
+				})
+				var mySwiper2 = new Swiper('.index_focus .swiper-container', {
+					autoplay: 5000,//可选选项，自动滑动
+					pagination : '.index_focus .swiper-pagination',
+					paginationClickable :true,
+					loop : true,
+				})
+				percentToPx();
+				moveDistance();
+				startScene();
+			} 
+			initAnimation();
+			//- 重置窗口，调整原件位置
+			window.resizeWidthPosition = {};
+			window.resizeHeightPosition = {};
+			for(var i=1;i<8;i++){
+				resizeWidthPosition[i] = $('#p'+i).css('left');
+				resizeHeightPosition[i] = $('#p'+i).css('top');
+				//- console.log(resizeHeightPosition);
+			}
+			$(window).resize(function() {
+				$('#p0').css('left','50%');
+				var widthOffset = widthPx - window.innerWidth;
+				var heightOffset = heightPx - window.innerHeight;
+				console.log('heightOffset:'+heightOffset);
+				var tempWidth = {},tempHeight = {};
+				if(widthOffset < 0 || heightOffset < 0){//窗口变大
+					for(var i=1;i<8;i++){
+						tempWidth[i] = parseFloat(resizeWidthPosition[i]) + Math.abs(widthOffset/2);
+						$('#p'+i).css('left',tempWidth[i]+'px');
+						tempHeight[i] = parseFloat(resizeHeightPosition[i]) + Math.abs(heightOffset/2);
+						$('#p'+i).css('top',tempHeight[i]+'px');
+					}
+				}else{//窗口变小
+					for(var i=1;i<8;i++){
+						tempWidth[i] = parseFloat(resizeWidthPosition[i]) - widthOffset/2;
+						$('#p'+i).css('left',tempWidth[i]+'px');
+					}
+				}
+			});
+		});
+

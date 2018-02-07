@@ -1,0 +1,122 @@
+extends _layout
+append header
+	link(rel='stylesheet', href='/zh/assets/css/iot.css')
+block content
+	section#billboard.retinaEls
+		.contnr
+			img.retinaEls(src="/zh/assets/image/iot/title_small.png")
+	section.contnr#timeShaft(style="display:none")
+		svg#shaft
+	section#iotvideo.retinaEls
+		.video_ctn
+			video(src="/zh/assets/image/iot/iot.mp4",poster="/zh/assets/image/iot/video_preview_small.jpg")
+	section.section.contnr#suites
+		h2.sectionTitle#changeline 开发者套件
+		p.sectionState SMART TAG KIT 是 SENSORO 推出的基于微信硬件平台的蓝牙开发者套件，它能帮你快速搭建起通过蓝牙与微信连通的智能硬件原型。我们的开发者套件主要由 3 部分组成：SMART TAG + SENSORO IOT 体验板 + 智能硬件开发板。
+		.contenCtn
+			#topCtn
+				#boardTop.iot.retinaEls
+					.cardLip.iot.retinaEls
+					#card.iot.retinaEls
+			#btmCtn
+				#boardBtm.iot.retinaEls
+			#textLeft.iotText
+				h4.title SMART TAG
+				p.state 通过AirSync™技术官方认证，封装了微信与硬件间的蓝牙通讯，将微信客户端的命令模拟成串口命令输出给硬件。
+			#textRight1.iotText
+				h4.title SENSORO IOT 体验板
+				p.state 集成RGB灯、电机、温度湿度传感器、红外传感器等元件，提供 SMART TAG 插槽并将其串口与 智能硬件开发板 接口对接。
+			#textRight2.iotText
+				h4.title 智能硬件开发板
+				p.state 对 SMART TAG 传输过来的命令进行解析，所有命令均已按照GB2312编码，如“蓝色”对应的编码为“C0B6C9AB”。智能硬件开发板 将控制信号输出给 iot体验板，改变RGB灯等元件的状态。
+			svg#iotline
+
+	section.section.contnr#guides
+		h2.sectionTitle 体验指南
+		p.sectionState 利用微信客户端，通过语音控制智能硬件设备，只需 10 分钟快速上手。通过微信扫描二维码绑定设备后，你可以在 SENSORO 公众号下的 iot 页面对设备发送命令。我们使用了微信 JSSDK 来实现语音命令解析，通过 SMART TAG 透明传输命令，通过 智能硬件开发板 解析命令，通过 iot体验板 来响应命令。
+		section.sectionContent
+			h3.sectionContentTitle 操作步骤
+			h4.sectionContentTitle2 1 | 启动 SMART TAG KIT
+			p.sectionContentState2 使用 USB 电源线为 SMART TAG KIT 供电并开机。
+			.imgCtn
+				img.tagKit.retinaEls(src="/zh/assets/image/iot/setup_small.jpg")
+
+			h4.sectionContentTitle2 2 | 使用微信绑定设备
+			p 拿出 SMART TAG KIT 包装内的卡片，使用微信扫描卡片上的二维码。<br>关注微信公众号后，SMART TAG KIT 将与你的微信号绑定。
+			.imgCtn.clearfix
+				.card.retinaEls
+				.card.retinaEls
+
+
+			h4.sectionContentTitle2 3 | 开始体验
+			p 语音/文本输入命令，SMART TAG KIT 就会给你回应。
+			.orders.clearfix
+				.phone.retinaEls
+				.ordersLst
+					li
+						.orderName 语音命令
+						.ordeDfs 回应
+					li
+						.orderName “蓝色”
+						.ordeDfs RBG LED 呈现蓝色
+					li
+						.orderName “红色”
+						.ordeDfs RBG LED 呈现红色
+					li
+						.orderName “绿色”
+						.ordeDfs RBG LED 呈现绿色
+					li
+						.orderName “变”
+						.ordeDfs RBG LED 颜色逐渐变化
+					li
+						.orderName “闪”
+						.ordeDfs RBG LED 闪动
+					li
+						.orderName “熄灭”
+						.ordeDfs RBG LED 熄灭
+					li
+						.orderName “转”
+						.ordeDfs 电机转动
+					li
+						.orderName “加速”
+						.ordeDfs 电机加速
+					li
+						.orderName “减速”
+						.ordeDfs 电机减速
+					li
+						.orderName “停”
+						.ordeDfs 电机停止
+					li
+						.orderName “温度”
+						.ordeDfs 收到“温度”消息
+					li
+						.orderName “湿度”
+						.ordeDfs 收到“湿度”消息
+			h4.sectionContentTitle2 4 | 开始智能硬件的微信之旅
+			p 通过对软硬件的扩展，你可以定制各种各样的智能硬件设备，如微信家电遥控器、微信温度计等。
+			.tour.retinaEls
+				.text 通过加装其他元件，如蜂鸣器、红外发射器、LED屏幕、磁力计等，来对设备硬件功能的扩展。
+				.text 通过编写程序可以实现自定义命令，你可以参考我们开发者套件的项目源码。
+					br
+					a(href="https://github.com/sensoro/iot",target="_blank") http://github.com/sensoro/iot
+	section.section.contnr(style="display:none;")
+		a.BtnOrder(href="/zh/order",target="_blank",style="text-decoration:none;") 购买 ¥198/个
+	section.section.contnr#application
+		h2.sectionTitle 相关资料
+		section.sectionContent
+			h4.sectionContentTitle2 1 | 开源项目
+			p.sectionContentState2 GitHub 开源项目
+				a(href="https://github.com/sensoro/iot",target="_blank") http://github.com/sensoro/iot
+				br
+				|内含 SMART TAG 的使用示例。
+			h4.sectionContentTitle2 2 | 开发者工具
+			p.sectionContentState2 你可以通过 Arduino IDE 向我们开发者套件中的 智能硬件开发板 烧录程序。<br>Arduino官方资料
+				a(href="http://arduino.cc/en/Guide/HomePage",target="_blank") http://arduino.cc/en/Guide/HomePage
+			h4.sectionContentTitle2 3 | 开发者 QQ 群 / 微信公众账号
+			p.sectionContentState2 扫描二维码，加入开发者交流群。
+			.imgCtn
+				.img.retinaEls
+				.img.retinaEls
+block scripts
+	script(src="/zh/assets/lib/snap.svg-min.js")
+	script(src="/zh/assets/js/iot.js")

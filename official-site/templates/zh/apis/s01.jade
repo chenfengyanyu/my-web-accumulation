@@ -1,0 +1,98 @@
+#section-1
+	.markdown
+		.div80
+		h2 大规模部署指南
+		hr
+		pre
+			code 云子，作为一款智能iBeacon传感器，在室内定位、线下统计、顾客互动等方面均有大规模的应用。因此如何在大规模使用的情况下，高效使用云子变得尤为重要。
+		p 商业部署的过程中，我们将云子的使用过程分为如下几部分：
+		ol
+			li 1.云子入库
+			li 2.云子部署
+			li 3.云子开发
+			li 4.云子维护
+		h3 一、云子入库
+		pre
+			code 当我们采购一批云子时，常常遇到的问题就是如何对这些云子进行管理。
+		p 每个云子都有唯一的序列号标识（SN）来标记云子的唯一性，同时在云子附带的二维码中包含有与其相对应的密钥。基于这一特点，我们可以很轻松地实现精确到特定云子的管理。
+		p.title 入库操作步骤：
+		ol 
+			li 1.在SENSORO云平台创建账号
+			li 2.安装巡检工具并登录账号
+			li 3.扫描云子附带的二维码将云子添加至账号下
+		p
+		p 通过以上三步，我们就完成对云子最基本的入库操作，主要使用了SENSORO云平台，以及巡检工具。现在我们可以在云平台中通过搜索和浏览找到特定的云子。
+		.images
+			img(src='/zh/assets/image/api/large-scale/1.png',height='409',width='700',alt='')
+		h3 二、云子部署
+		pre
+			code 进入部署环境，这是云子使用过程中比较复杂的一部分。
+		p 我们以某商场的室内定位为例，在商场一层部署100个云子。
+		p.title 部署操作步骤：
+		ol
+			li 1.在SENSORO云平台上传一张室内部署图
+			li 2.取出云子，利用配置工具检查其工作状态，并修改相应的配置
+			li 3.利用3M胶片将云子贴于天花板或其他安全位置
+			li 4.在SENSORO云平台的部署图中双击添加部署点，设置部署点信息
+			li 5.同时设置云子的“标签”字段，对云子进行简单的分组操作
+			li 6.重复以上动作，直至部署完成
+			li 7.开启巡检工具，清除巡检记录后开始巡检。通过这种方式将环境内的云子状态同步至SENSORO云平台，并检测部署位置与配置是否正确。
+		.images
+			img(src='/zh/assets/image/api/large-scale/3.jpg',height='480',width='270',alt='')
+		p 云子部署比较复杂，除了使用了配置工具外还使用了SENSORO云平台、巡检工具来辅助部署过程。部署结束后，您可以在SENSORO云平台中查看云子的配置数据以及部署位置。
+		.images
+			img(src='/zh/assets/image/api/large-scale/2.png',height='400',width='700',alt='')
+		h3 三、云子开发
+		pre
+			code 当云子完成部署后，进入开发阶段。这里我们通常会有三个需求：获取云子设备的部署位置及相关配置的信息，批量修改云子设备的一些配置如UUID、功率、频率、密码等，检测配置是否正确。
+		ol
+			li
+				p.title 1.云子的部署信息
+				p 在云子的部署过程中，我们生成了一套部署图。SENSORO云平台提供了一套完整的 REST API，您可以通过API获取到账号下的全部云子，可以获取每张部署图下云子的部署数据。
+			li 
+				p.title 2.批量配置
+				p 我们基于云子的实际开发过程中，对云子的工作配置可能与云子部署时并不一致，这样我们就需要对云子进行重新的部署。最基本的部署方式，可以参照部署图查找云子对应的SN，再利用配置工具搜索对应的SN找到云子进行配置。 这个过程显得比较繁琐，我们通常的配置需求可能是批量修改UUID、功率、频率、设置密码等。我们提供了适用于这种情况的批量配置工具，使用它可以快速完成云子工作配置的统一设置。对于需要调整的特殊云子，我们可以继续使用配置工具来对其进行单独配置。
+			li
+				p.title 3.配置检测
+				p 在配置完成后，我们可以通过巡检工具来将云子最新的状态更新到SENSORO云平台。可通过云平台来检查并确认云子的配置是否正确。
+			h3 四、云子维护
+			pre
+				code 在云子的使用过程中，我们要不断地检查云子以保证其在正确工作状态。这一过程，我们可分为巡检、替换两部分。
+			p.title 我们为云子的巡检提供了三种解决方案：
+			ol
+				li 1.巡检工具：利用人工，手持安装完巡检工具的手机设备，在部署区域内巡逻。巡检工具会自动将遇到的云子的工作状态上传至SENSORO云平台。
+				li 2.定制化设备：将一款特殊的有网络接入能力设备安装在部署区域内在，接通电源与网络。设备会在工作过程中收集云子工作状态数据包，并通过自身网络上传至SENSORO云平台。
+				li 3.集成SDK：我们为iOS/Android分别提供了包含电池电量等数据上传功能的SDK。
+					p.title （1）iOS SDK
+					pre
+						code /* 初始化UUID */ 
+							| NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"23A01AF0-232A-4518-9C0E-323FB773F5EF"];
+							| SBKBeaconID *beaconID = [SBKBeaconID beaconIDWithProximityUUID:uuid];
+							p
+							| /* 开始扫描 */
+							| [[SBKBeaconManager sharedInstance] startRangingBeaconsWithID:beaconIDwakeUpApplication:NO];
+							p
+							| /* 申请权限 */  
+							| [[SBKBeaconManager sharedInstance] requestAlwaysAuthorization];
+							p
+							| /* 开启传感器数据上传 */
+							| [[SBKBeaconManager sharedInstance] setCloudServiceEnable:YES];（需要v3.0版SDK，目前内测中）
+					p.title Android SDK
+					pre 
+						code /* 开启传感器数据上传 */
+							| beaconManager.cloudEnable(YES);（需要v3.0版SDK，目前内测中）
+							p
+							| /* 启动服务 */
+							| beaconManager.startService();
+			p.title 替换操作：
+			p 我们可以通过SENSORO云平台来查看那些云子工作状态不正常，可以对其进行替换操作。
+			p 利用配置工具将一颗新的云子的UMM、功率、频率、传感器开关、加密广播已经密码设置与被替换的云子相同，然后将之前的云子摘除替换为新的云子。
+
+
+
+
+
+
+
+
+

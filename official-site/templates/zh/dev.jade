@@ -1,0 +1,34 @@
+extends _layout
+append header
+	link(rel='stylesheet', href='/zh/assets/css/dev.css')
+block content
+	section.base_dev(style='border: 1px solid transparent;')
+		h3 开发者中心
+		ul
+			a(href="http://docs.sensoro.com",target="_blank")
+				li
+					img(src="/zh/assets/image/dev/alpha.png",style="border-radius: 50%;")
+					h3 低功耗广域网文档
+					i 介绍 α 系列基站、传感器、模块，并提供 Webhook、MQTT、开放API、移动端SDK 等开发者文档。
+			a(href="http://x.sensoro.com/developer",target="_blank")
+				li
+					img(src="/zh/assets/image/dev/scrm.png",style="border-radius: 50%;")
+					h3 云子SCRM文档
+					i 查看轻应用开发平台 CODE 的 SDK 介绍文档，包含授权、分享、卡券、统计、抽奖、设备识别等。
+			a(href="api.html")
+				li
+					img(src="/zh/assets/image/dev/ibeacon.png",style="border-radius: 50%;")
+					h3 iBeacon传感器文档
+					i 提供云子、云盒、云标说明书，配置、巡检、部署等移动端工具以及大规模部署指南。
+block append scripts
+	script.
+
+
+
+
+
+
+
+
+
+

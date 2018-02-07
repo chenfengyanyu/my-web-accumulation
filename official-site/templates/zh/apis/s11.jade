@@ -1,0 +1,89 @@
+#section-11(style='display:none')
+	.markdown
+		.div80
+		h2 云平台
+		hr
+		p SENSORO云平台是一套针对云子传感器部署管理的专业云服务。开发者可以通过云平台，以及相关联的巡检工具，批量部署工具，相关SDK轻松实现对传感器设备的管理，监控。主要功能有如下几部分：
+
+		h3 一、登录/注册账号
+		pre 使用邮箱和密码登录/注册。
+		p.title 如下图所示：
+		.images
+			img(src='/zh/assets/image/api/cloud/0.png',width='700')
+		
+		h3 二、硬件管理
+		pre 展示账号下所有云子的状态，可以在这里添加/删除云子、搜索云子、对云子贴标签进行分类管理。您可以通过 REST-API 中的云子列表接口将账号下数据导出。
+		.images
+			img(src='/zh/assets/image/api/cloud/1.png',width='700')
+		ul
+			li 1.云子列表：
+				p 显示云子设备的型号、序列号（SN）、UMM(UUID+Major+Minor)、部署位置坐标、电池电量、光线、温度、移动次数、数据更新时间以及云子标签。
+			li 2.云子搜索：
+				p 支持通过型号、SN与UMM的模糊搜索。
+			li 3.云子添加：
+				p 
+					| 添加云子，需要云子的SN以及该SN对应的唯一Token。
+					br
+					| 您可以在云子设备的二维码中读取到SN与Token，同时我们在
+					code 巡检工具
+					| 中提供扫码直接添加的功能。
+			li 4.设置标签：
+				p
+					| 每个云子都可以设置若干个标签，比如我将一颗云子放在北京望京SOHO办公室的冰箱里。
+					br
+					| 我可以对云子添加
+					code 望京SOHO办公室
+					| 、
+					code 冰箱
+					| 等标签，以此来实现对云子的归类管理。
+			li 5.云子详情页：
+				p 显示单个云子目前的状态，以及历史的数据记录。
+				.images
+					img(src='/zh/assets/image/api/cloud/8.png',width='700') 
+
+		h3 三、巡检记录
+		p 巡检记录会显示账号利用巡检工具巡检时，每一天发现多少云子设备。这个功能亦可用于商业地产定点巡逻。
+			.images
+				img(src='/zh/assets/image/api/cloud/3.png',width='700')
+
+		h3 四、部署图管理
+		pre 部署图是在大规模部署时，记录云子实际部署位置的工具。
+		ul
+			li 1.部署图列表：
+				p 显示所有添加过的部署图，包含一些部署的基本信息以及部署图上云子的数量。
+				.images
+					img(src='/zh/assets/image/api/cloud/5.png',width='700')
+			li 2.部署图详情页：
+				p - 显示一张部署图上的所有云子位置。
+				p - 同时我们提供了REST API中的部署图接口，您可以通过请求该接口拿到部署图的相关信息。
+				p - 主要功能有：
+					p 添加部署点：可通过双击来添加新的部署点。
+					p 管理部署点：单击可对之前的部署点进行管理。
+					p 修改部署点：可通过拖动的方式修改部署点的位置。
+				.images
+					img(src='/zh/assets/image/api/cloud/6.png',width='700')
+			
+			h3 五、应用管理
+			pre 创建应用后，即可获得应用Key与Secret，你可能会在部分REST API与SDK中会使用到它们。
+			.images
+				img(src='/zh/assets/image/api/cloud/7.png',width='700')
+
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

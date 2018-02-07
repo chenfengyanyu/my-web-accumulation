@@ -1,0 +1,167 @@
+extends _layout
+append header
+	link(rel='stylesheet', href='/zh/assets/css/contact.css')
+block content
+	section.sec-employer
+		h3 产品咨询
+		form(action='post')
+			#box
+				.row
+					.col-xs-8.col-xs-offset-2
+						.row
+							.form-group.col-xs-6
+								label(for='employerName') 姓名
+								input#employerName.form-control(type='text', placeholder='', name='name', required='')
+							.form-group.col-xs-6
+								label(for='employerTel') 手机号码
+								input#employerTel.form-control(type='tel', placeholder='', name='mobile', required='', maxlength='11')
+						.row
+							.form-group.col-xs-6
+								label(for='employerMail') 电子邮件
+								input#employerMail.form-control(type='email', placeholder='', name='email', required='')
+							.form-group.col-xs-6
+								label(for='employerTarget') 选择咨询目的
+								select#employerTarget.form-control(required='', name='target')
+									option(value='', selected='selected', disabled='disabled') 选择
+									option(value='', disabled='disabled') --- 产品 & 技术 --- 
+									option(value='1') iBeacon 传感器
+									option(value='2') 云子 SCRM
+									option(value='3') 低功耗广域网
+									option(disabled='disabled') --- 商务 & 媒体 --- 
+									option(value='4') 传感器厂商合作
+									option(value='5') 业务方案商合作
+									option(value='6') 新闻媒体合作
+									option(value='', disabled='disabled') --- 其他事项 --- 
+									option(value='7') 加入我们
+									option(value='8') 其他
+						.row
+							.form-group.col-xs-6
+								label(for='employerCompony') 所在公司名称
+								input#employerCompony.form-control(type='text', placeholder='', name='company', required='')
+							.form-group.col-xs-6
+								label(for='employerScale') 所在公司规模
+								select#employerScale.form-control(name='scale', required='')
+									option(value='', selected='selected', disabled='disabled') 选择
+									option(value='1') 15 人以下
+									option(value='2') 15-50 人
+									option(value='3') 50-100 人
+									option(value='4') 100-200 人
+									option(value='5') 200 人以上
+						.form-group
+							label(for='employerService') 咨询内容
+							textarea#employerService.form-control.col-xs-12(rows='3', placeholder='告诉我们您想要咨询的内容', name='advisory', required='')
+				.buttonwrap
+					button.btn.btn-default(type='submit') 发送
+	section.sec_address
+		ul
+			li
+				h3 中国北京
+				span 客服电话：400-686-3180
+				span 工作时间：周一至周五 10:00-12:30 14:00-18:30
+				span 邮箱：beijing@sensoro.com
+				span 地址：北京市朝阳区望京街10号 望京SOHO 1号楼 B座 2801/2807
+			li
+				h3 中国上海（功夫国际孵化器）
+				span 客服电话：021-50180837
+				span 工作时间：周一至周五 9:00-12:00 13:00-18:00
+				span 邮箱：applynow@kfstartups.com
+				span 地址：上海市浦东新区纳贤路800号科海大楼B座7楼
+			li
+				h3 中国深圳
+				span 客服电话：0755-26905091
+				span 工作时间：周一至周五 10:00-12:30 13:30-19:00
+				span 邮箱：shenzhen@sensoro.com
+				span 地址：深圳市南山区桃园路 田厦金牛广场B座2738室
+			li
+				h3 美国西雅图
+				span 客服电话：+1(425)802-4936
+				span 工作时间：周一至周五 10:00-12:30 14:00-18:30
+				span 邮箱：seattle@sensoro.com
+				span 地址：320 Westlake Ave N Floor 4, Seattle WA. 98109
+block append scripts
+	script.
+		!function() {
+			function f(a) {
+				var b = {};
+				for (var c in a) {
+					var d = this[c].value;
+					-1 !== ["scale", "target", "mobile"].indexOf(c) && (d -= 0),
+					k[c] = d,
+					(typeof d !== a[c].type || "number" == typeof d && isNaN(d)) && (b[c] = {},
+					b[c].type = "请输入" + a[c].type + "类型",
+					b[c].inputVal = this[c].value)
+				}
+				return b
+			}
+
+			var typeKV = {'ibeacon':1,'scrm':2,'alpha':3,'sensor':4,'solution':5,'media':6,'job':7,'other':8};
+			var type = window.location.hash.replace('#','');
+			 $("#employerTarget").val(typeKV[type]);
+
+
+			$(".sec-employer form").submit(function(a) {
+				alert('hrer');
+				if (a.preventDefault(),
+				!this.posted) {
+					this.posted = !0;
+					var b = f.call(this, j);
+					if (Object.keys(b).length) {
+						for (var c in b)
+							$(this[c]).parent().addClass("has-error");
+						return !1
+					}
+					$(".sec-employer .form-group.has-error").removeClass("has-error");
+					var d = this;
+					return $.ajax({
+						type: "POST",
+						url: "https://iot-api.sensoro.com/anonymous/contact",
+						data: k,
+						success: function(a) {
+							return 0 !== a.err_code ? d.posted = !1 : void $(".sec-employer button[type=submit]").attr("disabled", "disabled").text("发送成功")
+						}
+					}),
+					!1
+				}
+			})
+			   var j = {
+					name: {
+						type: "string",
+						"default": ""
+					},
+					mobile: {
+						type: "number",
+						"default": ""
+					},
+					email: {
+						type: "string",
+						"default": ""
+					},
+					company: {
+						type: "string",
+						"default": ""
+					},
+					scale: {
+						type: "number",
+						"default": 0
+					},
+					target: {
+						type: "number",
+						"default": 0
+					},
+					advisory: {
+						type: "string",
+						"default": ""
+					}
+				}
+				, k = {};
+		}();
+
+
+
+
+
+
+
+
+
+

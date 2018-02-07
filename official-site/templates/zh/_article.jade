@@ -1,0 +1,47 @@
+extends _layout
+append header
+  link(rel="stylesheet" href="/zh/assets/css/article.css")
+block content
+  article.site-section
+    .clearfix.s-container
+      .sec-con.fl
+        .sec-title
+          hgroup
+            each item in page.title
+              h1= item
+          nav
+            a(href="/zh/case") 客户案例
+            span(style="padding:10px;") /
+            a()= page.category
+        each item in page.content
+          if (item['type'] == 'img')
+            figure
+              img(src="#{item.con}")
+              if (item.desc)
+                p= item.desc
+          else if (['ol', 'ul'].indexOf(item['type']) !== -1  )
+            .list-wrap
+              if item.title
+                    h3.list-title(s=item['type'])= item.title
+              #{item.type}(class=item.class)
+                if item.con
+                  each subi in item.con
+                    li= subi
+          else
+            #{item.type}= item['con']
+      .sidebar-wrap
+        .sidebar.fr
+          .client
+            img.brand(src="#{page.logo}",width="188")
+
+            h3.name= page.pathname
+          .service
+            h3.name 案例类型
+            a= page.category
+          .scheme
+            h3.name 网站地图
+            a(href="/zh/alpha") 低功耗广域网
+            a(href="http://x.sensoro.com",target="_blank") 云子SCRM
+            a(href="/zh/yunzi") iBeacon传感器
+          .btn_item
+            a(href="/zh/contact").empty 立即免费咨询

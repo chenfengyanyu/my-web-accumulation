@@ -1,0 +1,965 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="269 95 1498 371" style="enable-background:new 269 95 1498 371;" preserveAspectRatio = "xMinYMax slice" xml:space="preserve">
+	 <style type="text/css">
+        <![CDATA[
+        @import url("../css/svg.css");
+        ]]>
+    </style>
+<defs>
+    <linearGradient id="orange_red" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:rgb(255,255,255);stop-opacity:0"/>
+        <stop offset="50%" style="stop-color:rgb(255,255,255);stop-opacity:0.8"/>
+        <stop offset="100%" style="stop-color:rgb(255,255,255);stop-opacity:0"/>
+    </linearGradient>
+</defs>
+<g id="sensoro" style="opacity: 0.7;">
+	<path id="Line" class="st0" d="M441.5,193.5l16,52"/>
+	<path id="Line-Copy" class="st0" d="M413.5,211.5l44,34"/>
+	<path id="Line-Copy-13" class="st0" d="M413.5,211.5l-27-12"/>
+	<path id="Line-Copy-16" class="st0" d="M368.5,195.5l18,4"/>
+	<path id="Line-Copy-17" class="st0" d="M368.5,195.5l-21-7"/>
+	<path id="Line-Copy-25" class="st0" d="M317.5,254.5l27-65"/>
+	<path id="Line-Copy-78" class="st0" d="M317.5,256.5l82,3"/>
+	<path id="Line-Copy-79" class="st0" d="M317.5,256.5l31,44"/>
+	<path id="Line-Copy-80" class="st0" d="M317.5,256.5l-13,61"/>
+	<path id="Line-Copy-82" class="st0" d="M396.5,262.5l-92,55"/>
+	<path id="Line-Copy-81" class="st0" d="M315.5,257.5l-35,54"/>
+	<path id="Line-Copy-19" class="st0" d="M323.5,185.5l24,3"/>
+	<path id="Line-Copy-20" class="st0" d="M323.5,185.5l-12-7"/>
+	<path id="Line-Copy-21" class="st0" d="M291.5,186.5l18-9"/>
+	<path id="Line-Copy-22" class="st0" d="M289.5,187.5l33-3"/>
+	<path id="Line-Copy-23" class="st0" d="M296.5,234.5l-20-33"/>
+	<path id="Line-Copy-26" class="st0" d="M278.5,235.5l-2-34"/>
+	<path id="Line-Copy-27" class="st0" d="M278.5,235.5h16"/>
+	<path id="Line-Copy-28" class="st0" d="M283.5,245.5l11-10"/>
+	<path id="Line-Copy-29" class="st0" d="M315.5,254.5l-21-19"/>
+	<path id="Line-Copy-30" class="st0" d="M315.5,254.5l-35-9"/>
+	<path id="Line-Copy-32" class="st0" d="M316.5,257.5l-33,2"/>
+	<path id="Line-Copy-33" class="st0" d="M268.5,245.5l15,14"/>
+	<path id="Line-Copy-34" class="st0" d="M268.5,263.5l15-4"/>
+	<path id="Line-Copy-35" class="st0" d="M284.5,275.5l-7,2"/>
+	<path id="Line-Copy-36" class="st0" d="M284.5,275.5l-1-13"/>
+	<path id="Line-Copy-37" class="st0" d="M284.5,275.5l115-16"/>
+	<path id="Line-Copy-31" class="st0" d="M269.5,243.5l12,3"/>
+	<path id="Line-Copy-24" class="st0" d="M296.5,234.5l24-48"/>
+	<path id="Line-Copy-14" class="st0" d="M397.5,258.5l-11-59"/>
+	<path id="Line-Copy-15" class="st0" d="M397.5,258.5l-31-61"/>
+	<path id="Line-Copy-18" class="st0" d="M396.5,257.5l-106-70"/>
+	<path id="Line-Copy-2" class="st0" d="M460.5,205.5l-3,40"/>
+	<path id="Line-Copy-3" class="st0" d="M479.5,201.5l-22,44"/>
+	<path id="Line-Copy-4" class="st0" d="M513.5,226.5l-54,19"/>
+	<path id="Line-Copy-38" class="st0" d="M398.5,259.5l61-14"/>
+	<path id="Line-Copy-39" class="st0" d="M464.5,271.5l-93,13"/>
+	<path id="Line-Copy-43" class="st0" d="M464.5,271.5l-49,23"/>
+	<path id="Line-Copy-44" class="st0" d="M464.5,271.5l-49,23"/>
+	<path id="Line-Copy-45" class="st0" d="M464.5,271.5l-49,23"/>
+	<path id="Line-Copy-46" class="st0" d="M464.5,271.5l-49,23"/>
+	<path id="Line-Copy-47" class="st0" d="M464.5,271.5l-49,23"/>
+	<path id="Line-Copy-48" class="st0" d="M464.5,271.5l12,60"/>
+	<path id="Line-Copy-49" class="st0" d="M414.5,295.5l62,36"/>
+	<path id="Line-Copy-83" class="st0" d="M422.5,334.5l54-3"/>
+	<path id="Line-Copy-84" class="st0" d="M422.5,334.5l16,18"/>
+	<path id="Line-Copy-85" class="st0" d="M475.5,333.5l-37,19"/>
+	<path id="Line-Copy-86" class="st0" d="M470.5,358.5l-32-4"/>
+	<path id="Line-Copy-88" class="st0" d="M470.5,358.5l-15,18"/>
+	<path id="Line-Copy-89" class="st0" d="M459.5,395.5l-4-19"/>
+	<path id="Line-Copy-90" class="st0" d="M471.5,380.5l-16-4"/>
+	<path id="Line-Copy-87" class="st0" d="M454.5,376.5l-16-22"/>
+	<path id="Line-Copy-50" class="st0" d="M413.5,297.5l-10,20"/>
+	<path id="Line-Copy-51" class="st0" d="M417.5,333.5l-15-15"/>
+	<path id="Line-Copy-52" class="st0" d="M384.5,310.5l18,8"/>
+	<path id="Line-Copy-53" class="st0" d="M384.5,310.5l-15-23"/>
+	<path id="Line-Copy-54" class="st0" d="M384.5,310.5l-16-6"/>
+	<path id="Line-Copy-55" class="st0" d="M368.5,288.5v16"/>
+	<path id="Line-Copy-56" class="st0" d="M348.5,301.5l17,2"/>
+	<path id="Line-Copy-57" class="st0" d="M348.5,301.5l-14,14"/>
+	<path id="Line-Copy-58" class="st0" d="M313.5,330.5l21-15"/>
+	<path id="Line-Copy-59" class="st0" d="M313.5,330.5l-15,13"/>
+	<path id="Line-Copy-60" class="st0" d="M280.5,351.5l18-8"/>
+	<path id="Line-Copy-61" class="st0" d="M280.5,351.5l-10,5"/>
+	<path id="Line-Copy-62" class="st0" d="M280.5,351.5l1-11"/>
+	<path id="Line-Copy-63" class="st0" d="M298.5,333.5l-17,7"/>
+	<path id="Line-Copy-64" class="st0" d="M298.5,333.5l6-13"/>
+	<path id="Line-Copy-65" class="st0" d="M288.5,320.5h16"/>
+	<path id="Line-Copy-66" class="st0" d="M288.5,320.5l-10-6"/>
+	<path id="Line-Copy-67" class="st0" d="M268.5,307.5l10,7"/>
+	<path id="Line-Copy-40" class="st0" d="M396.5,261.5l-25,23"/>
+	<path id="Line-Copy-41" class="st0" d="M398.5,260.5l15,34"/>
+	<path id="Line-Copy-42" class="st0" d="M464.5,271.5l-7-24"/>
+	<path id="Line-Copy-5" class="st0" d="M515.5,224.5l-51,45"/>
+	<path id="Line-Copy-6" class="st0" d="M517.5,225.5l41,10"/>
+	<path id="Line-Copy-68" class="st0" d="M572.5,266.5l-14-31"/>
+	<path id="Line-Copy-69" class="st0" d="M543.5,225.5l15,10"/>
+	<path id="Line-Copy-70" class="st0" d="M543.5,225.5l-49,69"/>
+	<path id="Line-Copy-71" class="st0" d="M574.5,270.5l-80,24"/>
+	<path id="Line-Copy-72" class="st0" d="M574.5,270.5h-109"/>
+	<path id="Line-Copy-73" class="st0" d="M491.5,293.5l-28-23"/>
+	<path id="Line-Copy-74" class="st0" d="M493.5,297.5l-16,35"/>
+	<path id="Line-Copy-75" class="st0" d="M495.5,295.5l20,22"/>
+	<path id="Line-Copy-76" class="st0" d="M553.5,299.5l-36,21"/>
+	<path id="Line-Copy-92" class="st0" d="M540.5,339.5l-23-19"/>
+	<path id="Line-Copy-93" class="st0" d="M540.5,339.5l-61-6"/>
+	<path id="Line-Copy-94" class="st0" d="M540.5,339.5l-71,18"/>
+	<path id="Line-Copy-96" class="st0" d="M540.5,339.5l-47,39"/>
+	<path id="Line-Copy-97" class="st0" d="M469.5,380.5h23"/>
+	<path id="Line-Copy-98" class="st0" d="M469.5,380.5l1-22"/>
+	<path id="Line-Copy-99" class="st0" d="M469.5,380.5l-8,14"/>
+	<path id="Line-Copy-100" class="st0" d="M504.5,401.5l-45-5"/>
+	<path id="Line-Copy-103" class="st0" d="M504.5,401.5l-12-20"/>
+	<path id="Line-Copy-101" class="st0" d="M474.5,409.5l-15-13"/>
+	<path id="Line-Copy-102" class="st0" d="M474.5,409.5l31-8"/>
+	<path id="Line-Copy-104" class="st0" d="M474.5,409.5l-1,21"/>
+	<path id="Line-Copy-105" class="st0" d="M505.5,425.5l-32,6"/>
+	<path id="Line-Copy-118" class="st0" d="M520.5,443.5l-47-12"/>
+	<path id="Line-Copy-120" class="st0" d="M474.5,448.5l16-6"/>
+	<path id="Line-Copy-122" class="st0" d="M473.5,449.5l28,20"/>
+	<path id="Line-Copy-124" class="st0" d="M519.5,445.5l-18,24"/>
+	<path id="Line-Copy-126" class="st0" d="M519.5,445.5l12,25"/>
+	<path id="Line-Copy-127" class="st0" d="M539.5,423.5l-8,47"/>
+	<path id="Line-Copy-128" class="st0" d="M539.5,423.5l-19,21"/>
+	<path id="Line-Copy-125" class="st0" d="M538.5,444.5l-37,25"/>
+	<path id="Line-Copy-123" class="st0" d="M473.5,449.5l5,18"/>
+	<path id="Line-Copy-121" class="st0" d="M472.5,448.5l1-16"/>
+	<path id="Line-Copy-106" class="st0" d="M505.5,425.5v-22"/>
+	<path id="Line-Copy-107" class="st0" d="M505.5,425.5l35-5"/>
+	<path id="Line-Copy-109" class="st0" d="M505.5,425.5l28-34"/>
+	<path id="Line-Copy-112" class="st0" d="M567.5,380.5l-34,11"/>
+	<path id="Line-Copy-113" class="st0" d="M566.5,380.5l4,17"/>
+	<path id="Line-Copy-114" class="st0" d="M605.5,420.5l-33-19"/>
+	<path id="Line-Copy-115" class="st0" d="M563.5,426.5l9-25"/>
+	<path id="Line-Copy-116" class="st0" d="M564.5,428.5l40-7"/>
+	<path id="Line-Copy-131" class="st0" d="M564.5,428.5l-23-7"/>
+	<path id="Line-Copy-132" class="st0" d="M564.5,428.5l-24,14"/>
+	<path id="Line-Copy-133" class="st0" d="M540.5,422.5v20"/>
+	<path id="Line-Copy-134" class="st0" d="M576.5,471.5l-36-29"/>
+	<path id="Line-Copy-135" class="st0" d="M536.5,471.5l4-29"/>
+	<path id="Line-Copy-129" class="st0" d="M564.5,429.5l11,19"/>
+	<path id="Line-Copy-130" class="st0" d="M582.5,472.5l-5-23"/>
+	<path id="Line-Copy-136" class="st0" d="M630.5,453.5l-51-3"/>
+	<path id="Line-Copy-137" class="st0" d="M630.5,453.5l-25-32"/>
+	<path id="Line-Copy-138" class="st0" d="M604.5,471.5l1-50"/>
+	<path id="Line-Copy-139" class="st0" d="M604.5,471.5l24-17"/>
+	<path id="Line-Copy-140" class="st0" d="M641.5,469.5l-13-15"/>
+	<path id="Line-Copy-141" class="st0" d="M644.5,468.5l2-46"/>
+	<path id="Line-Copy-142" class="st0" d="M603.5,420.5l43,2"/>
+	<path id="Line-Copy-143" class="st0" d="M606.5,404.5l40,18"/>
+	<path id="Line-Copy-145" class="st0" d="M606.5,404.5l9-16"/>
+	<path id="Line-Copy-147" class="st0" d="M568.5,380.5l46,5"/>
+	<path id="Line-Copy-148" class="st0" d="M571.5,400.5l19-59"/>
+	<path id="Line-Copy-149" class="st0" d="M541.5,340.5h47"/>
+	<path id="Line-Copy-153" class="st0" d="M552.5,301.5l39,39"/>
+	<path id="Line-Copy-154" class="st0" d="M619.5,312.5l-28,28"/>
+	<path id="Line-Copy-158" class="st0" d="M629.5,381.5l-38-41"/>
+	<path id="Line-Copy-159" class="st0" d="M629.5,381.5l-13,5"/>
+	<path id="Line-Copy-160" class="st0" d="M627.5,380.5l19-39"/>
+	<path id="Line-Copy-161" class="st0" d="M627.5,380.5l41-28"/>
+	<path id="Line-Copy-162" class="st0" d="M627.5,380.5l41-28"/>
+	<path id="Line-Copy-163" class="st0" d="M673.5,389.5l-4-39"/>
+	<path id="Line-Copy-164" class="st0" d="M673.5,389.5l-26-47"/>
+	<path id="Line-Copy-165" class="st0" d="M673.5,389.5l-28,33"/>
+	<path id="Line-Copy-167" class="st0" d="M675.5,439.5l-30-17"/>
+	<path id="Line-Copy-169" class="st0" d="M675.5,439.5l21-16"/>
+	<path id="Line-Copy-171" class="st0" d="M715.5,470.5l-19-47"/>
+	<path id="Line-Copy-172" class="st0" d="M730.5,458.5l-34-35"/>
+	<path id="Line-Copy-173" class="st0" d="M730.5,458.5l-3-47"/>
+	<path id="Line-Copy-175" class="st0" d="M745.5,447.5l-18-36"/>
+	<path id="Line-Copy-178" class="st0" d="M745.5,449l8-12.5"/>
+	<path id="Line-Copy-179" class="st0" d="M753.5,408.5v28"/>
+	<path id="Line-Copy-181" class="st0" d="M773.5,429.5l-20,7"/>
+	<path id="Line-Copy-182" class="st0" d="M773.5,443.5l-20-7"/>
+	<path id="Line-Copy-183" class="st0" d="M773.5,443.5v-15"/>
+	<path id="Line-Copy-184" class="st0" d="M775,415.5v14"/>
+	<path id="Line-Copy-186" class="st0" d="M775,415.5l14.5,6"/>
+	<path id="Line-Copy-188" class="st0" d="M775,415.5l2.5-12"/>
+	<path id="Line-Copy-189" class="st0" d="M755.5,408.5l22-8"/>
+	<path id="Line-Copy-190" class="st0" d="M755.5,408.5l21-16"/>
+	<path id="Line-Copy-191" class="st0" d="M757.5,380.5l19,10"/>
+	<path id="Line-Copy-231" class="st0" d="M800.5,392.5l-24-2"/>
+	<path id="Line-Copy-232" class="st0" d="M800.5,392.5l19-15"/>
+	<path id="Line-Copy-233" class="st0" d="M813.5,360.5l6,17"/>
+	<path id="Line-Copy-234" class="st0" d="M813.5,360.5l-17-12"/>
+	<path id="Line-Copy-235" class="st0" d="M771.5,357.5l22-10"/>
+	<path id="Line-Copy-240" class="st0" d="M771.5,357.5l-12-31"/>
+	<path id="Line-Copy-245" class="st0" d="M753.5,308.5l6,18"/>
+	<path id="Line-Copy-247" class="st0" d="M708.5,318.5l51,8"/>
+	<path id="Line-Copy-246" class="st0" d="M751.5,306.5l-35,39"/>
+	<path id="Line-Copy-241" class="st0" d="M743.5,338.5l14-12"/>
+	<path id="Line-Copy-242" class="st0" d="M770.5,315.5l-13,11"/>
+	<path id="Line-Copy-243" class="st0" d="M770.5,315.5l6-7"/>
+	<path id="Line-Copy-244" class="st0" d="M788.5,331.5l-9-24"/>
+	<path id="Line-Copy-258" class="st0" d="M999.5,256.5l-12-15"/>
+	<path id="Line-Copy-260" class="st0" d="M1014.5,250.5l-27-9"/>
+	<path id="Line-Copy-261" class="st0" d="M1014.5,250.5h16"/>
+	<path id="Line-Copy-262" class="st0" d="M999.5,273.5l31-23"/>
+	<path id="Line-Copy-263" class="st0" d="M999.5,273.5l-11-7"/>
+	<path id="Line-Copy-264" class="st0" d="M999.5,273.5l14,1"/>
+	<path id="Line-Copy-265" class="st0" d="M1031.5,267.5l-18,7"/>
+	<path id="Line-Copy-267" class="st0" d="M1145.5,278.3l17,39.2"/>
+	<path id="Line-Copy-268" class="st0" d="M1146.5,278.5l-12,11"/>
+	<path id="Line-Copy-269" class="st0" d="M1135.5,315.5l-1-26"/>
+	<path id="Line-Copy-270" class="st0" d="M1135.5,315.5l-1-26"/>
+	<path id="Line-Copy-271" class="st0" d="M1135.5,314.5l33-22"/>
+	<path id="Line-Copy-283" class="st0" d="M1196.5,278.5l-28,14"/>
+	<path id="Line-Copy-285" class="st0" d="M1196.5,278.5l-48-1"/>
+	<path id="Line-Copy-284" class="st0" d="M1196.5,278.5v24"/>
+	<path id="Line-Copy-286" class="st0" d="M1196.5,278.5l17-19"/>
+	<path id="Line-Copy-287" class="st0" d="M1160.5,255.5l53,4"/>
+	<path id="Line-Copy-288" class="st0" d="M1161.5,256.5l15-18"/>
+	<path id="Line-Copy-289" class="st0" d="M1191.5,213.5l-15,25"/>
+	<path id="Line-Copy-290" class="st0" d="M1191.5,213.5l22,46"/>
+	<path id="Line-Copy-291" class="st0" d="M1229.5,188.5l-16,71"/>
+	<path id="Line-Copy-303" class="st0" d="M1229.5,188.5v57"/>
+	<path id="Line-Copy-304" class="st0" d="M1269.5,234.5l-40,11"/>
+	<path id="Line-Copy-305" class="st0" d="M1215.5,257.5l14-12"/>
+	<path id="Line-Copy-306" class="st0" d="M1226.5,266.5l3-21"/>
+	<path id="Line-Copy-307" class="st0" d="M1226.5,266.5l-11,16"/>
+	<path id="Line-Copy-308" class="st0" d="M1226.5,266.5l-11,33"/>
+	<path id="Line-Copy-310" class="st0" d="M1226.5,266.5l10,41"/>
+	<path id="Line-Copy-311" class="st0" d="M1215.5,299.5l21,8"/>
+	<path id="Line-Copy-312" class="st0" d="M1215.5,299.5l29-15"/>
+	<path id="Line-Copy-313" class="st0" d="M1246.5,313.5v-33"/>
+	<path id="Line-Copy-314" class="st0" d="M1246.5,314.5l-9-7"/>
+	<path id="Line-Copy-315" class="st0" d="M1246.5,314.5l-16,17"/>
+	<path id="Line-Copy-316" class="st0" d="M1216.5,343.5l14-12"/>
+	<path id="Line-Copy-317" class="st0" d="M1216.5,343.5l-21,11"/>
+	<path id="Line-Copy-325" class="st0" d="M1216.5,343.5l-46,45"/>
+	<path id="Line-Copy-326" class="st0" d="M1215.5,370.5l-45,18"/>
+	<path id="Line-Copy-327" class="st0" d="M1190.5,402.5l-20-14"/>
+	<path id="Line-Copy-328" class="st0" d="M1253.5,394.5l-83-6"/>
+	<path id="Line-Copy-388" class="st0" d="M1253.5,394.5l-33-25"/>
+	<path id="Line-Copy-390" class="st0" d="M1215.5,345.5l3,22"/>
+	<path id="Line-Copy-391" class="st0" d="M1298.5,374.5l-80-7"/>
+	<path id="Line-Copy-392" class="st0" d="M1298.5,374.5l-80-7"/>
+	<path id="Line-Copy-393" class="st0" d="M1298.5,374.5l-68-42"/>
+	<path id="Line-Copy-394" class="st0" d="M1302.5,346.5l-55-30.8"/>
+	<path id="Line-Copy-396" class="st0" d="M1302.5,346.5l-87-3"/>
+	<path id="Line-Copy-397" class="st0" d="M1302.5,346.5l-81,21"/>
+	<path id="Line-Copy-398" class="st0" d="M1302.5,346.5l-5,26"/>
+	<path id="Line-Copy-399" class="st0" d="M1302.5,346.5l44,37"/>
+	<path id="Line-Copy-400" class="st0" d="M1300.5,374.5l46,9"/>
+	<path id="Line-Copy-402" class="st0" d="M1291.5,420.5l56-35"/>
+	<path id="Line-Copy-403" class="st0" d="M1335.5,428.5l12-43"/>
+	<path id="Line-Copy-404" class="st0" d="M1335.5,428.5l-16-116"/>
+	<path id="Line-Copy-405" class="st0" d="M1304.5,347.5l15-35"/>
+	<path id="Line-Copy-471" class="st0" d="M1304.5,347.5l107,3"/>
+	<path id="Line-Copy-472" class="st0" d="M1394.5,388.5l17-38"/>
+	<path id="Line-Copy-473" class="st0" d="M1394.5,388.5l-43-3"/>
+	<path id="Line-Copy-475" class="st0" d="M1394.5,388.5l56,39"/>
+	<path id="Line-Copy-490" class="st0" d="M1411.5,352.5l39,75"/>
+	<path id="Line-Copy-476" class="st0" d="M1335.5,430.5l115-3"/>
+	<path id="Line-Copy-478" class="st0" d="M1335.5,430.5l51,18"/>
+	<path id="Line-Copy-479" class="st0" d="M1335.5,430.5l8,41"/>
+	<path id="Line-Copy-480" class="st0" d="M1335.5,430.5l-31,26"/>
+	<path id="Line-Copy-481" class="st0" d="M1322.5,470.5l-18-14"/>
+	<path id="Line-Copy-482" class="st0" d="M1298.5,469.5l6-13"/>
+	<path id="Line-Copy-483" class="st0" d="M1275.5,456.5h29"/>
+	<path id="Line-Copy-484" class="st0" d="M1275.5,456.5l5,15"/>
+	<path id="Line-Copy-485" class="st0" d="M1275.5,456.5l13-34"/>
+	<path id="Line-Copy-489" class="st0" d="M1298.5,373.5l-10,49"/>
+	<path id="Line-Copy-486" class="st0" d="M1254.5,396.5l34,26"/>
+	<path id="Line-Copy-487" class="st0" d="M1254.5,396.5l-24,20"/>
+	<path id="Line-Copy-488" class="st0" d="M1275.5,457.5l-45-41"/>
+	<path id="Line-Copy-474" class="st0" d="M1452.5,429.5l-101-44"/>
+	<path id="Line-Copy-477" class="st0" d="M1386.5,447.5l-38-62"/>
+	<path id="Line-Copy-499" class="st0" d="M1386.5,447.5l46,24"/>
+	<path id="Line-Copy-500" class="st0" d="M1386.5,447.5l5,25"/>
+	<path id="Line-Copy-501" class="st0" d="M1386.5,447.5l-20,23"/>
+	<path id="Line-Copy-401" class="st0" d="M1298.5,375.5l35,54"/>
+	<path id="Line-Copy-395" class="st0" d="M1253.5,395.5l-6-79.8"/>
+	<path id="Line-Copy-389" class="st0" d="M1228.5,415.5l-11-46"/>
+	<path id="Line-Copy-318" class="st0" d="M1174.5,363.5l21-9"/>
+	<path id="Line-Copy-319" class="st0" d="M1174.5,363.5h-22"/>
+	<path id="Line-Copy-321" class="st0" d="M1174.5,363.5l-5,24"/>
+	<path id="Line-Copy-323" class="st0" d="M1140.5,400.5l29-13"/>
+	<path id="Line-Copy-324" class="st0" d="M1135.5,374.5l34,33"/>
+	<path id="Line-Copy-330" class="st0" d="M1133.3,374.7l5.2,25.8"/>
+	<path id="Line-Copy-331" class="st0" d="M1103.5,398.5l35,2"/>
+	<path id="Line-Copy-332" class="st0" d="M1103.5,398.5l28-25"/>
+	<path id="Line-Copy-338" class="st0" d="M1103.5,386.3l6-9.8"/>
+	<path id="Line-Copy-339" class="st0" d="M1084.5,372.5v19"/>
+	<path id="Line-Copy-340" class="st0" d="M1104.5,385.5l-20,6"/>
+	<path id="Line-Copy-341" class="st0" d="M1104.5,385.5l-19-16"/>
+	<path id="Line-Copy-342" class="st0" d="M1107.5,375.5l-22-6"/>
+	<path id="Line-Copy-343" class="st0" d="M1107.5,375.5l-6-20"/>
+	<path id="Line-Copy-348" class="st0" d="M1088.5,333.5l13,22"/>
+	<path id="Line-Copy-349" class="st0" d="M1087.5,329.5l-11,10"/>
+	<path id="Line-Copy-350" class="st0" d="M1087.5,354.5l-11-15"/>
+	<path id="Line-Copy-344" class="st0" d="M1107.5,375.5l-21-20"/>
+	<path id="Line-Copy-345" class="st0" d="M1085.5,368.5l1-13"/>
+	<path id="Line-Copy-346" class="st0" d="M1085.5,368.5l14-14"/>
+	<path id="Line-Copy-347" class="st0" d="M1088.5,355.5l11-1"/>
+	<path id="Line-Copy-333" class="st0" d="M1103.5,398.5l-19,11"/>
+	<path id="Line-Copy-334" class="st0" d="M1097.5,421.5l-13-12"/>
+	<path id="Line-Copy-335" class="st0" d="M1097.5,421.5l4-22"/>
+	<path id="Line-Copy-336" class="st0" d="M1097.5,421.5l36,1"/>
+	<path id="Line-Copy-337" class="st0" d="M1103.5,398.5l30,24"/>
+	<path id="Line-Copy-329" class="st0" d="M1138.5,400.5l31,7"/>
+	<path id="Line-Copy-351" class="st0" d="M1132.5,422.5l37-15"/>
+	<path id="Line-Copy-352" class="st0" d="M1132.5,422.5l13,12"/>
+	<path id="Line-Copy-368" class="st0" d="M1160.5,444.5l-15-10"/>
+	<path id="Line-Copy-369" class="st0" d="M1160.5,444.5l15,11"/>
+	<path id="Line-Copy-370" class="st0" d="M1172.5,472.7l2-17"/>
+	<path id="Line-Copy-371" class="st0" d="M1172.5,472.7l21-12.2"/>
+	<path id="Line-Copy-372" class="st0" d="M1185.5,451.5l8,9"/>
+	<path id="Line-Copy-373" class="st0" d="M1185.5,451.5l-16-18"/>
+	<path id="Line-Copy-374" class="st0" d="M1183.5,434.5l-14-1"/>
+	<path id="Line-Copy-375" class="st0" d="M1183.5,434.5l19,14"/>
+	<path id="Line-Copy-376" class="st0" d="M1205.5,462.5l-3-14"/>
+	<path id="Line-Copy-377" class="st0" d="M1205.5,462.5l27-3"/>
+	<path id="Line-Copy-379" class="st0" d="M1226.5,471.5l6-12"/>
+	<path id="Line-Copy-380" class="st0" d="M1239.5,472.5l-7-13"/>
+	<path id="Line-Copy-381" class="st0" d="M1229.5,418.5l3,41"/>
+	<path id="Line-Copy-382" class="st0" d="M1202.5,448.5l30,11"/>
+	<path id="Line-Copy-383" class="st0" d="M1202.5,448.5l25-30"/>
+	<path id="Line-Copy-387" class="st0" d="M1193.5,404.5l34,14"/>
+	<path id="Line-Copy-384" class="st0" d="M1202.5,448.5l-9-43"/>
+	<path id="Line-Copy-385" class="st0" d="M1184.5,431.5l8-27"/>
+	<path id="Line-Copy-386" class="st0" d="M1184.5,431.5l-15-22"/>
+	<path id="Line-Copy-378" class="st0" d="M1205.5,462.5l12,10"/>
+	<path id="Line-Copy-353" class="st0" d="M1130.5,440.5l15-6"/>
+	<path id="Line-Copy-354" class="st0" d="M1130.5,440.5l-15,12"/>
+	<path id="Line-Copy-356" class="st0" d="M1099.5,424.5l16,28"/>
+	<path id="Line-Copy-357" class="st0" d="M1098.5,424.5v17"/>
+	<path id="Line-Copy-358" class="st0" d="M1079.5,438.5l19,3"/>
+	<path id="Line-Copy-359" class="st0" d="M1079.5,438.5l-15,1"/>
+	<path id="Line-Copy-360" class="st0" d="M1059.5,459.5l5-20"/>
+	<path id="Line-Copy-361" class="st0" d="M1059.5,459.5l20-19"/>
+	<path id="Line-Copy-362" class="st0" d="M1083.5,457.5l-4-17"/>
+	<path id="Line-Copy-363" class="st0" d="M1083.5,457.5l32-6"/>
+	<path id="Line-Copy-364" class="st0" d="M1083.5,457.5l11,14"/>
+	<path id="Line-Copy-365" class="st0" d="M1083.5,457.5l-9,14"/>
+	<path id="Line-Copy-366" class="st0" d="M1083.5,457.5l-23,2"/>
+	<path id="Line-Copy-367" class="st0" d="M1067.5,472.5l-7-13"/>
+	<path id="Line-Copy-355" class="st0" d="M1105.5,468.5l10-16"/>
+	<path id="Line-Copy-322" class="st0" d="M1174.5,363.5l-34,35"/>
+	<path id="Line-Copy-320" class="st0" d="M1134.5,372.5l18-9"/>
+	<path id="Line-Copy-309" class="st0" d="M1215.5,284.5v15"/>
+	<path id="Line-Copy-292" class="st0" d="M1229.5,188.5l-21,9"/>
+	<path id="Line-Copy-302" class="st0" d="M1310.5,240.5l-102-43"/>
+	<path id="Line-Copy-293" class="st0" d="M1192.5,212.7l16-15"/>
+	<path id="Line-Copy-294" class="st0" d="M1192.5,212.7l70-18.2"/>
+	<path id="Line-Copy-295" class="st0" d="M1230.5,187.5l32,7"/>
+	<path id="Line-Copy-296" class="st0" d="M1291.5,240.5l-29-46"/>
+	<path id="Line-Copy-298" class="st0" d="M1229.5,245.5l33-51"/>
+	<path id="Line-Copy-297" class="st0" d="M1288.5,205.5l-26-11"/>
+	<path id="Line-Copy-299" class="st0" d="M1286.5,206.5l20,15"/>
+	<path id="Line-Copy-300" class="st0" d="M1286.5,206.5l26,35"/>
+	<path id="Line-Copy-301" class="st0" d="M1286.5,206.5l7,34"/>
+	<path id="Line-Copy-406" class="st0" d="M1305.5,217.5l6,24"/>
+	<path id="Line-Copy-407" class="st0" d="M1294.5,240.5l17,1"/>
+	<path id="Line-Copy-408" class="st0" d="M1294.5,240.5l-24-7"/>
+	<path id="Line-Copy-409" class="st0" d="M1279.5,253.5l-9-20"/>
+	<path id="Line-Copy-410" class="st0" d="M1279.5,253.5l23,17"/>
+	<path id="Line-Copy-411" class="st0" d="M1308.5,254.5l-6,16"/>
+	<path id="Line-Copy-412" class="st0" d="M1247.5,281.5l55-11"/>
+	<path id="Line-Copy-416" class="st0" d="M1319.5,311.5l-17-41"/>
+	<path id="Line-Copy-417" class="st0" d="M1319.5,311.5l36-20"/>
+	<path id="Line-Copy-418" class="st0" d="M1305.5,271.5l50,20"/>
+	<path id="Line-Copy-419" class="st0" d="M1309.5,254.5l46,37"/>
+	<path id="Line-Copy-421" class="st0" d="M1309.5,254.5l94,7"/>
+	<path id="Line-Copy-422" class="st0" d="M1334.5,242.5l69,19"/>
+	<path id="Line-Copy-423" class="st0" d="M1330.5,242.5l-22,11"/>
+	<path id="Line-Copy-424" class="st0" d="M1330.5,242.5l-4-29"/>
+	<path id="Line-Copy-425" class="st0" d="M1343.5,222.5l-17-9"/>
+	<path id="Line-Copy-426" class="st0" d="M1343.5,222.5l56,37"/>
+	<path id="Line-Copy-429" class="st0" d="M1343.5,222.5l51,70"/>
+	<path id="Line-Copy-427" class="st0" d="M1380.5,210.5l21,49"/>
+	<path id="Line-Copy-430" class="st0" d="M1380.5,210.5l26-16"/>
+	<path id="Line-Copy-432" class="st0" d="M1380.5,210.5l75,7"/>
+	<path id="Line-Copy-433" class="st0" d="M1430.5,204.5l25,13"/>
+	<path id="Line-Copy-445" class="st0" d="M1430.5,204.5l28,116"/>
+	<path id="Line-Copy-434" class="st0" d="M1430.5,204.5l-23-9"/>
+	<path id="Line-Copy-435" class="st0" d="M1460.5,240.5l-53-45"/>
+	<path id="Line-Copy-436" class="st0" d="M1457.5,238.5l-3-21"/>
+	<path id="Line-Copy-437" class="st0" d="M1448.5,197.5l6,21"/>
+	<path id="Line-Copy-438" class="st0" d="M1448.5,197.5v-20"/>
+	<path id="Line-Copy-439" class="st0" d="M1455.5,150.5l-8,24"/>
+	<path id="Line-Copy-440" class="st0" d="M1455.5,150.5l22,5"/>
+	<path id="Line-Copy-441" class="st0" d="M1474.5,178.5l3-23"/>
+	<path id="Line-Copy-442" class="st0" d="M1474.5,176.5v33"/>
+	<path id="Line-Copy-443" class="st0" d="M1458.5,240.5l16-31"/>
+	<path id="Line-Copy-444" class="st0" d="M1458.5,240.5l28-9"/>
+	<path id="Line-Copy-446" class="st0" d="M1458.5,240.5v78"/>
+	<path id="Line-Copy-447" class="st0" d="M1458.5,240.5l-54,20"/>
+	<path id="Line-Copy-448" class="st0" d="M1429.5,204.5l-25,56"/>
+	<path id="Line-Copy-449" class="st0" d="M1459.5,320.5l-55-60"/>
+	<path id="Line-Copy-450" class="st0" d="M1459.5,318.5l28-88"/>
+	<path id="Line-Copy-451" class="st0" d="M1487.5,186.5v44"/>
+	<path id="Line-Copy-452" class="st0" d="M1487.5,186.5l13-31"/>
+	<path id="Line-Copy-453" class="st0" d="M1529.5,189.5l-29-31"/>
+	<path id="Line-Copy-454" class="st0" d="M1529.5,189.5l-41,41"/>
+	<path id="Line-Copy-455" class="st0" d="M1522.5,276.5l-34-46"/>
+	<path id="Line-Copy-456" class="st0" d="M1522.5,276.5l-125,17"/>
+	<path id="Line-Copy-457" class="st0" d="M1522.5,276.5l-64,43"/>
+	<path id="Line-Copy-463" class="st0" d="M1516.5,337.5l-58-18"/>
+	<path id="Line-Copy-464" class="st0" d="M1577.5,335.5l-119-16"/>
+	<path id="Line-Copy-465" class="st0" d="M1386.5,450.5l72-131"/>
+	<path id="Line-Copy-458" class="st0" d="M1396.5,293.5l62,26"/>
+	<path id="Line-Copy-459" class="st0" d="M1396.5,293.5l16,57"/>
+	<path id="Line-Copy-467" class="st0" d="M1396.5,293.5l-48,91"/>
+	<path id="Line-Copy-469" class="st0" d="M1396.5,293.5l-75,17"/>
+	<path id="Line-Copy-470" class="st0" d="M1395.5,390.5l-75-79"/>
+	<path id="Line-Copy-468" class="st0" d="M1356.5,290.5l-8,94"/>
+	<path id="Line-Copy-460" class="st0" d="M1456.5,320.5l-44,30"/>
+	<path id="Line-Copy-466" class="st0" d="M1499.5,384.5l-87-34"/>
+	<path id="Line-Copy-491" class="st0" d="M1499.5,384.5l-47,42"/>
+	<path id="Line-Copy-492" class="st0" d="M1433.5,471.5l19-45"/>
+	<path id="Line-Copy-495" class="st0" d="M1458.5,471.5l-8-44"/>
+	<path id="Line-Copy-496" class="st0" d="M1517.5,421.5l-67,6"/>
+	<path id="Line-Copy-497" class="st0" d="M1517.5,421.5l-46,50"/>
+	<path id="Line-Copy-502" class="st0" d="M1517.5,421.5v50"/>
+	<path id="Line-Copy-503" class="st0" d="M1517.5,421.5l25,52"/>
+	<path id="Line-Copy-504" class="st0" d="M1517.5,421.5l69,41"/>
+	<path id="Line-Copy-505" class="st0" d="M1517.5,421.5h83"/>
+	<path id="Line-Copy-506" class="st0" d="M1517.5,421.5l43-29"/>
+	<path id="Line-Copy-507" class="st0" d="M1517.5,421.5l-2-81"/>
+	<path id="Line-Copy-498" class="st0" d="M1517.5,421.5l-16-36"/>
+	<path id="Line-Copy-508" class="st0" d="M1514.5,338.5l-13,47"/>
+	<path id="Line-Copy-509" class="st0" d="M1514.5,338.5l47,50"/>
+	<path id="Line-Copy-520" class="st0" d="M1576.5,338.5l-15,50"/>
+	<path id="Line-Copy-521" class="st0" d="M1674.5,311.5l-113,77"/>
+	<path id="Line-Copy-522" class="st0" d="M1688.5,348.5l-127,43"/>
+	<path id="Line-Copy-523" class="st0" d="M1688.5,348.5l-110-12"/>
+	<path id="Line-Copy-529" class="st0" d="M1602.5,422.5l-24-86"/>
+	<path id="Line-Copy-524" class="st0" d="M1608.5,294.5l-30,42"/>
+	<path id="Line-Copy-530" class="st0" d="M1608.5,292.5l66,16"/>
+	<path id="Line-Copy-531" class="st0" d="M1723.5,219.5l-49,89"/>
+	<path id="Line-Copy-532" class="st0" d="M1723.5,219.5l-142,6"/>
+	<path id="Line-Copy-534" class="st0" d="M1655.5,198.5l-74,27"/>
+	<path id="Line-Copy-535" class="st0" d="M1646.5,143.5l-65,82"/>
+	<path id="Line-Copy-536" class="st0" d="M1530.5,191.5l47,34"/>
+	<path id="Line-Copy-538" class="st0" d="M1530.5,189.5l-6,90"/>
+	<path id="Line-Copy-539" class="st0" d="M1530.5,189.5l115-45"/>
+	<path id="Line-Copy-542" class="st0" d="M1530.5,189.5l60-83"/>
+	<path id="Line-Copy-541" class="st0" d="M1530.5,189.5l-8-27"/>
+	<path id="Line-Copy-545" class="st0" d="M1535.5,137.5l-13,25"/>
+	<path id="Line-Copy-546" class="st0" d="M1535.5,137.5l17-22"/>
+	<path id="Line-Copy-540" class="st0" d="M1523.5,160.5l123-17"/>
+	<path id="Line-Copy-543" class="st0" d="M1535.5,137.5l111,6"/>
+	<path id="Line-Copy-544" class="st0" d="M1551.5,116.5l95,27"/>
+	<path id="Line-Copy-547" class="st0" d="M1610.5,106.5l36,37"/>
+	<path id="Line-Copy-548" class="st0" d="M1644.5,107.5l2,36"/>
+	<path id="Line-Copy-549" class="st0" d="M1684.5,109.5l-38,34"/>
+	<path id="Line-Copy-550" class="st0" d="M1681.5,132.5l-35,11"/>
+	<path id="Line-Copy-557" class="st0" d="M1681.5,132.5l25,5"/>
+	<path id="Line-Copy-558" class="st0" d="M1733.5,149.5l-27-12"/>
+	<path id="Line-Copy-559" class="st0" d="M1733.5,149.5l30,18"/>
+	<path id="Line-Copy-562" class="st0" d="M1709.5,193.5l54-26"/>
+	<path id="Line-Copy-564" class="st0" d="M1752.5,201.5l11-34"/>
+	<path id="Line-Copy-565" class="st0" d="M1752.5,201.5l15-10"/>
+	<path id="Line-Copy-566" class="st0" d="M1752.5,201.5l15-10"/>
+	<path id="Line-Copy-567" class="st0" d="M1753.5,204.5l14,29"/>
+	<path id="Line-Copy-568" class="st0" d="M1751.5,203.5l-23,54"/>
+	<path id="Line-Copy-563" class="st0" d="M1709.5,193.5l-62-48"/>
+	<path id="Line-Copy-560" class="st0" d="M1759.5,142.5l4,25"/>
+	<path id="Line-Copy-561" class="st0" d="M1759.5,142.5l-24,8"/>
+	<path id="Line-Copy-552" class="st0" d="M1681.5,132.5l-24,67"/>
+	<path id="Line-Copy-554" class="st0" d="M1681.5,132.5l24,60"/>
+	<path id="Line-Copy-555" class="st0" d="M1707.5,140.5l-2,52"/>
+	<path id="Line-Copy-556" class="st0" d="M1732.5,152.5l-27,40"/>
+	<path id="Line-Copy-553" class="st0" d="M1762.5,168.5l-105,31"/>
+	<path id="Line-Copy-551" class="st0" d="M1656.5,198.5l-10-55"/>
+	<path id="Line-Copy-537" class="st0" d="M1486.5,231.5l95-6"/>
+	<path id="Line-Copy-533" class="st0" d="M1723.5,219.5l-15-27"/>
+	<path id="Line-Copy-569" class="st0" d="M1723.5,219.5l5,37"/>
+	<path id="Line-Copy-570" class="st0" d="M1723.5,219.5l44,15"/>
+	<path id="Line-Copy-571" class="st0" d="M1729,260l38-25"/>
+	<path id="Line-Copy-580" class="st0" d="M1724.5,371.5l44-126"/>
+	<path id="Line-Copy-581" class="st0" d="M1724.5,371.5l5-50"/>
+	<path id="Line-Copy-594" class="st0" d="M1768.5,310.5l-39,11"/>
+	<path id="Line-Copy-582" class="st0" d="M1724.5,371.5l-34-22"/>
+	<path id="Line-Copy-583" class="st0" d="M1768.5,354.5l-78-5"/>
+	<path id="Line-Copy-584" class="st0" d="M1716.5,406.5l-26-57"/>
+	<path id="Line-Copy-572" class="st0" d="M1729.5,259.5v29"/>
+	<path id="Line-Copy-573" class="st0" d="M1767.5,263.5l-38,25"/>
+	<path id="Line-Copy-578" class="st0" d="M1767.5,297.5l-38-9"/>
+	<path id="Line-Copy-579" class="st0" d="M1768.5,278.5l-39,10"/>
+	<path id="Line-Copy-574" class="st0" d="M1673.5,308.5l56-20"/>
+	<path id="Line-Copy-577" class="st0" d="M1729.5,318.5v-30"/>
+	<path id="Line-Copy-575" class="st0" d="M1673.5,308.5l56,13"/>
+	<path id="Line-Copy-576" class="st0" d="M1673.5,308.5l15,39"/>
+	<path id="Line-Copy-528" class="st0" d="M1608.5,294.5l-28-65"/>
+	<path id="Line-Copy-527" class="st0" d="M1524.5,278.5l54,58"/>
+	<path id="Line-Copy-525" class="st0" d="M1608.5,294.5l-93,44"/>
+	<path id="Line-Copy-526" class="st0" d="M1577.5,227.5l-62,111"/>
+	<path id="Line-Copy-510" class="st0" d="M1604.5,421.5l-43-33"/>
+	<path id="Line-Copy-511" class="st0" d="M1604.5,421.5l-70,51"/>
+	<path id="Line-Copy-512" class="st0" d="M1604.5,421.5l-16,41"/>
+	<path id="Line-Copy-513" class="st0" d="M1577.5,471.5l11-9"/>
+	<path id="Line-Copy-514" class="st0" d="M1586.5,472.5l2-10"/>
+	<path id="Line-Copy-515" class="st0" d="M1613.5,472.5l-25-10"/>
+	<path id="Line-Copy-516" class="st0" d="M1714.5,408.5l-126,54"/>
+	<path id="Line-Copy-517" class="st0" d="M1714.5,408.5l-58,63"/>
+	<path id="Line-Copy-518" class="st0" d="M1714.5,408.5l-109,13"/>
+	<path id="Line-Copy-519" class="st0" d="M1721.5,374.5l-116,47"/>
+	<path id="Line-Copy-585" class="st0" d="M1723.5,373.5l45,5"/>
+	<path id="Line-Copy-593" class="st0" d="M1723.5,373.5l44-42"/>
+	<path id="Line-Copy-586" class="st0" d="M1714.5,409.5l54-31"/>
+	<path id="Line-Copy-595" class="st0" d="M1657.5,471.5l111-93"/>
+	<path id="Line-Copy-589" class="st0" d="M1715.5,409.5l13,55"/>
+	<path id="Line-Copy-590" class="st0" d="M1715.5,409.5l-10,61"/>
+	<path id="Line-Copy-591" class="st0" d="M1727.5,464.5l-22,6"/>
+	<path id="Line-Copy-596" class="st0" d="M1727.5,464.5l29-3"/>
+	<path id="Line-Copy-599" class="st0" d="M1768.5,448.5l-12,13"/>
+	<path id="Line-Copy-600" class="st0" d="M1762.5,471.5l-6-10"/>
+	<path id="Line-Copy-601" class="st0" d="M1756.5,471.5v-10"/>
+	<path id="Line-Copy-598" class="st0" d="M1727.5,464.5l41-18"/>
+	<path id="Line-Copy-597" class="st0" d="M1727.5,464.5l9,6"/>
+	<path id="Line-Copy-592" class="st0" d="M1727.5,464.5l42-67"/>
+	<path id="Line-Copy-587" class="st0" d="M1714.5,409.5l8-35"/>
+	<path id="Line-Copy-588" class="st0" d="M1767.5,438.5l-45-64"/>
+	<path id="Line-Copy-493" class="st0" d="M1416.5,471.5l36-45"/>
+	<path id="Line-Copy-494" class="st0" d="M1379.5,470.5l73-44"/>
+	<path id="Line-Copy-461" class="st0" d="M1357.5,292.5l55,58"/>
+	<path id="Line-Copy-462" class="st0" d="M1357.5,290.5l35,3"/>
+	<path id="Line-Copy-431" class="st0" d="M1403.5,259.5l3-65"/>
+	<path id="Line-Copy-428" class="st0" d="M1380.5,210.5l-35,12"/>
+	<path id="Line-Copy-420" class="st0" d="M1331.5,243.5l25,46"/>
+	<path id="Line-Copy-414" class="st0" d="M1247.5,281.5l72,30"/>
+	<path id="Line-Copy-415" class="st0" d="M1247.5,281.5l55,66"/>
+	<path id="Line-Copy-413" class="st0" d="M1247.5,281.5l31-27"/>
+	<path id="Line-Copy-272" class="st0" d="M1162.5,315.5l6-23"/>
+	<path id="Line-Copy-275" class="st0" d="M1162.5,315.5l2,17"/>
+	<path id="Line-Copy-276" class="st0" d="M1191.5,328.5l-24,5"/>
+	<path id="Line-Copy-277" class="st0" d="M1181.5,345.5l-14-12"/>
+	<path id="Line-Copy-278" class="st0" d="M1181.5,345.5l11-17"/>
+	<path id="Line-Copy-280" class="st0" d="M1195.5,304.5l-3,24"/>
+	<path id="Line-Copy-281" class="st0" d="M1195.5,304.5l-32-48"/>
+	<path id="Line-Copy-282" class="st0" d="M1147.5,276.5l16-20"/>
+	<path id="Line-Copy-279" class="st0" d="M1181.5,345.5l-11-55"/>
+	<path id="Line-Copy-273" class="st0" d="M1162.5,315.5l-13,8"/>
+	<path id="Line-Copy-274" class="st0" d="M1136.5,315.5l10,9"/>
+	<path id="Line-Copy-266" class="st0" d="M1031.5,267.5l-30-10"/>
+	<path id="Line-Copy-259" class="st0" d="M999.5,256.5l-10,9"/>
+	<path id="Line-Copy-236" class="st0" d="M771.5,357.5l32,36"/>
+	<path id="Line-Copy-238" class="st0" d="M771.5,357.5l8,32"/>
+	<path id="Line-Copy-237" class="st0" d="M794.5,349.5l8,42"/>
+	<path id="Line-Copy-239" class="st0" d="M794.5,349.5l-5-17"/>
+	<path id="Line-Copy-192" class="st0" d="M755.5,381.5l-27,28"/>
+	<path id="Line-Copy-193" class="st0" d="M755.5,381.5l-16-15"/>
+	<path id="Line-Copy-194" class="st0" d="M741.5,341.5l-5,22"/>
+	<path id="Line-Copy-248" class="st0" d="M741.5,339.5l-25,5"/>
+	<path id="Line-Copy-249" class="st0" d="M741.5,339.5l-29-6"/>
+	<path id="Line-Copy-250" class="st0" d="M717.5,344.5l-7-11"/>
+	<path id="Line-Copy-251" class="st0" d="M705.5,320.5l5,13"/>
+	<path id="Line-Copy-253" class="st0" d="M736.5,289.5l-26,44"/>
+	<path id="Line-Copy-252" class="st0" d="M705.5,320.5l3-15"/>
+	<path id="Line-Copy-254" class="st0" d="M712.5,289.5l-4,16"/>
+	<path id="Line-Copy-255" class="st0" d="M713.5,286.5l24,3"/>
+	<path id="Line-Copy-256" class="st0" d="M751.5,306.5l-14-17"/>
+	<path id="Line-Copy-257" class="st0" d="M751.5,306.5l-42-3"/>
+	<path id="Line-Copy-195" class="st0" d="M741.5,340.5l30,17"/>
+	<path id="Line-Copy-196" class="st0" d="M703.5,356.5l12-13"/>
+	<path id="Line-Copy-197" class="st0" d="M703.5,356.5l2,20"/>
+	<path id="Line-Copy-198" class="st0" d="M696.5,387.5l9-11"/>
+	<path id="Line-Copy-199" class="st0" d="M696.5,387.5l29,22"/>
+	<path id="Line-Copy-200" class="st0" d="M696.5,387.5l-21,2"/>
+	<path id="Line-Copy-201" class="st0" d="M696.5,387.5l-7-23"/>
+	<path id="Line-Copy-202" class="st0" d="M671.5,352.5l18,12"/>
+	<path id="Line-Copy-203" class="st0" d="M671.5,352.5l-27-14"/>
+	<path id="Line-Copy-204" class="st0" d="M629.5,327.5l15,11"/>
+	<path id="Line-Copy-205" class="st0" d="M629.5,327.5l-10-15"/>
+	<path id="Line-Copy-206" class="st0" d="M629.5,295.5l-10,17"/>
+	<path id="Line-Copy-207" class="st0" d="M629.5,295.5l11-20"/>
+	<path id="Line-Copy-208" class="st0" d="M629.5,295.5l-55-25"/>
+	<path id="Line-Copy-209" class="st0" d="M638.5,274.5l-65-5"/>
+	<path id="Line-Copy-210" class="st0" d="M638.5,274.5l17-7"/>
+	<path id="Line-Copy-211" class="st0" d="M653.5,252.5l2,15"/>
+	<path id="Line-Copy-212" class="st0" d="M652.5,250.5l-12,23"/>
+	<path id="Line-Copy-213" class="st0" d="M652.5,250.5l18-6"/>
+	<path id="Line-Copy-214" class="st0" d="M680.5,240.5l-10,4"/>
+	<path id="Line-Copy-215" class="st0" d="M680.5,240.5l7-14"/>
+	<path id="Line-Copy-216" class="st0" d="M683.5,200.5l4,26"/>
+	<path id="Line-Copy-217" class="st0" d="M683.5,200.5l-11,12"/>
+	<path id="Line-Copy-218" class="st0" d="M653.5,229.5l19-17"/>
+	<path id="Line-Copy-219" class="st0" d="M653.5,229.5l-9-11"/>
+	<path id="Line-Copy-220" class="st0" d="M634.5,203.5l10,15"/>
+	<path id="Line-Copy-221" class="st0" d="M634.5,203.5l-9,10"/>
+	<path id="Line-Copy-222" class="st0" d="M609.5,228.5l16-15"/>
+	<path id="Line-Copy-223" class="st0" d="M608.5,227.5l46,23"/>
+	<path id="Line-Copy-224" class="st0" d="M608.5,227.5l-36,42"/>
+	<path id="Line-Copy-225" class="st0" d="M608.5,227.5l-48,8"/>
+	<path id="Line-Copy-226" class="st0" d="M608.5,227.5l-13-5"/>
+	<path id="Line-Copy-227" class="st0" d="M558.5,235.5l37-13"/>
+	<path id="Line-Copy-228" class="st0" d="M576.5,221.5l19,1"/>
+	<path id="Line-Copy-229" class="st0" d="M576.5,221.5l-15-3"/>
+	<path id="Line-Copy-230" class="st0" d="M559.5,233.5v-15"/>
+	<path id="Line-Copy-187" class="st0" d="M795.5,428.5l-6-7"/>
+	<path id="Line-Copy-185" class="st0" d="M796.5,429.5l-23-1"/>
+	<path id="Line-Copy-180" class="st0" d="M753.5,408.5l-7,41"/>
+	<path id="Line-Copy-176" class="st0" d="M746,451l-14.5,8.5"/>
+	<path id="Line-Copy-177" class="st0" d="M716.5,471.5l15-12"/>
+	<path id="Line-Copy-174" class="st0" d="M698.5,423.5l29-12"/>
+	<path id="Line-Copy-170" class="st0" d="M675.5,439.5v32"/>
+	<path id="Line-Copy-168" class="st0" d="M690.5,468.5l-45-46"/>
+	<path id="Line-Copy-166" class="st0" d="M627.5,380.5l18,42"/>
+	<path id="Line-Copy-155" class="st0" d="M619.5,312.5l-17,2"/>
+	<path id="Line-Copy-156" class="st0" d="M573.5,271.5l29,43"/>
+	<path id="Line-Copy-157" class="st0" d="M573.5,271.5l17,67"/>
+	<path id="Line-Copy-150" class="st0" d="M536.5,390.5l52-50"/>
+	<path id="Line-Copy-151" class="st0" d="M533.5,389.5l5-47"/>
+	<path id="Line-Copy-152" class="st0" d="M564.5,378.5l-24-36"/>
+	<path id="Line-Copy-146" class="st0" d="M606.5,404.5l-35-3"/>
+	<path id="Line-Copy-144" class="st0" d="M605.5,403.5v14"/>
+	<path id="Line-Copy-117" class="st0" d="M507.5,402.5l97,19"/>
+	<path id="Line-Copy-108" class="st0" d="M476.5,410.5l64,10"/>
+	<path id="Line-Copy-110" class="st0" d="M534.5,391.5l6,29"/>
+	<path id="Line-Copy-111" class="st0" d="M534.5,391.5l-27,9"/>
+	<path id="Line-Copy-95" class="st0" d="M490.5,379.5l-21-22"/>
+	<path id="Line-Copy-91" class="st0" d="M553.5,299.5l19-28"/>
+	<path id="Line-Copy-77" class="st0" d="M553.5,299.5l-57-5"/>
+	<path id="Line-Copy-7" class="st0" d="M517.5,225.5l23-2"/>
+	<path id="Line-Copy-8" class="st0" d="M517.5,225.5l-2-13"/>
+	<path id="Line-Copy-9" class="st0" d="M482.5,201.5l33,11"/>
+	<path id="Line-Copy-10" class="st0" d="M482.5,201.5l-20,2"/>
+	<path id="Line-Copy-11" class="st0" d="M442.5,194.5l20,9"/>
+	<path id="Line-Copy-12" class="st0" d="M439.5,192.5l-24,16"/>
+	<circle id="Oval-28" class="st1" cx="310" cy="177" r="3"/>
+	<circle id="Oval-28_1_" class="st1" cx="322" cy="185" r="3"/>
+	<circle id="Oval-28_2_" class="st1" cx="345" cy="188" r="3"/>
+	<circle id="Oval-28_3_" class="st1" cx="289" cy="188" r="3"/>
+	<circle id="Oval-28-Copy-284" class="st1" cx="289" cy="188" r="3"/>
+	<circle id="Oval-28_4_" class="st1" cx="276" cy="199" r="3"/>
+	<circle id="Oval-28-Copy" class="st1" cx="279" cy="236" r="3"/>
+	<circle id="Oval-28-Copy-2" class="st1" cx="295" cy="235" r="3"/>
+	<circle id="Oval-28-Copy-285" class="st1" cx="295" cy="235" r="3"/>
+	<circle id="Oval-28-Copy-3" class="st1" cx="283" cy="246" r="3"/>
+	<circle id="Oval-28-Copy-4" class="st1" cx="283" cy="260" r="3"/>
+	<circle id="Oval-28-Copy-286" class="st1" cx="283" cy="260" r="3"/>
+	<circle id="Oval-28-Copy-287" class="st1" cx="283" cy="260" r="3"/>
+	<circle id="Oval-28-Copy-5" class="st1" cx="287" cy="275" r="3"/>
+	<circle id="Oval-28-Copy-6" class="st1" cx="276" cy="278" r="3"/>
+	<circle id="Oval-28-Copy-7" class="st1" cx="317" cy="256" r="3"/>
+	<circle id="Oval-28-Copy-8" class="st1" cx="348" cy="301" r="3"/>
+	<circle id="Oval-28-Copy-9" class="st1" cx="334" cy="316" r="3"/>
+	<circle id="Oval-28-Copy-10" class="st1" cx="314" cy="331" r="3"/>
+	<circle id="Oval-28-Copy-11" class="st1" cx="304" cy="319" r="3"/>
+	<circle id="Oval-28-Copy-12" class="st1" cx="298" cy="334" r="3"/>
+	<circle id="Oval-28-Copy-13" class="st1" cx="298" cy="345" r="3"/>
+	<circle id="Oval-28-Copy-14" class="st1" cx="282" cy="340" r="3"/>
+	<circle id="Oval-28-Copy-15" class="st1" cx="279" cy="351" r="3"/>
+	<circle id="Oval-28-Copy-16" class="st1" cx="287" cy="322" r="3"/>
+	<circle id="Oval-28-Copy-17" class="st1" cx="279" cy="313" r="3"/>
+	<circle id="Oval-28-Copy-18" class="st1" cx="383" cy="310" r="3"/>
+	<circle id="Oval-28-Copy-19" class="st1" cx="367" cy="304" r="3"/>
+	<circle id="Oval-28-Copy-20" class="st1" cx="370" cy="287" r="3"/>
+	<circle id="Oval-28-Copy-290" class="st1" cx="370" cy="287" r="3"/>
+	<circle id="Oval-28-Copy-128" class="st1" cx="399" cy="259" r="3"/>
+	<circle id="Oval-28-Copy-129" class="st1" cx="387" cy="200" r="3"/>
+	<circle id="Oval-28-Copy-131" class="st1" cx="367" cy="195" r="3"/>
+	<circle id="Oval-28-Copy-132" class="st1" cx="414" cy="211" r="3"/>
+	<circle id="Oval-28-Copy-282" class="st1" cx="414" cy="211" r="3"/>
+	<circle id="Oval-28-Copy-134" class="st1" cx="461" cy="203" r="3"/>
+	<circle id="Oval-28-Copy-135" class="st1" cx="481" cy="200" r="3"/>
+	<circle id="Oval-28-Copy-136" class="st1" cx="516" cy="211" r="3"/>
+	<circle id="Oval-28-Copy-137" class="st1" cx="543" cy="224" r="3"/>
+	<circle id="Oval-28-Copy-138" class="st1" cx="560" cy="218" r="3"/>
+	<circle id="Oval-28-Copy-139" class="st1" cx="559" cy="235" r="3"/>
+	<circle id="Oval-28-Copy-140" class="st1" cx="577" cy="221" r="3"/>
+	<circle id="Oval-28-Copy-141" class="st1" cx="594" cy="222" r="3"/>
+	<circle id="Oval-28-Copy-21" class="st1" cx="402" cy="319" r="3"/>
+	<circle id="Oval-28-Copy-291" class="st1" cx="402" cy="319" r="3"/>
+	<circle id="Oval-28-Copy-22" class="st1" cx="414" cy="295" r="3"/>
+	<circle id="Oval-28-Copy-289" class="st1" cx="414" cy="295" r="3"/>
+	<circle id="Oval-28-Copy-23" class="st1" cx="420" cy="334" r="3"/>
+	<circle id="Oval-28-Copy-24" class="st1" cx="438" cy="354" r="3"/>
+	<circle id="Oval-28-Copy-292" class="st1" cx="438" cy="354" r="3"/>
+	<circle id="Oval-28-Copy-25" class="st1" cx="478" cy="333" r="3"/>
+	<circle id="Oval-28-Copy-26" class="st1" cx="470" cy="358" r="3"/>
+	<circle id="Oval-28-Copy-293" class="st1" cx="470" cy="358" r="3"/>
+	<circle id="Oval-28-Copy-27" class="st1" cx="455" cy="377" r="3"/>
+	<circle id="Oval-28-Copy-28" class="st1" cx="470" cy="381" r="3"/>
+	<circle id="Oval-28-Copy-29" class="st1" cx="461" cy="396" r="3"/>
+	<circle id="Oval-28-Copy-30" class="st1" cx="491" cy="380" r="3"/>
+	<circle id="Oval-28-Copy-31" class="st1" cx="506" cy="402" r="3"/>
+	<circle id="Oval-28-Copy-32" class="st1" cx="475" cy="410" r="3"/>
+	<circle id="Oval-28-Copy-33" class="st1" cx="473" cy="450" r="3"/>
+	<circle id="Oval-28-Copy-34" class="st1" cx="473" cy="432" r="3"/>
+	<circle id="Oval-28-Copy-35" class="st1" cx="490" cy="443" r="3"/>
+	<circle id="Oval-28-Copy-36" class="st1" cx="479" cy="468" r="3"/>
+	<circle id="Oval-28-Copy-37" class="st1" cx="520" cy="444" r="3"/>
+	<circle id="Oval-28-Copy-39" class="st1" cx="506" cy="426" r="3"/>
+	<circle id="Oval-28-Copy-40" class="st1" cx="540" cy="420" r="3"/>
+	<circle id="Oval-28-Copy-41" class="st1" cx="540" cy="444" r="3"/>
+	<circle id="Oval-28-Copy-42" class="st1" cx="563" cy="429" r="3"/>
+	<circle id="Oval-28-Copy-43" class="st1" cx="577" cy="450" r="3"/>
+	<circle id="Oval-28-Copy-44" class="st1" cx="628" cy="453" r="3"/>
+	<circle id="Oval-28-Copy-46" class="st1" cx="605" cy="404" r="3"/>
+	<circle id="Oval-28-Copy-47" class="st1" cx="571" cy="401" r="3"/>
+	<circle id="Oval-28-Copy-48" class="st1" cx="566" cy="380" r="3"/>
+	<circle id="Oval-28-Copy-49" class="st1" cx="534" cy="390" r="3"/>
+	<circle id="Oval-28-Copy-50" class="st1" cx="540" cy="340" r="3"/>
+	<circle id="Oval-28-Copy-51" class="st1" cx="591" cy="340" r="3"/>
+	<circle id="Oval-28-Copy-52" class="st1" cx="616" cy="387" r="3"/>
+	<circle id="Oval-28-Copy-53" class="st1" cx="628" cy="381" r="3"/>
+	<circle id="Oval-28-Copy-54" class="st1" cx="646" cy="423" r="3"/>
+	<circle id="Oval-28-Copy-55" class="st1" cx="676" cy="438" r="3"/>
+	<circle id="Oval-28-Copy-56" class="st1" cx="691" cy="468" r="3"/>
+	<circle id="Oval-28-Copy-57" class="st1" cx="697" cy="423" r="3"/>
+	<circle id="Oval-28-Copy-58" class="st1" cx="673" cy="390" r="3"/>
+	<circle id="Oval-28-Copy-59" class="st1" cx="697" cy="387" r="3"/>
+	<circle id="Oval-28-Copy-60" class="st1" cx="706" cy="375" r="3"/>
+	<circle id="Oval-28-Copy-61" class="st1" cx="703" cy="357" r="3"/>
+	<circle id="Oval-28-Copy-62" class="st1" cx="688" cy="363" r="3"/>
+	<circle id="Oval-28-Copy-63" class="st1" cx="670" cy="352" r="3"/>
+	<circle id="Oval-28-Copy-64" class="st1" cx="646" cy="340" r="3"/>
+	<circle id="Oval-28-Copy-95" class="st1" cx="628" cy="326" r="3"/>
+	<circle id="Oval-28-Copy-96" class="st1" cx="619" cy="311" r="3"/>
+	<circle id="Oval-28-Copy-97" class="st1" cx="602" cy="314" r="3"/>
+	<circle id="Oval-28-Copy-98" class="st1" cx="631" cy="294" r="3"/>
+	<circle id="Oval-28-Copy-99" class="st1" cx="640" cy="275" r="3"/>
+	<circle id="Oval-28-Copy-100" class="st1" cx="657" cy="267" r="3"/>
+	<circle id="Oval-28-Copy-101" class="st1" cx="657" cy="267" r="3"/>
+	<circle id="Oval-28-Copy-102" class="st1" cx="653.5" cy="249.5" r="3"/>
+	<circle id="Oval-28-Copy-103" class="st1" cx="672.5" cy="242.5" r="3"/>
+	<circle id="Oval-28-Copy-104" class="st1" cx="672.5" cy="242.5" r="3"/>
+	<circle id="Oval-28-Copy-105" class="st1" cx="681.6" cy="239.6" r="3"/>
+	<circle id="Oval-28-Copy-105_1_" class="st1" cx="687.6" cy="224.6" r="3"/>
+	<circle id="Oval-28-Copy-106" class="st1" cx="687.6" cy="224.6" r="3"/>
+	<circle id="Oval-28-Copy-107" class="st1" cx="683.6" cy="198.6" r="3"/>
+	<circle id="Oval-28-Copy-108" class="st1" cx="669.6" cy="213.6" r="3"/>
+	<circle id="Oval-28-Copy-109" class="st1" cx="653.6" cy="228.6" r="3"/>
+	<circle id="Oval-28-Copy-110" class="st1" cx="643.6" cy="217.6" r="3"/>
+	<circle id="Oval-28-Copy-111" class="st1" cx="633.6" cy="202.6" r="3"/>
+	<circle id="Oval-28-Copy-114" class="st1" cx="624.6" cy="213.6" r="3"/>
+	<circle id="Oval-28-Copy-115" class="st1" cx="609.6" cy="228.6" r="3"/>
+	<circle id="Oval-28-Copy-116" class="st1" cx="609.6" cy="228.6" r="3"/>
+	<circle id="Oval-28-Copy-117" class="st1" cx="609.6" cy="228.6" r="3"/>
+	<circle id="Oval-28-Copy-118" class="st1" cx="609.6" cy="228.6" r="3"/>
+	<circle id="Oval-28-Copy-119" class="st1" cx="609.6" cy="228.6" r="3"/>
+	<circle id="Oval-28-Copy-120" class="st1" cx="572.6" cy="269.6" r="3"/>
+	<circle id="Oval-28-Copy-295" class="st1" cx="572.6" cy="269.6" r="3"/>
+	<circle id="Oval-28-Copy-121" class="st1" cx="552.4" cy="299.6" r="3"/>
+	<circle id="Oval-28-Copy-122" class="st1" cx="516.6" cy="319.6" r="3"/>
+	<circle id="Oval-28-Copy-123" class="st1" cx="493.6" cy="294.6" r="3"/>
+	<circle id="Oval-28-Copy-124" class="st1" cx="463.6" cy="270.6" r="3"/>
+	<circle id="Oval-28-Copy-126" class="st1" cx="516.6" cy="224.6" r="3"/>
+	<circle id="Oval-28-Copy-283" class="st1" cx="516.6" cy="224.6" r="3"/>
+	<circle id="Oval-28-Copy-127" class="st1" cx="457.6" cy="245.6" r="3"/>
+	<circle id="Oval-28-Copy-288" class="st1" cx="457.6" cy="245.6" r="3"/>
+	<circle id="Oval-28-Copy-65" class="st1" cx="727" cy="410" r="3"/>
+	<circle id="Oval-28-Copy-66" class="st1" cx="731" cy="459" r="3"/>
+	<circle id="Oval-28-Copy-67" class="st1" cx="746" cy="450" r="3"/>
+	<circle id="Oval-28-Copy-68" class="st1" cx="755" cy="435" r="3"/>
+	<circle id="Oval-28-Copy-69" class="st1" cx="775" cy="444" r="3"/>
+	<circle id="Oval-28-Copy-70" class="st1" cx="775" cy="429" r="3"/>
+	<circle id="Oval-28-Copy-71" class="st1" cx="775" cy="415" r="3"/>
+	<circle id="Oval-28-Copy-72" class="st1" cx="789" cy="421" r="3"/>
+	<circle id="Oval-28-Copy-73" class="st1" cx="795" cy="429" r="3"/>
+	<circle id="Oval-28-Copy-74" class="st1" cx="753.9" cy="407.9" r="3"/>
+	<circle id="Oval-28-Copy-75" class="st1" cx="777.9" cy="391.9" r="3"/>
+	<circle id="Oval-28-Copy-94" class="st1" cx="777.9" cy="400.1" r="3"/>
+	<circle id="Oval-28-Copy-75_1_" class="st1" cx="736.9" cy="364.9" r="3"/>
+	<circle id="Oval-28-Copy-77" class="st1" cx="755.9" cy="379.9" r="3"/>
+	<circle id="Oval-28-Copy-78" class="st1" cx="771.9" cy="356.9" r="3"/>
+	<circle id="Oval-28-Copy-79" class="st1" cx="793.9" cy="346.9" r="3"/>
+	<circle id="Oval-28-Copy-80" class="st1" cx="812.9" cy="358.9" r="3"/>
+	<circle id="Oval-28-Copy-81" class="st1" cx="820.7" cy="375.9" r="3"/>
+	<circle id="Oval-28-Copy-142" class="st1" cx="1097.9" cy="441.9" r="3"/>
+	<circle id="Oval-28-Copy-145" class="st1" cx="1058.9" cy="458.9" r="3"/>
+	<circle id="Oval-28-Copy-146" class="st1" cx="1064.9" cy="438.9" r="3"/>
+	<circle id="Oval-28-Copy-147" class="st1" cx="1105.9" cy="467.9" r="3"/>
+	<circle id="Oval-28-Copy-148" class="st1" cx="1116.9" cy="451.9" r="3"/>
+	<circle id="Oval-28-Copy-149" class="st1" cx="1128.7" cy="440.9" r="3"/>
+	<circle id="Oval-28-Copy-150" class="st1" cx="1132.9" cy="422.9" r="3"/>
+	<circle id="Oval-28-Copy-151" class="st1" cx="1097.9" cy="422.9" r="3"/>
+	<circle id="Oval-28-Copy-152" class="st1" cx="1146.7" cy="435.9" r="3"/>
+	<circle id="Oval-28-Copy-153" class="st1" cx="1159.5" cy="443.9" r="3"/>
+	<circle id="Oval-28-Copy-154" class="st1" cx="1173.9" cy="453.9" r="3"/>
+	<circle id="Oval-28-Copy-155" class="st1" cx="1169.9" cy="432.9" r="3"/>
+	<circle id="Oval-28-Copy-156" class="st1" cx="1183.9" cy="449.9" r="3"/>
+	<circle id="Oval-28-Copy-157" class="st1" cx="1194.9" cy="459.9" r="3"/>
+	<circle id="Oval-28-Copy-158" class="st1" cx="1206.9" cy="463.9" r="3"/>
+	<circle id="Oval-28-Copy-159" class="st1" cx="1203" cy="448.9" r="3"/>
+	<circle id="Oval-28-Copy-160" class="st1" cx="1183.9" cy="433.9" r="3"/>
+	<circle id="Oval-28-Copy-161" class="st1" cx="1169.9" cy="408.9" r="3"/>
+	<circle id="Oval-28-Copy-162" class="st1" cx="1138.9" cy="400.9" r="3"/>
+	<circle id="Oval-28-Copy-296" class="st1" cx="1132.9" cy="372.9" r="3"/>
+	<circle id="Oval-28-Copy-297" class="st1" cx="1151.9" cy="363.9" r="3"/>
+	<circle id="Oval-28-Copy-298" class="st1" cx="1108.9" cy="376.9" r="3"/>
+	<circle id="Oval-28-Copy-299" class="st1" cx="1102.9" cy="385.9" r="3"/>
+	<circle id="Oval-28-Copy-300" class="st1" cx="1101.9" cy="398.9" r="3"/>
+	<circle id="Oval-28-Copy-301" class="st1" cx="1083.9" cy="408.9" r="3"/>
+	<circle id="Oval-28-Copy-302" class="st1" cx="1083.9" cy="391.9" r="3"/>
+	<circle id="Oval-28-Copy-303" class="st1" cx="1083.9" cy="369.9" r="3"/>
+	<circle id="Oval-28-Copy-304" class="st1" cx="1100.9" cy="352.9" r="3"/>
+	<circle id="Oval-28-Copy-305" class="st1" cx="1087.9" cy="355.9" r="3"/>
+	<circle id="Oval-28-Copy-306" class="st1" cx="1087.9" cy="330.9" r="3"/>
+	<circle id="Oval-28-Copy-308" class="st1" cx="1029.9" cy="266.9" r="3"/>
+	<circle id="Oval-28-Copy-309" class="st1" cx="1012.9" cy="274.9" r="3"/>
+	<circle id="Oval-28-Copy-310" class="st1" cx="998.9" cy="273.9" r="3"/>
+	<circle id="Oval-28-Copy-311" class="st1" cx="987.9" cy="266.9" r="3"/>
+	<circle id="Oval-28-Copy-312" class="st1" cx="999.9" cy="256.9" r="3"/>
+	<circle id="Oval-28-Copy-313" class="st1" cx="1014.9" cy="249.9" r="3"/>
+	<circle id="Oval-28-Copy-314" class="st1" cx="1029.9" cy="250.9" r="3"/>
+	<circle id="Oval-28-Copy-315" class="st1" cx="987.9" cy="240.9" r="3"/>
+	<circle id="Oval-28-Copy-307" class="st1" cx="1075.9" cy="338.9" r="3"/>
+	<circle id="Oval-28-Copy-163" class="st1" cx="1169.9" cy="387.9" r="3"/>
+	<circle id="Oval-28-Copy-164" class="st1" cx="1191.9" cy="403.9" r="3"/>
+	<circle id="Oval-28-Copy-165" class="st1" cx="1228.9" cy="417.9" r="3"/>
+	<circle id="Oval-28-Copy-166" class="st1" cx="1232.9" cy="457.9" r="3"/>
+	<circle id="Oval-28-Copy-167" class="st1" cx="1289.9" cy="421.9" r="3"/>
+	<circle id="Oval-28-Copy-168" class="st1" cx="1274.9" cy="456.9" r="3"/>
+	<circle id="Oval-28-Copy-169" class="st1" cx="1303.9" cy="457.9" r="3"/>
+	<circle id="Oval-28-Copy-170" class="st1" cx="1334.9" cy="429.9" r="3"/>
+	<circle id="Oval-28-Copy-171" class="st1" cx="1386.9" cy="448.9" r="3"/>
+	<circle id="Oval-28-Copy-172" class="st1" cx="1348.9" cy="385.9" r="3"/>
+	<circle id="Oval-28-Copy-173" class="st1" cx="1297.7" cy="374.9" r="3"/>
+	<circle id="Oval-28-Copy-174" class="st1" cx="1228.9" cy="332.9" r="3"/>
+	<circle id="Oval-28-Copy-180" class="st1" cx="1214.9" cy="343.9" r="3"/>
+	<circle id="Oval-28-Copy-181" class="st1" cx="1194.9" cy="354.9" r="3"/>
+	<circle id="Oval-28-Copy-182" class="st1" cx="1173.9" cy="363.9" r="3"/>
+	<circle id="Oval-28-Copy-183" class="st1" cx="1181.9" cy="347.9" r="3"/>
+	<circle id="Oval-28-Copy-184" class="st1" cx="1191.9" cy="328.9" r="3"/>
+	<circle id="Oval-28-Copy-185" class="st1" cx="1195.9" cy="302.9" r="3"/>
+	<circle id="Oval-28-Copy-186" class="st1" cx="1198.9" cy="277.9" r="3"/>
+	<circle id="Oval-28-Copy-189" class="st1" cx="1214.9" cy="283.9" r="3"/>
+	<circle id="Oval-28-Copy-190" class="st1" cx="1214.9" cy="299.9" r="3"/>
+	<circle id="Oval-28-Copy-191" class="st1" cx="1236.9" cy="307.9" r="3"/>
+	<circle id="Oval-28-Copy-192" class="st1" cx="1245.9" cy="315.9" r="3"/>
+	<circle id="Oval-28-Copy-193" class="st1" cx="1245.9" cy="281.9" r="3"/>
+	<circle id="Oval-28-Copy-194" class="st1" cx="1213.9" cy="258.9" r="3"/>
+	<circle id="Oval-28-Copy-195" class="st1" cx="1228.9" cy="246.9" r="3"/>
+	<circle id="Oval-28-Copy-197" class="st1" cx="1303.9" cy="270.9" r="3"/>
+	<circle id="Oval-28-Copy-198" class="st1" cx="1303.9" cy="270.9" r="3"/>
+	<circle id="Oval-28-Copy-199" class="st1" cx="1320" cy="312" r="3"/>
+	<circle id="Oval-28-Copy-200" class="st1" cx="1279" cy="253" r="3"/>
+	<circle id="Oval-28-Copy-201" class="st1" cx="1271" cy="234" r="3"/>
+	<circle id="Oval-28-Copy-202" class="st1" cx="1294" cy="240" r="3"/>
+	<circle id="Oval-28-Copy-203" class="st1" cx="1308" cy="254" r="3"/>
+	<circle id="Oval-28-Copy-204" class="st1" cx="1357" cy="291" r="3"/>
+	<circle id="Oval-28-Copy-205" class="st1" cx="1331" cy="242" r="3"/>
+	<circle id="Oval-28-Copy-223" class="st1" cx="1345" cy="223" r="3"/>
+	<circle id="Oval-28-Copy-224" class="st1" cx="1327" cy="212" r="3"/>
+	<circle id="Oval-28-Copy-225" class="st1" cx="1381" cy="210" r="3"/>
+	<circle id="Oval-28-Copy-226" class="st1" cx="1403" cy="261" r="3"/>
+	<circle id="Oval-28-Copy-227" class="st1" cx="1395" cy="294" r="3"/>
+	<circle id="Oval-28-Copy-228" class="st1" cx="1413" cy="352" r="3"/>
+	<circle id="Oval-28-Copy-229" class="st1" cx="1459" cy="320" r="3"/>
+	<circle id="Oval-28-Copy-230" class="st1" cx="1515" cy="338" r="3"/>
+	<circle id="Oval-28-Copy-231" class="st1" cx="1500" cy="384" r="3"/>
+	<circle id="Oval-28-Copy-232" class="st1" cx="1519" cy="422" r="3"/>
+	<circle id="Oval-28-Copy-233" class="st1" cx="1563" cy="390" r="3"/>
+	<circle id="Oval-28-Copy-234" class="st1" cx="1589" cy="464" r="3"/>
+	<circle id="Oval-28-Copy-235" class="st1" cx="1604" cy="421" r="3"/>
+	<circle id="Oval-28-Copy-236" class="st1" cx="1577.5" cy="336.5" r="2.7"/>
+	<circle id="Oval-28-Copy-237" class="st1" cx="1607.9" cy="292.9" r="3"/>
+	<circle id="Oval-28-Copy-240" class="st1" cx="1674" cy="311" r="3"/>
+	<circle id="Oval-28-Copy-241" class="st1" cx="1688" cy="348" r="3"/>
+	<circle id="Oval-28-Copy-242" class="st1" cx="1723" cy="373" r="3"/>
+	<circle id="Oval-28-Copy-246" class="st1" cx="1729" cy="320" r="3"/>
+	<circle id="Oval-28-Copy-247" class="st1" cx="1729" cy="288" r="3"/>
+	<circle id="Oval-28-Copy-248" class="st1" cx="1729" cy="258" r="3"/>
+	<circle id="Oval-28-Copy-249" class="st1" cx="1723" cy="220" r="3"/>
+	<circle id="Oval-28-Copy-250" class="st1" cx="1751" cy="203" r="3"/>
+	<circle id="Oval-28-Copy-251" class="st1" cx="1707" cy="194" r="3"/>
+	<circle id="Oval-28-Copy-252" class="st1" cx="1657" cy="199" r="3"/>
+	<circle id="Oval-28-Copy-253" class="st1" cx="1578" cy="226" r="3"/>
+	<circle id="Oval-28-Copy-318" class="st1" cx="1727.3" cy="464.8" r="3"/>
+	<circle id="Oval-28-Copy-245" class="st1" cx="1756.1" cy="462" r="3"/>
+	<circle id="Oval-28-Copy-238" class="st1" cx="1522.5" cy="277.5" r="2.7"/>
+	<circle id="Oval-28-Copy-254" class="st1" cx="1487.5" cy="230.5" r="2.7"/>
+	<circle id="Oval-28-Copy-255" class="st1" cx="1458.3" cy="240.5" r="2.7"/>
+	<circle id="Oval-28-Copy-256" class="st1" cx="1447.5" cy="197.5" r="2.7"/>
+	<circle id="Oval-28-Copy-259" class="st1" cx="1454.5" cy="216.5" r="2.7"/>
+	<circle id="Oval-28-Copy-260" class="st1" cx="1429.5" cy="203.5" r="2.7"/>
+	<circle id="Oval-28-Copy-261" class="st1" cx="1406.5" cy="194.5" r="2.7"/>
+	<circle id="Oval-28-Copy-262" class="st1" cx="1447.5" cy="174.5" r="2.7"/>
+	<circle id="Oval-28-Copy-263" class="st1" cx="1475.5" cy="176.5" r="2.7"/>
+	<circle id="Oval-28-Copy-264" class="st1" cx="1488.5" cy="186.5" r="2.7"/>
+	<circle id="Oval-28-Copy-265" class="st1" cx="1499.5" cy="157.5" r="2.7"/>
+	<circle id="Oval-28-Copy-268" class="st1" cx="1522.5" cy="161.5" r="2.7"/>
+	<circle id="Oval-28-Copy-270" class="st1" cx="1534.5" cy="137.5" r="2.7"/>
+	<circle id="Oval-28-Copy-271" class="st1" cx="1550.5" cy="116.5" r="2.7"/>
+	<circle id="Oval-28-Copy-272" class="st1" cx="1646.5" cy="144.5" r="2.7"/>
+	<circle id="Oval-28-Copy-273" class="st1" cx="1646.5" cy="144.5" r="2.7"/>
+	<circle id="Oval-28-Copy-316" class="st1" cx="1684.5" cy="109.5" r="2.7"/>
+	<circle id="Oval-28-Copy-274" class="st3" cx="1681.5" cy="109.5" r="2.7"/>
+	<circle id="Oval-28-Copy-275" class="st1" cx="1707.5" cy="137.5" r="2.7"/>
+	<circle id="Oval-28-Copy-317" class="st1" cx="1681.5" cy="132.5" r="2.7"/>
+	<circle id="Oval-28-Copy-276" class="st1" cx="1734.5" cy="150.5" r="2.7"/>
+	<circle id="Oval-28-Copy-277" class="st1" cx="1758.5" cy="141.5" r="2.7"/>
+	<circle id="Oval-28-Copy-278" class="st1" cx="1763.5" cy="167.5" r="2.7"/>
+	<circle id="Oval-28-Copy-279" class="st1" cx="1763.5" cy="167.5" r="2.7"/>
+	<circle id="Oval-28-Copy-266" class="st1" cx="1477.5" cy="155.5" r="2.7"/>
+	<circle id="Oval-28-Copy-267" class="st1" cx="1455.5" cy="148.5" r="2.7"/>
+	<circle id="Oval-28-Copy-257" class="st1" cx="1475.5" cy="209.5" r="2.7"/>
+	<circle id="Oval-28-Copy-258" class="st1" cx="1475.5" cy="209.5" r="2.7"/>
+	<circle id="Oval-28-Copy-206" class="st1" cx="1312" cy="242" r="3"/>
+	<circle id="Oval-28-Copy-207" class="st1" cx="1306" cy="220" r="3"/>
+	<circle id="Oval-28-Copy-208" class="st1" cx="1286" cy="206" r="3"/>
+	<circle id="Oval-28-Copy-209" class="st1" cx="1262" cy="194" r="3"/>
+	<circle id="Oval-28-Copy-210" class="st1" cx="1229" cy="187" r="3"/>
+	<circle id="Oval-28-Copy-211" class="st1" cx="1207" cy="198" r="3"/>
+	<circle id="Oval-28-Copy-212" class="st1" cx="1191" cy="213" r="3"/>
+	<circle id="Oval-28-Copy-213" class="st1" cx="1178" cy="237" r="3"/>
+	<circle id="Oval-28-Copy-214" class="st1" cx="1162" cy="256" r="3"/>
+	<circle id="Oval-28-Copy-215" class="st1" cx="1170" cy="291" r="3"/>
+	<circle id="Oval-28-Copy-216" class="st1" cx="1162" cy="317" r="3"/>
+	<circle id="Oval-28-Copy-217" class="st1" cx="1166" cy="334" r="3"/>
+	<circle id="Oval-28-Copy-218" class="st1" cx="1147" cy="325" r="3"/>
+	<circle id="Oval-28-Copy-219" class="st1" cx="1135" cy="315" r="3"/>
+	<circle id="Oval-28-Copy-220" class="st1" cx="1133" cy="290" r="3"/>
+	<circle id="Oval-28-Copy-222" class="st1" cx="1147" cy="278" r="3"/>
+	<circle id="Oval-28-Copy-196" class="st1" cx="1225.9" cy="266.9" r="3"/>
+	<circle id="Oval-28-Copy-175" class="st1" cx="1217.8" cy="368.9" r="3"/>
+	<circle id="Oval-28-Copy-176" class="st1" cx="1303.9" cy="347.9" r="3"/>
+	<circle id="Oval-28-Copy-177" class="st1" cx="1450.9" cy="428.9" r="3"/>
+	<circle id="Oval-28-Copy-179" class="st1" cx="1253.9" cy="395.9" r="3"/>
+	<circle id="Oval-28-Copy-143" class="st1" cx="1083.9" cy="458.9" r="3"/>
+	<circle id="Oval-28-Copy-144" class="st1" cx="1079.9" cy="438.9" r="3"/>
+	<circle id="Oval-28-Copy-82" class="st1" cx="789.9" cy="332.9" r="3"/>
+	<circle id="Oval-28-Copy-83" class="st1" cx="758.9" cy="325.9" r="3"/>
+	<circle id="Oval-28-Copy-84" class="st1" cx="741.9" cy="339.9" r="3"/>
+	<circle id="Oval-28-Copy-85" class="st1" cx="716.9" cy="343.9" r="3"/>
+	<circle id="Oval-28-Copy-86" class="st1" cx="709.9" cy="332.9" r="3"/>
+	<circle id="Oval-28-Copy-88" class="st1" cx="704.9" cy="317.9" r="3"/>
+	<circle id="Oval-28-Copy-89" class="st1" cx="708.9" cy="302.9" r="3"/>
+	<circle id="Oval-28-Copy-90" class="st1" cx="752.9" cy="306.9" r="3"/>
+	<circle id="Oval-28-Copy-91" class="st1" cx="736.9" cy="288.9" r="3"/>
+	<circle id="Oval-28-Copy-92" class="st1" cx="713.9" cy="286.9" r="3"/>
+	<circle id="Oval-28-Copy-93" class="st1" cx="778.9" cy="306.9" r="3"/>
+	<circle  class="st1" cx="770.9" cy="313.9" r="3"/>
+	<circle  class="st1" cx="801.9" cy="392.9" r="3"/>
+</g>
+<rect x="265" y="120" width="110%" height="100%" style="fill:url(#orange_red)"/>
+
+<defs>
+    <radialGradient id="circle_shadow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+        <stop offset="0%" style="stop-color:rgb(166,94,94);stop-opacity:0.8"/>
+        <stop offset="100%" style="stop-color:rgb(255,255,255);stop-opacity:0"/>
+    </radialGradient>
+</defs>
+<g>
+	<circle  class="st2" cx="440" cy="195" r="15" style="fill:url(#circle_shadow)"/>
+	<circle  class="cir_r_8" cx="440" cy="195" r="8" />
+	<circle  class="cir_r_12" cx="440" cy="195" r="12" />
+	<circle  class="st2 breathe-lamp" cx="440" cy="195" r="5"/>
+</g>
+<g>
+	<circle  class="st2" cx="605" cy="420" r="20" style="fill:url(#circle_shadow)"/>
+	<circle  class="cir_r_6" cx="605" cy="420" r="6" />
+	<circle  class="cir_r_10" cx="605" cy="420" r="10" />
+	<circle  class="st2 breathe-lamp" cx="605" cy="420" r="3"/>
+</g>
+<g>
+	<circle  class="st2" cx="1529.9" cy="189.9" r="20" style="fill:url(#circle_shadow)"/>
+	<circle  class="cir_r_6" cx="1529.9" cy="189.9" r="6" />
+	<circle  class="cir_r_10" cx="1529.9" cy="189.9" r="10" />
+	<circle  class="st2 breathe-lamp" cx="1529.9" cy="189.9" r="3"/>
+</g>
+<g>
+	<circle  class="st2" cx="1397" cy="386" r="25" style="fill:url(#circle_shadow)"/>
+	<circle  class="cir_r_8" cx="1397" cy="386" r="8" />
+	<circle  class="cir_r_12" cx="1397" cy="386" r="12" />
+	<circle  class="st2 breathe-lamp" cx="1397" cy="386" r="5"/>
+</g>
+<g>
+	<circle  class="st2" cx="1705" cy="382" r="20" style="fill:url(#circle_shadow)"/>
+	<circle  class="cir_r_6" cx="1705" cy="382" r="7" />
+	<circle  class="cir_r_10" cx="1705" cy="382" r="11" />
+	<circle  class="st2 breathe-lamp" cx="1705" cy="382" r="4"/>
+</g>
+</svg>

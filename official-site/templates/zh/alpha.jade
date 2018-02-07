@@ -1,0 +1,390 @@
+extends _layout
+append header
+	link(rel='stylesheet', href='/zh/assets/css/alpha.css')
+block content
+	section#canvas
+	section.wan_banner.play
+		.warp.animate
+			.left.fade_in
+				.pos
+					h3 
+						img.a(src='/zh/assets/image/a.png',width='50')
+						| Space 低功耗广域网
+					i 革命性通信技术
+					i 超低功耗传感器网络基站
+					.btn_item
+						a(href='http://iot.sensoro.com') 开始使用
+			.right.fade_in
+				img(src='/zh/assets/image/wan/product2.png',width='330',height='600')
+	
+	section.wan_scene
+		h3 应用场景
+		.warp
+			ul
+				li.active(data-index='0') 智慧城市
+				li(data-index='1') 农业
+				li(data-index='2') 医疗业
+				li(data-index='3') 物流业
+				li(data-index='4') 工业
+				li(data-index='5') 智能家居
+			- var arr0 = [{img:'a1.png',title:'井盖状态监控',des:'为井盖装上限位开关与GPS，可以监控井盖的开关状态，进行追踪定位。'},{img:'a2.png',title:'空气质量监测',des:'利用电化学传感器监测有害气体，立体化监控空气质量。'},{img:'a3.png',title:'路灯节能',des:'路灯加装传输控制模块，可实现工作状态监控及灯光远距离管理。'},{img:'a4.png',title:'水位预警',des:'河流、水库的水位、水温、水质动态监控，异常时报警。'},{img:'a5.png',title:'停车场管理',des:'地磁传感器与BLE设备结合，实现车位状态监控及停车场定位。'},{img:'a6.png',title:'公共交通管理',des:'城市自行车定位、车辆轨迹追踪、车辆噪音监控，助力智慧交通。'}]
+			- var arr1 = [{img:'b1.png',title:'土壤监测',des:'对土壤的水分、养分、PH值等数据进行监测，科学化浇灌、施肥。'},{img:'b2.png',title:'温湿度管控',des:'对仓库、大棚等温湿度敏感设施进行监控，避免损失。'},{img:'b3.png',title:'机械状态检测',des:'监测机械的工作状态、提供异常报警以及对设备进行定位。'},{img:'b4.png',title:'光线监测',des:'对大棚进行光线监测与管控，控制植物光照。'},{img:'b5.png',title:'气体浓度监测',des:'利用NO传感器对鸡舍、大棚进行有害气体浓度监控。'},{img:'placeholder.png',title:'',des:''}]
+			- var arr2 = [{img:'c1.png',title:'健康监测',des:'监控心率、血压等健康指标，辅助疾病预测。'},{img:'c2.png',title:'医疗设备管理',des:'资产管理及工作状态监控。'},{img:'c3.png',title:'病房状态监测',des:'监控病房的温度、湿度、气体，安装无线紧急呼叫按钮。'},{img:'c4.png',title:'药品存放环境监测',des:'全冷链温度监控，防止药品在运输、仓储过程中变质。'},{img:'c5.png',title:'门禁管理',des:'实施医院的门禁管理，监控门窗开关状态。'},{img:'c6.png',title:'病人位置追踪',des:'对病人的地理位置进行监控，可结合BLE设备实现精准的室内定位。'}]
+			- var arr3 = [{img:'d1.png',title:'冷链运输',des:'全冷链温度监控，防止药品在运输或者仓储过程中变质。'},{img:'d2.png',title:'运输工具管理',des:'对运输工具进行监测与管控，包括定位管理、轨迹管理、车辆安全管理等方面。'},{img:'d3.png',title:'运输线路管理',des:'对城市中的运输线路进行有效管理，进行运输网络优化、车辆高效调度、运输路线设计。'},{img:'d4.png',title:'集装箱位置状态监测',des:'集装箱的位置追踪、提供温度、湿度及有害气体的监测、通过光线监控集装箱是否被打开。'},{img:'placeholder.png',title:'',des:''},{img:'placeholder.png',title:'',des:''}]
+			- var arr4 = [{img:'e1.png',title:'自动化生产',des:'组建大规模生产设备网络，实现自动化生产。'},{img:'e2.png',title:'设备运行状态监控',des:'设备运行日志上报，紧急状况报警。'},{img:'e3.png',title:'智能远程控制',des:'远程对机器、管道进行关闭，加快紧急事件的处理效率。'},{img:'e4.png',title:'智能抄表',des:'水表、燃气表集成传输模块，实现小区智能抄表，施工成本更低。'},{img:'e5.png',title:'矿工位置定位',des:'结合BLE设备实现精准定位，同时可以根据无线信号进行搜救。'},{img:'e6.png',title:'工作环境安全检查',des:'工业危险气体监控、废水水质监控、废气有害气体监控。'}]
+			- var arr5 = [{img:'f1.png',title:'门窗安全监控',des:'对家庭门、窗进行监控，开启时报警，可以App、摄像头等联动。'},{img:'f2.png',title:'家用电器远程管理',des:'控制热水器、电饭煲、电视、灯光，监控冰箱门开关。'},{img:'f3.png',title:'家庭电源监测',des:'家庭电源智能监测管理，包括配电箱故障监测和报警、电源使用情况统计等。'},{img:'f4.png',title:'烟雾智能监测',des:'监控烟雾及气体变化，监控管道泄漏、实现火灾预防和报警。'},{img:'placeholder.png',title:'',des:''},{img:'placeholder.png',title:'',des:''}]
+			- var arrs = [arr0,arr1,arr2,arr3,arr4,arr5];
+			div.scene_box
+				each one , i in arrs
+					dl(id='#{"scene"+i}')
+						each item in one
+							dd
+								img(src='/zh/assets/image/wan/#{item.img}',width='45')
+								b #{item.title}
+								p #{item.des}
+			.btn_item.center
+				a(href='/zh/case',style='margin-right:0') 客户案例
+	section.wan_sensor
+		h3 从传感器到云，一体化解决方案
+		img.signal(src='/zh/assets/image/wan/signal.gif')
+		img.total(src='/zh/assets/image/wan/process.gif')
+	section.wan_station
+		h3 开箱即用，极致体验
+		#tool_box
+	section.wan_battery
+		h3 超低功耗，4AA电池可用一年
+		img.my_animate(id='battery',data-move-x='55%',src='/zh/assets/image/wan/power.png',width='280')
+		img.my_animate(id='box',data-move-x='-35%',src='/zh/assets/image/wan/node4a.png',width='280')
+		div.battery_desc
+			i 4AA 电池
+			p -8dBm/417.5ms 蓝牙广播，每5分钟一次上传，可持续使用一年以上。
+			svg
+				path(id='battery_path',stroke='rgb(17, 11, 10)',fill='#fff',stroke-width='1',d='M50,20 L50,80 H150')
+				circle(id='battery_circle',cx='150',cy='80',r='3',stroke-width='1',fill='rgb(17, 11, 10)')
+		div.box_desc
+			svg
+				path(id='box_path',stroke='rgb(17, 11, 10)',fill='#fff',stroke-width='1',d='M50,140 V100 H0')
+				circle(id='box_circle',cx='3',cy='100',r='3',stroke-width='1',fill='rgb(17, 11, 10)')
+			i α 传感器
+			p 提供温度、湿度、光线等环境参数监控，支持 iBeacon、Eddystone 全部协议，可远程管理。
+	section.wan_km
+		h3 超远距离，轻松10公里覆盖
+		ul
+			li
+				span
+					i 3
+					| 公里半径
+				p 多阻隔复杂环境
+			li
+				span
+					i 5
+					| 公里半径
+				p 复杂环境
+			li
+				span
+					i 10
+					| 公里半径
+				p 相对空旷环境
+		.clean
+	section.wan_tab
+		h3 运营商级后台，细节无处不在
+		.warp
+			.left.my_tab(data-move-x='-120px')
+				ul
+					li
+						span
+							img(src='/zh/assets/image/wan/icon07.png',width='18',height='17')
+						p
+							strong 场景化设计简单易用
+							| 完全针对商业场景进行方案设计，使用起来方便直接，提高部署实施效率，极大降低使用成本。
+					li
+						span
+							img(src='/zh/assets/image/wan/icon08.png',width='18',height='23')
+						p
+							strong 多层加密机制安全可靠
+							| 每个传感器均使用独立密钥，防范硬件破解，网络层、应用层多层加密，保证数据安全。
+					li
+						span
+							img(src='/zh/assets/image/wan/icon09.png',width='22',height='16')
+						p
+							strong 开放API定制化灵活
+							| 提供 Webhook、MQTT 数据推送服务与 Open API，开发者可以接收推送的传感器数据灵活构建业务场景。
+			.right.my_tab(data-move-x='120px')
+				img(src='/zh/assets/image/wan/cloud.png',width='500')
+	section.wan_tool
+		h3 移动客户端，部署极致简单
+		.warp
+			.left.my_tab(data-move-x='-120px')
+				img(src='/zh/assets/image/download/screen.png',width='250')
+			.right.my_tab(data-move-x='120px')
+				.box
+					.describe
+						img(src='/zh/assets/image/download/logo.png',width='80')
+						i α Tool
+						p 随时设置基站，传感器，传输模块参数
+					.download
+						a(href='#') iOS版下载 
+						br
+						a(href='#') 安卓版下载 
+						img(src='/zh/assets/image/wan/qrcode.jpeg',width='96')
+	section.base_contact
+		h3 如何建立低功耗广域网
+		ul
+			a(href='/zh/contact#alpha')
+				li
+					img(src='/zh/assets/image/wan/icon10.png',width='35',height='31')
+					h3 咨询方案
+					i 填写您的需求，我们会主动联系您，并给您专业的建议。
+			a(href='/zh/contact#alpha')
+				li
+					img(src='/zh/assets/image/wan/icon11.png',width='35',height='27')
+					h3 设计部署
+					i 专业团队帮您设计及部署，全程指导整个部署流程。
+			a(href='/zh/contact#alpha')
+				li
+					img(src='/zh/assets/image/wan/icon12.png',width='35',height='31')
+					h3 运营维护
+					i 专业管理后台进行维护和运营，所有操作简单易学。
+		.btn_item.center.fix_margin
+			a(href='/zh/contact#alpha') 立刻咨询
+block append scripts
+	script(src='/zh/assets/lib/jquery.smoove.min.js')
+	script(src='/zh/assets/lib/3deye.min.js')
+	script(src='/zh/assets/lib/three.min.js')
+	script(src='/zh/assets/lib/Projector.js')
+	script(src='/zh/assets/lib/CanvasRenderer.js')
+	script.
+		$(document).ready(function(){
+
+			var innerHeight = window.innerHeight;
+			$('.wan_banner .warp').height(innerHeight-50);
+
+			$('.wan_scene li').click(function(){
+				$(this).siblings().removeClass('active');
+				$(this).addClass('active');
+				var $cur = $('#scene'+$(this).attr('data-index'));
+				$cur.siblings().css({'opacity':'0','transition':'opacity 0.3s ease-out'});
+				$cur.css({'opacity':'1','transition':'opacity 0.2s ease-in-out'});
+			})
+
+			$('.my_animate').smoove({
+				offset  : '50%',
+				opacity : 100
+			});
+
+			// 计算svg路径长度
+			function getSvgPathLength(){
+				//battery_desc，M50,20 L50,80 H150，160
+				//box_desc，M50,140 V100 H0，90
+				var svg = new Snap('.box_desc svg');
+				var theLine = svg.paper.path('M60,60 H0').attr({
+				    stroke: '#110b0a',
+				    strokeWidth: 0.5,
+				    fill: '#fff'	
+				});
+				//- console.log(theLine.getTotalLength());
+			}
+			//- getSvgPathLength();
+
+			//- 旋转箱子
+			function rotateBox(index){
+				$('#tool_box').css('background-image','url("/zh/assets/image/trunk/'+index+'.png")');
+			}
+
+			$('#tool_box').vc3dEye({
+			    imagePath:'/zh/assets/image/trunk/',
+			    totalImages:19,
+			    imageExtension:'png'
+			});
+
+			function moveTrunk(value){
+				var startFlag = $(window).scrollTop() - $('.wan_station').offset().top;
+				window.clearInterval(closeInter); 
+				window.clearInterval(openInter); 
+				if(startFlag > value){
+					$('#tool_box').css('marginTop',-300);
+				}else{
+					$('#tool_box').css('marginTop',-450);
+				}
+			}
+
+			var openInter = null,closeInter = null;
+			function trunkPosition(value){
+				var startFlag = $(window).scrollTop() - $('.wan_station').offset().top;
+				window.clearInterval(closeInter); 
+				window.clearInterval(openInter); 
+				if(startFlag > value){
+					openInter = window.setInterval(openTrunk,10);
+				}else{
+					closeInter = window.setInterval(closeTrunk,8);
+				}
+			}
+
+			var boxIndex = 1,stateFlag = false;
+			function openTrunk () {
+				boxIndex ++;
+				if(boxIndex < 20){
+					rotateBox(boxIndex);
+				}else{
+					boxIndex = 19;
+					stateFlag = true;
+					window.clearInterval(openInter); 
+					rotateBox(boxIndex);
+				}
+			}
+			function closeTrunk () {
+				boxIndex--;
+				if(boxIndex > 1){
+					rotateBox(boxIndex);
+				}else{
+					boxIndex = 1;
+					stateFlag = false;
+					window.clearInterval(closeInter); 
+					rotateBox(boxIndex);
+				}
+			}	
+
+			$('.my_tab').smoove({
+				offset  : '50%',
+				opacity : 40
+			});
+
+			setInterval(function() {
+				moveTrunk(-380);
+				trunkPosition(-180);
+				watchPosition('battery','-100');
+				watchPosition('box','-100');
+			}, 1200);
+			//监测滚动位置
+			function watchPosition(name,value){
+				var startFlag = $(window).scrollTop() - $('.wan_battery').offset().top;
+				if(startFlag > value){
+					$('.'+name+'_desc>i,.'+name+'_desc>p').css('animation','op-show 1s ease-in-out forwards');
+					$('#'+name+'_path').css('animation',name+'-go 0.8s  ease-in-out forwards');
+					$('	#'+name+'_circle').css('animation','op-show 0.3s 0.8s ease-in-out forwards');
+				}else{
+					$('#'+name+'_circle').css('animation','op-hide 0.3s ease-in-out backwards');
+					$('#'+name+'_path').css('animation',name+'-back 0.8s 0.3s ease-in-out backwards');
+					$('.'+name+'_desc>i,.'+name+'_desc>p').css('animation','op-hide 1s 0.3s  ease-in-out  backwards');
+				}
+			}
+
+
+
+			var SEPARATION = 100, AMOUNTX = 50, AMOUNTY = 50;
+			var container;
+			var camera, scene, renderer;
+			var particles, particle, count = 0;
+			var mouseX = 0, mouseY = 0;
+			var innerHeight = window.innerHeight;
+			var innerWidth = window.innerWidth;
+			var windowHalfX = innerWidth / 2;
+			var windowHalfY = innerHeight / 2;
+			init();
+			animate();
+			function init() {
+				container = document.getElementById('canvas')
+				camera = new THREE.PerspectiveCamera( 105, innerWidth / innerHeight, 1, 10000 );
+				camera.position.x = 300;
+				camera.position.y = 300;
+				camera.position.z = 1000;
+				scene = new THREE.Scene();
+				particles = new Array();
+				var PI2 = Math.PI * 2;
+				var material = new THREE.SpriteCanvasMaterial( {
+					color: 0x555555,
+					program: function ( context ) {
+						context.beginPath();
+						context.arc( 0, 0, 0.5, 0, PI2, true );
+						context.fill(); 
+					}
+				} );
+				var i = 0;
+				for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
+					for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
+						particle = particles[ i ++ ] = new THREE.Sprite( material );
+						particle.position.x = ix * SEPARATION - ( ( AMOUNTX * SEPARATION ) / 2 );
+						particle.position.z = iy * SEPARATION - ( ( AMOUNTY * SEPARATION ) / 2 );
+						scene.add( particle );
+					}
+				}
+				renderer = new THREE.CanvasRenderer();
+				renderer.setClearColor( 0x181818 );
+				renderer.setPixelRatio( window.devicePixelRatio );
+				//- console.log(innerHeight);
+				renderer.setSize( innerWidth, innerHeight - 50);
+				container.appendChild( renderer.domElement );
+				document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+				//document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+				//document.addEventListener( 'touchmove', onDocumentTouchMove, false );
+				window.addEventListener( 'resize', onWindowResize, false );
+			}
+			function onWindowResize() {
+				
+				//这部分代码为了修复 iOS Safari Navbar 收缩问题，不是特别好。。
+				if(innerWidth == window.innerWidth){
+					if((Math.abs(innerHeight - window.innerHeight) == 29)||(Math.abs(innerHeight - window.innerHeight) == 38)||(Math.abs(innerHeight - window.innerHeight) == 79)||(Math.abs(innerHeight - window.innerHeight) == 219)||(Math.abs(innerHeight - window.innerHeight) == 72)||(Math.abs(innerHeight - window.innerHeight) == 198))
+					return;
+				}
+			
+				innerWidth = window.innerWidth;
+				windowHalfX = innerWidth / 2;
+				windowHalfY = innerHeight / 2;
+				camera.aspect = innerWidth / innerHeight;
+				camera.updateProjectionMatrix();
+				renderer.setSize( innerWidth, innerHeight - 50);
+			}
+
+			function onDocumentMouseMove( event ) {
+				mouseX = event.clientX - windowHalfX;
+				mouseY = event.clientY - windowHalfY;
+			}
+			function onDocumentTouchStart( event ) {
+				if ( event.touches.length === 1 ) {
+					//event.preventDefault();
+					mouseX = event.touches[ 0 ].pageX - windowHalfX;
+					mouseY = event.touches[ 0 ].pageY - windowHalfY;
+				}
+			}
+			function onDocumentTouchMove( event ) {
+				if ( event.touches.length === 1 ) {
+					//event.preventDefault();
+					mouseX = event.touches[ 0 ].pageX - windowHalfX;
+					mouseY = event.touches[ 0 ].pageY - windowHalfY;
+				}
+			}
+			var raf = null;
+			//滚动初始位置重新启动动画
+			var raf = null;
+			$(window).scroll(function(){
+				if($(window).scrollTop() < innerHeight+200 && raf == null){
+					animate();
+				}else if($(window).scrollTop() > innerHeight+200 && raf != null){
+					window.cancelAnimationFrame(raf);
+					raf = null;
+				}
+			});
+			
+			function animate() {
+				raf = requestAnimationFrame( animate );
+				render();
+			}
+			function render() {
+				camera.position.x += ( mouseX - camera.position.x ) * .05;
+				camera.position.y += ( - mouseY - camera.position.y ) * 0;
+				camera.lookAt( scene.position );
+				var i = 0;
+				for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
+					for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
+						particle = particles[ i++ ];
+						particle.position.y = ( Math.sin( ( ix + count ) * 0.3 ) * 50 ) +
+							( Math.sin( ( iy + count ) * 0.5 ) * 50 );
+						particle.scale.x = particle.scale.y = ( Math.sin( ( ix + count ) * 0.3 ) + 1 ) * 3 +
+							( Math.sin( ( iy + count ) * 0.5 ) + 1 ) * 3;
+					}
+				}
+				renderer.render( scene, camera );
+				count += 0.1;
+			}
+		});
+

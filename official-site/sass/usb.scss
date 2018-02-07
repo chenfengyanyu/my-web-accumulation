@@ -1,0 +1,125 @@
+.usb_explode{
+  width: 1000px;
+  margin: 0 auto 60px;
+  position: relative;
+  min-height: 500px;
+  #chip{
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    top: 0;
+  }
+  #shell{
+    position: absolute;
+    left: 50%;
+    margin-left: -60px;
+    top: 200px;
+  }
+  .chip_desc{
+    width: 200px;
+    position: absolute;
+    bottom: 10%;
+    left: 8%;
+    text-align: right;
+    padding-right: 25px;
+    left: 0%\9\0;
+    width: 340px\9\0;
+    padding-right: 40px\9\0;
+    #chip_path{
+      stroke-dasharray: 200;
+      stroke-dashoffset: 200;
+      stroke-dashoffset: 0\9\0;
+    }
+    #chip_circle{
+      opacity: 0;
+      opacity: 1\9\0;
+    }
+    >svg{
+        margin-top: -40px;
+        margin-left: 115px\9\0;
+    }
+  }
+  .shell_desc{
+    width: 200px;
+    position: absolute;
+    right: 18%;
+    bottom: 45%;
+    #shell_path{
+      stroke-dasharray: 90;
+      stroke-dashoffset: 90;
+      stroke-dashoffset: 0\9\0;
+    }
+    #shell_circle{
+      opacity: 0;
+      opacity: 1\9\0;
+    }
+  }
+  .chip_desc , .shell_desc{
+      >i{
+        font-style: normal;
+        font-size: 18px;
+        display: inline-block;
+        margin-bottom: 8px;
+        color: #4A4A4A;
+        opacity: 0;
+        opacity: 1\9\0;
+      }
+      >p{
+        color:rgba(0, 0, 0, 0.5);
+        font-size: 12px;
+        opacity: 0;
+        opacity: 1\9\0;
+      }
+    }
+}
+
+@-webkit-keyframes op-show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes op-hide {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes chip-go {
+    0% {
+        stroke-dashoffset: 200;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+@-webkit-keyframes chip-back {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: 200;
+    }
+}
+
+@-webkit-keyframes shell-go {
+    0% {
+        stroke-dashoffset: 90;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+@-webkit-keyframes shell-back {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: 90;
+    }
+}

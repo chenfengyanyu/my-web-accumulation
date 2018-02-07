@@ -1,0 +1,77 @@
+doctype html
+html
+	head
+		meta(http-equiv='Content-Type',content='text/html;charset=utf-8')
+		title warning
+		link(rel='stylesheet', href='/zh/assets/css/ie.css')
+		script.
+			var item = location.href.split('return=');
+			var return_url = item[1];
+			function agree() {
+				setCookie('warning_has_shown', 'yes');
+				window.location.href = "/";
+			}
+			function setCookie(name, value) {
+				if(name != '')
+					today = new Date();
+				expires = new Date(today.getTime() + (8 * 7 * 86400000)); 
+				document.cookie = name + '=' + value + '; expires=' + expires;
+			}
+			function getCookie(name) {
+				if(name == '')
+					return('');
+				name_index = document.cookie.indexOf(name + '=');
+				if(name_index == -1)
+					return('');
+				cookie_value =  document.cookie.substr(name_index + name.length + 1, document.cookie.length);
+				end_of_cookie = cookie_value.indexOf(';');
+				if(end_of_cookie != -1)
+					cookie_value = cookie_value.substr(0, end_of_cookie);
+				space = cookie_value.indexOf('+');
+				while(space != -1) { 
+					cookie_value = cookie_value.substr(0, space) + ' ' + cookie_value.substr(space + 1, cookie_value.length);
+					space = cookie_value.indexOf('+');
+				}
+				return(cookie_value);
+			}
+
+	body
+		.warn
+			.black
+				h1
+					span.orange Oops!
+					| 你还在使用过时的 Internet Exeplorer 浏览器？
+				p 过时的 IE 浏览器不仅对新的网页技术无法支持，同时也存在大量安全的隐患。我建议你可以任选下载以下免费浏览器的最新版本，它们来自于苹果、谷歌等这样值得信赖的公司，安全、快速、免费，都是比 IE 更好的选择。下载安装后，你也可以为更好的互联网环境提供了一份有力的支持。
+				.action.clear
+					.left
+						input(checked='checked',type='checkbox') 
+						span 我知道了，不再显示
+					.right
+						a(style='cursor:pointer',onclick='agree()')
+							img(src='/zh/assets/image/ie/warning.png')
+			.white.clear
+				ul.browser
+					li
+						p
+							a(href='http://www.apple.com.cn/safari/',target='_blank')
+								img(src='/zh/assets/image/ie/safari.png')
+						p
+							a(href='http://www.apple.com.cn/safari/',target='_blank') Safari
+					li
+						p
+							a(href='http://www.google.com/chrome/?hl=zh-CN',target='_blank')
+								img(src='/zh/assets/image/ie/chrome.png')
+						p
+							a(href='http://www.google.com/chrome/?hl=zh-CN',target='_blank') Chrome
+					li
+						p
+							a(href='http://www.mozillaonline.com/',target='_blank')
+								img(src='/zh/assets/image/ie/firefox.png')
+						p
+							a(href='http://www.mozillaonline.com/',target='_blank') Firefox
+					li
+						p
+							a(href='http://www.operachina.com/',target='_blank')
+								img(src='/zh/assets/image/ie/opera.png')
+						p
+							a(href='http://www.operachina.com/',target='_blank') Opera

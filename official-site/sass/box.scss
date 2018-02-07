@@ -1,0 +1,269 @@
+.box_explode{
+	width: 1000px;
+	margin: 0 auto 60px;
+	position: relative;
+	min-height: 500px;
+	// border: 1px solid;
+	#box1{
+		position: absolute;
+		left: 30%;
+		top: 30%;
+		margin-left: -85px;
+		z-index: 5;
+	}
+	#box2{
+		position: absolute;
+		left: 42%;
+		top: 60%;
+		z-index: 4;
+		margin-left: -10px;
+	}
+	#box3{
+		position: absolute;
+		left: 48%;
+		top: 41%;
+		z-index: 3;
+		margin-left: -50px;
+	}
+	#box4{
+		position: absolute;
+		left: 57%;
+		top: 18%;
+		z-index: 2;
+		margin-left: -75px;
+	}
+	#box5{
+		position: absolute;
+		left: 70%;
+		top: 5%;
+		z-index: 1;
+		margin-left: -70px;
+	}
+	.box1_desc{
+		width: 170px;
+		position: absolute;
+		bottom: 18%;
+		left: -5%;
+		text-align: right;
+		padding-left: 38px\9\0;
+		left: -18%\9\0;
+		width: 291px\9\0;
+		#box1_path{
+		  stroke-dasharray: 70;
+		  stroke-dashoffset: 70;
+		  stroke-dashoffset: 0\9\0;
+		}
+		#box1_circle{
+		  opacity: 0;
+		  opacity: 1\9\0;
+		}
+		>svg{
+		    margin-top: -40px;
+		    margin-left: 85px\9\0;
+		}
+	}
+	.box2_desc{
+		width: 170px;
+		position: absolute;
+		bottom: 2%;
+		left: 33.5%;
+		text-align: center;
+		#box2_path{
+		  stroke-dasharray: 60;
+		  stroke-dashoffset: 60;
+		  stroke-dashoffset: 0\9\0;
+		}
+		#box2_circle{
+		  opacity: 0;
+		  opacity: 1\9\0;
+		}
+		>svg{
+		    margin-top: -40px;
+		}
+	}
+	.box3_desc{
+		width: 170px;
+		position: absolute;
+		bottom: 73%;
+		left: 20%;
+		text-align: right;
+		#box3_path{
+		  stroke-dasharray: 165;
+		  stroke-dashoffset: 165;
+		  stroke-dashoffset: 0\9\0;
+		}
+		#box3_circle{
+		  opacity: 0;
+		  opacity: 1\9\0;
+		}
+		>svg{
+			position: absolute;
+			left: 112%;
+			top: 45%;
+			overflow: auto\9;
+		}
+	}
+	.box4_desc{
+		width: 170px;
+		position: absolute;
+		bottom: 18%;
+		left: 72%;
+		text-align: left;
+		#box4_path{
+		  stroke-dasharray: 270;
+		  stroke-dashoffset: 270;
+		  stroke-dashoffset: 0\9\0;
+		}
+		#box4_circle{
+		  opacity: 0;
+		  opacity: 1\9\0;
+		}
+		>svg{
+			position: absolute;
+			left: -70%;
+			bottom: -65%;
+			bottom: 10%\9\0;
+		}
+	}
+	.box5_desc{
+		width: 170px;
+		position: absolute;
+		bottom: 65%;
+		left: 85%;
+		text-align: left;
+		#box5_path{
+		  stroke-dasharray: 60;
+		  stroke-dashoffset: 60;
+		  stroke-dashoffset: 0\9\0;
+		}
+		#box5_circle{
+		  opacity: 0;
+		  opacity: 1\9\0;
+		}
+		>svg{
+			position: absolute;
+			top: -65%;
+			left: -40%;
+			overflow: auto\9;
+		}
+	}
+	.box1_desc , .box2_desc,.box3_desc,.box4_desc,.box5_desc{
+		>i{
+		  font-style: normal;
+		  font-size: 18px;
+		  display: inline-block;
+		  margin-bottom: 8px;
+		  color: #4A4A4A;
+		  opacity: 0;
+		  opacity: 1\9\0;
+		}
+		>p{
+		  color:rgba(0, 0, 0, 0.5);
+		  font-size: 12px;
+		  opacity: 0;
+		  opacity: 1\9\0;
+		}
+	}
+}
+
+@-webkit-keyframes op-show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes op-hide {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes box1-go {
+    0% {
+        stroke-dashoffset: 70;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+@-webkit-keyframes box1-back {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: 70;
+    }
+}
+
+@-webkit-keyframes box2-go {
+    0% {
+        stroke-dashoffset: 60;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+@-webkit-keyframes box2-back {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: 60;
+    }
+}
+
+@-webkit-keyframes box3-go {
+    0% {
+        stroke-dashoffset: 165;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+@-webkit-keyframes box3-back {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: 165;
+    }
+}
+
+@-webkit-keyframes box4-go {
+    0% {
+        stroke-dashoffset: 270;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+@-webkit-keyframes box4-back {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: 270;
+    }
+}
+
+@-webkit-keyframes box5-go {
+    0% {
+        stroke-dashoffset: 60;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+@-webkit-keyframes box5-back {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: 60;
+    }
+}

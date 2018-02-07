@@ -1,0 +1,31 @@
+// //svg path
+// @mixin svgpath($path, $name) {
+//     @-webkit-keyframes #{$name}-go {
+//         0% {
+//             stroke-dashoffset: $path;
+//         }
+//         100% {
+//             stroke-dashoffset: 0;
+//         }
+//     }
+//     @-webkit-keyframes #{$name}-back {
+//         0% {
+//             stroke-dashoffset: 0;
+//         }
+//         100% {
+//             stroke-dashoffset: $path;
+//         }
+//     }
+// }
+
+// @mixin keyframes($a) {
+//     @-webkit-keyframes $a {
+//         @content;
+//     }
+//     @-moz-keyframes $a {
+//         @content;
+//     }
+//     @keyframes $a {
+//         @content;
+//     }
+// }
