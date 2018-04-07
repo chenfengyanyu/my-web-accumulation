@@ -1,8 +1,22 @@
 CKEDITOR.plugins.add('abbr', {
   icons: 'abbr',
+  onLoad: function() {
+    // CKEDITOR.addCss(
+    //   'p:first-child {' +
+    //       'border-top: solid 2px green' +
+    //   '}' +
+    //   'p:last-child {' +
+    //       'border-bottom: solid 2px green' +
+    //   '}'
+    // );
+  },
   init: function (editor) {
     // Plugin logic goes here...
-    editor.addCommand('abbr',new CKEDITOR.dialogCommand('abbrDialog'));
+    editor.addCommand('abbr',new CKEDITOR.dialogCommand('abbrDialog',
+      {
+        allowedContent: 'abbr[title,id]'
+      }
+    ));
 
     editor.ui.addButton('Abbr', {
       label: 'Insert Abbreviation',
@@ -11,6 +25,10 @@ CKEDITOR.plugins.add('abbr', {
     });
 
     CKEDITOR.dialog.add('abbrDialog', this.path + 'dialogs/abbr.js');
+
+    // 引入样式
+    // var pluginDirectory = this.path;
+    // editor.addContentsCss( pluginDirectory + 'styles/example.css' );
 
     if ( editor.contextMenu ) {
       editor.addMenuGroup( 'abbrGroup' );
