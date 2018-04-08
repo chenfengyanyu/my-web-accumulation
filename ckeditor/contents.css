@@ -227,3 +227,13 @@ a > img {
 .simplebox-content {
   padding: 0 8px;
 }
+.simplebox.align-right {
+  float: right;
+}
+.simplebox.align-left {
+  float: left;
+}
+.simplebox.align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
