@@ -1,6 +1,7 @@
 CKEDITOR.plugins.add('abbr', {
   icons: 'abbr',
   onLoad: function() {
+    // editor 初始化之前
     // CKEDITOR.addCss(
     //   'p:first-child {' +
     //       'border-top: solid 2px green' +
