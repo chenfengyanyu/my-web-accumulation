@@ -11,5 +11,21 @@ CKEDITOR.plugins.add('abbr', {
     });
 
     CKEDITOR.dialog.add('abbrDialog', this.path + 'dialogs/abbr.js');
+
+    if ( editor.contextMenu ) {
+      editor.addMenuGroup( 'abbrGroup' );
+      editor.addMenuItem( 'abbrItem', {
+        label: 'Edit Abbreviation',
+        icon: this.path + 'icons/abbr.png',
+        command: 'abbr',
+        group: 'abbrGroup'
+      });
+
+      editor.contextMenu.addListener( function( element ) {
+        if ( element.getAscendant( 'abbr', true ) ) {
+          return { abbrItem: CKEDITOR.TRISTATE_OFF };
+        }
+      });
+    }
   }
 });
