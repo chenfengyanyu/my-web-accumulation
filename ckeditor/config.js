@@ -6,7 +6,8 @@
 CKEDITOR.editorConfig = function( config ) {
 	// Define changes to default configuration here. For example:
 	// config.language = 'fr';
-  // config.uiColor = 'red';
-  config.extraPlugins = 'mathjax';
+  // config.uiColor = '#66AB16';
+  // config.readOnly = true;
+  config.extraPlugins = 'mathjax,timestamp,abbr';
   config.mathJaxLib = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML';
 };
