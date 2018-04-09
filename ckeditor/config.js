@@ -8,6 +8,7 @@ CKEDITOR.editorConfig = function( config ) {
 	// config.language = 'fr';
   // config.uiColor = '#66AB16';
   // config.readOnly = true;
-  config.extraPlugins = 'mathjax,timestamp,abbr,contextmenu,simplebox';
+  config.extraPlugins = 'mathjax,timestamp,abbr,contextmenu,simplebox,newblod';
   config.mathJaxLib = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML';
+  config.extraAllowedContent = 'str[font-weight]';
 };
