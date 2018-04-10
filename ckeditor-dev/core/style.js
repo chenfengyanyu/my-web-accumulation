@@ -1,8 +1,3 @@
-/**
- * @license Copyright (c) 2003-2018, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
- */
-
 'use strict';
 
 /**
@@ -51,9 +46,15 @@ CKEDITOR.STYLE_OBJECT = 3;
 			tr: 1, th: 1, ul: 1, dl: 1, dt: 1, dd: 1, form: 1, audio: 1, video: 1
 		};
 
+  // \s 匹配空白或者制表符等
 	var semicolonFixRegex = /\s*(?:;\s*|$)/,
 		varRegex = /#\((.+?)\)/g;
-
+  
+  /**
+   * 文档地址：https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dom_walker.html
+   * bookmark( [ contentOnly ]:Boolean, [ isReject ]:Boolean )
+   * whitespaces( [ isReject ] )是否是空字符文本节点
+   */
 	var notBookmark = CKEDITOR.dom.walker.bookmark( 0, 1 ),
 		nonWhitespaces = CKEDITOR.dom.walker.whitespaces( 1 );
 
@@ -83,7 +84,9 @@ CKEDITOR.STYLE_OBJECT = 3;
 	 *		// Executing:
 	 *		editor.applyStyle( style );
 	 *		// Will give:
-	 *		// <p>Foo</p><h1>Bar^</h1>
+   *		// <p>Foo</p><h1>Bar^</h1> 
+   *    // checkActive( elementPath, editor ) 是否该元素在元素路径中处于活动状态
+   *    // editor.elementPath()返回编辑器中选中内容的路径
 	 *		style.checkActive( editor.elementPath(), editor ); // -> true
 	 *
 	 *		editor.removeStyle( style );
