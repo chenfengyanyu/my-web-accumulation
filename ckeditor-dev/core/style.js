@@ -180,6 +180,7 @@ CKEDITOR.STYLE_OBJECT = 3;
 		 * reasons, although since CKEditor 4.4 this type of argument is deprecated. Read more about
 		 * the signature change in the {@link CKEDITOR.style} documentation.
 		 */
+    // 选中内容应用样式
 		apply: function( editor ) {
 			// Backward compatibility.
 			if ( editor instanceof CKEDITOR.dom.document )
@@ -211,6 +212,7 @@ CKEDITOR.STYLE_OBJECT = 3;
 		 * reasons, although since CKEditor 4.4 this type of argument is deprecated. Read more about
 		 * the signature change in the {@link CKEDITOR.style} documentation.
 		 */
+    // 移除选择内容的样式
 		remove: function( editor ) {
 			// Backward compatibility.
 			if ( editor instanceof CKEDITOR.dom.document )
@@ -505,19 +507,6 @@ CKEDITOR.STYLE_OBJECT = 3;
 		getDefinition: function() {
 			return this._.definition;
 		}
-
-		/**
-		 * If defined (for example by {@link CKEDITOR.style#addCustomHandler custom style handler}), it returns
-		 * the {@link CKEDITOR.filter.allowedContentRules allowed content rules} which should be added to the
-		 * {@link CKEDITOR.filter} when enabling this style.
-		 *
-		 * **Note:** This method is not defined in the {@link CKEDITOR.style} class.
-		 *
-		 * @since 4.4
-		 * @method toAllowedContentRules
-		 * @param {CKEDITOR.editor} [editor] The editor instance.
-		 * @returns {CKEDITOR.filter.allowedContentRules} The rules that should represent this style in the {@link CKEDITOR.filter}.
-		 */
 	};
 
 	/**
@@ -527,6 +516,7 @@ CKEDITOR.STYLE_OBJECT = 3;
 	 * @param styleDefinition
 	 * @returns {String} Inline style text.
 	 */
+  // 基于样式定义来构建行内的样式
 	CKEDITOR.style.getStyleText = function( styleDefinition ) {
 		// If we have already computed it, just return it.
 		var stylesDef = styleDefinition._ST;
@@ -675,6 +665,7 @@ CKEDITOR.STYLE_OBJECT = 3;
 	 * @param definition The style class definition.
 	 * @returns {CKEDITOR.style} The new style class created for the provided definition.
 	 */
+  // 用户自定义样式句柄
 	CKEDITOR.style.addCustomHandler = function( definition ) {
 		var styleClass = function( styleDefinition ) {
 			this._ = {
@@ -704,7 +695,8 @@ CKEDITOR.STYLE_OBJECT = 3;
 
 	// Gets the parent element which blocks the styling for an element. This
 	// can be done through read-only elements (contenteditable=false) or
-	// elements with the "data-nostyle" attribute.
+  // elements with the "data-nostyle" attribute.
+  // 获取样式包裹的父元素
 	function getUnstylableParent( element, root ) {
 		var unstylable, editable;
 
@@ -732,7 +724,8 @@ CKEDITOR.STYLE_OBJECT = 3;
 		posFollowingIdenticalContained =
 			CKEDITOR.POSITION_FOLLOWING | CKEDITOR.POSITION_IDENTICAL | CKEDITOR.POSITION_IS_CONTAINED;
 
-	// Checks if the current node can be a child of the style element.
+  // Checks if the current node can be a child of the style element.
+  // 检测当前的节点是否是样式元素的子节点
 	function checkIfNodeCanBeChildOfStyle( def, currentNode, lastNode, nodeName, dtd, nodeIsNoStyle, nodeIsReadonly, includeReadonly ) {
 		// Style can be applied to text node.
 		if ( !nodeName )
@@ -751,13 +744,15 @@ CKEDITOR.STYLE_OBJECT = 3;
 	}
 
 	// Check if the style element can be a child of the current
-	// node parent or if the element is not defined in the DTD.
+  // node parent or if the element is not defined in the DTD.
+  // 检查样式元素是否可以是当前节点父级的子元素
 	function checkIfStyleCanBeChildOf( def, currentParent, elementName, isUnknownElement ) {
 		return currentParent &&
 			( ( currentParent.getDtd() || CKEDITOR.dtd.span )[ elementName ] || isUnknownElement ) &&
 			( !def.parentRule || def.parentRule( currentParent ) );
 	}
 
+  // 检查是否选中区域的起点
 	function checkIfStartsRange( nodeName, currentNode, lastNode ) {
 		return (
 			!nodeName || !CKEDITOR.dtd.$removeEmpty[ nodeName ] ||
@@ -765,6 +760,7 @@ CKEDITOR.STYLE_OBJECT = 3;
 		);
 	}
 
+  // 检查是否是：文本，只读，或者是空元素
 	function checkIfTextOrReadonlyOrEmptyElement( currentNode, nodeIsReadonly ) {
 		var nodeType = currentNode.type;
 		return nodeType == CKEDITOR.NODE_TEXT || nodeIsReadonly || ( nodeType == CKEDITOR.NODE_ELEMENT && !currentNode.getChildCount() );
@@ -1190,7 +1186,8 @@ CKEDITOR.STYLE_OBJECT = 3;
 	}
 
 	// Finds nested editables within container. Does not return
-	// editables nested in another editable (twice).
+  // editables nested in another editable (twice).
+  // 在容器中查找嵌套的可编辑内容
 	function findNestedEditables( container ) {
 		var editables = [];
 
@@ -1204,7 +1201,8 @@ CKEDITOR.STYLE_OBJECT = 3;
 		return editables;
 	}
 
-	// Checks if style is allowed in this editable.
+  // Checks if style is allowed in this editable.
+  // 检测样式是否可修改
 	function checkIfAllowedInEditable( editable, style ) {
 		var filter = CKEDITOR.filter.instances[ editable.data( 'cke-filter' ) ];
 
@@ -1308,7 +1306,8 @@ CKEDITOR.STYLE_OBJECT = 3;
 
 	// Replace the original block with new one, with special treatment
 	// for <pre> blocks to make sure content format is well preserved, and merging/splitting adjacent
-	// when necessary. (https://dev.ckeditor.com/ticket/3188)
+  // when necessary. (https://dev.ckeditor.com/ticket/3188)
+  // 使用新的元素替换块级元素
 	function replaceBlock( block, newBlock ) {
 		// Block is to be removed, create a temp element to
 		// save contents.
@@ -1341,7 +1340,8 @@ CKEDITOR.STYLE_OBJECT = 3;
 		}
 	}
 
-	// Merge a <pre> block with a previous sibling if available.
+  // Merge a <pre> block with a previous sibling if available.
+  // 合并多个相邻的 pre 标签
 	function mergePre( preBlock ) {
 		var previousBlock;
 		if ( !( ( previousBlock = preBlock.getPrevious( nonWhitespaces ) ) && previousBlock.type == CKEDITOR.NODE_ELEMENT && previousBlock.is( 'pre' ) ) )
@@ -1366,7 +1366,8 @@ CKEDITOR.STYLE_OBJECT = 3;
 		previousBlock.remove();
 	}
 
-	// Split into multiple <pre> blocks separated by double line-break.
+  // Split into multiple <pre> blocks separated by double line-break.
+  // 通过双重换行来拆分多个 pre 
 	function splitIntoPres( preBlock ) {
 		// Exclude the ones at header OR at tail,
 		// and ignore bookmark content between them.
@@ -1395,7 +1396,8 @@ CKEDITOR.STYLE_OBJECT = 3;
 		return headBookmark + str.replace( regexp, replacement ) + tailBookmark;
 	}
 
-	// Converting a list of <pre> into blocks with format well preserved.
+  // Converting a list of <pre> into blocks with format well preserved.
+  // 将一组 pre 标签转换成新的块级元素
 	function fromPres( preHtmls, newBlock ) {
 		var docFrag;
 		if ( preHtmls.length > 1 )
@@ -1438,7 +1440,8 @@ CKEDITOR.STYLE_OBJECT = 3;
 		return docFrag || newBlock;
 	}
 
-	// Converting from a non-PRE block to a PRE block in formatting operations.
+  // Converting from a non-PRE block to a PRE block in formatting operations.
+  // 将 block 转化成 pre
 	function toPre( block, newBlock ) {
 		var bogus = block.getBogus();
 		bogus && bogus.remove();
@@ -1473,7 +1476,8 @@ CKEDITOR.STYLE_OBJECT = 3;
 		return newBlock;
 	}
 
-	// Removes a style from an element itself, don't care about its subtree.
+  // Removes a style from an element itself, don't care about its subtree.
+  // 移除元素自身样式，忽略子树
 	function removeFromElement( element, keepDataAttrs ) {
 		var def = this._.definition,
 			attributes = def.attributes,
@@ -1522,7 +1526,8 @@ CKEDITOR.STYLE_OBJECT = 3;
 
 	// Removes a style from inside an element. Called on applyStyle to make cleanup
 	// before apply. During clean up this function keep data-* attribute in contrast
-	// to removeFromElement.
+  // to removeFromElement.
+  // 从元素中删除样式
 	function removeFromInsideElement( element ) {
 		var overrides = getOverrides( this ),
 			innerElements = element.getElementsByTag( this.element ),
@@ -1557,7 +1562,8 @@ CKEDITOR.STYLE_OBJECT = 3;
 	// Note: Remove the element if no attributes remain.
 	// @param {Object} element
 	// @param {Object} overrides
-	// @param {Boolean} Don't remove the element
+  // @param {Boolean} Don't remove the element
+  // 从特定的元素删除覆盖的样式或者属性，如果没有属性将移除元素，可以理解为属性或者样式去重
 	function removeOverrides( element, overrides, dontRemove ) {
 		var attributes = overrides && overrides.attributes;
 
@@ -1585,7 +1591,8 @@ CKEDITOR.STYLE_OBJECT = 3;
 			removeNoAttribsElement( element );
 	}
 
-	// If the element has no more attributes, remove it.
+  // If the element has no more attributes, remove it.
+  // 移除没有属性的元素
 	function removeNoAttribsElement( element, forceRemove ) {
 		// If no more attributes remained in the element, remove it,
 		// leaving its children.
@@ -1637,7 +1644,8 @@ CKEDITOR.STYLE_OBJECT = 3;
 
 		el = setupElement( el, style );
 
-		// Avoid ID duplication.
+    // Avoid ID duplication.
+    // 避免复制 id
 		if ( targetDocument.getCustomData( 'doc_processing_style' ) && el.hasAttribute( 'id' ) )
 			el.removeAttribute( 'id' );
 		else
@@ -1665,6 +1673,7 @@ CKEDITOR.STYLE_OBJECT = 3;
 		return el;
 	}
 
+  // 替换变量
 	function replaceVariables( list, variablesValues ) {
 		for ( var item in list ) {
 			list[ item ] = list[ item ].replace( varRegex, function( match, varName ) {
@@ -1675,7 +1684,8 @@ CKEDITOR.STYLE_OBJECT = 3;
 
 	// Returns an object that can be used for style matching comparison.
 	// Attributes names and values are all lowercased, and the styles get
-	// merged with the style attribute.
+  // merged with the style attribute.
+  // 返回可用于样式匹配比较的对象
 	function getAttributesForComparison( styleDefinition ) {
 		// If we have already computed it, just return it.
 		var attribs = styleDefinition._AC;
@@ -1713,7 +1723,8 @@ CKEDITOR.STYLE_OBJECT = 3;
 	// Get the the collection used to compare the elements and attributes,
 	// defined in this style overrides, with other element. All information in
 	// it is lowercased.
-	// @param {CKEDITOR.style} style
+  // @param {CKEDITOR.style} style
+  // 获取用于比较元素和属性的集合，定义样式覆盖
 	function getOverrides( style ) {
 		if ( style._.overrides )
 			return style._.overrides;
@@ -1766,7 +1777,8 @@ CKEDITOR.STYLE_OBJECT = 3;
 		return overrides;
 	}
 
-	// Make the comparison of attribute value easier by standardizing it.
+  // Make the comparison of attribute value easier by standardizing it.
+  // 标准化属性值，便于比较
 	function normalizeProperty( name, value, isStyle ) {
 		var temp = new CKEDITOR.dom.element( 'span' );
 		temp[ isStyle ? 'setStyle' : 'setAttribute' ]( name, value );
@@ -1872,7 +1884,7 @@ CKEDITOR.styleCommand.prototype.exec = function( editor ) {
 
 /**
  * Manages styles registration and loading. See also {@link CKEDITOR.config#stylesSet}.
- *
+ *    // 三种类型的样式定义
  *		// The set of styles for the <b>Styles</b> drop-down list.
  *		CKEDITOR.stylesSet.add( 'default', [
  *			// Block Styles
@@ -1929,6 +1941,7 @@ CKEDITOR.tools.extend( CKEDITOR.editor.prototype, {
 	 * @param {CKEDITOR.style} style The style to be watched.
 	 * @param {Function} callback The function to be called.
 	 */
+  // 监听样式状态改变
 	attachStyleStateChange: function( style, callback ) {
 		// Try to get the list of attached callbacks.
 		var styleStateChangeCallbacks = this._.styleStateChangeCallbacks;
@@ -1993,6 +2006,7 @@ CKEDITOR.tools.extend( CKEDITOR.editor.prototype, {
 	 * @member CKEDITOR.editor
 	 * @param {Function} callback The function to be called with the styles data.
 	 */
+  // 获取当前实例的样式集
 	getStylesSet: function( callback ) {
 		if ( !this._.stylesDefinitions ) {
 			var editor = this,
