@@ -48,7 +48,8 @@ CKEDITOR.STYLE_OBJECT = 3;
 
   // \s 匹配空白或者制表符等
 	var semicolonFixRegex = /\s*(?:;\s*|$)/,
-		varRegex = /#\((.+?)\)/g;
+    varRegex = /#\((.+?)\)/g;
+  // 这里想匹配类似 #(id) 之类的东西？
   
   /**
    * 文档地址：https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dom_walker.html
@@ -116,27 +117,6 @@ CKEDITOR.STYLE_OBJECT = 3;
 	 *		// <p>[<img src="bar.png" alt="" class="foo" />]Foo</p>
 	 *
 	 * ### API changes introduced in CKEditor 4.4
-	 *
-	 * Before CKEditor 4.4 all style instances had no access at all to the {@link CKEDITOR.editor editor instance}
-	 * within which the style is used. Neither the style constructor, nor style methods were requiring
-	 * passing the editor instance which made styles independent of the editor and hence its settings and state.
-	 * This design decision came from CKEditor 3; it started causing problems and became an unsolvable obstacle for
-	 * the {@link CKEDITOR.style.customHandlers.widget widget style handler} which we introduced in CKEditor 4.4.
-	 *
-	 * There were two possible solutions. Passing an editor instance to the style constructor or to every method.
-	 * The first approach would be clean, however, having in mind the backward compatibility, we did not decide
-	 * to go for it. It would bind the style to one editor instance, making it unusable with other editor instances.
-	 * That could break many implementations reusing styles between editors. Therefore, we decided to take the longer
-	 * but safer path &mdash; the editor instance became an argument for nearly all style methods, however,
-	 * for backward compatibility reasons, all these methods will work without it. Even the newly
-	 * implemented {@link CKEDITOR.style.customHandlers.widget widget style handler}'s methods will not fail,
-	 * although they will also not work by aborting at an early stage.
-	 *
-	 * Therefore, you can safely upgrade to CKEditor 4.4 even if you use style methods without providing
-	 * the editor instance. You must only align your code if your implementation should handle widget styles
-	 * or any other custom style handler. Of course, we recommend doing this in any case to avoid potential
-	 * problems in the future.
-	 *
 	 * @class
 	 * @constructor Creates a style class instance.
 	 * @param {CKEDITOR.style.definition} styleDefinition
@@ -146,10 +126,10 @@ CKEDITOR.STYLE_OBJECT = 3;
 		if ( typeof styleDefinition.type == 'string' )
 			return new CKEDITOR.style.customHandlers[ styleDefinition.type ]( styleDefinition );
 
-		// Inline style text as attribute should be converted
-		// to styles object.
+    // 将行内样式转换成 styles 对象格式
 		var attrs = styleDefinition.attributes;
 		if ( attrs && attrs.style ) {
+      // 扩展对象，类似于 Object.assign();
 			styleDefinition.styles = CKEDITOR.tools.extend( {},
 				styleDefinition.styles, CKEDITOR.tools.parseCssText( attrs.style ) );
 			delete attrs.style;
@@ -157,7 +137,7 @@ CKEDITOR.STYLE_OBJECT = 3;
 
 		if ( variablesValues ) {
 			styleDefinition = CKEDITOR.tools.clone( styleDefinition );
-
+      // 返回一个 list 数组，variablesValues 是什么？
 			replaceVariables( styleDefinition.attributes, variablesValues );
 			replaceVariables( styleDefinition.styles, variablesValues );
 		}
@@ -168,6 +148,7 @@ CKEDITOR.STYLE_OBJECT = 3;
 					styleDefinition.element.toLowerCase() : styleDefinition.element
 			) : '*';
 
+    // 检测元素是块级，行内或者是 style 对象
 		this.type = styleDefinition.type ||
 			(
 				blockElements[ element ] ? CKEDITOR.STYLE_BLOCK :
@@ -208,9 +189,10 @@ CKEDITOR.STYLE_OBJECT = 3;
 				var initialEnterMode = this._.enterMode;
 
 				// See comment in removeStyle.
-				if ( !initialEnterMode )
+        if ( !initialEnterMode )
+          // activeEnterMode 为当前的上下文使用动态输入模式
 					this._.enterMode = editor.activeEnterMode;
-				applyStyleOnSelection.call( this, editor.getSelection(), 0, editor );
+				applyStyleOnSelection.call( this, editor.getSelection(), 0, editor ); // 0:applyToRange
 				this._.enterMode = initialEnterMode;
 			}
 		},
@@ -232,7 +214,7 @@ CKEDITOR.STYLE_OBJECT = 3;
 		remove: function( editor ) {
 			// Backward compatibility.
 			if ( editor instanceof CKEDITOR.dom.document )
-				return applyStyleOnSelection.call( this, editor.getSelection(), 1 );
+				return applyStyleOnSelection.call( this, editor.getSelection(), 1 ); // 1:removeFromRange
 
 			if ( this.checkApplicable( editor.elementPath(), editor ) ) {
 				var initialEnterMode = this._.enterMode;
@@ -263,6 +245,7 @@ CKEDITOR.STYLE_OBJECT = 3;
 		 * recommended to provide it for integration with all features.  Read more about
 		 * the signature change in the {@link CKEDITOR.style} documentation.
 		 */
+    // 为范围应用样式
 		applyToRange: function( range ) {
 			this.applyToRange =
 				this.type == CKEDITOR.STYLE_INLINE ? applyInlineStyle :
@@ -287,6 +270,7 @@ CKEDITOR.STYLE_OBJECT = 3;
 		 * recommended to provide it for integration with all features. Read more about
 		 * the signature change in the {@link CKEDITOR.style} documentation.
 		 */
+    // 根据提供的 range 范围，移除样式
 		removeFromRange: function( range ) {
 			this.removeFromRange =
 				this.type == CKEDITOR.STYLE_INLINE ? removeInlineStyle :
@@ -302,13 +286,8 @@ CKEDITOR.STYLE_OBJECT = 3;
 		 * and applies the style attributes directly on the provided element. Use with caution.
 		 *
 		 * See {@link CKEDITOR.editor#applyStyle}.
-		 *
-		 * @param {CKEDITOR.dom.element} element
-		 * @param {CKEDITOR.editor} editor The editor instance. Required argument since
-		 * CKEditor 4.4. The style system will work without it, but it is highly
-		 * recommended to provide it for integration with all features. Read more about
-		 * the signature change in the {@link CKEDITOR.style} documentation.
 		 */
+    // 应用样式到指定的元素
 		applyToObject: function( element ) {
 			setupElement( element, this );
 		},
@@ -317,12 +296,9 @@ CKEDITOR.STYLE_OBJECT = 3;
 		 * Gets the style state inside the elements path.
 		 *
 		 * @param {CKEDITOR.dom.elementPath} elementPath
-		 * @param {CKEDITOR.editor} editor The editor instance. Required argument since
-		 * CKEditor 4.4. The style system will work without it, but it is highly
-		 * recommended to provide it for integration with all features. Read more about
-		 * the signature change in the {@link CKEDITOR.style} documentation.
 		 * @returns {Boolean} `true` if the element is active in the elements path.
 		 */
+    // 检测元素路径中是否已经增加了样式
 		checkActive: function( elementPath, editor ) {
 			switch ( this.type ) {
 				case CKEDITOR.STYLE_BLOCK:
@@ -365,6 +341,7 @@ CKEDITOR.STYLE_OBJECT = 3;
 		 * checked against this filter as well.
 		 * @returns {Boolean} `true` if this style can be applied at the elements path.
 		 */
+    // 选中的元素是否可以应用样式
 		checkApplicable: function( elementPath, editor, filter ) {
 			// Backward compatibility.
 			if ( editor && editor instanceof CKEDITOR.filter )
@@ -394,6 +371,7 @@ CKEDITOR.STYLE_OBJECT = 3;
 		 * the signature change in the {@link CKEDITOR.style} documentation.
 		 * @returns {Boolean}
 		 */
+    // 检测元素是否匹配了当前的样式
 		checkElementMatch: function( element, fullMatch ) {
 			var def = this._.definition;
 
@@ -448,6 +426,7 @@ CKEDITOR.STYLE_OBJECT = 3;
 		 * the signature change in the {@link CKEDITOR.style} documentation.
 		 * @returns {Boolean}
 		 */
+    // 检测是否一个元素或者属性被当前的样式移除了
 		checkElementRemovable: function( element, fullMatch, editor ) {
 			// Check element matches the style itself.
 			if ( this.checkElementMatch( element, fullMatch, editor ) )
@@ -494,6 +473,7 @@ CKEDITOR.STYLE_OBJECT = 3;
 		 * @param {String} [label] The label used in the style preview.
 		 * @return {String} The HTML of preview.
 		 */
+    // 基于当前样式构建可预览的 HTML
 		buildPreview: function( label ) {
 			var styleDefinition = this._.definition,
 				html = [],
@@ -521,13 +501,7 @@ CKEDITOR.STYLE_OBJECT = 3;
 
 			return html.join( '' );
 		},
-
-		/**
-		 * Returns the style definition.
-		 *
-		 * @since 4.1
-		 * @returns {Object}
-		 */
+    // 返回样式定义
 		getDefinition: function() {
 			return this._.definition;
 		}
@@ -1672,6 +1646,7 @@ CKEDITOR.STYLE_OBJECT = 3;
 		return el;
 	}
 
+  // 为元素添加样式和属性
 	function setupElement( el, style ) {
 		var def = style._.definition,
 			attributes = def.attributes,
@@ -1828,6 +1803,7 @@ CKEDITOR.STYLE_OBJECT = 3;
 		return true;
 	}
 
+  // 为选中内容应用样式
 	function applyStyleOnSelection( selection, remove, editor ) {
 		var doc = selection.document,
 			ranges = selection.getRanges(),
@@ -1846,11 +1822,16 @@ CKEDITOR.STYLE_OBJECT = 3;
 			}
 		}
 
+    /**
+     * 文档地址：https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_dom_range.html#method-createIterator
+     * 创建一个 ranges 的迭代器
+     */
 		var iterator = ranges.createIterator();
 		while ( ( range = iterator.getNextRange() ) )
 			func.call( this, range, editor );
 
-		selection.selectRanges( originalRanges || ranges );
+    selection.selectRanges( originalRanges || ranges );
+    // 移除数据中的值
 		doc.removeCustomData( 'doc_processing_style' );
 	}
 } )();
