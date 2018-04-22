@@ -18,10 +18,15 @@ function Promise(executor){
       self.reason = reason;
     }
   }
-
+  // promise 接收一个executor函数，该函数在构造promise实例时就执行
   executor(resolve,reject);
 }
 
+/**
+ * 
+ * promise实例需要用then方法注册执行成功/失败的回调方法，
+ * then中根据promise所处状态，判断调用成功还是失败的回调
+ */
 Promise.prototype.then = function(onFullfilled, onRejected){
   let self = this;
   if(self.status === 'fulfilled'){
