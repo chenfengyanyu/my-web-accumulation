@@ -1,0 +1,49 @@
+CKEDITOR.plugins.add('newblod', {
+  icons: 'newblod',
+  init: function (editor) {
+    editor.addCommand('resetBlod', {
+      exec: function (editor) {
+        var selection = editor.getSelection(),
+          myroot = selection.root,
+          textNodes = [],
+          ranges = [],
+          range, text, index;
+        console.log(myroot.getChildren());
+
+        function getTextNodes(element) {
+          var children = element.getChildren(),child;
+
+          for (var i = children.count(); i--;) {
+            child = children.getItem(i);
+            if (child.type == CKEDITOR.NODE_ELEMENT)
+              getTextNodes(child);
+            else if (child.type == CKEDITOR.NODE_TEXT)
+              textNodes.push(child);
+          }
+        }
+
+        getTextNodes(myroot);
+
+        for (i = textNodes.length; i--;) {
+          text = textNodes[i];
+          index = text.getText().indexOf('the');
+          if (index > -1) {
+            range = editor.createRange();
+            range.setStart(text, index);
+            // Note: 3 is fixed length of "the". You may want to change it.
+            range.setEnd(text, index + 3);
+            ranges.push(range);
+          }
+        }
+
+        selection.selectRanges(ranges);
+      }
+    });
+
+    editor.ui.addButton('Newblod', {
+      label: '字体加粗',
+      command: 'resetBlod',
+      toolbar: 'insert,0'
+    });
+  }
+});
