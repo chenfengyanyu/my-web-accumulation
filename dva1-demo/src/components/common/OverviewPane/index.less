@@ -1,0 +1,84 @@
+@background-color: white;
+@prefixCls: 'overview-pane';
+
+.overview-header{
+  border: 1px solid #dfdede;
+  background: #fff;
+}
+
+.overview-page-mixin(){
+  background-color: @background-color;
+  text-align: center;
+  padding: 15px 0 0 0;
+  margin-top: 10px;
+  border: 1px solid #efefef;
+
+  footer {
+    margin-top: 10px;
+    background-color: #108ee9;
+    color: white;
+    height: 30px;
+    line-height: 30px;
+  }
+}
+
+//总览body的样式设置
+.overview-pane {
+  &-header-item {
+    // background-color: @background-color;
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+  }
+  &-body-item {
+    .overview-page-mixin();
+  }
+  &-body-item-margin {
+    margin-left: 10px;
+    .overview-page-mixin();
+  }
+}
+
+.more{
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.text {
+  font-size: 20px;
+  & + div {
+    margin-top: 10px;
+  }
+}
+
+.tip {
+  display: inline-block;
+  margin-left: 8px;
+
+  & > span{
+    margin-left: 8px;
+  }
+}
+
+.firstItem {
+  & > span:nth-child(1) {
+    display: none;
+  }
+}
+
+.offline-status {
+  & > span:nth-child(1) {
+    background-color: #000000;
+  }
+}
+:global {
+  .ant-badge-status-processing {
+    background-color: #108ee9 !important;
+  }
+  .ant-badge-status-default {
+    background-color: #000 !important;
+}
+}
