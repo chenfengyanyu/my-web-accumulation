@@ -1,0 +1,35 @@
+:global {
+  .ant-input-group {
+    width: 200px;
+  }
+  .ant-input-affix-wrapper {
+    width: 260px !important;
+  }
+}
+.box{
+  background: #fff;
+  border: 1px solid #dfdede;
+  padding: 15px;
+  .cycleInput{
+    width: 200px;
+  }
+  .submitBtn {
+    text-align: center;
+  }
+  .label{
+    width: 35px;
+    display: inline-block;
+    font-size: smaller;
+  }
+}
+
+.mixin (@color) {
+  fill: @color;
+  width: 2em;
+  height: 2em;
+  vertical-align: -0.6em;
+  overflow: hidden;
+}
+.icon{
+  .mixin(#8b8a8a);
+}

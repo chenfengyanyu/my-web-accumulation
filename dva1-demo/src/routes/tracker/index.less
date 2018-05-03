@@ -1,0 +1,90 @@
+// .active {
+//   color: #49a9ee !important;
+// }
+// .inactive {
+//   color: #999 !important;
+// }
+
+// .tracker-mode-change{
+//   i{
+//     cursor: pointer;
+//     font-size: 15px;
+//     &:hover{
+//       color: lighten(#666, 10%)
+//     }
+//     margin-left: 10px;
+//   }
+//   div {
+//     display: inline-block;
+//   }
+// }
+.mixin (@color) {
+  fill: @color;
+  width: 2em;
+  height: 2em;
+  vertical-align: -0.6em;
+  overflow: hidden;
+}
+.icon{
+  .mixin(#8b8a8a);
+}
+.icon0{
+  .mixin(#fe041d);
+}
+.icon25{
+  .mixin(#108ee9);
+}
+.icon50{
+  .mixin(#ffbf00);
+}
+.icon75{
+  .mixin(#108ee9);
+}
+.icon100{
+  .mixin(#00a854);
+}
+.config{
+  fill: #108ee9;
+  width: 1.2em;
+  height: 1.2em;
+  vertical-align: -0.2em;
+}
+.btnPos{
+  float: right;
+}
+.label{
+  width: 35px;
+  display: inline-block;
+  font-size: smaller;
+}
+.info{
+  color: red;
+  margin-top: 10px;
+  line-height: 15px;
+}
+.option{
+  i{
+    font-size: 18px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+}
+:global {
+  .ant-card-body{
+    padding: 0;
+  }
+  .ant-card-bordered {
+    border: 1px solid #dfdede;
+  }
+  .ant-card-extra {
+    position: absolute;
+    right: 10px;
+    top: 14px;
+  }
+  .ant-card-head {
+    padding: 0 10px;
+  }
+  .ant-table-pagination {
+    margin-right: 10px !important;
+  }
+}

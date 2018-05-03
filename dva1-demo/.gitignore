@@ -1,0 +1,7 @@
+dist
+node_modules
+.DS_Store
+.log
+config.js
+!src/utils/config.js
+.vscode/

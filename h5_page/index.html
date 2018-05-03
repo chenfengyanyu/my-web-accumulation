@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<!-- <div class="test"></div> -->
+	<div class="container" id="wrap">
+		<section class="item">
+			<div class="animate one"><img src="img/b.png" width="80%"/></div>
+			<div class="animate two"><img src="img/c.png" width="70%"/></div>
+			<div class="animate three"><img src="img/a.png" width="120" height="120" /></div>
+			<div class="arrow"></div>
+		</section>
+		<section class="item">
+			<div class="animate one"><img src="img/b.png" width="80%"/></div>
+			<div class="animate two"><img src="img/c.png" width="70%"/></div>
+			<div class="animate three"><img src="img/a.png" width="120" height="120" /></div>
+			<div class="arrow"></div>
+		</section>
+		<section></section>
+		<section></section>
+		<section></section>
+	</div>
+	<script type="text/javascript" src="js/iSlider.js"></script>
+	<script type="text/javascript">
+		var myslider=new iSlider({
+		    wrap:'#wrap',
+		    item:'.item',
+		    onslide:function (index) {
+		        console.log(index);
+		    }
+		});
+	</script>
+</body>
+</html>
