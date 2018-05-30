@@ -1,1 +1,1 @@
-export default () => <img src="/static/img/1.png" alt="my image" />
+export default () => <img src="/static/img/1.png" alt="jartto image" />
