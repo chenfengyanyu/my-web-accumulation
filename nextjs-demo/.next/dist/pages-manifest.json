@@ -1,1 +1,1 @@
-{"/starts":"bundles/pages/starts.js","/_app":"bundles/pages/_app.js","/_error":"bundles/pages/_error.js","/_document":"bundles/pages/_document.js"}
+{"/index":"bundles/pages/index.js","/image":"bundles/pages/image.js","/_app":"bundles/pages/_app.js","/_error":"bundles/pages/_error.js","/_document":"bundles/pages/_document.js","/":"bundles/pages/index.js"}
