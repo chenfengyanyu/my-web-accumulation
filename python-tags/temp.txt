@@ -1,47 +1,161 @@
-HTML5
+更新时间：2018-06-06
+难度等级： 为 ， 为  ， 为  。
+HMTL5HTML5
+  
+   
+   
+扩展
 CSS
+  
+   
+   
+扩展
 JS
+  
+   
+   
+扩展
 产品设计
+软件
+视觉网站
+原型工具
 前端类库
-移动端
-PWA
-WebAssembly
-小程序
-Canvas
-WebGL
-SVG
-graphql
-模块化编程
+jQueryzeptounderscorelodashEasyUIBootstrapMeterial Design移动端
+Native App
+Hybird App
+Web App 
+响应式布局
+webview
+关于 Hbuilder移动端 Touchend 事件不触发解决方案PWA
+官网第一本 PWA 中文书PWA（Progressive Web App）初探总结讲讲 PWAReact 同构应用 PWA 升级指南WebAssembly
+WebAssembly，Web 的新时代来谈谈 WebAssembly 是个啥？为何说它会影响每一个 Web 开发者？WebAssembly 系列（四）WebAssembly 工作原理如何评论浏览器最新的 WebAssembly 字节码技术？小程序
+快速上手小程序细数小程序的坑小程序开发 TipsCanvas
+Canvas 实现单机版贪吃蛇WebGL
+WebGL技术储备WebGL的实际使用WebGL 3D版俄罗斯方块SVG
+走进 SVG SVG 类库 snap.svg.jsgraphql
+graphqlapolloapollo-blog模块化编程
 源码学习
 算法
+初探加密算法算法分析程序员实用算法对称加密
+非对称加密
+Hash 加密
 数据结构
+数组 
+栈 
+队列 
+链表 
+树 
+图 
+堆 
+散列表 
+链表
+...
 主流框架
-web服务器端
-数据库
+Angular
+VueReact
+web 服务器端
+Nodejsdenonexus 搭建 npm 私服Nginx消息队列 
+nodejs 和 结合dubbo服务 node-zookeeper-dubbothrifty -> nodejs实例数据库
+MySQL 
+Redis 
+Memcached 
 包管理
+npm 
+cnpm 
+yarn 
+homebrew 
+bower 
 Python
+  
+   
+   
 设计模式
-网络协议
+单例模式 
+简单工厂模式 
+观察者模式 
+适配器模式 
+代理模式 
+桥接模式
+外观模式
+访问者模式
+策略模式
+模版方法模式
+中介者模式
+迭代器模式
+备忘录模式
+职责链模式
+享元模式
+状态模式
+常用的 Javascript 设计模式网络协议
+TCP 
+UDP 
+HTTP 协议入门HTTP2HTTPS 
+计算机网络的 7 层协议 
 函数式编程
+什么是函数式编程思维？我眼中的 JavaScript 函数式编程参数个数 Arity
+高阶组件 Higher-Order Functions (HOF)
+偏应用函数 Partial Application
+柯里化 Currying
+闭包 Closure
+自动柯里化 Auto Currying
+函数合成 Function Composition
+Continuation
+纯函数 Purity
+副作用 Side effects
+幂等 Idempotent
+Point-Free Style
+断言 Predicate
+约定 Contracts
+范畴 Category
+JavaScript 函数式编程术语大全...
 优化
-DOM
-缓存
-跨域
-事件模型
-安全
+方式
+工具
+网站性能优化实战——从12.67s到1.06s的故事DOM
+JavaScript HTML DOM缓存
+HTML5 离线存储HTML 和 HTTP 头文件设置
+Nginx 缓存 
+彻底弄懂 HTTP 缓存机制及原理跨域
+JSONPCORSNginx事件模型
+观察者模式 
+DOM0 级模型 
+IE 事件模型 
+DOM2 级模型 
+JQuery Event 模型 
+JS 事件模型安全
+Web 安全之 XSS 和 CSRFWeb 安全的三个攻防姿势XSS 的原理分析与解剖对于 XSS 和 CSRF 你究竟了解多少CSRF 攻击的应对之道SQL 注入 
+HTTPS 
+内网渗透 
+DDos 攻击 
+点击劫持 
+Session 劫持 
+短信接口攻击 
 Git
-代码规范
-Nginx
-DNS
-CDN
-V8引擎
-Linux
+Git 学习资源汇总Git 常规操作如何配置 Git 对应多个 RepositoryGit 实践系列一：初探代码规范
+ESLintJSHintstyleLintNginx
+NginxDNS
+例解 DNS 递归/迭代名称解析原理浏览器输入网址后台是如何运作的CDN
+什么是 CDN？V8 引擎
+Google V8 引擎运用了哪些优秀的算法？V8 引擎详解Google V8Linux
+ls/cd/rm/cat/chmod/chown/useradd/df/du/ps/top/head/tail 
+Linux掌握 Linux 命令 Grep Linux 实用命令Mac 下查看端口占用情况网络操作
+grep 
+sed 
+awk 
 Electron
-抓包工具
-测试
+初探 Electron 理论篇初探 Electron 升华篇初探 Electron 实践篇 1初探 Electron 实践篇 2抓包工具
+FiddlerCharlesPostmanHttpWatch测试
+单元测试
+软件测试
 部署
-浏览器
-数据可视化
+Docker
+Jenkins浏览器
+浏览器工作原理what-happens-when再谈 IE 浏览器兼容问题数据可视化
+图表 
+地图 
 前端工程化
+我们是如何做好前端工程化和静态资源管理百度 fisScratGruntGulpWebpack
+BrowserifyParcelBabel
 物联网
-技术杂谈
+ruffruff入门应用开发要想成为一名物联网工程师，需要学习哪些知识？技术杂谈
+一个程序员的成长之路 剖析别人，总结自己秒杀系统优化思路客户端高可用建设体系缓存架构设计

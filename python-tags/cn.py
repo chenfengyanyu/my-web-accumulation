@@ -4,7 +4,7 @@ jieba.enable_parallel(4)
 # Setting up parallel processes :4 ,but unable to run on Windows
 from os import path
 from scipy.misc import imread
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 # jieba.load_userdict("txt\userdict.txt")
 # add userdict by load_userdict()
 from wordcloud import WordCloud, ImageColorGenerator
@@ -36,7 +36,7 @@ def jieba_processing_txt(text):
 
     mywordlist = []
     seg_list = jieba.cut(text, cut_all=False)
-    liststr = "/ ".join(seg_list)
+    liststr = '/ '.join(seg_list)
 
     with io.open(stopwords_path, encoding='utf-8') as f_stop:
         f_stop_text = f_stop.read()
@@ -45,16 +45,12 @@ def jieba_processing_txt(text):
     for myword in liststr.split('/'):
         if not (myword.strip() in f_stop_seg_list) and len(myword.strip()) > 1:
             mywordlist.append(myword)
+    print mywordlist
     return ' '.join(mywordlist)
 
 
 wc = WordCloud(font_path=font_path, background_color="white", max_words=2000, mask=back_coloring,
                max_font_size=60, random_state=42, width=1000, height=860, margin=2,)
-
-
 wc.generate(jieba_processing_txt(text))
-
-# create coloring from image
-image_colors_default = ImageColorGenerator(back_coloring)
-# save wordcloud
+# wc.generate(text)
 wc.to_file(path.join(d, imgname1))
