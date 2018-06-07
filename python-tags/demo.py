@@ -14,7 +14,7 @@ def get_title(url):
     html = h.content.decode('utf-8')
     #print html
 
-    qurl = r'<a href="forum.*? class="s xst">(.*?)</a>'
+    qurl = '<a href="/2018/01/04/first-exploration-electron-2/">(.*?)</a>'
     qurllist = re.findall(qurl,html)
     #print qurllist
 
@@ -26,6 +26,6 @@ def get_title(url):
         #f.flush()
         f.close()
 
-for i in range(1,5):
+for i in range(1,1000):
     url = 'http://jartto.wang/page/'+str(i)+'/'
     get_title(url)
