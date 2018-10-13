@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="three/lib/reset.css" />
+		<style type="text/css">
+			#canvas {
+				background: #8C8C8C;
+				margin-left: 25%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<canvas id="canvas" width="500px" height="500px"></canvas>
+	</body>
+	<script type="text/javascript">
+		var canvas = document.querySelector('#canvas')
+		var context = canvas.getContext('2d')
+		var snake_body, direction, food_position
+		init_snake()
+		// snake fastival
+		function init_snake() {
+			snake_body = [{
+				x: 40,
+				y: 40,
+				color: 'black'
+			}, {
+				x: 60,
+				y: 40,
+				color: 'black'
+			}, {
+				x: 80,
+				y: 40,
+				color: 'red'
+			}]
+			// snake move direction
+			direction = 'right'
+			// food position
+			food_position = {
+				x: 260,
+				y: 180
+			}
+		}
+
+		setInterval(function() {
+			context.clearRect(0, 0, 500, 500)
+			init()
+			draw_snake()
+			move_snake()
+		}, 120)
+
+		// left 37
+		// right 39
+		// top 38
+		// bottom 40
+		window.addEventListener('keydown', function(e) {
+			if(e.keyCode == 37) {
+				if(direction != 'right') {
+					direction = 'left'
+				}
+			} else if(e.keyCode == 39) {
+				if(direction != 'left') {
+					direction = 'right'
+				}
+			} else if(e.keyCode == 38) {
+				if(direction != 'bottom') {
+					direction = 'top'
+				}
+			} else if(e.keyCode == 40) {
+				if(direction != 'top') {
+					direction = 'bottom'
+				}
+			}
+		})
+
+		// init canvas
+		function init() {
+			context.strokeStyle = '#EEEEEE'
+			for(var i = 0; i < 500; i += 20) {
+				context.moveTo(i, 0)
+				context.lineTo(i, 500)
+				context.moveTo(0, i)
+				context.lineTo(500, i)
+			}
+			context.stroke()
+			context.fillStyle = 'black'
+			context.fillRect(food_position.x, food_position.y, 20, 20)
+		}
+
+		// repaint snake fastival
+		function draw_snake() {
+			var new_fastival = []
+			for(var i = 0; i < snake_body.length; i++) {
+				context.fillStyle = snake_body[i].color
+				context.fillRect(snake_body[i].x, snake_body[i].y, 20, 20)
+				new_fastival.push({
+					x: snake_body[i].x,
+					y: snake_body[i].y
+				})
+			}
+			eat_food()
+			dead(new_fastival)
+
+		}
+
+		// snake move algorithm
+		function move_snake() {
+			var x = 0,
+				y = 0
+			if(direction == 'right') {
+				x = 20
+			} else if(direction == 'left') {
+				x = -20
+			} else if(direction == 'top') {
+				y = -20
+			} else if(direction == 'bottom') {
+				y = 20
+			}
+			for(var i = 0; i < snake_body.length - 1; i++) {
+				snake_body[i].x = snake_body[i + 1].x
+				snake_body[i].y = snake_body[i + 1].y
+			}
+			snake_body[snake_body.length - 1].x += x
+			snake_body[snake_body.length - 1].y += y
+		}
+
+		// random produce food
+		function random_food() {
+			food_position = {
+				x: ~~(Math.random() * (500 / 20)) * 20,
+				y: ~~(Math.random() * (500 / 20)) * 20
+			}
+		}
+
+		// snake eat food
+		function eat_food() {
+			if(snake_body[snake_body.length - 1].x == food_position.x && snake_body[snake_body.length - 1].y == food_position.y) {
+				random_food()
+				add_snake_fastival()
+			}
+		}
+
+		// add snake fastival
+		function add_snake_fastival() {
+			new_fastival = {
+				x: snake_body[0].x - 20,
+				y: snake_body[0].y - 20,
+				color: 'black'
+			}
+			snake_body.unshift(new_fastival)
+		}
+
+		function dead(new_fastival) {
+			var last_fastival = snake_body[snake_body.length - 1]
+			if(last_fastival.x == -20 || last_fastival.x == 500 || last_fastival.y == -20 || last_fastival.y == 500) {
+				alert("重新开始游戏")
+				init_snake()
+			}
+			for(var i = 0; i < new_fastival.length; i++) {
+				for(var j = i + 1; j < new_fastival.length; j++) {
+					if(new_fastival[i].x == new_fastival[j].x && new_fastival[i].y == new_fastival[j].y) {
+						alert("重新开始游戏")
+						init_snake()
+					}
+				}
+			}
+		}
+	</script>
+
+</html>
