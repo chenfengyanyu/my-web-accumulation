@@ -1,0 +1,68 @@
+#section-8(style='display:none')
+	.markdown
+		.div80
+		h2 配置工具
+		hr
+		pre 配置工具是提供给开发者来查看和修改云子参数的手机客户端，支持 iPhone 和 Android。
+		h3 一、云子列表
+		p 打开云子配置工具，首先能看到的是附近的云子列表。每个云子信息不仅包括 Major、Minor 等基本信息，还有一个以动画形式展现的 RSSI 强度，针对3.x的固件版本的硬件可以显示提供功率和频率。
+		p.title 如下图所示：
+		.images
+			img(src='/zh/assets/image/api/config/1.png',width='270')
+		p 您还可以根据SN、UMM、型号、固件版本等进行搜索，或者扫描云子附带的二维码，快速找到相应的云子。
+
+		h3 二、云子详情页
+		p 1.点击列表中的云子条目可以进入云子详情页面。每个云子都包含温度、光线以及加速度传感器数据等。所有传感器数据都以图示的方式实时展现，可以极为直观地全面了解一个云子的工作状态。
+		.images
+			img(src='/zh/assets/image/api/config/2.png',width='270')
+		p 2.云子配置工具提供了实时 RSSI 折线图，使得开发者能够精确地了解到云子的信号变化状态，如下图所示：
+		.images
+			img(src='/zh/assets/image/api/config/3.png',width='270')
+
+		h3 三、云子配置页
+		p 云子，作为一款iBeacon智能传感器主要提供的配置功能主要分5部分：
+		ul
+			li 1.iBeacon功能
+				p iBeacon为Apple提出的标准功能，符合Apple 标准的iBeacon协议。包括iBeacon功能的开关、UUID、Major、Minor的设置。
+			li 2.广播功能
+				p 云子会以一定功率和频率向外广播数据，广播的内容根据各功能的开关情况而定，包括iBeacon与传感器数据。在这部分可以设置云子的广播功率、频率。功率越高则覆盖范围越大，反之覆盖范围越小。频率越高时，云子更易被发现，数据状态更新也会更快。当云子的广播功率、频率较高时，如何100ms+8dBm时电池消耗速度会比较快。
+			li 3.传感器功能
+				p 云子除了标准的iBeacon功能外，还集成了温度、光线、加速度等多种传感器。这部分配置可以控制传感器的开关，还可对加速度计数器进行清零操作。
+			li 4.蹭用
+				p 云子的iBeacon功能为Apple的标准协议，但iBeacon协议还存在着一些问题。例如部署好一套系统后，可以除了部署方可以使用，其他开发者也可以在未授权的情况下使用。同时iBeacon协议的防攻击功能比较弱，如果部署好一套100枚设备组成的系统，破坏者可以通过复制一些同样的设备放在部署环境中对已构建的系统造成破坏。
+				p 为了解决这个问题，我们可以通过设定密钥启动SENSORO私有协议来实现（需要3.x以上固件）。密钥数量有限，需要通过SENSORO云平台进行
+					code 申请
+					| 。
+			li 5.防窜改
+				p 每个云子可以设定一个唯一密码。设定密码后，如果需要修改云子则必须提供密码。 密码不可找回，请牢记密码。
+			.images
+				img(src='/zh/assets/image/api/config/4.jpg',width='270')
+
+			p
+				a(href='https://itunes.apple.com/cn/app/sensoro-yun-zi-pei-zhi/id902437077?mt=8',target='_blank') iOS 配置工具
+			p
+				a(href='http://sensoro.github.io/download/app/sensoro-beacon-utilities/android/yunzi.apk',target='_blank') Android 配置工具
+			p.title 扫码下载配置工具等更多App
+			.images
+				img(src='/zh/assets/image/api/qrcode.png',width='115')
+
+
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

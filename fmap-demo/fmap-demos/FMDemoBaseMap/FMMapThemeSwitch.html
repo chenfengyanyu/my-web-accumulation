@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>切换主题示例</title>
+	<link rel="stylesheet" href="lib/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div id="fengMap" ></div>
+	
+	<!-- 主题切换 -->
+	<div class="dropdown" id="control-panel">
+		<button id="dropLabel-themeName" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+		aria-expanded="false">
+		切换主题<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu" aria-labelledby="dropLabel-themeName">
+			<li><a data-prop="themeName" data-val="2001">主题一：2001</a></li>
+			<li><a data-prop="themeName" data-val="2002">主题二：2002</a></li>
+		</ul>
+	</div>
+	<script src="lib/jquery-2.1.4.min.js"></script>
+	<script src="lib/fengmap.min.js"></script>
+	<script src="lib/bootstrap.min.js"></script>
+	<script>
+		//获取版本号,设置title
+		document.title = '切换主题示例V' + fengmap.VERSION;
+
+		//定义全局map变量
+		var map;
+		var fmapID = '10347';
+
+		window.onload = function() {
+			map = new fengmap.FMMap({
+				//渲染dom
+				container: document.getElementById('fengMap'),
+				//地图数据位置
+				mapServerURL: './data/' + fmapID,
+				//主题数据位置
+				mapThemeURL: './data/theme',
+				// 默认比例尺级别设置为20级
+				defaultMapScaleLevel: 20,
+				//开发者申请应用下web服务的key
+				key: '请输入您的KEY',
+				//开发者申请应用名称
+				appName: '请输入您的appName',
+			});
+
+			//打开Fengmap服务器的地图数据和主题
+			map.openMapById(fmapID);
+
+			var aSwitch = document.getElementsByTagName('a');
+			for (var i = 0; i < aSwitch.length; i++) {
+				aSwitch[i].onclick = function() {
+					var prop = this.attributes["data-val"].nodeValue;
+					map.themeName = prop;
+					document.getElementById('dropLabel-themeName').innerHTML = this.innerHTML + '<span class="caret"></span>';
+				}
+			}
+		};
+	</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+#section-2(style='display:none')
+	.markdown
+		.div80
+		h2 微信摇一摇周边
+		hr
+		h3 一、登录摇一摇周边平台
+		p 进入
+			a(href='https://zb.weixin.qq.com')  摇一摇周边平台
+			| ，登录微信公众号。
+		h3 二、设备管理
+		p 参照
+			a(href='https://zb.weixin.qq.com/nearby/instruction.xhtml?section=1') 微信官方文档
+		ol
+			li 
+				p 1.
+					code 新增设备
+					| ，操作完成后你会获得一个未激活的设备。
+				.images
+					img(src='/zh/assets/image/api/wxShake/1.png',width='600',alt='设备管理')
+				p 2.
+					code 查看设备
+					| ，获得设备的配置，每个设备均有一个 iBeacon ID，即 UUID、Major、Minor。
+				.images
+					img(src='/zh/assets/image/api/wxShake/3.png',width='600',alt='查看详情')
+		h3 三、设备配置
+		p 1.
+			code 下载配置工具
+			| 参照
+			a(href='/zh/api') 配置工具文档
+		p 2.
+			code 扫描硬件上的设备二维码
+			| ，进入此设备页面。
+			ul
+				li 云子的二维码在背面
+				li 云盒的二维码在侧面
+				li 云标的二维码可能在里面，需要拆掉外壳进行扫描。
+		p 3.
+			code 开始配置
+			| ，将微信给出的 iBeacon ID，通过配置工具设置到设备里。
+			.images
+				img(src='/zh/assets/image/api/wxShake/4.png',width='260')
+			ul
+				li 微信给出的 Major、Minor 为十进制表示。
+				li 功率频率，推荐-4dBm/211.25ms。
+				li 设置密码，可以防止他人恶意修改设备。
+		p 4.
+			code 保存
+		h3 四、配置验证
+		ol
+			li 1.打开微信
+			li 2.进入摇一摇
+			li 3.检查是否打开蓝牙
+			li 4.出现“周边”选项
+			li 5.摇一摇，出现
+				code 激活设备
+				| 提示
+			li 6.点击激活设备
+			li 7.重新摇一摇，出现
+				code 公众号页面
+		.images
+			img(src='/zh/assets/image/api/wxShake/0.png',width='260')
+		h3 五、页面配置
+		pre
+			code 摇一摇周边平台分配的设备在激活后，会关联到自身的公众号页面。您可以通过平台上的`页面管理`来新增页面。
+		p
+			code 页面类型
+		ol
+			li 1.自定义链接，您可以指定任意的URL链接。
+			li 2.模板页面：（1）公众号关注模板（2）卡券发放模板 
+		.images
+			img(src='/zh/assets/image/api/wxShake/5.png',width='400')
+		h5 配置步骤
+		ol
+			li 
+				code 1.新增页面
+				| ，选择按照您的需求选择页面类型。
+				.images
+					img(src='/zh/assets/image/api/wxShake/6.png',width='560') 
+			li 
+				code 2.对设备进行页面关联
+				| ，建立设备与页面的连接。 
+				.images
+					img(src='/zh/assets/image/api/wxShake/8.png',width='500') 
+			li 	
+				code 3.摇一摇验证
+				| ，按照第四部分的配置验证进行重新验证。 
+				.images
+					img(src='/zh/assets/image/api/wxShake/9.png',width='260') 
+		h3 六、总结
+		p.title 摇一摇配置总体上比较简单，只有两部分主要内容：
+			ol
+				li 1.在微信摇一摇周边平台：获取 iBeacon ID，管理其绑定的页面内容。
+				li 2.通过 SENSORO 配置工具对硬件设备进行配置，将 iBeacon ID写入。
+		p.titile 常见问题
+			ol
+				li 微信相关问题参见： 
+					a(href='https://zb.weixin.qq.com/nearby/instruction.xhtml?section=1') 微信摇一摇周边帮助指引
+
+

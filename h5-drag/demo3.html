@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>demo3-拖拽上传</title>
+  <style type="text/css">
+  #div1 {
+    width:150px; 
+    height:140px;
+    padding:10px;
+    border:1px solid #aaaaaa;
+    border-radius: 3px;
+  }
+  </style>
+</head>
+
+<body>
+  <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  <br />
+  <img id="drag1" src="img/1.png" width="150" draggable="true" ondragstart="drag(event)" />
+
+</body>
+<script type="text/javascript">
+function allowDrop(ev)
+{
+  ev.preventDefault();
+}
+
+function drag(ev)
+{
+  ev.dataTransfer.setData("Text",ev.target.id);
+}
+
+function drop(ev)
+{
+  ev.preventDefault();
+  var data=ev.dataTransfer.getData("Text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</html>

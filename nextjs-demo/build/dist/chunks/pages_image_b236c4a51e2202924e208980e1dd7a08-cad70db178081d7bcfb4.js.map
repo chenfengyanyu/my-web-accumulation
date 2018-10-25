@@ -1,0 +1,1 @@
+{"version":3,"file":"chunks/pages_image_b236c4a51e2202924e208980e1dd7a08-cad70db178081d7bcfb4.js","sources":["webpack:///pages/image.js"],"sourcesContent":["export default () => <img src=\"/static/img/1.png\" alt=\"jartto image\" />\n\n\n// WEBPACK FOOTER //\n// pages/image.js"],"mappings":";;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;;;A","sourceRoot":""}

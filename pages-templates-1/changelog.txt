@@ -1,0 +1,78 @@
+- v2.3.0
+* [Upgrade] Bootstrap to v3.3.7
+* [Upgrade] Fontawesome to v4.7.0
+* [Fixed] [Calendar] pagescalendar('getEvents',option);
+* [Fixed] [Calendar] pagescalender(“rebuild”)
+* [Fixed] [Calendar] Setting startOfTheWeek and endOfTheWeek breaks
+* [Fixed] [Calendar] Scroll to first event is not working properly
+* [Fixed] [Calendar] Calendar.settings.header.visible not applying properly
+* [Fixed] Prevent scroll propagation on sidebar menu
+* [Fixed] [Calendar] Uncaught TypeError: Cannot read property 'pageX' of undefined
+
+
+- v2.2.0
+* [Add] Pending Comments Widget 
+* [Add] Map Sales Widget
+* [Upgrade] Select2 to v4.0.3
+* [Removed] Select2 v3.x
+* [Fixed] [Calendar] weekends: false makes Mondays be empty
+* [Fixed] [Calendar] this.checkOptionsAndBuild()
+* [Fixed] [Calendar] onTimeSlotDblClick not working on mobile
+* [Fixed] [Calendar] scroll to first Event
+* [Fixed] [Calendar] overlapping events more than 2 causes wrong length
+* [Fixed] csSelect for angular
+
+- v2.1.6
+* [Add] Minimal Weekly Stats Widget
+* [Add] Project Progress Widget
+* [Add] Stat Cards Widget
+* [Fixed] Angular Email Compose Unwanted width
+* [Remove] duplicate code
+* [Add] "context" parameter to init functions - Pages.js
+* [Add] Better way to get selected option
+* [Remove] unused variable (padding) - Pages.js
+
+- v2.1.5
+* Full Compatibility with SASS / SCSS 
+* Compatibility with LibSass 
+* Misspelled bootstrap diretory in assets folder
+* Remove console.log calls in pages.js
+ 
+https://github.com/revoxltd/pages/issues?q=milestone%3A%22SCSS+Full+Support%22+is%3Aclosed
+
+- v2.1.4
+[Add] Weekly Widget : Todo
+[Add] Bootstrap Typehead plugin - JQuery and Angular
+[Update] Barebone html header
+[Fixed] Calendar: Set week to be visible by default2
+[Fixed] Calendar Event Callbacks are not being called5
+[Fixed] Calendar week view bug7
+
+https://github.com/revoxltd/pages/issues?q=milestone%3A2.1.4
+
+- v2.1.3
+* Fixes for sass/scss
+* [Calendar] eventOverlap should be set to false by default and changing does not disable events to overlap 
+* [Calendar] eventBubble attribute not working as expected 
+* [Calendar] ui visible option change doesn't effect anything
+* [Calendar] local variable/attribute change doesn't effect anything
+* [Notification] In mobile when menu is open it overlaps with the sidebar
+* [Calendar] MonthView onMonth change issue
+
+https://github.com/revoxltd/pages/issues?q=milestone%3Av2.1.3+is%3Aclosed
+
+- v2.1.2 
+* Weekly Widget #2 - Table Widget
+* Weekly Widget #3 - Pie Chart Widget
+* Fixed : Datatable Pagination Styles
+* Fixed : Using Boostrap dropdowns in tables
+* Fixed : Calendar date selectiong gets slower with each selection
+* Fixed : Force load all fonts via HTTP breaks SSL
+* Fixed : Jquery in Rails
+* Fixed : Datatable sorting_disabled css
+
+For more information visit
+https://github.com/revoxltd/pages/issues?q=milestone%3Av2.1.2+is%3Aclosed
+
+or
+http://help.revox.io/t/change-log-v2-1-2/116

@@ -1,0 +1,398 @@
+#section-5(style='display:none')
+	.markdown
+		.div80
+		h2 REST API 详解
+		hr
+		p REST API 可以让您用任何可以发送 HTTP 请求的设备来与 
+			a(href='http://cloud.sensoro.com',target='_blank') SENSORO云平台
+			| 进行交互。
+		p.title 基础介绍
+			ul
+				li 1.鉴权方式：HTTP Basic Auth
+				li 2.URL： https://cloud-api.sensoro.com
+				li 3.账号：
+					a(href='http://cloud.sensoro.com',target='_blank') 注册链接
+		h3 一、用户/Users
+		table
+			thead
+				tr
+					th URL 
+					th HTTP
+					th 功能
+			tbody
+				tr
+					td /sessions
+					td POST
+					td 邮箱密码验证
+		ul
+			li 1.邮箱密码验证
+				p
+					code POST /sessions
+				p
+					code 参数
+		table
+			thead
+				tr
+					th 名称
+					th 类型
+					th 描述
+					th 必填
+			tbody
+				tr
+					td email
+					td String
+					td 电子邮箱
+					td 是
+				tr
+					td password
+					td String
+					td 密码
+					td 是
+		p
+			code 例子
+		pre
+			code curl -X POST \
+				|   -H "Content-Type: application/json" \
+				|   -d '{"email":"user1@sensoro.com","password":"123456"}' \
+				|   https://cloud-api.sensoro.com/sessions/
+		p
+			code 返回值
+		pre
+			code Status: 200 OK
+
+		h3 二、云子/Beacons
+		table
+			thead
+				tr
+					th URL
+					th HTTP
+					th 功能
+			tbody
+				tr
+					td /users/me/beacons
+					td GET
+					td 云子列表
+				tr
+					td /users/me/beacons
+					td POST
+					td 添加云子
+				tr
+					td /users/me/beacons/:sn
+					td DELETE
+					td 删除云子
+				tr
+					td /users/me/beacons/:sn
+					td PUT
+					td 设置云子标签
+		ul
+			li 1.云子列表
+			p
+				code GET /users/me/beacons
+			p
+				code 例子
+			pre
+				code
+					| curl -u user1@sensoro.com:123456 \
+					|   -X GET \
+					|   -H "Content-Type: application/json" \
+					|   https://cloud-api.sensoro.com/users/me/beacons
+			p
+				code 返回值
+			pre
+				code Status: 200 OK
+			li 2.添加云子
+			p
+				code POST /users/me/beacons
+			p
+				code 参数
+			table
+				thead
+					tr
+						th 名称
+						th 类型
+						th 描述
+						th 必填
+				tbody
+					tr
+						td mac
+						td String
+						td mac地址(SN)
+						td 是
+					tr
+						td token
+						td String
+						td 验证密钥	
+						td 是
+			p
+				code 例子
+			pre
+				code
+					| curl -u user1@sensoro.com:123456 \
+					|   -X POST \
+					|   -H "Content-Type: application/json" \
+					|   -d '{"mac":"0117C5486322","token":"KfTNYy9tRzyOwNUG"}' \
+					|   https://cloud-api.sensoro.com/users/me/beacons
+			p
+				code 返回值
+			pre
+				code
+					| Status: 200 OK
+					| {
+					|      "UMM": "63EA09C2-5345-4E6D-9776-26B9C6FC126C|2D03|00C3",
+					|      "mac": "0117C5486322",
+					|      "updatedTime": 1418269545245,
+					|      "users": [
+					|           {
+					|                 "user": "53d5c846f3e54d2f4d42af8b",
+					|                  "createdTime": "2014-12-11T03:53:40.120Z"
+					|           }
+					|        ],
+					|        "createTime": "2014-09-19T06:03:48.552Z",
+					|        "lonlat": [
+					|               116.475426,
+					|               39.993717
+					|        ],
+					|        "sensor": {
+					|               "accelerometer": 0,
+					|               "light": 153.36,
+					|               "power": 71,
+					|               "temperature": 19
+					|         }
+					| }
+			li 3.删除云子
+				p
+					code DELETE /users/me/beacons/:sn
+				p
+					code 例子
+				pre
+					code
+						| curl -u user1@sensoro.com:123456 \
+						|   -X DELETE \
+						|   -H "Content-Type: application/json" \
+						|   https://cloud-api.sensoro.com/users/me/beacons/0117C5486322
+				p
+					code 返回值
+				pre
+					code Status: 200 OK
+				li 4.设置云子标签
+					p
+						code PUT /users/me/beacons/:sn
+					p
+						code 参数
+					table
+						thead
+							tr
+								th 名称
+								th 类型
+								th 描述
+								th 必填
+							tbody
+							tr
+								td tags
+								td Array
+								td 标签数组	
+								td 是
+					p
+						code 例子
+					pre
+						code
+							| curl -u user1@sensoro.com:123456 \
+							|   -X PUT \
+							|   -H "Content-Type: application/json" \
+							|   -d '{"tags":["Beijing","WJ","SOHO","2807"]}' \
+							|   https://cloud-api.sensoro.com/users/me/beacons/0117C5486322
+					p
+						code 返回值
+					pre
+						code Status: 200 OK
+
+		h3 三、巡检记录/Logs
+			table
+				thead
+					tr
+						th URL
+						th HTTP
+						th 功能
+				tbody
+					tr
+						td /users/me/beacons/logs	
+						td GET
+						td 云子记录
+		ul
+			li 1.巡检记录列表
+				p
+					code GET /users/me/beacons/logs
+				p
+					code 参数
+				table
+					thead
+						tr
+							th 名称
+							th 类型
+							th 描述
+							th 必填
+					tbody
+						tr
+							td type	
+							td Int
+							td
+								| 来源类型：
+								br
+								| 0: 所有用户上传的数据
+								br
+								| 1: 自己上传的数据
+								br
+								| 2: 自己巡检人员上传的数据
+							td 否
+						tr
+							td timestamp
+							td String
+							td 时间戳
+							td 否
+						tr
+							td mac
+							td String
+							td mac地址(SN)
+							td 否
+						tr
+							td page
+							td Int
+							td 页码，默认0
+							td 否
+						tr
+							td count
+							td Int
+							td 返回数量，默认100
+							td 否
+				p
+					code 例子
+				pre
+					code
+						| curl -u user1@sensoro.com:123456 \
+						|   -X GET \
+						|   -H "Content-Type: application/json" \
+						|   https://cloud-api.sensoro.com/users/me/beacons/logs?mac=0117C5486322&timestamp=1418279942
+				p
+					code 返回值
+				pre
+					code
+						| Status: 200 OK
+						| [
+						|      {
+						|           "beaconMac": "0117C5486322",
+						|           "beaconUMM": "63EA09C2-5345-4E6D-9776-26B9C6FC126C|2D03|00C3",
+						|           "__v": 0,
+						|           "updatedTime": 1418281671108,
+						|           "location": {
+						|                  "lat": 39.99475475859843,
+						|                  "lon": 116.4750352755154
+						|            },
+						|            "sensor": {
+						|                   "temperature": 19,
+						|                   "light": 22.14,
+						|                   "power": 71,
+						|                   "accelerometer": 0
+						|             }
+						|        }
+						| ]
+
+		h3 四、部署图/Maps
+			table
+				thead
+					tr
+						th URL
+						th HTTP
+						th 功能
+				tbody
+					tr
+						td /maps/:key
+						td GET
+						td 指定部署图的数据
+			ul
+				li 1.获取部署图数据
+				p
+					code GET /maps/:key
+				p
+					code 参数
+				table
+					thead
+						tr
+							th 名称
+							th 类型
+							th 描述
+							th 必填
+					tbody
+						tr
+							td key
+							td String
+							td 地图ID
+							td 是
+				p
+					code 例子
+				pre
+					code
+						| curl -u user1@sensoro.com:123456 \
+						|    -X GET \
+						|    -H "Content-Type: application/json" \
+						|    https://cloud-api.sensoro.com/maps/aNJGbkSj
+				p
+					code 返回值
+				pre
+					code
+						| Status: 200 OK
+						| {
+						|        "__v": 1,
+						|        "address": "Beijing WJ SOHO",
+						|        "description": "",
+						|        "floor": "F1",
+						|        "imageURL": "http://sensoro-maps.qiniudn.com/819a02a0d5b9a21e9ca8d186666280c1.png",
+						|        "key": "aNJGbkSj",
+						|        "name": "MapOne",
+						|        "user": "53d5c846f3e54d2f4d42af8b",
+						|        "createdTime": 1418280779158,
+						|        "beacons": [
+						|              {
+						|                    "mac": "0117C5486322",
+						|                    "PosX": 0.6781768,
+						|                    "PosY": 0.40375,
+						|                    "label": "",
+						|                    "title": "",
+						|                    "updatedTime": "2014-12-11T06:53:32.197Z",
+						|                    "id": "54893f6c0c1bc56f4ecb9fde"
+						|              }
+						|         ],
+						|         "tags": [],
+						|         "yScale": 1,
+						|         "xScale": 1,
+						|         "id": "54893f4b0c1bc56f4ecb9fdd"
+						| }
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

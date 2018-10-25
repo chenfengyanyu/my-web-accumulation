@@ -1,0 +1,48 @@
+/*base_dev*/
+
+.base_dev {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 100px 0 130px;
+    height: 620px\9\0;
+    h3 {
+        text-align: center;
+        font-size: 35px;
+        margin: 100px 0 50px;
+    }
+    ul {
+        display: flex;
+        text-align: center;
+        a {
+            text-decoration: none;
+            flex: 1;
+            width: 33%\9\0;
+            float: left;
+            color: #000;
+        }
+        li {
+            padding: 20px;
+            margin: 0 20px 0 0;
+            cursor: pointer;
+            >h3 {
+                margin: 18px;
+                font-size: 18px;
+            }
+            >i {
+                font-size: 14px;
+                color: #797B7B;
+                font-style: normal;
+            }
+            &:hover {
+                background-color: #EFEFEF;
+            }
+        }
+    }
+    .fix_margin {
+        margin: 4% 0 0 30px;
+    }
+    img{
+        width:100px;
+        border-radius:50px;
+    }
+}

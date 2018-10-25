@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>2D/3D切换</title>
+	<link rel="stylesheet" href="lib/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div id="fengMap" ></div>
+
+	<!-- 视角按钮组 -->
+	<div class="viewmode-group btn-group-vertical" data-toggle="buttons">
+		<button class="btn btn-default">2D</button>
+		<button class="btn btn-default btn-primary">3D</button>
+	</div>
+	
+	<script src="lib/jquery-2.1.4.min.js"></script>
+	<script src="lib/fengmap.min.js"></script>
+	<script>
+		//获取版本号,设置title
+		document.title = '2D/3D切换V' + fengmap.VERSION; 
+
+		//定义全局map变量
+		var map;
+		var fmapID = '10347';
+
+		window.onload = function() {
+			map = new fengmap.FMMap({
+				//渲染dom
+				container: document.getElementById('fengMap'),
+				//地图数据位置
+				mapServerURL: './data/' + fmapID,
+				//主题数据位置
+				mapThemeURL: 'data/theme/',
+				//设置主题
+				defaultThemeName: '3007',
+				// 默认比例尺级别设置为20级	
+				defaultMapScaleLevel: 20,
+				//开启2维，3维切换的动画显示
+				viewModeAnimateMode: true,
+				//开发者申请应用下web服务的key
+				key: '请输入您的KEY',
+				//开发者申请应用名称
+				appName: '请输入您的appName',
+			});
+
+			//打开Fengmap服务器的地图数据和主题
+			map.openMapById(fmapID);
+
+			var aBtn = document.querySelectorAll('.btn');
+			//开启2维模式
+			aBtn[0].onclick = function() {
+				//设置地图为2维模式
+				map.viewMode = fengmap.FMViewMode.MODE_2D; 
+				this.classList.add('btn-primary');
+				aBtn[1].classList.remove('btn-primary');
+			};
+
+			//开启3维模式
+			aBtn[1].onclick = function() {
+				//设置地图为3维模式
+				map.viewMode = fengmap.FMViewMode.MODE_3D; 
+				this.classList.add('btn-primary');
+				aBtn[0].classList.remove('btn-primary');
+			};
+		};
+	</script>
+</body>
+</html>

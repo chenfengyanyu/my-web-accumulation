@@ -1,0 +1,11 @@
+<template name="_builderLayout">
+	{{>sideBar}}
+	<div class="page-container full-height">
+	{{>header}}
+	<!-- START PAGE-CONTAINER -->
+		{{> Template.dynamic template=main}}
+	</div>
+	{{>quickView}}
+	{{>builderOptions}}
+	{{>overlaySearch}}
+</template>

@@ -1,0 +1,230 @@
+p, h1, h2, h3, h4, h5, ul {
+  padding: 0;
+  margin: 0; }
+
+p, h1, h2, h3, h4, h5 {
+  font-size: inherit;
+  line-height: inherit; }
+
+.section {
+  padding-top: 100px;
+  padding-bottom: 150px;
+  font-size: 16px;
+  text-align: center;
+  min-width: 1018px; }
+
+.section_fir_title {
+  font-size: 36px; }
+
+.section_fir_state {
+  padding-top: 50px;
+  text-align: left; }
+
+.section_sec_title {
+  font-size: 23px;
+  padding-top: 60px;
+  padding-bottom: 30px; }
+
+.section_fir_title, .section_sec_title {
+  line-height: 1; }
+
+.container {
+  width: 1018px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  min-width: 1018px; }
+
+.toCenter {
+  display: block;
+  margin: 0 auto; }
+
+.clearfix {
+  zoom: 1; }
+  .clearfix:after {
+    content: "";
+    display: block;
+    clear: both; }
+
+.sctn {
+  width: 1018px;
+  margin: 0 auto;
+  padding-bottom: 80px;
+  font-size: 16px;
+  line-height: 1.1;
+  padding-left: 15px;
+  padding-right: 15px; }
+  .sctn .title {
+    border-bottom: 1px solid #c6c6c6;
+    padding-bottom: 20px;
+    font-size: inherit;
+    line-height: 1; }
+    .sctn .title .order {
+      margin-right: 8px;
+      margin-top: -1px;
+      font-size: 12px;
+      border: 1px solid #000;
+      border-radius: 3px;
+      width: 15px;
+      height: 15px;
+      text-align: center;
+      line-height: 16px;
+      font-style: normal;
+      display: inline-block; }
+    .sctn .title .name {
+      font-weight: normal;
+      position: relative;
+      top: 1px; }
+  .sctn .content_lst {
+    padding-top: 70px; }
+    .sctn .content_lst li:not(:first-of-type) {
+      margin-top: 20px; }
+    .sctn .content_lst li .cell {
+      padding-left: calc(100% / 9);
+      display: inline-block;
+      width: calc(100% / 3); }
+      .sctn .content_lst li .cell .para_title {
+        color: #999;
+        margin-bottom: 6px; }
+
+#products {
+  min-width: 1018px;
+  margin-bottom: 28px;
+  background: #f7f9fb; }
+  #products .info {
+    padding-top: 43px;
+    font-size: 24px;
+    color: #999; }
+  #products .page_title {
+    padding-top: 24px;
+    font-size: 36px; }
+  #products .imgCtn {
+    display: block;
+    height: 166px;
+    background-repeat: no-repeat;
+    background-position: center; }
+  #products .cell {
+    padding-left: calc(100% / 30); }
+    #products .cell:nth-of-type(1) .imgCtn {
+      background-image: url(/zh/assets/image/compare/beacon-yunzi.png);
+      background-size: auto 86px; }
+    #products .cell:nth-of-type(2) .imgCtn {
+      background-image: url(/zh/assets/image/compare/beacon-4AA.png);
+      background-size: auto 100%; }
+    #products .cell:nth-of-type(3) .imgCtn {
+      background-image: url(/zh/assets/image/compare/beacon-usb.png);
+      background-size: auto 100%; }
+
+#nav_ctn {
+  height: 57px; }
+
+#nav {
+  border-bottom: 1px solid transparent;
+  background: #fff;
+  height: 56px; }
+  #nav .sctn {
+    padding-bottom: 0; }
+  #nav .content_lst {
+    padding-top: 0; }
+  #nav li {
+    height: 56px;
+    line-height: 56px; }
+    #nav li .cell {
+      padding-left: calc(100% / 85);
+      text-align: center; }
+
+.navFix {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-bottom-color: #c6c6c6 !important;
+  z-index: 99; }
+
+#board_chip {
+  margin-top: 66px; }
+  #board_chip li .cell {
+    padding-left: calc(100% / 85); }
+    #board_chip li .cell .imgCtn {
+      height: 100px;
+      background-repeat: no-repeat;
+      background-position: center; }
+    #board_chip li .cell .price, #board_chip li .cell .butn, #board_chip li .cell .name {
+      text-align: center; }
+    #board_chip li .cell .name {
+      padding-top: 30px; }
+    #board_chip li .cell:nth-of-type(1) .imgCtn {
+      background-image: url(/zh/assets/image/compare/chip-yunzi.png);
+      background-size: auto 90px; }
+    #board_chip li .cell:nth-of-type(2) .imgCtn {
+      background-image: url(/zh/assets/image/compare/chip-4AA.png);
+      background-size: auto 100%; }
+    #board_chip li .cell:nth-of-type(3) .imgCtn {
+      background-image: url(/zh/assets/image/compare/chip-usb.png);
+      background-size: auto 100%; }
+  #board_chip li:nth-of-type(2) {
+    margin-top: 50px; }
+    #board_chip li:nth-of-type(2) .cell .imgCtn {
+      height: 66px;
+      background-image: url(/zh/assets/image/compare/nordic.png);
+      background-size: auto 100%; }
+
+#function {
+  color: #333; }
+  #function .para_title {
+    color: inherit; }
+
+#price .cell .imgCtn {
+  height: 156px;
+  background-repeat: no-repeat;
+  background-position: 0 center; }
+#price .cell .price, #price .cell .butn {
+  text-align: center; }
+#price .cell .price {
+  font-size: 19px;
+  padding: 50px 0 20px; }
+#price .cell .butn {
+  display: block;
+  cursor: pointer;
+  font-size: 12px;
+  width: 70px;
+  padding: 2px 4px;
+  border-radius: 3px;
+  background: #932929;
+  color: #fff;
+  position: relative;
+  left: 50%;
+  margin-left: -35px;
+  line-height: 24px; 
+  text-decoration: none;
+  &:hover{
+    background-color: #791f1f;
+  }
+
+}
+#price .cell:nth-of-type(1) {
+  padding-left: calc(100% / 12); }
+  #price .cell:nth-of-type(1) .price, #price .cell:nth-of-type(1) .btn_ctn {
+    padding-right: calc(100% / 4); }
+  #price .cell:nth-of-type(1) .imgCtn {
+    background-image: url(/zh/assets/image/compare/yunzi.png);
+    background-size: auto 77px; }
+#price .cell:nth-of-type(2) {
+  padding-left: calc(100% / 10); }
+  #price .cell:nth-of-type(2) .price, #price .cell:nth-of-type(2) .btn_ctn {
+    padding-right: calc(100% / 3); }
+  #price .cell:nth-of-type(2) .imgCtn {
+    background-image: url(/zh/assets/image/compare/4AA.png);
+    background-size: auto 100%; }
+#price .cell:nth-of-type(3) {
+  padding-left: calc(100% / 8); }
+  #price .cell:nth-of-type(3) .price, #price .cell:nth-of-type(3) .btn_ctn {
+    position: relative;
+    right: calc(100% / 2.8); }
+  #price .cell:nth-of-type(3) .imgCtn {
+    background-image: url(/zh/assets/image/compare/usb.png);
+    background-size: auto 100%; }
+
+#service .cell a {
+  color: #000; }
+  #service .cell a:hover {
+    color: #000; }

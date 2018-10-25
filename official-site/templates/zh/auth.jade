@@ -1,0 +1,204 @@
+extends _layout
+append header
+	link(rel='stylesheet', href='/zh/assets/css/auth.css')
+block content
+	section.auth_box
+		.auth_warp
+			.login_animate(style="height: 520px;")
+				h3 统一登录系统
+				form.login
+					.line
+						input(type='email',placeholder='请输入邮箱')
+					.line
+						input(type='password',placeholder='请输入密码')
+					button#submit(type='submit') 登录
+					.info
+						.left
+							i
+								b
+							span 记住密码
+						.right
+							span 忘记密码？
+			.auth_cloud.animate
+				.slide_in_up_2
+					h1#welcome Hi！
+						span#name
+					ul
+						a(href="http://iot.sensoro.com",target="_blank")
+							li
+								img(src="/zh/assets/image/auth/iot.png")
+								h3 低功耗广域网云平台
+						a(href="http://x.sensoro.com",target="_blank")
+							li
+								img(src="/zh/assets/image/auth/scrm.png")
+								h3 云子SCRM云平台
+						a(href="http://cloud.sensoro.com",target="_blank")
+							li
+								img(src="/zh/assets/image/auth/ibeacon.png")
+								h3 iBeacon设备云平台
+					#logout 退出登录
+		#textbg
+			.box1
+				img(src='/zh/assets/image/login.png')
+block append scripts
+	script.
+		// cookie 设置，获取，删除
+		var cookie = {
+			name: 'x-session-id',
+			set: function(value, expires) {
+				expires = expires && new Date(expires);
+				var str = escape(value);
+
+				if (expires) {
+					str += (';expires=' + expires.toGMTString());
+				}
+				str += ';path=/;domain=sensoro.com';
+				document.cookie = cookie.name + '=' + str;
+			},
+			get: function() {
+				var reg = new RegExp('(^| )' + cookie.name + '=([^;]*)(;|$)');
+				var arr = document.cookie.match(reg);
+				if (arr) {
+					return unescape(arr[2]);
+				} else {
+					return null;
+				}
+			},
+			remove: function() {
+				var exp = new Date();
+				exp.setTime(exp.getTime() - 1);
+				var cval = this.get(cookie.name);
+				if (cval !== null) {
+					document.cookie = cookie.name + '=' + cval + ';expires=' + exp.toGMTString() + ';path=/;domain=sensoro.com';
+				}
+			}
+		};
+		var loginUrl = 'https://passport.sensoro.com';
+
+		// 登录
+		var login = function(email, password, remember) {
+			$.post(loginUrl + '/sessions', {
+				email: email,
+				password: password,
+				remember: remember
+			}).success(function(user) {
+				console.log(user);
+				cookie.set(user.sessionID, user.expires);
+				//- $('.auth_box').hide();
+				//- $('.auth_cloud').show();
+				$('.auth_box').addClass('play');
+			}).error(function(err) {
+				err = err.responseText;
+				try {
+					err = JSON.parse(err);
+				} catch(e){}
+				console.log(err);
+				alert('用户名或密码吗不正确');
+			});
+		};
+
+		// 获取当前登录用户的信息
+		var getUserInfo = function() {
+			var headers = {};
+			headers[cookie.name] = cookie.get();
+			$.ajax({
+				url: loginUrl + '/users/me',
+				headers: headers,
+				success: function(user) {
+					console.log(user);
+					var name = user.email.split('@')[0].toLowerCase();
+					$('#name').text(name);
+					$('.auth_box').addClass('play');
+				},
+				error: function(err) {
+					err = err.responseText;
+					try {
+						err = JSON.parse(err);
+					} catch(e){}
+					console.log(err);
+				}
+			});
+		};
+
+		// 登出
+		var logout = function() {
+			var headers = {};
+			headers[cookie.name] = cookie.get();
+			$.ajax({
+				method: 'DELETE',
+				url: loginUrl + '/sessions',
+				headers: headers,
+				success: function(ret) {
+					console.log(ret);
+				},
+				error: function(err) {
+					err = err.responseText;
+					try {
+						err = JSON.parse(err);
+					} catch(e){}
+					console.log(err);
+				}
+			});
+		};
+
+		$(document).ready(function(){
+			$('.auth_box').height(window.innerHeight-50);
+			$(window).resize(function() {
+				$('.auth_box').height(window.innerHeight-50);
+			})
+
+			var oul = $('#textbg .box1');
+			var oulHtml = oul.html();
+			oul.html(oulHtml+oulHtml);
+			var ali = $('.box1 img');
+			$('#textbg .box1>img').css('width',window.innerWidth);
+			var ttt = -(window.innerWidth*192/1280/2);
+			console.log(ttt);
+			$('#textbg').css({'height':window.innerWidth*192/1280,'marginTop':ttt+'px'});
+			//- var aliWidth = $('#textbg .box1>img').eq(1).width();
+			var aliWidth = window.innerWidth;
+			var ulWidth = aliWidth*ali.size();
+			oul.width(ulWidth); 
+			var speed = 2;
+			function slider(){
+				if(speed<0){
+				  if(oul.css('left')==-ulWidth/2+'px'){
+				  oul.css('left',0);
+				  }
+				  oul.css('left','+=-2px');
+				}
+				if(speed>0){
+				  if(oul.css('left')=='0px'){
+				  oul.css('left',-ulWidth/2+'px');
+				  }
+				  oul.css('left','+='+speed+'px');
+				}
+			}
+			var timeId = setInterval(slider,30);
+			getUserInfo();
+			// 用户登陆
+			$('form').submit(function(e){
+				e.preventDefault();
+				var email = $('input[type=email]').val();
+				var password = $('input[type=password]').val();
+				console.log(email, password);
+				login(email, password);
+			});
+			$('#logout').click(function(){
+				console.log('out');
+				logout();
+				if($('.auth_box').hasClass('play')){
+					$('.auth_box').removeClass('play');
+				}
+			})
+		});
+
+
+
+
+
+
+
+
+
+

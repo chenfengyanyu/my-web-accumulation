@@ -1,0 +1,190 @@
+
+/*
+Dashboard CSS -
+Contains Widget related styles. These styles are not included in core Pages CSS framework.
+
+[Table of contents]
+
+1. MAP SALES
+2. TODO LIST
+3. COMMENTS WIDGET
+4. Projects
+*/
+
+/* Start MAP SALES */
+
+.sales-map-widget .img-holder {
+	text-align: center;
+	width:47px;
+	height:47px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	background-color:#294781;
+
+}
+
+.sales-map-widget .map-body{
+	height: 100%;
+	min-height: 355px;
+	position: relative;
+}
+
+.sales-map-widget .select2-container .select2-selection .select2-selection__rendered{
+	font-size: 18px;
+}
+
+.sales-map-widget .select2-container .select2-selection{
+	padding: 0px 0px 0px 3px;
+	background:none;
+	border:1px !important;
+
+}
+
+.sales-map-widget .select2-dropdown{
+	-webkit-box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.2);
+	box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.2);
+	margin-top: 5px;
+}
+/* END  MAP SALES */
+
+
+/* Start TODO LIST */
+.task{
+	cursor: pointer;
+}
+.task:hover .hidden{
+    display: block!important;
+}
+.task-list-title{
+	align-items: center;
+	display: flex;
+}
+.task-list-title, .checkbox{
+	padding: 10px 20px;
+}
+.todolist-widget .checkbox{
+	width:20%;
+}
+/* Strikethrough
+http://codepen.io/EdenSG/pen/jPENoE
+*/
+.strikethrough {
+	display: inline-block;
+	position: relative;
+	opacity: .7;
+}
+
+.strikethrough:after {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 1px;
+	margin-top: -12px;
+	background: #626262;
+	transform-origin: center left;
+	animation: strikethrough 1s 0.3s cubic-bezier(.55, 0, .1, 1) 1;
+	transition: transform 0.3s cubic-bezier(.55, 0, .1, 1);
+}
+
+/* Keyframes for initial animation */
+
+@keyframes strikethrough {
+	from {
+			transform: scaleX(0);
+	}
+	to {
+			transform: scaleX(1);
+	}
+}
+.task-list{
+    background: url(../img/left-border.jpg) repeat-y calc(80%);
+    width: 100%;
+
+}
+
+.checkbox.text-center label::after{
+	left: 1.2px;
+}
+/* END TODO LIST */
+
+/* Start COMMENTS WIDGET */
+.pending-comments-widget .widget-header {
+	background: #3B4753;
+}
+.pending-comments-widget h5 {
+	color: #C1C3C6;
+	font-weight: 500;
+	font-size: 13px;
+}
+.pending-comments-widget .nav-tabs li.active a {
+	color: #FFF;
+}
+.pending-comments-widget .nav-tabs li:not(.active) a {
+	color: #C1C3C6;
+}
+.pending-comments-widget .nav-tabs-simple::after {
+	position: static;
+	border: none;
+}
+.pending-comments-widget .scrollable {
+	height: 251px;
+	margin-bottom: 0 !important;
+}
+.pending-comments-widget .comment-button {
+	color: #000 !important;
+}
+.pending-comments-widget .view-button::before {
+	content: '|';
+	margin-left: -7px;
+	margin-right: 25px;
+	color: #C1C3C6;
+}
+.pending-comments-widget .select2-choice {
+	border: none;
+	background-color: transparent;
+	font-size: 18px;
+	color: #FFF;
+}
+.pending-comments-widget .comment-wrapper {
+	width: calc(100% - 45px);
+}
+.pending-comments-widget .comment-username {
+	font-weight: 500;
+}
+
+.pending-comments-widget .select2-container .select2-selection .select2-selection__rendered{
+	font-size: 18px;
+	color: #fff;
+}
+
+.pending-comments-widget .select2-container .select2-selection{
+	padding: 0px 0px 0px 3px;
+	background:none;
+	border:1px !important;
+
+}
+.pending-comments-widget .scroll-content{
+	max-height: 370px;
+}
+
+.pending-comments-widget .select2-dropdown{
+	-webkit-box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.2);
+	box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.2);
+	margin-top: 5px;
+}
+/* End COMMENTS WIDGET */
+
+/* Pending Projects */
+.pending-projects-widget .nav-tabs-simple > li:after{
+	background: #ececec;
+}
+.pending-projects-widget .nav-tabs > li > a{
+	padding: 8px 7px;
+}
+.pending-projects-widget .nav-tabs-simple:after{
+	border-bottom: 0;
+}

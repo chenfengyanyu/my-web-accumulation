@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>手势控制</title>
+	<link rel="stylesheet" href="lib/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div id="fengMap" ></div>
+	
+	<div id="control" class="panel panel-info">
+		<div class="panel-body">
+		</div>
+	</div>
+	<script src="lib/jquery-2.1.4.min.js"></script>
+	<script src="lib/fengmap.min.js"></script>
+	<script src="lib/bootstrap.min.js"></script>
+	<script>
+		//获取版本号,设置title
+		document.title = '手势控制V' + fengmap.VERSION;
+
+		//定义全局map变量
+		var map;
+		var fmapID = '10347';
+
+		window.onload = function() {
+			map = new fengmap.FMMap({
+				//渲染dom
+				container: document.getElementById('fengMap'),
+				//地图数据位置
+				mapServerURL: './data/' + fmapID,
+				//主题数据位置
+				mapThemeURL: './data/theme',
+				//设置主题
+				defaultThemeName: '3007',
+				// 默认比例尺级别设置为20级
+				defaultMapScaleLevel: 20,
+				//开发者申请应用下web服务的key
+				key: '请输入您的KEY',
+				//开发者申请应用名称
+				appName: '请输入您的appName',
+			});
+
+			//打开Fengmap服务器的地图数据和主题
+			map.openMapById(fmapID);
+
+			//地图加载完成事件
+			map.on('loadComplete',function() {
+				
+				bindCheck_(map.gestureEnableController, ['enableMapPan', 'enableMapPinch', 'enableMapRotate', 'enableMapIncline'], ['禁用平移地图', '禁用缩放地图', '禁用旋转地图', '禁用倾斜地图']);
+			});
+
+			//添加checked
+			function bindCheck_(controller, names, values) {
+				var oParent = document.querySelector('#control .panel-body');
+				var oDiv = '';
+				for (var i = 0; i < names.length; i++) {
+					var name = names[i];
+					var labelname = values[i];
+					oDiv += '<div class="check"><label><input id="' + name + '" type="checkbox">' + labelname + '</label></div>';
+				}
+				oParent.innerHTML = oDiv;
+				var aCheckbox = document.querySelectorAll('.check input');
+				for (var i = 0; i < aCheckbox.length; i++) {
+					aCheckbox[i].onchange = function() {
+						if (this.checked == true) {
+							controller[this.id] = false;
+						} else {
+							controller[this.id] = true;
+						}
+					}
+				}
+			};
+		};
+	</script>
+</body>
+</html>

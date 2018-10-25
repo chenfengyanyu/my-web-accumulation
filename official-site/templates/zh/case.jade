@@ -1,0 +1,94 @@
+extends _layout
+append header
+	link(rel='stylesheet', href='/zh/assets/css/case.css')
+block content
+	section.case_banner
+		img(src='/zh/assets/image/case/ceo.jpg',width='200')
+		p 
+			| “你们做的东西让人惊讶，极富商业价值；
+			br
+			| 期待你们与微软在更多领域，有着更加深度合作。”
+		.name 微软 CEO Satya Nadella
+	section.case_count
+		ul
+			li
+				i 780
+				b 品牌客户
+			li
+				i 62
+				b 国家及地区
+			li
+				i 46000
+				b 门店
+	section.case_tab
+		ul
+			li.active(data-flag='all') 全部
+			li(data-flag='company') 公司大事件
+			li(data-flag='alpha') 低功耗广域网
+			li(data-flag='scrm') 云子SCRM
+	section.case_list
+		- var list1 = [{img:'google.png',desc:'SENSORO 产品全面支持谷歌 Eddystone 安全框架——EID，为用户解决安全痛点。',target:'eid.html'},{img:'a.png',desc:'SENSORO 完成 1000 万美元融资，投资方包括：诺基亚成长基金、香港新世界集团、曼图资本。',target:'http://mp.weixin.qq.com/s?__biz=MzA4NzY0NzIwNA==&mid=400652253&idx=1&sn=a36e124669cb8a46a39314ef9a4a086e'},{img:'wifipix.png',desc:'SENSORO 与 WIFIPIX 展开独家战略合作，双方将在商业客户、数据挖掘、商用场景感知服务等领域全面开展合作。',target:'http://mp.weixin.qq.com/s?__biz=MzA4NzY0NzIwNA==&mid=401936899&idx=1&sn=52c65302716d215bba12729b5fc68526'},{img:'palmap.png',desc:'SENSORO 与 Palmap 建立战略合作伙伴关系，双方将通过beacon传感器与室内定位技术结合，有效实现资源互通，完善室内定位应用场景，共同开发室内定位商业市场。',target:'http://mp.weixin.qq.com/s?__biz=MzA4NzY0NzIwNA==&mid=402141664&idx=1&sn=a3de093e60d52d19a0f29c63a943c953'}];
+		- var list2 = [{img:'nokia.png',desc:'9月18日上午11时，第一台 α Space 低功耗广域网基站在北京市望京地区完成部署。',target:'http://mp.weixin.qq.com/s?__biz=MzA4NzY0NzIwNA==&mid=2651013209&idx=1&sn=005ff92c18407352e0557c434d323763'},{img:'chitec.png',desc:'α Space 低功耗物联网基站亮相第十九届中国北京科技产业博览会。',target:'http://mp.weixin.qq.com/s?__biz=MzA4NzY0NzIwNA==&mid=2651013167&idx=1&sn=f6156586306887e36386196aa011d3f0'},];
+		- var list3 = [{img:'museum.png',desc:'国博与SENSORO联合打造数字化导览平台，让“珍宝”说话。历史艺术与数字化的跨界结合，为观展带来全新的近场互动体验。',target:'museum.html'},{img:'marykay.png',desc:'玫琳凯上海大楼开业首日即引入云子SCRM爆款应用——基于物联网的”Pokemon Go”，调动全员通过“寻宝”探索办公新环境，引领智慧大楼新潮流。',target:'maryKay.html'},{img:'wangfujing.png',desc:'2016年春节期间，SENSORO助力王府井步行商业街玩转数字营销，优化传统零售业转型升级。',target:'wangfujing.html'},{img:'madrid.png',desc:'足球豪门皇马首次采用iBeacon技术回馈球迷，打破传统观球体验，让球迷利用换个“玩法“与巨星互动。',target:'madrid.html'}];
+		- var lists = list1.concat(list2,list3);
+		- var compareList = [{keyword:'all',index:'lists'},{keyword:'company',index:'list1'},{keyword:'alpha',index:'list2'},{keyword:'scrm',index:'list3'}];
+		each one ,i in compareList
+			ul(id='#{one.keyword}')
+				each item in eval("("+one.index+")")
+					li(data-target='#{item.target}')
+						img(src='/zh/assets/image/case/#{item.img}',width='120px')
+						p #{item.desc} 
+						a(href='articles/#{item.target}') 查看 &gt;
+	section.case_order
+		h3 现在开启低功耗广域网／云子SCRM定制服务
+		.btn_item.fix
+			a(href='/zh/contact') 立刻咨询
+block append scripts
+	script.
+		$(function(){
+
+
+			$('.case_tab li').click(function(){
+				$(this).siblings().removeClass('active');
+				$(this).addClass('active');
+				var cur = $(this).attr('data-flag');
+				//- 计算当前容器高度
+				$('.case_list').height($('#'+cur).find('li').size()*185);
+				$('#'+cur).siblings().css({'opacity':'0','transition':'opacity 0.2s ease-out','zIndex':0});
+				$('#'+cur).css({'opacity':'1','transition':'opacity 0.4s ease-in-out','zIndex':5});
+			})
+
+			$('.case_list li').click(function(){
+				if($(this).attr('data-target').indexOf("http") > -1) {
+					var url =  $(this).attr('data-target');
+					window.open(url,"_blank");
+				}else{
+					window.location.href = 'articles/'+ $(this).attr('data-target');
+				}
+			})
+
+			var showCurrentTab = function(key){
+				var $eleTab = $('.case_tab ul'),
+					$eleContent = $('.case_list');
+				$.map($eleTab.find('li'), function(item, index){
+					if($(item).attr('data-flag') == key){
+						//重置tab
+						$eleTab.children().removeClass('active');
+						$eleTab.children().eq(index).addClass('active');
+						//- 重置content
+						$eleContent.children().css('opacity','0');
+						$eleContent.height($('#'+key).find('li').size()*185);
+						$('#'+key).css({'opacity':'1','zIndex':5,'position':'relative'});
+					}
+				})
+			}
+
+			var init = function(){
+				$('.case_list').height($('.case_list ul').height());
+				showCurrentTab(window.location.href.split('#')[1]);
+			}
+
+			init();
+
+
+		})

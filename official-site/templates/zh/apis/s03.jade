@@ -1,0 +1,329 @@
+#section-3(style='display:none')
+	.markdown
+		.div80
+		h2 iOS SDK
+		hr
+		pre
+			code 由于 SDK 需要更多的 App 授权，所以如果您不需要下面列表中的功能，请使用 iOS 提供的标准 iBeacon SDK 进行开发。
+				br
+				ul
+					li 1.需要动态修改设备。
+					li 2.需要使用防蹭用功能。
+					li 3.需要访问设备的传感器数据和电池数据。
+		p 欢迎使用云子/标签，本质上它们是一种带有iBeacon功能的无线智能传感器设备。
+		p.title 目前我们的iOS SDK，主要提供以下功能：
+			ul
+				li 1.扫描周围的传感器设备
+				li 2.读取传感器设备的参数
+				li 3.上传传感器设备状态（电池、UMM等）至
+					a(href='http://cloud.sensoro.com') SENSORO云平台
+				li 4.设置云子传感器
+		p
+		h3 安装SDK
+		h4 1. 下载
+		p 您可以从下面的地址下载最新版的iOS SDK：
+			a(href='https://github.com/Sensoro/SDK-iOS',target='_blank') 下载地址
+		h4 2. 安装与配置
+		p 解压缩下载的文件，将 Headers 目录中的所有文件，以及libSensoroBeaconKit.a、libSensoroCloud.a文件，加入您的 Xcode 项目中。
+		p （1）因为SDK中含有Category，所以需要在 Other Linker Flags 增加 -ObjC
+		pre
+			code Targets --> Build Settings --> Linking --> Other Linker Flags
+		p 结果如下图所示： 
+		.images
+			img(src='/zh/assets/image/api/ios/3.jpg',width='600')
+		p （2）然后添加对系统框架的依赖 (Framework)：
+		pre 
+			code Targets --> Build Phases --> Link Binary With Libraries
+			p
+			code - CoreBluetooth.framework
+			code - CoreLocation.framework
+			code - Security.framework
+		p.title 结果如下图所示： 
+		.images
+			img(src='/zh/assets/image/api/ios/1.png',width='600')
+		p 引用头文件：
+		pre
+			code #import "SBKBeacon.h"
+			code #import "SBKBeaconManager.h"
+			code #import "SBKBeaconManager+Cloud.h"
+		p
+		h3 	开始使用
+		h3 一. 初始化
+		p 在这一步，我们声明需要监听的硬件的UUID等，随后启动扫描服务。请求所需的各类权限如定位服务，并设置是否上传传感器数据（电池电量、UMM）等。
+		pre
+			code /*初始化UUID*/
+			br
+			code NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"23A01AF0-232A-4518-9C0E-323FB773F5EF"];
+			p
+			code SBKBeaconID *beaconID = [SBKBeaconID beaconIDWithProximityUUID:uuid];
+			p
+			code /* 设置云子防蹭用密钥 (如果没有可以不设置) */
+			code [SBKBeaconManager sharedInstance] addBroadcastKey("01Y2GLh1yw3+6Aq0RsnOQ8xNvXTnDUTTLE937Yedd/DnkHESUpvQ7YvLucs9YfwGR5R/jwW8Rqp9XtGbmwbKXzXQ==");
+			p
+			code /*开始扫描*/
+			br
+			code [[SBKBeaconManager sharedInstance] startRangingBeaconsWithID:beaconIDwakeUpApplication:NO];
+			p
+			code /*申请权限*/
+			br
+			code [[SBKBeaconManager sharedInstance] requestAlwaysAuthorization];
+			p
+			code /* 设置启用云服务 (上传传感器数据，如电量、UMM等)。如果不设置，默认为关闭状态。*/
+			br
+			code [[SBKBeaconManager sharedInstance] setCloudServiceEnable:YES];
+		h3 二. 监控传感器设备进出状态
+		p 通常我们进入或离开某些设备时需要进行一些操作，目前有两种监测方式。
+		pre
+			| 1. 通过Notification监控传感器进出状态
+			p
+			| /*当有设备进入或离开时，SDK将发出 SBKBeaconInRangeStatusUpdatedNotification*/
+			| [[NSNotificationCenter defaultCenter] addObserver:selfselector:@selector(beacon:)name:SBKBeaconInRangeStatusUpdatedNotificationobject:nil];
+			p
+			| 2. 通过Delegate监控传感器进出状态
+			p
+			| /* 发现新传感器设备 */
+			| - (void)beaconManager:(SBKBeaconManager *)beaconManager didRangeNewBeacon:(SBKBeacon *)beacon;
+			p
+			| /* 传感器设备离开 */
+			| - (void)beaconManager:(SBKBeaconManager *)beaconManager beaconDidGone:(SBKBeacon *)beacon;
+			p
+			| /* 每秒返回还在范围内的传感器设备 */
+			| - (void)beaconManager:(SBKBeaconManager *)beaconManager scanDidFinishWithBeacons:(NSArray *)
+		h3 三. 读取传感器设备数据
+		p 下表为云子传感器中常用的重要参数列表。
+		table
+			thead
+				tr
+					th 属性 
+					th 描述
+			tbody
+				tr
+					td beaconID 
+					td 包含UMM的ID值
+				tr
+					td serialNumber 
+					td 设备唯一表示
+				tr
+					td rssi 
+					td 信号强度
+				tr
+					td accuracy 
+					td 距离（米）
+				tr
+					td proximity 
+					td 范围（很远，附近，很近，未知）
+				tr
+					td temperature 
+					td 芯片温度
+				tr
+					td light 
+					td 光线
+				tr
+					td moving 
+					td 移动状态
+				tr
+					td accelerometerCount 
+					td 移动计数器
+				tr
+					td inRange 
+					td 是否在范围内
+				tr
+					td batteryLevel 
+					td 电池电量
+				tr
+					td hardwareModelName 
+					td 硬件版本
+				tr
+				td firmwareVersion 
+				td 固件版本
+		p.title 应用程序通常会在传感器数据状态发生变化时进行一些操作，如信号强度变化，光线变化，移动状态变化，计数器数值变化。目前有两种方式来监测：
+		pre 1. 通过Delegate监控传感器设备各传感器数值状态
+			p
+				| /* 传感器设备信号强度变化*/
+				| - (void)sensoroBeacon:(SBKBeacon *)beacon didUpdateRSSI:(NSInteger)rssi;
+			p
+				| /* 传感器设备温度变化*/
+				| - (void)sensoroBeacon:(SBKBeacon *)beacon didUpdateTemperatureData:(NSNumber *)temperature;
+			p
+				| /* 传感器设备光线变化*/
+				| - (void)sensoroBeacon:(SBKBeacon *)beacon didUpdateLightData:(NSNumber *)light;
+			p
+				|/* 传感器设备移动计数器数值变化*/
+				| - (void)sensoroBeacon:(SBKBeacon *)beacon didUpdateAccelerometerCount:(NSNumber *)accelerometerCount;
+			p
+				| /* 传感器设备移动状态变化*/
+				| - (void)sensoroBeacon:(SBKBeacon *)beacon didUpdateMovingState:(NSNumber *)isMoving;
+			p
+				| 2. 通过KVO方式监控传感器设备各传感器数状态
+			p
+				| /* 定义对象SET方法 */
+				| - (void)setBeacon:(SBKBeacon *)beacon{
+				|  if(self.beacon)
+				|    {
+				|      [self removeObserver];
+				|    }
+				|    _beacon = beaco n;
+				|    [self addObserver];
+				| }
+			p
+				| /* 添加观察者 */
+				| - (void)addObserver
+				| {
+				|  [self.beacon addObserver:self forKeyPath:@"rssi" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:NULL];
+				| ...
+				| }
+			p
+				| /* 移除观察者 */
+				| - (void)removeObserver
+				| {
+				|	[self.beacon removeObserver:self forKeyPath:@"rssi"];
+				|	...
+				| }
+			p
+				| /* 监听数值变化 */
+				| - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+				| {
+				|   if ([keyPath isEqualToString:@"rssi"]){
+				|     if ([change objectForKey:@"new"] != [change objectForKey:@"old"])
+				|       {
+				|         /* 处理函数 */
+				|       }
+				|     }
+				| }
+		h3 四. 权限检查
+		p 为保证iBeacon的正常使用，需要应用获得定位服务授权，同时开启了蓝牙服务。通过一下两种方式可分别检查应用的定位服务权限及蓝牙服务是否开启。
+			ul
+				li 1.定位服务权限
+				pre
+					| -(BOOL)checkLocationServices
+					| {
+					|   if (!self.locationManager) {
+					|     self.locationManager = [[CLLocationManager alloc] init];
+					|     self.locationManager.desiredAccuracy=kCLLocationAccuracyBest;
+					|     self.locationManager.distanceFilter=100.0f;
+					|   }
+					|   BOOL enable=[CLLocationManager locationServicesEnabled];//定位服务是否可用
+					|   int status=[CLLocationManager authorizationStatus];//是否具有定位权限
+					|   if(!enable || status<3){
+					|    if([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]){
+					|      [self.locationManager requestAlwaysAuthorization];//请求权限
+					|    }
+					|    return NO;//需求请求定位权限
+					|   }
+					|   return YES;
+					| }
+				li 2.蓝牙是否开启
+				pre
+					| -(BOOL)checkBluetoothServices
+					| {	
+					|   if (!self.CM) {
+					|     self.CM = [[CBCentralManager alloc]initWithDelegate:self queue:nil];
+					|   }
+					|   if (self.CM.state == CBCentralManagerStatePoweredOff) {
+					|     return NO;
+					|   }
+					|   else if(self.CM.state == CBCentralManagerStatePoweredOn){
+					|     return YES;
+					|   }
+					|   return YES;
+					| }
+		p 在iOS8以前的系统中，当您使用定位服务时，自动提示用户进行授权。在iOS8中，Apple对授权策略进行了更新，需要明确的调用函数请求用户授权。相应的SDK中也提供了相应的替代函数。
+			ol
+				li 1.requestAlwaysAuthorization
+					p 首先需要设定提示文字，在调用函数时，如果用户还未授权给App，系统会把此提示文字显示给用户的信息。 在Info.plist中添加如下的Key：
+					pre NSLocationAlwaysUsageDescription
+					p 同时设定相应的文字说明，如果不添加此提示文字则调用此函数没有效果。 其次调用授权函数
+					pre [[SBKBeaconManager sharedInstance] requestAlwaysAuthorization];
+				li 2.requestWhenInUseAuthorization
+					p 首先需要设定提示文字，在调用函数时，如果用户还未授权给App，系统会把此提示文字显示给用户的信息。 在Info.plist中添加如下的Key：
+					pre NSLocationWhenInUseUsageDescription
+					p 同时设定相应的文字说明，如果不添加此提示文字则调用此函数没有效果。 其次调用授权函数
+					pre [[SBKBeaconManager sharedInstance] requestWhenInUseAuthorization];
+					p 这两个函数的详细信息及区别参考如何获取定位服务授权。
+
+		h3 五. 推送服务
+		p.title iBeacon实现的推送原理几种：
+			ol
+				li 1.发现iBeacon -> 通知服务器 -> 服务器发送远端推送。
+				li 2.发现iBeacon -> 访问服务器或本机缓存获取推送内容 -> 本机发送本地推送。
+		p 这里给出本地推送的参考代码。
+		pre
+			| 1. 通过Notification监测传感器进出，调用beacon:方法。
+			| [[NSNotificationCenter defaultCenter] addObserver:selfselector:@selector(beacon:)name:SBKBeaconInRangeStatusUpdatedNotificationobject:nil];
+			p
+			| 2. 当有传感器进出时，调用此方法产生本地推送。
+			| - (void)beacon:(NSNotification *)notification {
+			p
+			| /*获取SBKBeacon对象*/
+			| SBKBeacon *beacon = notification.object;
+			p
+			| /*判断应用是否在后台*/
+			| if ([UIApplication sharedApplication].applicationState == UIApplicationStateBackground){
+			P
+			| /*判断是进入还是离开*/
+			|   if (beacon.inRange) {
+			p
+			|  /*本地推送*/
+			|    UILocalNotification *notification = [[UILocalNotification alloc] init];
+			|    NSString * message = @"进入";
+			|    notification.alertBody = message;
+			|    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+			|   }
+			|   else{
+			|    UILocalNotification *notification = [[UILocalNotification alloc] init];
+			|    NSString * message = @"离开";
+			|    notification.alertBody = message;
+			|    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+			|   }
+			|  }
+			| }
+
+		h3 六. 后台唤醒
+		p.title iBeacon 协议的一个核心功能就是当 iDevice 遇到一个特定的 Beacon 时，可以将特定的应用唤醒。 首先您需要声明您的应用的后台运行模式，在 Xcode 进行勾选：
+		.images
+			img(src='/zh/assets/image/api/ios/2.png',width='600')
+		p 或者，也可以直接在 Info.plist 中添加：
+		pre
+			| UIBackgroundModes
+			| bluetooth-central
+			| location
+		p 最后，在配置 SBKBeaconManager 检测时，将 wakeUpApplication 参数设置为 YES，即
+		pre 
+			| SBKBeaconID *beaconID = [SBKBeaconID beaconIDWithProximityUUID:SBKSensoroDefaultProximityUUID];
+			| [[SBKBeaconManager sharedInstance] startRangingBeaconsWithID:beaconID wakeUpApplication:YES];
+
+		h3 	七. 总结
+		p 至此，您已完成将 SDK 整合进您项目之中的全部工作。后面，您可以使用 SDK 的功能来完成您 App 与 Beacon 之间的互动，更多技术细节，请参考完整的
+			a(href='http://static.sensoro.com/documents/SBK/iOS/index.html',target='_blank') SDK文档 
+			|，以及我们的 
+			a(href='https://github.com/Sensoro/Yunzi-iOS',target='_blank') Demo 程序源代码 。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

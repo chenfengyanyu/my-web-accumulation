@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>线标注</title>
+    <link rel="stylesheet" href="lib/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="fengMap"></div>
+    <!--操作按钮-->
+    <div class="operating">
+        <button class="btn btn-default">添加线标注</button>
+        <button class="btn btn-default">删除线标注</button>
+    </div>
+    <script src="lib/jquery-2.1.4.min.js"></script>
+    <script src="lib/fengmap.min.js"></script>
+    <script>
+        //获取版本号,设置title
+        document.title = '线标注V' + fengmap.VERSION; 
+
+        //定义全局map变量
+        var map;
+        var fmapID = '10347';
+        //当前的路线
+        var naviLines = []; 
+        //是否能画线状态开关
+        var startNavi = true; 
+
+        window.onload = function() {
+            map = new fengmap.FMMap({
+                //渲染dom
+                container: document.getElementById('fengMap'),
+                //地图数据位置
+                mapServerURL: './data/' + fmapID,
+                //主题数据位置
+                mapThemeURL: 'data/theme',
+                //设置主题
+                defaultThemeName: '3007',
+                // 默认比例尺级别设置为20级 
+                defaultMapScaleLevel: 20,
+                //对不可见图层启用透明设置 默认为true
+                focusAlphaMode: false,
+                //关闭聚焦层切换的动画显示
+                focusAnimateMode: false,
+                //对不聚焦图层启用透明设置，当focusAlphaMode = true时有效
+                focusAlpha: 0.1,
+                //开启2维，3维切换的动画显示
+                viewModeAnimateMode: true,
+                //设置倾斜角，默认倾斜角为60度
+                defaultTiltAngle: 45,
+                //开发者申请应用下web服务的key
+                key: '请输入您的KEY',
+                //开发者申请应用名称
+                appName: '请输入您的appName',
+            });
+
+            //打开Fengmap服务器的地图数据和主题
+            map.openMapById(fmapID);
+
+            //绘制线图层
+            function drawLines(results, lineStyle) {
+                //绘制部分
+                var line = new fengmap.FMLineMarker();
+                for (var i = 0; i < results.length; i++) {
+                    var result = results[i];
+                    var gid = result.groupId;
+                    var points = result.points;
+                    var seg = new fengmap.FMSegment();
+                    seg.groupId = gid;
+                    seg.points = points;
+                    line.addSegment(seg);
+                    var lineObject = map.drawLineMark(line, lineStyle);
+                    naviLines.push(lineObject);
+                }
+            };
+
+            //清除路线
+            var clearNaviLines = function() {
+                //方法一：清除所有路径线
+                map.clearLineMark();
+
+                //方法二：清除所有路径线
+                // if (naviLines.length != 0) {
+                //     for (var i = 0; i < naviLines.length; i++) {
+                //         if (naviLines[i])
+                //             map.clearLineMark(naviLines[i]);
+                //     }
+                //     naviLines = [];
+                // }
+            };
+
+            var aBtn = document.querySelectorAll('.btn');
+
+            //添加线标注
+            aBtn[0].onclick = function() {
+                if (startNavi) {
+                    //添加导航线线坐标点
+                    var naviResults = [{
+                        groupId: 1,
+                        points: [
+                            {x: 12961602.00, y: 4861851.50, z: 0},
+                            {x: 12961625.00, y: 4861850.50, z: 0},
+                            {x: 12961625.00, y: 4861825.00, z: 0},
+                        ]
+                    }];
+
+                    //配置线型、线宽、透明度等
+                    var lineStyle = {
+                        //设置线的宽度
+                        lineWidth: 4,
+                        //设置线的透明度
+                        alpha: 0.8,
+
+                        // offsetHeight 默认的高度为 1, (离楼板1米的高度)
+                        offsetHeight: 1,
+                        
+                        //设置线的类型为导航线
+                        lineType: fengmap.FMLineType.FMARROW,
+                        //设置线动画,false为动画
+                        noAnimate: true,
+                    };
+                    //绘制线
+                    drawLines(naviResults, lineStyle); 
+
+                    //添加线坐标点
+                    var naviResults2 = [{
+                        groupId: 1,
+                        points: [
+                            {x: 12961626.00, y: 4861886.53, z: 0},
+                            {x: 12961626.18, y: 4861849.71, z: 0},
+                            {x: 12961655.38, y: 4861849.60, z: 0},
+                        ]
+                    }];
+
+                    //配置线型、颜色、线宽、透明度等
+                    var lineStyle2 = {
+                        //设置线的颜色
+                        color: '#FF0000',
+                        //设置线的宽度
+                        lineWidth: 4,
+                        //设置线的透明度
+                        alpha: 0.8,
+
+                        // offsetHeight 默认的高度为 1, (离楼板1米的高度)
+                        offsetHeight: 0,
+
+                        //设置线的类型
+                        lineType: fengmap.FMLineType.dotDash,
+                        dash: {
+                            //设置线的大小
+                            size: 5,
+                            //0为实线，大于0为虚线
+                            gap: 0,
+                        }
+                    };
+                    //绘制线
+                    drawLines(naviResults2, lineStyle2); 
+                    startNavi = false;
+                    this.classList.add('btn-primary');
+                }
+            };
+
+            //删除线标注
+            aBtn[1].onclick = function() {
+                clearNaviLines();
+                startNavi = true;
+                aBtn[0].classList.remove('btn-primary');
+            };
+        };
+    </script>
+</body>
+
+</html>

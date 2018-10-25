@@ -1,0 +1,992 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <title>Pages Documentation - v2.1.0</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=1200, maximum-scale=1" />
+    <link href="../assets/plugins/bootstrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="../pages/css/pages-icons.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/plugins/jquery-scrollbar/jquery.scrollbar.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../assets/plugins/bootstrap-select2/select2.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../assets/plugins/ion-slider/css/ion.rangeSlider.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../assets/plugins/ion-slider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../assets/plugins/jquery-nouislider/jquery.nouislider.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../assets/plugins/bootstrap3-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/plugins/bootstrap-tag/bootstrap-tagsinput.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/plugins/dropzone/css/dropzone.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/plugins/switchery/css/switchery.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../assets/plugins/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="../assets/plugins/summernote/css/summernote.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="../assets/plugins/jquery-dynatree/skin/ui.dynatree.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../assets/plugins/jquery-dynatree/skin/ui.dynatree.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../assets/plugins/jquery-dynatree/skin/ui.dynatree.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../pages/css/pages.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/print.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/plugins/highlight/styles/github.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="index" data-spy="scroll" data-target=".sidebar">
+    <header>
+        <div class="container">
+            <a class="logo" href="#">
+                <img src="../assets/img/pages_logo_white.png" width="78" height="22">
+            </a>
+        </div>
+    </header>
+    <div class="container p-t-70">
+        <div class="container-inner">
+            <nav class="sidebar ">
+    <div class="pg_scrollable">
+    <ul class="nav">
+        <li >
+            <h6>Introduction</h6>
+            <ul class="nav" style="overflow: hidden; display: block;">
+                <li >
+                    <a href="../index.html">Getting Started</a>
+                </li>
+                <li >
+                    <a href="../partials/less.html">LESS</a>
+                </li>
+                 <li >
+                    <a href="../partials/sass.html">SASS</a>
+                </li>
+                <li >
+                    <a href="../partials/grunt.html">Grunt</a>
+                </li>
+                <li >
+                    <a href="../partials/gulp.html">Gulp</a>
+                </li>
+                <li >
+                    <a href="../partials/browser_support.html">Browser Support</a>
+                </li>
+                <li >
+                    <a href="../partials/angular_js.html">AngularJS support</a>
+                </li>
+                <li >
+                    <a href="../partials/meteor_js.html">MeteorJS support</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h6>Boilerplates</h6>
+            <ul class="nav">
+                <li > <a href="../partials/express_js.html"> Express Js </a>
+                </li>
+                <li > <a href="../partials/sails_js.html"> Sails Js </a>
+                </li>
+                <li > <a href="../partials/rails.html">Rails</a>
+                </li>
+            </ul>
+        </li>
+        <li >
+            <a href="../partials/api.html">API Reference</a>
+        </li>
+        <li >
+            <a href="../partials/widget_market.html">Widgets Market</a>
+        </li>
+        <li>
+            <h6>Apps</h6>
+            <ul class="nav">
+                <li > <a href="../partials/calendar.html"> Calendar </a></li>
+                <li > <a href="../partials/social.html"> Social </a></li>
+                <li  class="active" > <a href="../partials/email.html"> Email </a></li>
+            </ul>
+        </li>
+        <li >
+            <a href="../partials/layouts.html">Layouts</a>
+        </li>
+        <li >
+            <a href="../partials/content.html">Content</a>
+        </li>
+        <li >
+            <a href="../partials/themes.html">Themes</a>
+        </li>
+        <li >
+            <a href="../partials/grid.html">Grid</a>
+        </li>
+        <li >
+            <a href="../partials/views.html">Views</a>
+        </li>
+        <li >
+            <a href="../partials/helpers.html">Helpers</a>
+        </li>
+        <li >
+            <a href="../partials/portlets.html">Portlets</a>
+        </li>
+        <li>
+            <h6>UI Elements</h6>
+            <ul class="nav">
+                <li > <a href="../partials/color.html"> Color </a>
+                </li>
+                <li > <a href="../partials/typo.html"> Typography </a>
+                </li>
+                <li > <a href="../partials/icons.html">Icons</a>
+                </li>
+                <li > <a href="../partials/buttons.html">Buttons</a>
+                </li>
+                <li > <a href="../partials/notification.html"> Notifications </a>
+                </li>
+                <li > <a href="../partials/modals.html"> Modals </a>
+                </li>
+                <li > <a href="../partials/progress.html"> Progress &amp; Activity </a>
+                </li>
+                <li > <a href="../partials/accordians.html">Accordians </a> </li>
+                <li > <a href="../partials/tabs.html"> Tabs </a>
+                </li>
+                <li > <a href="../partials/sliders.html">Sliders</a>
+                </li>
+                <li > <a href="../partials/treeview.html">Tree View</a>
+                </li>
+                <li > <a href="../partials/nestable.html">Nestable </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h6>Forms</h6>
+            <ul class="nav">
+                <li >
+                    <a href="../partials/form_elements.html">Form Elements</a>
+                </li>
+                <li >
+                    <a href="../partials/form_layouts.html">Form Layouts</a>
+                </li>
+                <li >
+                    <a href="../partials/form_validation.html">Form Validation</a>
+                </li>
+                <li >
+                    <a href="../partials/form_wizard.html">Form Wizard</a>
+                </li>
+            </ul>
+        </li>
+        <li >
+            <a href="../partials/charts.html">Charts</a>
+        </li>
+        <li>
+            <h6>Maps</h6>
+            <ul class="nav">
+                <li >
+                    <a href="../partials/google_maps.html">Google Maps</a>
+                </li>
+                <li >
+                    <a href="../partials/vector_maps.html">Vector Maps</a>
+                </li>
+            </ul>
+        </li>
+        <li >
+            <a href="../partials/tables.html">Tables</a>
+        </li>
+        <li>
+            <h6>Extras</h6>
+            <ul class="nav">
+                <li >
+                    <a href="../partials/timeline.html">Timeline</a>
+                </li>
+            </ul>
+        </li>
+        <li >
+            <a href="../partials/troubleshooting.html">Troubleshooting</a>
+        </li>
+        <li >
+            <a href="../partials/changelog.html">Changelog</a>
+        </li>
+        <li >
+            <a href="../partials/support.html">Support</a>
+        </li>
+    </ul>
+</div>
+</nav>
+            <div class="row">
+                <div class="col-md-9 col-sm-8 col-md-offset-3 col-sm-offset-4">
+                    <div class="content">
+                        
+	
+
+
+<section id="email">
+    <h3 class="page-title">Email</h3>
+<hr>
+    <p>Pages Email app is a web-based email client designed and developed exclusively for Pages framework. It has a responsive design to work flawlessly across many devices. Please note that current version only includes the Inbox and Compose views. This is a work in progress and we're hoping to make this a complete jQuery plugin soon
+    </p>
+</section>
+<h3 class="section-sep">jQuery users</h3>
+<h4> Dependencies </h4>
+<h5>Include the stylesheets of the libraries</h5>
+<pre><code class="xml">&lt;link href=&quot;assets/plugins/bootstrap3-wysihtml5/bootstrap3-wysihtml5.min.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+&lt;link href=&quot;assets/plugins/jquery-menuclipper/jquery.menuclipper.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+&lt;link href=&quot;assets/plugins/bootstrap-tag/bootstrap-tagsinput.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;</pre></code>
+<h5>Include the scripts</h5>
+<pre><code class="xml">&lt;script src=&quot;assets/plugins/bootstrap3-wysihtml5/bootstrap3-wysihtml5.all.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;assets/plugins/jquery-menuclipper/jquery.menuclipper.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;assets/plugins/bootstrap-tag/bootstrap-tagsinput.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+</pre></code>
+<br>
+<h4>Pages Email Lib </h4>
+<p>In <code>pages.email.js</code> please replace the URL “http://revox.io/json/emails.json” (Line #54) with your own end point URL which can return a JSON having a structure mentioned below. Then include the updated file below <code>pages.js</code>.
+</p>
+<pre><code class="xml">&lt;script src=&quot;pages/js/pages.email.js&quot;&gt;&lt;/script&gt;</pre></code>
+<br>
+<ul>
+    <li>emails - (Array) List of all emails categorized by date
+        <ul>
+            <li>group - Date category</li>
+            <li>list - list of emails received for the day
+                <ul>
+                    <li>id - unique ID to represent each email, should be an unique integer</li>
+                    <li>subject - Subject line of the email</li>
+                    <li>to - (Array) Recipients name list</li>
+                    <li>body - Email body. HTML is allowed</li>
+                    <li>time - Time email was sent</li>
+                    <li>datetime - Date and time combined</li>
+                    <li>from - Sender name</li>
+                    <li>dp - Display picture of the sender</li>
+                    <li>dpRetina - Retina version of the display picture of the sender</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+<p>Sample JSON output</p>
+<pre><code class="xml">{
+    &quot;emails&quot;: [
+        {
+            &quot;group&quot;: &quot;Today April 23&quot;,
+            &quot;list&quot;: [{
+                &quot;id&quot;: 1,
+                &quot;subject&quot;: &quot;Pages - Multi-Purpose Admin Template Revolution Begins here!&quot;,
+                &quot;to&quot;: [&quot;David Nester&quot;, &quot;Jane Smith&quot;],
+                &quot;body&quot;: &quot;&lt;p&gt;First email body&lt;/p&gt; &quot;,
+                &quot;time&quot;: &quot;5 Mins ago&quot;,
+                &quot;datetime&quot;: &quot;Today at 1:33pm&quot;,
+                &quot;from&quot;: &quot;David Nester&quot;,
+                &quot;dp&quot;: &quot;assets/img/profiles/avatar.jpg&quot;,
+                &quot;dpRetina&quot;: &quot;assets/img/profiles/avatar2x.jpg&quot;
+            }, {
+                &quot;id&quot;: 2,
+                &quot;subject&quot;: &quot;Your site has some very imaginative animation /movement! &quot;,
+                &quot;to&quot;: [&quot;Anne Simons&quot;],
+                &quot;body&quot;: &quot;&lt;p&gt;Second email body&lt;/p&gt; &quot;,
+                &quot;time&quot;: &quot;45 mins ago&quot;,
+                &quot;datetime&quot;: &quot;Today at 1:33pm&quot;,
+                &quot;from&quot;: &quot;Anne Simons&quot;,
+                &quot;dp&quot;: &quot;assets/img/profiles/5.jpg&quot;,
+                &quot;dpRetina&quot;: &quot;assets/img/profiles/5x.jpg&quot;
+            }]
+        }, {
+            &quot;group&quot;: &quot;Yesterday April 22&quot;,
+            &quot;list&quot;: [{
+                &quot;id&quot;: 3,
+                &quot;subject&quot;: &quot;Good design is obvious. Great design is transparent&quot;,
+                &quot;to&quot;: [&quot;John Doe&quot;, &quot;Anne Simons&quot;],
+                &quot;body&quot;: &quot;&lt;p&gt;Third email body&lt;/p&gt; &quot;,
+                &quot;time&quot;: &quot;1:33pm&quot;,
+                &quot;datetime&quot;: &quot;Today at 1:33pm&quot;,
+                &quot;from&quot;: &quot;David Nester&quot;,
+                &quot;dp&quot;: &quot;assets/img/profiles/b.jpg&quot;,
+                &quot;dpRetina&quot;: &quot;assets/img/profiles/b2x.jpg&quot;
+            }]
+        }
+    ]
+}</pre></code>
+<h4>Markup</h4>
+<p>Inlcude the following HTML source in your file</p>
+<h5>Inbox view</h5>
+<pre><code class="xml">&lt;!-- START EMAIL --&gt;
+&lt;div class=&quot;email-wrapper&quot;&gt;
+    &lt;!-- START EMAIL SIDEBAR MENU--&gt;
+    &lt;nav class=&quot;email-sidebar padding-30&quot;&gt;
+        &lt;a href=&quot;email_compose.html&quot; class=&quot;btn btn-complete btn-block btn-compose m-b-30&quot;&gt;Compose&lt;/a&gt;
+        &lt;p class=&quot;menu-title&quot;&gt;BROWSE&lt;/p&gt;
+        &lt;ul class=&quot;main-menu&quot;&gt;
+            &lt;li class=&quot;active&quot;&gt;
+                &lt;a href=&quot;#&quot;&gt;
+                    &lt;span class=&quot;title&quot;&gt;&lt;i class=&quot;pg-inbox&quot;&gt;&lt;/i&gt; Inbox&lt;/span&gt;
+                    &lt;span class=&quot;badge pull-right&quot;&gt;5&lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class=&quot;&quot;&gt;
+                &lt;a href=&quot;#&quot;&gt;
+                    &lt;span class=&quot;title&quot;&gt;&lt;i class=&quot;pg-folder&quot;&gt;&lt;/i&gt; All mail&lt;/span&gt;
+                &lt;/a&gt;
+                &lt;ul class=&quot;sub-menu no-padding&quot;&gt;
+                    &lt;li&gt;
+                        &lt;a href=&quot;#&quot;&gt;
+                            &lt;span class=&quot;title&quot;&gt;Important&lt;/span&gt;
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;a href=&quot;#&quot;&gt;
+                            &lt;span class=&quot;title&quot;&gt;Labeled&lt;/span&gt;
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;a href=&quot;#&quot;&gt;
+                    &lt;span class=&quot;title&quot;&gt;&lt;i class=&quot;pg-sent&quot;&gt;&lt;/i&gt; Sent&lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;a href=&quot;#&quot;&gt;
+                    &lt;span class=&quot;title&quot;&gt;&lt;i class=&quot;pg-spam&quot;&gt;&lt;/i&gt; Spam&lt;/span&gt;
+                    &lt;span class=&quot;badge pull-right&quot;&gt;10&lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;p class=&quot;menu-title m-t-20 all-caps&quot;&gt;Quick view&lt;/p&gt;
+        &lt;ul class=&quot;sub-menu no-padding&quot;&gt;
+            &lt;li&gt;
+                &lt;a href=&quot;#&quot;&gt;
+                    &lt;span class=&quot;title&quot;&gt;Documents&lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;a href=&quot;#&quot;&gt;
+                    &lt;span class=&quot;title&quot;&gt;Flagged&lt;/span&gt;
+                    &lt;span class=&quot;badge pull-right&quot;&gt;5&lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;a href=&quot;#&quot;&gt;
+                    &lt;span class=&quot;title&quot;&gt;Images&lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+    &lt;!-- END EMAL SIDEBAR MENU --&gt;
+    &lt;!-- START EMAILS LIST --&gt;
+    &lt;div class=&quot;email-list b-r b-grey&quot;&gt; &lt;a class=&quot;email-refresh&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-refresh&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;div id=&quot;emailList&quot;&gt;
+            &lt;!-- START EMAIL LIST SORTED BY DATE --&gt;
+            &lt;!-- END EMAIL LIST SORTED BY DATE --&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- END EMAILS LIST --&gt;
+    &lt;!-- START OPENED EMAIL --&gt;
+    &lt;div class=&quot;email-opened&quot;&gt;
+        &lt;div class=&quot;no-email&quot;&gt;
+            &lt;h1&gt;No email has been selected&lt;/h1&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;email-content-wrapper&quot;&gt;
+            &lt;div class=&quot;actions-wrapper menuclipper bg-master-lightest&quot;&gt;
+                &lt;ul class=&quot;actions menuclipper-menu no-margin p-l-20 &quot;&gt;
+                    &lt;li class=&quot;visible-sm-inline-block visible-xs-inline-block&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;email-list-toggle&quot;&gt;&lt;i class=&quot;fa fa-angle-left&quot;&gt;&lt;/i&gt; All Inboxes
+                                &lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;no-padding &quot;&gt;&lt;a href=&quot;#&quot; class=&quot;text-info&quot;&gt;Reply&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;no-padding &quot;&gt;&lt;a href=&quot;#&quot;&gt;Reply all&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;no-padding &quot;&gt;&lt;a href=&quot;#&quot;&gt;Forward&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;no-padding &quot;&gt;&lt;a href=&quot;#&quot;&gt;Mark as read&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;no-padding &quot;&gt;&lt;a href=&quot;#&quot; class=&quot;text-danger&quot;&gt;Delete&lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;email-content&quot;&gt;
+                &lt;div class=&quot;email-content-header&quot;&gt;
+                    &lt;div class=&quot;thumbnail-wrapper d48 circular bordered&quot;&gt;
+                        &lt;img width=&quot;40&quot; height=&quot;40&quot; alt=&quot;&quot; data-src-retina=&quot;assets/img/profiles/avatar2x.jpg&quot; data-src=&quot;assets/img/profiles/avatar.jpg&quot; src=&quot;assets/img/profiles/avatar2x.jpg&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;sender inline m-l-10&quot;&gt;
+                        &lt;p class=&quot;name no-margin bold&quot;&gt;
+                        &lt;/p&gt;
+                        &lt;p class=&quot;datetime no-margin&quot;&gt;&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
+                    &lt;div class=&quot;subject m-t-20 m-b-20 semi-bold&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;fromto&quot;&gt;
+                        &lt;div class=&quot;pull-left&quot;&gt;
+                            &lt;div class=&quot;btn-group dropdown-default&quot;&gt;
+                                &lt;a class=&quot;btn dropdown-toggle btn-small btn-rounded&quot; data-toggle=&quot;dropdown&quot; href=&quot;#&quot;&gt;
+                                        David Nester
+                                        &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+                                        &lt;/a&gt;
+                                &lt;ul class=&quot;dropdown-menu&quot;&gt;
+                                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;
+                                    &lt;/li&gt;
+                                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Friend&lt;/a&gt;
+                                    &lt;/li&gt;
+                                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Report&lt;/a&gt;
+                                    &lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/div&gt;
+                            &lt;label class=&quot;inline&quot;&gt;
+                                &lt;span class=&quot;muted&quot;&gt;&amp;nbsp;&amp;nbsp;to&lt;/span&gt;
+                                &lt;span class=&quot; small-text&quot;&gt;johnsmith@skyace.com&lt;/span&gt;
+                            &lt;/label&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;email-content-body m-t-20&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;wysiwyg5-wrapper b-a b-grey m-t-30&quot;&gt;
+                    &lt;textarea class=&quot;email-reply&quot; placeholder=&quot;Reply&quot;&gt;&lt;/textarea&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- END OPENED EMAIL --&gt;
+    &lt;!-- START COMPOSE BUTTON FOR TABS --&gt;
+    &lt;div class=&quot;compose-wrapper visible-xs&quot;&gt;
+        &lt;a class=&quot;compose-email text-info pull-right m-r-10 m-t-10&quot; href=&quot;email_compose.html&quot;&gt;&lt;i class=&quot;fa fa-pencil-square-o&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;!-- END COMPOSE BUTTON --&gt;
+&lt;/div&gt;
+&lt;!-- END EMAIL --&gt;</pre></code>
+<br>
+<h5>Compose view</h5>
+<p>Replace <code class="xml">&lt;div class=&quot;email-opened&quot;&gt;...&lt;/div&gt;</code> with the following for the compose view</p>
+<pre><code class="xml">&lt;!-- START COMPOSE EMAIL --&gt;
+&lt;div class=&quot;email-composer container-fluid&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-sm-12 no-padding&quot;&gt;
+            &lt;div class=&quot;wysiwyg5-wrapper email-toolbar-wrapper&quot;&gt;
+            &lt;/div&gt;
+            &lt;form id=&quot;form-project&quot; role=&quot;form&quot; autocomplete=&quot;off&quot;&gt;
+                &lt;div class=&quot;form-group-attached&quot;&gt;
+                    &lt;div class=&quot;row clearfix&quot;&gt;
+                        &lt;div class=&quot;col-sm-6&quot;&gt;
+                            &lt;div class=&quot;form-group form-group-default&quot;&gt;
+                                &lt;label&gt;TO:&lt;/label&gt;
+                                &lt;input name=&quot;to&quot; data-role=&quot;tagsinput&quot; class=&quot;form-control tagsinput&quot; type=&quot;text&quot; value=&quot;John Smith&quot; /&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;col-sm-6&quot;&gt;
+                            &lt;div class=&quot;form-group form-group-default&quot;&gt;
+                                &lt;label&gt;CC:&lt;/label&gt;
+                                &lt;input type=&quot;text&quot; class=&quot;form-control&quot; name=&quot;cc&quot; placeholder=&quot;Add Carbon Copy&quot;&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group form-group-default&quot;&gt;
+                        &lt;label&gt;Subject&lt;/label&gt;
+                        &lt;input type=&quot;text&quot; class=&quot;form-control&quot; name=&quot;subject&quot;&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/form&gt;
+            &lt;div class=&quot;wysiwyg5-wrapper email-body-wrapper&quot;&gt;
+                &lt;textarea class=&quot;wysiwyg email-body&quot; style=&quot;height:350px&quot;&gt;&lt;/textarea&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;row p-b-20&quot;&gt;
+        &lt;div class=&quot;col-sm-11&quot;&gt;
+            &lt;button class=&quot;btn btn-white btn-cons&quot;&gt;Cancel&lt;/button&gt;
+            &lt;button class=&quot;btn btn-complete btn-cons m-l-10&quot;&gt;Send&lt;/button&gt;
+            &lt;div class=&quot;checkbox inline m-l-20&quot;&gt;
+                &lt;input type=&quot;checkbox&quot; value=&quot;1&quot; id=&quot;sendCC&quot;&gt;
+                &lt;label for=&quot;sendCC&quot; class=&quot;hint-text hidden-xs&quot;&gt;Send a &lt;span class=&quot;text-complete&quot;&gt;Carbon Copy&lt;/span&gt; CC to my Primary email address.&lt;/label&gt;
+                &lt;label for=&quot;sendCC&quot; class=&quot;hint-text visible-xs-inline&quot;&gt;Send me a CC&lt;/label&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-sm-1&quot;&gt;
+            &lt;button class=&quot;btn btn-complete pull-right&quot;&gt;
+                &lt;i class=&quot;pg-save&quot;&gt;&lt;/i&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- END COMPOSE EMAIL --&gt;</code></pre>
+<br>
+<br>
+<h3 class="section-sep">AngularJS users</h3>
+<h4>Dependencies</h4>
+<p>You will find email app route and dependency injections in <code>demo/angular/assets/js/config.js</code>. Controllers and Directives are found in <code>assets/js/apps/email/email.js</code> and these depend email lib, <code>pages.email.min.js</code> mentioned above</p>
+<pre><code class="js">// File: demo/angular/assets/js/config.js
+...
+// Email app
+.state('app.email', {
+        abstract: true,
+        url: '/email',
+        templateUrl: 'tpl/apps/email/email.html',
+        resolve: {
+            deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                return $ocLazyLoad.load([
+                        'menuclipper',
+                        'wysihtml5'
+                    ], {
+                        insertBefore: '#lazyload_placeholder'
+                    })
+                    .then(function() {
+                        return $ocLazyLoad.load([
+                            'assets/js/apps/email/service.js',
+                            'assets/js/apps/email/email.js'
+                        ])
+                    });
+            }]
+        }
+    })
+    .state('app.email.inbox', {
+        url: '/inbox/:emailId',
+        templateUrl: 'tpl/apps/email/email_inbox.html'
+    })
+    .state('app.email.compose', {
+        url: '/compose',
+        templateUrl: 'tpl/apps/email/email_compose.html'
+    })
+...</code></pre>
+<h4>Template files</h4>
+<pre><code class="xml">&lt;!-- File: tpl/apps/email/email.html --&gt;
+&lt;!-- START EMAIL --&gt;
+&lt;div class=&quot;email-wrapper&quot;&gt;
+    &lt;div ng-include src=&quot;'tpl/apps/email/blocks/sidebar.html'&quot; include-replace&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;full-height&quot; ui-view&gt;&lt;/div&gt;
+    &lt;!-- START COMPOSE BUTTON FOR TABS --&gt;
+    &lt;div class=&quot;compose-wrapper visible-xs&quot;&gt;
+        &lt;a class=&quot;compose-email text-info pull-right m-r-10 m-t-10&quot; href=&quot;email_compose.html&quot;&gt;&lt;i class=&quot;fa fa-pencil-square-o&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;!-- END COMPOSE BUTTON --&gt;
+&lt;/div&gt;
+&lt;!-- END EMAIL --&gt;</code></pre>
+<pre><code class="xml">&lt;!-- File: tpl/apps/email/email_inbox.html --&gt;
+&lt;!-- START EMAILS LIST --&gt;
+&lt;div class=&quot;email-list b-r b-grey&quot; ng-controller=&quot;EmailListCtrl&quot;&gt; &lt;a class=&quot;email-refresh&quot; href=&quot;&quot;&gt;&lt;i class=&quot;fa fa-refresh&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+    &lt;div id=&quot;emailList&quot; ui-jq=&quot;ioslist&quot;&gt;
+        &lt;!-- START EMAIL LIST SORTED BY DATE --&gt;
+            &lt;div class=&quot;list-view-group-container&quot; ng-repeat=&quot;email in emails&quot;&gt;
+                &lt;div class=&quot;list-view-group-header&quot;&gt;&lt;span&gt;{{email.group}}&lt;/span&gt;&lt;/div&gt;
+
+                &lt;ul class=&quot;no-padding&quot;&gt;
+                    &lt;li ng-repeat=&quot;item in email.list&quot; class=&quot;item padding-15&quot; data-email-id=&quot;{{item.id}}&quot; ng-click=&quot;view(emailId)&quot; ng-init=&quot;emailId = item.id&quot;&gt; 
+                                &lt;div class=&quot;thumbnail-wrapper d32 circular bordered {{item.color}}&quot;&gt; 
+                                    &lt;img width=&quot;40&quot; height=&quot;40&quot; alt=&quot;&quot; ng-src=&quot;{{item.dpRetina}}&quot;&gt; 
+                                &lt;/div&gt; 
+                                &lt;div class=&quot;checkbox  no-margin p-l-10&quot;&gt; 
+                                    &lt;input type=&quot;checkbox&quot; value=&quot;1&quot; id=&quot;emailcheckbox-{{$parent.$index}}-{{$index}}&quot;&gt; 
+                                    &lt;label for=&quot;emailcheckbox-{{$parent.$index}}-{{$index}}&quot;&gt;&lt;/label&gt; 
+                                &lt;/div&gt; 
+                                &lt;div class=&quot;inline m-l-15&quot;&gt; 
+                                    &lt;p class=&quot;recipients no-margin hint-text small&quot;&gt;{{formatTo(item.to)}}&lt;/p&gt; 
+                                    &lt;p class=&quot;subject no-margin&quot;&gt;{{item.subject}}&lt;/p&gt; 
+                                    &lt;p class=&quot;body no-margin&quot;&gt; 
+                                     {{formatBody(item.body)}}
+                                    &lt;/p&gt; 
+                                &lt;/div&gt; 
+                                &lt;div class=&quot;datetime&quot;&gt;{{item.time}}&lt;/div&gt; 
+                                &lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt; 
+                            &lt;/li&gt;
+                &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;!-- END EMAIL LIST SORTED BY DATE --&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- END EMAILS LIST --&gt;
+&lt;!-- START OPENED EMAIL --&gt;
+&lt;div class=&quot;email-opened&quot; ng-controller=&quot;EmailViewCtrl&quot;&gt;
+    &lt;div class=&quot;no-email&quot; ng-hide=&quot;email&quot;&gt;
+        &lt;h1&gt;No email has been selected&lt;/h1&gt;
+    &lt;/div&gt;
+     &lt;div class=&quot;email-content-wrapper&quot; ng-show=&quot;email&quot;&gt;
+        &lt;div class=&quot;actions-wrapper menuclipper bg-master-lightest&quot; ui-jq=&quot;menuclipper&quot; ui-options=&quot;{bufferWidth: 20}&quot;&gt;
+            &lt;ul class=&quot;actions menuclipper-menu no-margin p-l-20 &quot;&gt;
+                &lt;li class=&quot;visible-sm-inline-block visible-xs-inline-block&quot;&gt;
+                    &lt;a ng-click=&quot;showInbox()&quot; class=&quot;email-list-toggle&quot;&gt;&lt;i class=&quot;fa fa-angle-left&quot;&gt;&lt;/i&gt; All Inboxes
+                                &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;no-padding &quot;&gt;&lt;a href=&quot;&quot; class=&quot;text-info&quot;&gt;Reply&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;no-padding &quot;&gt;&lt;a href=&quot;&quot;&gt;Reply all&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;no-padding &quot;&gt;&lt;a href=&quot;&quot;&gt;Forward&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;no-padding &quot;&gt;&lt;a href=&quot;&quot;&gt;Mark as read&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;no-padding &quot;&gt;&lt;a href=&quot;&quot; class=&quot;text-danger&quot;&gt;Delete&lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;email-content&quot;&gt;
+            &lt;div class=&quot;email-content-header&quot;&gt;
+                &lt;div class=&quot;thumbnail-wrapper d48 circular bordered&quot;&gt;
+                    &lt;img width=&quot;40&quot; height=&quot;40&quot; alt=&quot;&quot; ui-jq=&quot;unveil&quot; data-src-retina=&quot;assets/img/profiles/avatar2x.jpg&quot; data-src=&quot;assets/img/profiles/avatar.jpg&quot; src=&quot;assets/img/profiles/avatar2x.jpg&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;sender inline m-l-10&quot;&gt;
+                    &lt;p class=&quot;name no-margin bold&quot;&gt;{{email.from}}
+                    &lt;/p&gt;
+                    &lt;p class=&quot;datetime no-margin&quot;&gt;{{email.datetime}}&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;subject m-t-20 m-b-20 semi-bold&quot;&gt;{{email.subject}}
+                &lt;/div&gt;
+                &lt;div class=&quot;fromto&quot;&gt;
+                    &lt;div class=&quot;pull-left&quot;&gt;
+                        &lt;div class=&quot;btn-group dropdown-default&quot;&gt;
+                            &lt;a class=&quot;btn dropdown-toggle btn-small btn-rounded&quot; data-toggle=&quot;dropdown&quot; href=&quot;&quot;&gt;
+                                        David Nester
+                                        &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+                                        &lt;/a&gt;
+                            &lt;ul class=&quot;dropdown-menu&quot;&gt;
+                                &lt;li&gt;&lt;a href=&quot;&quot;&gt;Action&lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;&quot;&gt;Friend&lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;&quot;&gt;Report&lt;/a&gt;
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+                        &lt;label class=&quot;inline&quot;&gt;
+                            &lt;span class=&quot;muted&quot;&gt;&amp;nbsp;&amp;nbsp;to&lt;/span&gt;
+                            &lt;span class=&quot; small-text&quot;&gt;johnsmith@skyace.com&lt;/span&gt;
+                        &lt;/label&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;email-content-body m-t-20&quot; ng-bind-html=&quot;emailHTML&quot; &gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;wysiwyg5-wrapper b-a b-grey m-t-30&quot;&gt;
+                &lt;textarea class=&quot;email-reply&quot; placeholder=&quot;Reply&quot; reply-editor&gt;&lt;/textarea&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+&lt;!-- END OPENED EMAIL --&gt;
+
+</code></pre>
+<pre><code class="xml">&lt;!-- File: tpl/apps/email/email_compose.html --&gt;
+&lt;!-- START COMPOSE EMAIL --&gt;
+&lt;div class=&quot;email-composer container-fluid&quot; email-composer&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-sm-12 no-padding&quot;&gt;
+            &lt;div class=&quot;wysiwyg5-wrapper email-toolbar-wrapper&quot;&gt;
+            &lt;/div&gt;
+            &lt;form id=&quot;form-project&quot; role=&quot;form&quot; autocomplete=&quot;off&quot;&gt;
+                &lt;div class=&quot;form-group-attached&quot;&gt;
+                    &lt;div class=&quot;row clearfix&quot;&gt;
+                        &lt;div class=&quot;col-sm-6&quot;&gt;
+                            &lt;div pg-form-group class=&quot;form-group form-group-default&quot;&gt;
+                                &lt;label&gt;TO:&lt;/label&gt;
+                                &lt;input name=&quot;to&quot; data-role=&quot;tagsinput&quot; class=&quot;form-control tagsinput&quot; type=&quot;text&quot; value=&quot;John Smith&quot; /&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;col-sm-6&quot;&gt;
+                            &lt;div pg-form-group class=&quot;form-group form-group-default&quot;&gt;
+                                &lt;label&gt;CC:&lt;/label&gt;
+                                &lt;input type=&quot;text&quot; class=&quot;form-control&quot; name=&quot;cc&quot; placeholder=&quot;Add Carbon Copy&quot;&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div pg-form-group class=&quot;form-group form-group-default&quot;&gt;
+                        &lt;label&gt;Subject&lt;/label&gt;
+                        &lt;input type=&quot;text&quot; class=&quot;form-control&quot; name=&quot;subject&quot;&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/form&gt;
+            &lt;div class=&quot;wysiwyg5-wrapper email-body-wrapper&quot;&gt;
+                &lt;textarea class=&quot;wysiwyg email-body&quot; style=&quot;height:350px&quot;&gt;&lt;/textarea&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;row p-b-20&quot;&gt;
+        &lt;div class=&quot;col-sm-11&quot;&gt;
+            &lt;button class=&quot;btn btn-white btn-cons&quot;&gt;Cancel&lt;/button&gt;
+            &lt;button class=&quot;btn btn-complete btn-cons m-l-10&quot;&gt;Send&lt;/button&gt;
+            &lt;div class=&quot;checkbox inline m-l-20&quot;&gt;
+                &lt;input type=&quot;checkbox&quot; value=&quot;1&quot; id=&quot;sendCC&quot;&gt;
+                &lt;label for=&quot;sendCC&quot; class=&quot;hint-text hidden-xs&quot;&gt;Send a &lt;span class=&quot;text-complete&quot;&gt;Carbon Copy&lt;/span&gt; CC to my Primary email address.&lt;/label&gt;
+                &lt;label for=&quot;sendCC&quot; class=&quot;hint-text visible-xs-inline&quot;&gt;Send me a CC&lt;/label&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-sm-1&quot;&gt;
+            &lt;button class=&quot;btn btn-complete pull-right&quot;&gt;
+                &lt;i class=&quot;pg-save&quot;&gt;&lt;/i&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- END COMPOSE EMAIL --&gt;
+</code></pre>
+<pre><code class="xml">&lt;!-- File: tpl/apps/email/blocks/sidebar.html --&gt;
+&lt;!-- START EMAIL SIDEBAR MENU--&gt;
+    &lt;nav class=&quot;email-sidebar padding-30&quot;&gt;
+        &lt;a ui-sref=&quot;app.email.compose&quot; class=&quot;btn btn-complete btn-block btn-compose m-b-30&quot;&gt;Compose&lt;/a&gt;
+        &lt;p class=&quot;menu-title&quot;&gt;BROWSE&lt;/p&gt;
+        &lt;ul class=&quot;main-menu&quot;&gt;
+            &lt;li class=&quot;active&quot;&gt;
+                &lt;a ui-sref=&quot;app.email.inbox&quot;&gt;
+                    &lt;span class=&quot;title&quot;&gt;&lt;i class=&quot;pg-inbox&quot;&gt;&lt;/i&gt; Inbox&lt;/span&gt;
+                    &lt;span class=&quot;badge pull-right&quot;&gt;5&lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class=&quot;&quot;&gt;
+                &lt;a href=&quot;&quot;&gt;
+                    &lt;span class=&quot;title&quot;&gt;&lt;i class=&quot;pg-folder&quot;&gt;&lt;/i&gt; All mail&lt;/span&gt;
+                &lt;/a&gt;
+                &lt;ul class=&quot;sub-menu no-padding&quot;&gt;
+                    &lt;li&gt;
+                        &lt;a href=&quot;&quot;&gt;
+                            &lt;span class=&quot;title&quot;&gt;Important&lt;/span&gt;
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;a href=&quot;&quot;&gt;
+                            &lt;span class=&quot;title&quot;&gt;Labeled&lt;/span&gt;
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;a href=&quot;&quot;&gt;
+                    &lt;span class=&quot;title&quot;&gt;&lt;i class=&quot;pg-sent&quot;&gt;&lt;/i&gt; Sent&lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;a href=&quot;&quot;&gt;
+                    &lt;span class=&quot;title&quot;&gt;&lt;i class=&quot;pg-spam&quot;&gt;&lt;/i&gt; Spam&lt;/span&gt;
+                    &lt;span class=&quot;badge pull-right&quot;&gt;10&lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;p class=&quot;menu-title m-t-20 all-caps&quot;&gt;Quick view&lt;/p&gt;
+        &lt;ul class=&quot;sub-menu no-padding&quot;&gt;
+            &lt;li&gt;
+                &lt;a href=&quot;&quot;&gt;
+                    &lt;span class=&quot;title&quot;&gt;Documents&lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;a href=&quot;&quot;&gt;
+                    &lt;span class=&quot;title&quot;&gt;Flagged&lt;/span&gt;
+                    &lt;span class=&quot;badge pull-right&quot;&gt;5&lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;a href=&quot;&quot;&gt;
+                    &lt;span class=&quot;title&quot;&gt;Images&lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+    &lt;!-- END EMAL SIDEBAR MENU --&gt;
+</code></pre>
+<h4>Controller and Directive</h4>
+<pre><code class="js">// File: assets/js/apps/email/email.js
+'use strict';
+
+/* Controllers */
+
+angular.module('app')
+    // Email controller 
+    .controller('EmailListCtrl', ['$scope', 'emails', '$stateParams', '$state', '$timeout', '$window',
+        function($scope, emails, $stateParams, $state, $timeout, $window) {
+
+            var w = angular.element($window);
+
+
+            emails.all().then(function(list) {
+                $scope.emails = list;
+            });
+
+            $scope.EmailCtrl = function(arr) {
+                return arr.join();
+            }
+            $scope.formatBody = function(body) {
+                return body.replace(/&lt;(?:.|\n)*?&gt;/gm, '');
+            }
+            $scope.view = function(id) {
+                $state.go('app.email.inbox', {
+                    'emailId': id
+                })
+                $timeout(function() {
+                    if ($.Pages.isVisibleSm() || $.Pages.isVisibleXs()) {
+                        $('.email-list').toggleClass('slideLeft');
+                    }
+                });
+            };
+            $scope.showInbox = function() {
+                $('.email-list').removeClass('slideLeft');
+            }
+
+            w.bind('resize', function() {
+                if (w.width() &lt;= 1024) {
+                    $('.email-sidebar').hide();
+
+                } else {
+                    $('.email-list').length &amp;&amp; $('.email-list').removeClass('slideLeft');
+                    $('.email-sidebar').show();
+                }
+            });
+
+        }
+    ])
+
+.controller('EmailViewCtrl', ['$scope', 'emails', '$stateParams', '$sce', function($scope, emails, $stateParams, $sce) {
+
+    $stateParams.emailId &amp;&amp; emails.find($stateParams.emailId).then(function(email) {
+        $scope.email = email;
+        $scope.emailHTML = $sce.trustAsHtml(email.body);
+    });
+
+
+
+}]);
+
+/* Directives */
+
+angular.module('app')
+    .directive('emailComposer', function() {
+        return {
+            restrict: 'A',
+            link: function(scope, element, attrs) {
+                // Email composer
+                var emailComposerToolbarTemplate = {
+                    &quot;font-styles&quot;: function(locale) {
+                        return '&lt;li class=&quot;dropdown&quot;&gt;' + '&lt;a data-toggle=&quot;dropdown&quot; class=&quot;btn btn-default dropdown-toggle &quot;&gt;' + '&lt;span class=&quot;editor-icon editor-icon-headline&quot;&gt;&lt;/span&gt;' + '&lt;span class=&quot;current-font&quot;&gt;Normal&lt;/span&gt;' + '&lt;b class=&quot;caret&quot;&gt;&lt;/b&gt;' + '&lt;/a&gt;' + '&lt;ul class=&quot;dropdown-menu&quot;&gt;' + '&lt;li&gt;&lt;a tabindex=&quot;-1&quot; data-wysihtml5-command-value=&quot;p&quot; data-wysihtml5-command=&quot;formatBlock&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;Normal&lt;/a&gt;&lt;/li&gt;' + '&lt;li&gt;&lt;a tabindex=&quot;-1&quot; data-wysihtml5-command-value=&quot;h1&quot; data-wysihtml5-command=&quot;formatBlock&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;1&lt;/a&gt;&lt;/li&gt;' + '&lt;li&gt;&lt;a tabindex=&quot;-1&quot; data-wysihtml5-command-value=&quot;h2&quot; data-wysihtml5-command=&quot;formatBlock&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;2&lt;/a&gt;&lt;/li&gt;' + '&lt;li&gt;&lt;a tabindex=&quot;-1&quot; data-wysihtml5-command-value=&quot;h3&quot; data-wysihtml5-command=&quot;formatBlock&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;3&lt;/a&gt;&lt;/li&gt;' + '&lt;li&gt;&lt;a tabindex=&quot;-1&quot; data-wysihtml5-command-value=&quot;h4&quot; data-wysihtml5-command=&quot;formatBlock&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;4&lt;/a&gt;&lt;/li&gt;' + '&lt;li&gt;&lt;a tabindex=&quot;-1&quot; data-wysihtml5-command-value=&quot;h5&quot; data-wysihtml5-command=&quot;formatBlock&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;5&lt;/a&gt;&lt;/li&gt;' + '&lt;li&gt;&lt;a tabindex=&quot;-1&quot; data-wysihtml5-command-value=&quot;h6&quot; data-wysihtml5-command=&quot;formatBlock&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;6&lt;/a&gt;&lt;/li&gt;' + '&lt;/ul&gt;' + '&lt;/li&gt;';
+                    },
+                    emphasis: function(locale) {
+                        return '&lt;li&gt;' + '&lt;div class=&quot;btn-group&quot;&gt;' + '&lt;a tabindex=&quot;-1&quot; title=&quot;CTRL+B&quot; data-wysihtml5-command=&quot;bold&quot; class=&quot;btn  btn-default&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;&lt;i class=&quot;editor-icon editor-icon-bold&quot;&gt;&lt;/i&gt;&lt;/a&gt;' + '&lt;a tabindex=&quot;-1&quot; title=&quot;CTRL+I&quot; data-wysihtml5-command=&quot;italic&quot; class=&quot;btn  btn-default&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;&lt;i class=&quot;editor-icon editor-icon-italic&quot;&gt;&lt;/i&gt;&lt;/a&gt;' + '&lt;a tabindex=&quot;-1&quot; title=&quot;CTRL+U&quot; data-wysihtml5-command=&quot;underline&quot; class=&quot;btn  btn-default&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;&lt;i class=&quot;editor-icon editor-icon-underline&quot;&gt;&lt;/i&gt;&lt;/a&gt;' + '&lt;/div&gt;' + '&lt;/li&gt;';
+                    },
+                    blockquote: function(locale) {
+                        return '&lt;li&gt;' + '&lt;a tabindex=&quot;-1&quot; data-wysihtml5-display-format-name=&quot;false&quot; data-wysihtml5-command-value=&quot;blockquote&quot; data-wysihtml5-command=&quot;formatBlock&quot; class=&quot;btn  btn-default&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;' + '&lt;i class=&quot;editor-icon editor-icon-quote&quot;&gt;&lt;/i&gt;' + '&lt;/a&gt;' + '&lt;/li&gt;'
+                    },
+                    lists: function(locale) {
+                        return '&lt;li&gt;' + '&lt;div class=&quot;btn-group&quot;&gt;' + '&lt;a tabindex=&quot;-1&quot; title=&quot;Unordered list&quot; data-wysihtml5-command=&quot;insertUnorderedList&quot; class=&quot;btn  btn-default&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;&lt;i class=&quot;editor-icon editor-icon-ul&quot;&gt;&lt;/i&gt;&lt;/a&gt;' + '&lt;a tabindex=&quot;-1&quot; title=&quot;Ordered list&quot; data-wysihtml5-command=&quot;insertOrderedList&quot; class=&quot;btn  btn-default&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;&lt;i class=&quot;editor-icon editor-icon-ol&quot;&gt;&lt;/i&gt;&lt;/a&gt;' + '&lt;a tabindex=&quot;-1&quot; title=&quot;Outdent&quot; data-wysihtml5-command=&quot;Outdent&quot; class=&quot;btn  btn-default&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;&lt;i class=&quot;editor-icon editor-icon-outdent&quot;&gt;&lt;/i&gt;&lt;/a&gt;' + '&lt;a tabindex=&quot;-1&quot; title=&quot;Indent&quot; data-wysihtml5-command=&quot;Indent&quot; class=&quot;btn  btn-default&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;&lt;i class=&quot;editor-icon editor-icon-indent&quot;&gt;&lt;/i&gt;&lt;/a&gt;' + '&lt;/div&gt;' + '&lt;/li&gt;'
+                    },
+                    image: function(locale) {
+                        return '&lt;li&gt;' + '&lt;div class=&quot;bootstrap-wysihtml5-insert-image-modal modal fade&quot;&gt;' + '&lt;div class=&quot;modal-dialog &quot;&gt;' + '&lt;div class=&quot;modal-content&quot;&gt;' + '&lt;div class=&quot;modal-header&quot;&gt;' + '&lt;a data-dismiss=&quot;modal&quot; class=&quot;close&quot;&gt;&times;&lt;/a&gt;' + '&lt;h3&gt;Insert image&lt;/h3&gt;' + '&lt;/div&gt;' + '&lt;div class=&quot;modal-body&quot;&gt;' + '&lt;input class=&quot;bootstrap-wysihtml5-insert-image-url form-control&quot; value=&quot;http://&quot;&gt;' + '&lt;/div&gt;' + '&lt;div class=&quot;modal-footer&quot;&gt;' + '&lt;a data-dismiss=&quot;modal&quot; class=&quot;btn btn-default&quot;&gt;Cancel&lt;/a&gt;' + '&lt;a data-dismiss=&quot;modal&quot; class=&quot;btn btn-primary&quot;&gt;Insert image&lt;/a&gt;' + '&lt;/div&gt;' + '&lt;/div&gt;' + '&lt;/div&gt;' + '&lt;/div&gt;' + '&lt;a tabindex=&quot;-1&quot; title=&quot;Insert image&quot; data-wysihtml5-command=&quot;insertImage&quot; class=&quot;btn  btn-default&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;' + '&lt;i class=&quot;editor-icon editor-icon-image&quot;&gt;&lt;/i&gt;' + '&lt;/a&gt;' + '&lt;/li&gt;'
+                    },
+                    link: function(locale) {
+                        return '&lt;li&gt;' + '&lt;div class=&quot;bootstrap-wysihtml5-insert-link-modal modal fade&quot;&gt;' + '&lt;div class=&quot;modal-dialog &quot;&gt;' + '&lt;div class=&quot;modal-content&quot;&gt;' + '&lt;div class=&quot;modal-header&quot;&gt;' + '&lt;a data-dismiss=&quot;modal&quot; class=&quot;close&quot;&gt;&times;&lt;/a&gt;' + '&lt;h3&gt;Insert link&lt;/h3&gt;' + '&lt;/div&gt;' + '&lt;div class=&quot;modal-body&quot;&gt;' + '&lt;input class=&quot;bootstrap-wysihtml5-insert-link-url form-control&quot; value=&quot;http://&quot;&gt;' + '&lt;label class=&quot;checkbox&quot;&gt; &lt;input type=&quot;checkbox&quot; checked=&quot;&quot; class=&quot;bootstrap-wysihtml5-insert-link-target&quot;&gt;Open link in new window&lt;/label&gt;' + '&lt;/div&gt;' + '&lt;div class=&quot;modal-footer&quot;&gt;' + '&lt;a data-dismiss=&quot;modal&quot; class=&quot;btn btn-default&quot;&gt;Cancel&lt;/a&gt;' + '&lt;a data-dismiss=&quot;modal&quot; class=&quot;btn btn-primary&quot; href=&quot;&quot;&gt;Insert link&lt;/a&gt;' + '&lt;/div&gt;' + '&lt;/div&gt;' + '&lt;/div&gt;' + '&lt;/div&gt;' + '&lt;a tabindex=&quot;-1&quot; title=&quot;Insert link&quot; data-wysihtml5-command=&quot;createLink&quot; class=&quot;btn  btn-default&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;' + '&lt;i class=&quot;editor-icon editor-icon-link&quot;&gt;&lt;/i&gt;' + '&lt;/a&gt;' + '&lt;/li&gt;'
+                    },
+                    html: function(locale) {
+                        return '&lt;li&gt;' + '&lt;div class=&quot;btn-group&quot;&gt;' + '&lt;a tabindex=&quot;-1&quot; title=&quot;Edit HTML&quot; data-wysihtml5-action=&quot;change_view&quot; class=&quot;btn  btn-default&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;' + '&lt;i class=&quot;editor-icon editor-icon-html&quot;&gt;&lt;/i&gt;' + '&lt;/a&gt;' + '&lt;/div&gt;' + '&lt;/li&gt;'
+                    }
+                }
+
+                setTimeout(function() {
+                    var emailBody = $(element).find('.email-body');
+                    emailBody.length &amp;&amp; emailBody.wysihtml5({
+                        html: true,
+                        stylesheets: [&quot;pages/css/editor.css&quot;],
+                        customTemplates: emailComposerToolbarTemplate
+                    });
+
+                    $(element).find('.wysihtml5-toolbar').appendTo('.email-toolbar-wrapper');
+                }, 500);
+            }
+        }
+    })
+
+.directive('replyEditor', function() {
+    // Wysiwyg editor custom options
+
+    var editorTemplate = {
+        &quot;font-styles&quot;: function(locale) {
+            return '&lt;li class=&quot;dropdown dropup&quot;&gt;' + '&lt;a data-toggle=&quot;dropdown&quot; class=&quot;btn btn-default dropdown-toggle &quot;&gt;    &lt;span class=&quot;glyphicon glyphicon-font&quot;&gt;&lt;/span&gt;    &lt;span class=&quot;current-font&quot;&gt;Normal text&lt;/span&gt;    &lt;b class=&quot;caret&quot;&gt;&lt;/b&gt;  &lt;/a&gt;' + '&lt;ul class=&quot;dropdown-menu&quot;&gt;    &lt;li&gt;&lt;a tabindex=&quot;-1&quot; data-wysihtml5-command-value=&quot;p&quot; data-wysihtml5-command=&quot;formatBlock&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;Normal text&lt;/a&gt;&lt;/li&gt;     &lt;li&gt;&lt;a tabindex=&quot;-1&quot; data-wysihtml5-command-value=&quot;h1&quot; data-wysihtml5-command=&quot;formatBlock&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;Heading 1&lt;/a&gt;&lt;/li&gt;    &lt;li&gt;&lt;a tabindex=&quot;-1&quot; data-wysihtml5-command-value=&quot;h2&quot; data-wysihtml5-command=&quot;formatBlock&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;Heading 2&lt;/a&gt;&lt;/li&gt;    &lt;li&gt;&lt;a tabindex=&quot;-1&quot; data-wysihtml5-command-value=&quot;h3&quot; data-wysihtml5-command=&quot;formatBlock&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;Heading 3&lt;/a&gt;&lt;/li&gt;    &lt;li&gt;&lt;a tabindex=&quot;-1&quot; data-wysihtml5-command-value=&quot;h4&quot; data-wysihtml5-command=&quot;formatBlock&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;Heading 4&lt;/a&gt;&lt;/li&gt;    &lt;li&gt;&lt;a tabindex=&quot;-1&quot; data-wysihtml5-command-value=&quot;h5&quot; data-wysihtml5-command=&quot;formatBlock&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;Heading 5&lt;/a&gt;&lt;/li&gt;    &lt;li&gt;&lt;a tabindex=&quot;-1&quot; data-wysihtml5-command-value=&quot;h6&quot; data-wysihtml5-command=&quot;formatBlock&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;Heading 6&lt;/a&gt;&lt;/li&gt;  &lt;/ul&gt;' + '&lt;/li&gt;';
+        },
+        emphasis: function(locale) {
+            return '&lt;li&gt;' + '&lt;div class=&quot;btn-group&quot;&gt;' + '&lt;a tabindex=&quot;-1&quot; title=&quot;CTRL+B&quot; data-wysihtml5-command=&quot;bold&quot; class=&quot;btn  btn-default&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;&lt;i class=&quot;editor-icon editor-icon-bold&quot;&gt;&lt;/i&gt;&lt;/a&gt;' + '&lt;a tabindex=&quot;-1&quot; title=&quot;CTRL+I&quot; data-wysihtml5-command=&quot;italic&quot; class=&quot;btn  btn-default&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;&lt;i class=&quot;editor-icon editor-icon-italic&quot;&gt;&lt;/i&gt;&lt;/a&gt;' + '&lt;a tabindex=&quot;-1&quot; title=&quot;CTRL+U&quot; data-wysihtml5-command=&quot;underline&quot; class=&quot;btn  btn-default&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;&lt;i class=&quot;editor-icon editor-icon-underline&quot;&gt;&lt;/i&gt;&lt;/a&gt;' + '&lt;/div&gt;' + '&lt;/li&gt;';
+        },
+        blockquote: function(locale) {
+            return '&lt;li&gt;' + '&lt;a tabindex=&quot;-1&quot; data-wysihtml5-display-format-name=&quot;false&quot; data-wysihtml5-command-value=&quot;blockquote&quot; data-wysihtml5-command=&quot;formatBlock&quot; class=&quot;btn  btn-default&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;' + '&lt;i class=&quot;editor-icon editor-icon-quote&quot;&gt;&lt;/i&gt;' + '&lt;/a&gt;' + '&lt;/li&gt;'
+        },
+        lists: function(locale) {
+            return '&lt;li&gt;' + '&lt;div class=&quot;btn-group&quot;&gt;' + '&lt;a tabindex=&quot;-1&quot; title=&quot;Unordered list&quot; data-wysihtml5-command=&quot;insertUnorderedList&quot; class=&quot;btn  btn-default&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;&lt;i class=&quot;editor-icon editor-icon-ul&quot;&gt;&lt;/i&gt;&lt;/a&gt;' + '&lt;a tabindex=&quot;-1&quot; title=&quot;Ordered list&quot; data-wysihtml5-command=&quot;insertOrderedList&quot; class=&quot;btn  btn-default&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;&lt;i class=&quot;editor-icon editor-icon-ol&quot;&gt;&lt;/i&gt;&lt;/a&gt;' + '&lt;a tabindex=&quot;-1&quot; title=&quot;Outdent&quot; data-wysihtml5-command=&quot;Outdent&quot; class=&quot;btn  btn-default&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;&lt;i class=&quot;editor-icon editor-icon-outdent&quot;&gt;&lt;/i&gt;&lt;/a&gt;' + '&lt;a tabindex=&quot;-1&quot; title=&quot;Indent&quot; data-wysihtml5-command=&quot;Indent&quot; class=&quot;btn  btn-default&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;&lt;i class=&quot;editor-icon editor-icon-indent&quot;&gt;&lt;/i&gt;&lt;/a&gt;' + '&lt;/div&gt;' + '&lt;/li&gt;'
+        },
+        image: function(locale) {
+            return '&lt;li&gt;' + '&lt;div class=&quot;bootstrap-wysihtml5-insert-image-modal modal fade&quot;&gt;' + '&lt;div class=&quot;modal-dialog &quot;&gt;' + '&lt;div class=&quot;modal-content&quot;&gt;' + '&lt;div class=&quot;modal-header&quot;&gt;' + '&lt;a data-dismiss=&quot;modal&quot; class=&quot;close&quot;&gt;&times;&lt;/a&gt;' + '&lt;h3&gt;Insert image&lt;/h3&gt;' + '&lt;/div&gt;' + '&lt;div class=&quot;modal-body&quot;&gt;' + '&lt;input class=&quot;bootstrap-wysihtml5-insert-image-url form-control&quot; value=&quot;http://&quot;&gt;' + '&lt;/div&gt;' + '&lt;div class=&quot;modal-footer&quot;&gt;' + '&lt;a data-dismiss=&quot;modal&quot; class=&quot;btn btn-default&quot;&gt;Cancel&lt;/a&gt;' + '&lt;a data-dismiss=&quot;modal&quot; class=&quot;btn btn-primary&quot;&gt;Insert image&lt;/a&gt;' + '&lt;/div&gt;' + '&lt;/div&gt;' + '&lt;/div&gt;' + '&lt;/div&gt;' + '&lt;a tabindex=&quot;-1&quot; title=&quot;Insert image&quot; data-wysihtml5-command=&quot;insertImage&quot; class=&quot;btn  btn-default&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;' + '&lt;i class=&quot;editor-icon editor-icon-image&quot;&gt;&lt;/i&gt;' + '&lt;/a&gt;' + '&lt;/li&gt;'
+        },
+        link: function(locale) {
+            return '&lt;li&gt;' + '&lt;div class=&quot;bootstrap-wysihtml5-insert-link-modal modal fade&quot;&gt;' + '&lt;div class=&quot;modal-dialog &quot;&gt;' + '&lt;div class=&quot;modal-content&quot;&gt;' + '&lt;div class=&quot;modal-header&quot;&gt;' + '&lt;a data-dismiss=&quot;modal&quot; class=&quot;close&quot;&gt;&times;&lt;/a&gt;' + '&lt;h3&gt;Insert link&lt;/h3&gt;' + '&lt;/div&gt;' + '&lt;div class=&quot;modal-body&quot;&gt;' + '&lt;input class=&quot;bootstrap-wysihtml5-insert-link-url form-control&quot; value=&quot;http://&quot;&gt;' + '&lt;div class=&quot;checkbox check-success&quot;&gt; &lt;input type=&quot;checkbox&quot; class=&quot;bootstrap-wysihtml5-insert-link-target&quot; checked=&quot;checked&quot; value=&quot;1&quot; id=&quot;link-checkbox&quot;&gt; &lt;label for=&quot;link-checkbox&quot;&gt;Open link in new window&lt;/label&gt;&lt;/div&gt;' + '&lt;/div&gt;' + '&lt;div class=&quot;modal-footer&quot;&gt;' + '&lt;a data-dismiss=&quot;modal&quot; class=&quot;btn btn-default&quot;&gt;Cancel&lt;/a&gt;' + '&lt;a data-dismiss=&quot;modal&quot; class=&quot;btn btn-primary&quot; href=&quot;&quot;&gt;Insert link&lt;/a&gt;' + '&lt;/div&gt;' + '&lt;/div&gt;' + '&lt;/div&gt;' + '&lt;/div&gt;' + '&lt;a tabindex=&quot;-1&quot; title=&quot;Insert link&quot; data-wysihtml5-command=&quot;createLink&quot; class=&quot;btn  btn-default&quot; href=&quot;javascript:;&quot; unselectable=&quot;on&quot;&gt;' + '&lt;i class=&quot;editor-icon editor-icon-link&quot;&gt;&lt;/i&gt;' + '&lt;/a&gt;' + '&lt;/li&gt;'
+        }
+    }
+
+    var editorOptions = {
+        &quot;font-styles&quot;: true, //Font styling, e.g. h1, h2, etc. Default true
+        &quot;emphasis&quot;: true, //Italics, bold, etc. Default true
+        &quot;lists&quot;: false, //(Un)ordered lists, e.g. Bullets, Numbers. Default true
+        &quot;html&quot;: false, //Button which allows you to edit the generated HTML. Default false
+        &quot;link&quot;: true, //Button to insert a link. Default true
+        &quot;image&quot;: true, //Button to insert an image. Default true,
+        &quot;color&quot;: false, //Button to change color of font  
+        &quot;blockquote&quot;: true, //Blockquote  
+        stylesheets: [&quot;pages/css/editor.css&quot;],
+        customTemplates: editorTemplate
+    };
+
+    return {
+        restrict: 'A',
+        link: function(scope, element, attrs) {
+            !$(element).data('wysihtml5') &amp;&amp; $(element).wysihtml5(editorOptions);
+        }
+    }
+});</code></pre>
+<h4>Services</h4> Service to retrieve email list from an API. For this demo we're loading a local JSON file (explained above in jQuery section)
+<pre><code class="js">// File: assets/js/apps/email/service.js
+angular.module('app')
+    .factory('emails', function($http) {
+
+        var list = $http.get('assets/js/apps/email/emails.json').then(function(response) {
+            return response.data.emails;
+        });
+        var emails = {
+            all: function() {
+                return list;
+            },
+            find: function(id) {
+                return list.then(function(list) {
+                    for (var i = 0; i &lt; list.length; i++) {
+                        for (var j = 0; j &lt; list[i].list.length; j++) {
+                            if (list[i].list[j].id == id)
+                                return list[i].list[j];
+                        }
+                    }
+                })
+            }
+        };
+        return emails;
+    });</code></pre>
+<br>
+<p>For help and bug report please contact support@revox.io</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        Copyright Reserved Revox 2014 - 2016
+    </footer>
+    <script src="../assets/plugins/jquery/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="../assets/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="../assets/plugins/modernizr.custom.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../assets/plugins/bootstrapv3/js/bootstrap.min.js"></script>
+    <script src="../assets/plugins/highlight/highlight.pack.js" type="text/javascript"></script>
+    <script src="../assets/plugins/jquery-actual/jquery.actual.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../assets/plugins/bootstrap-select2/select2.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/classie/classie.js"></script>
+    <script src="../assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="../pages/js/pages.min.js" type="text/javascript"></script>
+    <script src="../assets/js/sidebar.js" type="text/javascript"></script>
+    <script src="../assets/plugins/jquery-dynatree/jquery.dynatree.min.js" type="text/javascript"></script>
+     
+    <script src="../assets/js/portlets.js" type="text/javascript"></script>
+    <script>
+    $(document).ready(function() {
+        $.fn.scrollbar && $('.pg_scrollable').scrollbar({
+            ignoreOverlay: false
+        });
+        //Initialize Pages core
+        hljs.initHighlightingOnLoad();
+         $("#default-tree").dynatree();
+          $("#angular-tree").dynatree();
+    $("#g-tree").dynatree();
+    $("#b-tree").dynatree();
+    });
+    </script>
+</body>
+
+</html>

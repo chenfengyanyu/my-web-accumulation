@@ -1,0 +1,1 @@
+{"dependencies":[{"name":"./main","loc":{"line":1,"column":17}}],"generated":{"js":"\"use strict\";\n\nvar _main = require(\"./main\");\n\nvar _main2 = _interopRequireDefault(_main);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n(0, _main2.default)();"},"hash":"a38e865bf13f4deab9521fb12a3bd3c4"}

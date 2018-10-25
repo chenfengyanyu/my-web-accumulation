@@ -1,0 +1,72 @@
+import React from 'react';
+import { Row, Col, Input, Spin, Icon } from 'antd';
+import { classnames } from '../../utils';
+import styles from './index.less';
+import Block from '../../components/common/Block';
+import TrackerList from './list';
+
+const Search = Input.Search;
+const ACTIVE_TAB = {
+  DEVICE_MODE: 'device-mode',
+  MAP_MODE: 'map-mode',
+};
+
+const Pane = ({ dispatch, deviceMode, handleSearch, onChageMode, loading }) => {
+  const showModeEle = () => {
+    const deviceActive = deviceMode;
+    //device-mode-tab
+    const deviceCls = classnames({
+      [styles.active]: deviceActive,
+      [styles.inactive]: !deviceActive,
+    });
+    //map-mode-tab
+    const mapCls = classnames({
+      [styles.active]: !deviceActive,
+      [styles.inactive]: deviceActive,
+    });
+
+    let SearchEle = <Row type="flex" justify="space-between">
+      <Col span={8} style={{ textAlign: 'left' }}>
+        <Search placeholder="设备编号" style={{ width: 200 }} onSearch={handleSearch} />
+      </Col>
+      <Col span={3} style={{ textAlign: 'right' }}>
+        <div className={styles['tracker-mode-change']}>
+          <Icon className={deviceCls} type="apple" onClick={function () { onChageMode(ACTIVE_TAB.DEVICE_MODE) }.bind(this)} />
+          <Icon className={mapCls} type="apple" onClick={function () { onChageMode(ACTIVE_TAB.MAP_MODE) }.bind(this)} />
+        </div>
+      </Col>
+    </Row>;
+
+    const deviceProps = {
+      dispatch,
+    }
+
+    let DeviceModeEle = <div>
+      <Block val={10} />
+        {SearchEle}
+      <Block val={15} />
+      {/*<Spin size="large" spinning>*/}
+      <TrackerList {...deviceProps} />
+      {/*</Spin>*/}
+    </div>;
+
+    const mapProps = {
+      dispatch,
+    }
+    let MapModeEle = <div>
+      <Block val={10} />
+        {SearchEle}
+      <Block val={15} />
+      <TrackerList {...mapProps} />
+    </div>;
+    if (deviceMode) {
+      return DeviceModeEle;
+    } else {
+      return MapModeEle;
+    }
+  };
+
+  return (<div>{showModeEle()}</div>);
+};
+
+export default Pane;

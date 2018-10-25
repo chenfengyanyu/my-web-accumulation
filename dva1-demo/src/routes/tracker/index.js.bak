@@ -1,0 +1,112 @@
+import React from 'react';
+import { connect } from 'dva';
+import { Row, Col, Button, Input, Spin, Icon } from 'antd';
+import moment from 'moment';
+import Animate from 'rc-animate';
+import Block from '../../components/common/Block';
+import OverviewPane from '../../components/common/OverviewPane/';
+import styles from './index.less';
+import Pane from './pane.js';
+
+const createReactClass = require('create-react-class');
+const Search = Input.Search
+const ACTIVE_TAB = {
+  DEVICE_MODE: 'device-mode',
+  MAP_MODE: 'map-mode',
+};
+
+//搜索词
+let searchText = '';
+
+const Tracker = createReactClass({
+  getInitialState() {
+    return {
+      activeKey: ACTIVE_TAB.DEVICE_MODE,
+    }
+  },
+  //提交搜索
+  onChageMode(key) {
+    this.setState({
+      activeKey: key,
+    });
+  },
+
+  handleSearch(val) {
+    this.props.dispatch({
+      type: 'tracker/query',
+      payload: {
+        search: val,
+        limit: 10000,
+      },
+    })
+  },
+
+  render() {
+
+    const options = {
+      header: [{
+        tip: { text: '设备总数' },
+        text: 15423,
+      }, {
+        tip: { text: '正常', status: 'processing' },
+        text: 13894,
+      }, {
+        tip: { text: '未激活', status: 'warning' },
+        text: 1020,
+      }, {
+        tip: { text: '离线', status: 'offline' },
+        text: 2089,
+      }],
+      body: [{
+        tips: [{ text: 'dengjie' }, { text: 'dengjie' }, { text: 'dengjie' }],
+        text: 'jiedeng',
+        name: 'dj',
+      }, {
+        tips: [{ text: 'dengjie' }, { text: 'dengjie' }],
+        text: 'jiedeng',
+        name: 'dj',
+      }, {
+        tips: [{ text: 'dengjie' }, { text: 'dengjie' }, { text: 'dengjie' }],
+        text: 'jiedeng',
+        name: 'dj',
+      }, {
+        tips: [{ text: 'dengjie' }, { text: 'dengjie' }],
+        text: 'jiedeng',
+        name: 'dj',
+      }, {
+        tips: [{ text: 'dengjie' }, { text: 'dengjie' }],
+        text: 'jiedeng',
+        name: 'dj',
+      }],
+      show: false,
+    };
+    const activeKey = this.state.activeKey === ACTIVE_TAB.DEVICE_MODE;
+
+    const props = {
+      deviceMode: activeKey,
+      handleSearch: this.handleSearch,
+      loading: false,
+      onChageMode: this.onChageMode,
+    };
+    return (
+      <div className="content-inner">
+        <div>
+          <OverviewPane {...options} />
+        </div>
+        <Block val={15} />
+        <Animate
+          showProp="deviceMode"
+          transitionName="fade"
+        >
+          <Pane {...props} />
+        </Animate>
+      </div>
+    )
+  },
+});
+
+function mapStateToProps({ tracker }) {
+  return { tracker };
+}
+
+export default connect(mapStateToProps)(Tracker);

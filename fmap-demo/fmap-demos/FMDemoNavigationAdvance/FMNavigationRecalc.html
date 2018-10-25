@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>路径偏移重新规划</title>
+	<link rel="stylesheet" href="lib/bootstrap.min.css">
+	<link href=" css/style.css" rel="stylesheet">
+</head>
+<body>
+	<div id="fengMap" ></div>
+	<!--距离时间显示-->
+
+	<!--操作按钮-->
+	<button class="btn btn-default navigation" id="navigation">开始导航</button>	
+
+	<script src="lib/jquery-2.1.4.min.js"></script>
+	<script src="lib/fengmap.min.js"></script>
+	<script src="lib/bootstrap.min.js"></script>
+	<script>
+		//获取版本号,设置title
+		document.title = '路径偏移重新规划V' + fengmap.VERSION;
+
+		//定义全局map变量
+		var map;
+		var fmapID = '10347';
+		// 导航对象
+		var navi;
+		var groupControl;
+		var locationMarker;
+		var groupLayer;
+		//导航开关
+		var navigation = true; 
+		var firstPath = true;
+
+		//起点终点坐标
+		var points = [
+			{x: 12961607.949377403,y: 4861858.712984723,groupID: 2},//起点
+			{x: 12961662.565714367,y: 4861818.338024983,groupID: 2},//终点 
+			{x: 12961643.488707684,y: 4861845.86996354,groupID: 2} //拐角点 
+		];
+
+		window.onload = function() {
+			if (navi) {
+				navi.stop();
+				navi = null;
+			}
+			map = new fengmap.FMMap({
+				//渲染dom
+				container: document.getElementById('fengMap'),
+				//地图数据位置
+				mapServerURL: './data/' + fmapID,
+				//主题数据位置
+				mapThemeURL: 'data/theme',
+				//设置主题
+				defaultThemeName: '3007',
+				// 默认比例尺级别设置为20级
+				defaultMapScaleLevel: 20,
+				//对不可见图层启用透明设置 默认为true
+				focusAlphaMode: true,
+				//关闭聚焦层切换的动画显示
+				focusAnimateMode: false,
+				//对不聚焦图层启用透明设置，当focusAlphaMode = true时有效
+				focusAlpha: 0,
+				//开启2维，3维切换的动画显示
+				viewModeAnimateMode: true,
+				//设置倾斜角，默认倾斜角为60度
+				defaultTiltAngle: 30,
+				//开发者申请应用下web服务的key
+				key: '请输入您的KEY',
+				//开发者申请应用名称
+				appName: '请输入您的appName',
+			});
+
+			//打开Fengmap服务器的地图数据和主题
+			map.openMapById(fmapID);
+
+			//地图加载完成回调
+			map.on('loadComplete', function() {
+
+				// 设置显示楼层
+				map.visibleGroupIDs = [2];
+				//设置焦点层
+				map.focusGroupID = 2;
+				// 地图加载完创建导航对象并画导航路径
+				createrNavi(points);
+			});
+
+			var oNavigation = document.querySelector('#navigation');
+
+			//创建导航路线
+			function createrNavi(coord) {
+				if (!navi) {
+					//初始化导航对象
+					navi = new fengmap.FMNavigation({
+						map: map,
+						locationMarkerUrl: 'image/pointer.png',
+						//设置Marker尺寸
+						locationMarkerSize: 43,
+						//设置地图是否选择，默认false
+						followAngle: true,
+						//设置线高度,默认为1
+						// offsetHeight: 1,
+						//导航跟随倾斜角度
+						// tiltAngle: 80,	
+						//导航跟随显示级别	
+						scaleLevel: 0,
+						// 设置导航线的样式
+						lineStyle: {
+							// 导航线样式
+							lineType: fengmap.FMLineType.FMARROW,
+							// 设置线的宽度
+							lineWidth: 6,
+							//设置线的颜色
+							// godColor: '#FF0000',   
+							//设置边线的颜色
+							// godEdgeColor: '#920000',   
+						}
+					});
+					navi.clearAll();
+					//导航路径结束事件
+					navi.on('complete', function() {
+						navigation = true;
+						oNavigation.classList.remove('btn-primary');
+					});
+
+					//添加起点
+					createStartMarker(coord[0]);
+
+					//添加终点
+					createEndMarker(coord[1]);
+				}
+
+				// 添加导航事件
+				navi.on('walking', walking);
+
+				navi.locationMarker.setPosition(Object.assign({
+					height: 3
+				},
+				coord[0]));
+
+				function walking(data) {
+					if (firstPath && data.index == 3) {
+						navi.stop();
+						// 关闭导航事件
+						navi.off('walking', walking);
+
+						toOffset();
+					}
+				};
+
+				function toOffset() {
+					firstPath = false;
+					var to = Object.assign({},
+					points[2], {
+						callback: function() {
+							createStartMarker(to, true);
+							//导航开始
+							navi.simulate();
+						}
+					});
+					navi.locationMarker.moveTo(to);
+				};
+
+				// 画出导航线
+				navi.drawNaviLine();
+			};
+
+			//添加起点
+			function createStartMarker(point, noMarker) {
+				navi.setStartPoint({
+					x: point.x,
+					y: point.y,
+					groupID: 2,
+					//是否设置图片
+					noMarker: noMarker,
+					url: 'image/start.png',
+					size: 32
+				});
+			};
+
+			//添加终点
+			function createEndMarker(point) {
+				navi.setEndPoint({
+					x: point.x,
+					y: point.y,
+					groupID: 2,
+					url: 'image/end.png',
+					size: 32
+				});
+			};
+
+			//开始导航
+			oNavigation.onclick = function() {
+				if (navigation) {
+					firstPath = true;
+					navi.clearNaviLines();
+					navi.setStartPoint(points[0]);
+					createrNavi(points);
+					navigation = false;
+					navi.simulate();
+					this.classList.add('btn-primary');
+				}
+			};
+		};
+	</script>
+</body>
+</html>

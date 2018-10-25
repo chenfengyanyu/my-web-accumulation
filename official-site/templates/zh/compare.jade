@@ -1,0 +1,245 @@
+extends _layout
+append header
+	link(rel='stylesheet', href='/zh/assets/css/compare.css')
+block content
+		section#products
+			.sctn
+				h2.info 产品比较
+				h1.page_title 查看所有 iBeacon 设备
+				ul.content_lst
+					li
+						.cell
+							a.imgCtn(href='/zh/yunzi')
+						.cell
+							a.imgCtn(href='/zh/box')
+						.cell
+							a.imgCtn(href='/zh/usb')
+		section#nav_ctn
+			section#nav
+				.sctn
+					ul.content_lst
+						li
+							.cell 云子
+							.cell 云盒
+							.cell 云标
+		section#board_chip.sctn
+			h2.title
+				i.order 1
+				b.name 电路板 & 芯片
+			ul.content_lst
+				li
+					.cell
+						.imgCtn
+						p.name 云子电路板
+					.cell
+						.imgCtn
+						.name 云盒电路板
+					.cell
+						.imgCtn
+						p.name 云标电路板
+				li
+					.cell
+						.imgCtn
+						p.name NRF51822
+					.cell
+						.imgCtn
+						.name NRF51822
+					.cell
+						.imgCtn
+						p.name NRF51822
+		section#size.sctn
+			h2.title
+				i.order 2
+				b.name 尺寸
+			ul.content_lst
+				li
+					.cell
+						h3.para_title 高度：
+						p.para 50.0 mm
+					.cell
+						h3.para_title 长度 ：
+						p.para 64.0 mm
+					.cell
+						h3.para_title 长度 ：
+						p.para 42.77 mm
+				li
+					.cell
+						h3.para_title 厚度：
+						p.para 19.0 mm
+					.cell
+						h3.para_title 宽度：
+						p.para 64.0 mm
+					.cell
+						h3.para_title 宽度：
+						p.para 17.32 mm
+				li
+					.cell
+						// h3.para_title 高度：
+						// p.para 50.0 mm
+					.cell
+						h3.para_title 厚度 ：
+						p.para 23.5 mm
+					.cell
+						h3.para_title 高度：
+						p.para 7.37 mm
+		section#power.sctn
+			h2.title
+				i.order 3
+				b.name 电池
+			ul.content_lst
+				li
+					.cell 松下CR2477（无法更换）
+					.cell 4节AA电池
+					.cell USB供电
+				li
+					.cell 典型配置可工作 1.5 年
+					.cell 典型配置可工作 5 年
+					.cell ---
+		section#proof.sctn
+			h2.title
+				i.order 4
+				b.name 三防
+			ul.content_lst
+				li
+					.cell 防水
+					.cell ---
+					.cell ---
+				li
+					.cell 防尘
+					.cell 防尘
+					.cell 防尘
+				li
+					.cell 防震
+					.cell 防震
+					.cell 防震
+		section#function.sctn
+			h2.title
+				i.order 5
+				b.name 功能
+			ul.content_lst
+				li
+					.cell
+						h3.para_title 支持协议：
+						p.para iBeacon、Eddystone
+					.cell
+						h3.para_title 支持协议：
+						p.para iBeacon、Eddystone
+					.cell
+						h3.para_title 支持协议：
+						p.para iBeacon、Eddystone
+				li
+					.cell
+						h3.para_title 覆盖半径：
+						p.para 3 米 - 80 米
+					.cell
+						h3.para_title 覆盖半径：
+						p.para 15 厘米 - 100 米
+					.cell
+						h3.para_title 覆盖半径：
+						p.para 15 厘米 - 100 米
+				li
+					.cell
+						h3.para_title 广播频率：
+						p.para 100 毫秒 - 1285 毫秒
+					.cell
+						h3.para_title 广播频率：
+						p.para 100 毫秒 - 1285 毫秒
+					.cell
+						h3.para_title 广播频率：
+						p.para 100 毫秒 - 1285 毫秒
+		section#sensor.sctn
+			h2.title
+				i.order 6
+				b.name 传感器
+			ul.content_lst
+				li
+					.cell 光线传感器
+					.cell ---
+					.cell ---
+				li
+					.cell 温度传感器
+					.cell 温度传感器
+					.cell 温度传感器
+				li
+					.cell 加速度传感器
+					.cell ---
+					.cell ---
+		section#security.sctn
+			h2.title
+				i.order 7
+				b.name 安全性
+			ul.content_lst
+				li
+					.cell 防篡改密码
+					.cell 防篡改密码
+					.cell 防篡改密码
+				li
+					.cell 防蹭用
+					.cell 防蹭用
+					.cell 防蹭用
+				li
+					.cell 防伪造
+					.cell 防伪造
+					.cell 防伪造
+		section#service.sctn
+			h2.title
+				i.order 8
+				b.name 配套服务
+			ul.content_lst
+				li
+					.cell
+						a(href='/zh/api#config') 配置工具
+					.cell
+						a(href='/zh/api#config') 配置工具
+					.cell
+						a(href='/zh/api#config') 配置工具
+				li
+					.cell
+						a(href='/zh/api#inspect') 巡检工具
+					.cell
+						a(href='/zh/api#inspect') 巡检工具
+					.cell
+						a(href='/zh/api#inspect') 巡检工具
+				li
+					.cell
+						a(href='/zh/api#deploy') 部署工具
+					.cell
+						a(href='/zh/api#deploy') 部署工具
+					.cell
+						a(href='/zh/api#deploy') 部署工具
+				li
+					.cell
+						a(href='/zh/api#cloud') 云平台
+					.cell
+						a(href='/zh/api#cloud') 云平台
+					.cell
+						a(href='/zh/api#cloud') 云平台
+				li
+					.cell
+						a(href='/zh/api#rest') REST API
+					.cell
+						a(href='/zh/api#rest') REST API
+					.cell
+						a(href='/zh/api#rest') REST API
+		section#price.sctn
+			h2.title
+				i.order 9
+				b.name 价格
+			ul.content_lst
+				li
+					.cell
+						.imgCtn
+						p.price ￥188 / 个
+						.btn_ctn
+							a.butn(href='/zh/order') 立即购买
+					.cell
+						.imgCtn
+						.price ￥99 / 个
+						.btn_ctn
+							a.butn(href='/zh/order') 立即购买
+					.cell
+						.imgCtn
+						p.price ￥99 / 个
+						.btn_ctn
+							a.butn(href='/zh/order') 立即购买
+

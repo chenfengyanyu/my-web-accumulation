@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>基础地图显示</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div id="fengMap" ></div>
+	<script src="lib/jquery-2.1.4.min.js"></script>
+	<script src="lib/fengmap.min.js"></script>
+	<script>
+		//获取版本号,设置title
+		document.title = '基础地图显示V' + fengmap.VERSION;
+
+		//定义全局map变量
+		var map;
+		var fmapID = '10347';
+
+		window.onload = function() {
+			map = new fengmap.FMMap({
+				//渲染dom
+				container: document.getElementById('fengMap'),
+				//地图数据位置
+				mapServerURL: './data/' + fmapID,
+				//主题数据位置
+				mapThemeURL: './data/theme',
+				//设置主题
+				defaultThemeName: '3007',
+				// 默认比例尺级别设置为20级
+				defaultMapScaleLevel: 20,
+				//开发者申请应用下web服务的key
+				key: 'f907972d47103d0937fb39febcfa1d1a',
+				//开发者申请应用名称
+				appName: 'city',
+			});
+
+			//加载在线数据
+			/*map = new fengmap.FMMap({
+				//渲染dom
+				container : $('#fengMap')[0],     
+				
+			});*/
+
+			//打开Fengmap服务器的地图数据和主题
+			map.openMapById(fmapID, function(error){
+				//打印错误信息
+				console.log(error);
+			});
+		};
+  </script>
+</body>
+</html>

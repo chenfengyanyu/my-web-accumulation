@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>楼层显示控制</title>
+	<link rel="stylesheet" href="lib/bootstrap.min.css">
+	<link href="css/common.css" rel="stylesheet">
+    <link href="css/iconfont/iconfont.css" rel="stylesheet">
+</head>
+<body>
+	<div id="fengMap" ></div>
+
+	<!-- 楼层按钮组 -->
+	<div class="btn-group-vertical group-layer" data-toggle="buttons">
+	    <label class="btn btn-primary btn-layer" ><i class="icon iconfont">&#xe61c;</i></label>
+	    <span id="top" class="btn btn-default"><i class="icon iconfont">&#xe65e;</i></span>
+	    <div class="btn-group-vertical layer-list" data-toggle="buttons"></div>
+	    <span id="down" class="btn btn-default disabled"><i  class="icon iconfont">&#xe65f;</i></span>
+	</div>
+	<!-- /.modal -->
+	<script src="lib/jquery-2.1.4.min.js"></script>
+	<script src="lib/fengmap.min.js"></script>
+	<script src="lib/jquery.nicescroll.js"></script>
+	<script src="lib/bootstrap.min.js"></script>
+	<!-- 右边导航控件，基于Jquery库   -->
+	<script src="js/layerGroup.js"></script>
+	<script src="js/layerList.js"></script>
+	<script>
+		//获取版本号,设置title
+		document.title = '楼层显示控制V' + fengmap.VERSION;
+
+		//定义全局map变量
+		var map;
+		var fmapID = '10347';
+
+		window.onload = function() {
+			map = new fengmap.FMMap({
+				//渲染dom
+				container: document.getElementById('fengMap'),
+				//地图数据位置
+				mapServerURL: './data/' + fmapID,
+				//主题数据位置
+				mapThemeURL: './data/theme',
+				//设置主题
+				defaultThemeName: '3007',
+				// 默认比例尺级别设置为20级
+				defaultMapScaleLevel: 20,
+				//关闭聚焦层切换的动画显示
+				focusAnimateMode: true,
+				focusAlphaMode: false,
+				//设置最大倾斜角
+				defaultMaxTiltAngle: 80,
+				//设置倾斜角，默认倾斜角为60度
+				defaultTiltAngle: 30,
+				//开发者申请应用下web服务的key
+				key: '请输入您的KEY',
+				//开发者申请应用名称
+				appName: '请输入您的appName',
+			});
+
+			//打开Fengmap服务器的地图数据和主题
+			map.openMapById(fmapID);
+			
+			//地图加载完回调事件
+			map.on('loadComplete',function() {
+				//默认楼层加载完后不显示，需自定义设置要显示的楼层和聚焦层
+				map.visibleGroupIDs = map.groupIDs;
+				map.focusGroupID = map.groupIDs[0];
+				layerGroup.init(map.listGroups, map.focusGroupID);
+			});
+		};
+	</script>
+</body>
+</html>

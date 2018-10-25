@@ -1,0 +1,27 @@
+/* 
+	Widget specific styles go here
+*/
+#nvd3-pie{
+	margin-top: -75px;
+}
+.nv-pieLabels{
+	display: none;
+}
+.nvtooltip{
+	border-radius: 4px !important;
+	border:none !important;
+	box-shadow: 0 0 4px rgba(0,0,0,.16);
+	text-align:left;
+	padding: 6px 8px;
+}
+.nvtooltip p{
+	text-align:left;
+	margin: 0;
+	padding: 0;
+}
+.nvtooltip p.key{
+	font-size: 12px;
+}
+.nvtooltip p.value{
+	font-size: 14px;
+}

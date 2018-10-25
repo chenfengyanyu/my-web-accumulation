@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<title>单击拾取点标注</title>
+	<link rel="stylesheet" href="lib/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div id="fengMap" ></div>
+	<!--操作按钮-->
+	<div class="operating">
+		<button class="btn btn-default">单击拾取点标注</button>
+		<button class="btn btn-default">注销拾取点标注事件</button>
+	</div>
+
+	<!-- data-backdrop="false" -->
+	<div id="dlgModelInfo" class="modal fade">
+		<div class="modal-dialog bottom">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">拾取对象类型：</h4>
+				</div>
+				<div class="modal-body">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-md-12" id="m-title"></div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">ID：<span id="m-info"></span></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	
+	<script src="lib/jquery-2.1.4.min.js"></script>
+	<script src="lib/fengmap.min.js"></script>
+	<script src="lib/bootstrap.min.js"></script>
+	<script src="js/layerGroup.js"></script>
+	<script>
+		//获取版本号,设置title
+		document.title = '单击拾取点标注V' + fengmap.VERSION;
+
+		//定义全局map变量
+		var map;
+		var fmapID = '10347';
+		//是否拾取标注标注
+		var isPickMarker = false;
+
+		window.onload = function() {
+			map = new fengmap.FMMap({
+				//渲染dom
+				container: document.getElementById('fengMap'),
+				//地图数据位置
+				mapServerURL: './data/' + fmapID,
+				//主题数据位置
+				mapThemeURL: './data/theme',
+				//设置主题
+				defaultThemeName: '3007',
+				// 默认比例尺级别设置为20级
+				defaultMapScaleLevel: 20,
+				//开发者申请应用下web服务的key
+				key: '请输入您的KEY',
+				//开发者申请应用名称
+				appName: '请输入您的appName',
+			});
+
+			//打开Fengmap服务器的地图数据和主题
+			map.openMapById(fmapID);
+
+			//地图加载完成事件
+			map.on('loadComplete',function() {
+				addTextMarker();
+				addImageMar();
+			});
+
+			//地图点击事件
+			map.on('mapClickNode',function(event) {
+				if (event.nodeType == fengmap.FMNodeType.NONE) return;
+
+				if (!isPickMarker) return;
+
+				if (event.nodeType != fengmap.FMNodeType.MODEL) {
+					var d;
+					if (event.nodeType == fengmap.FMNodeType.TEXT_MARKER) {
+						d = {
+							name: "文字",
+							id: event.target.ID,
+						};
+						gui.showPickupInfo(d);
+
+					} else if (event.nodeType == fengmap.FMNodeType.IMAGE_MARKER) {
+						d = {
+							name: "图片",
+							id: event.target.ID,
+						};
+						gui.showPickupInfo(d);
+					}
+				}
+			});
+
+			//添加文字标签层
+			function addTextMarker() {
+				var group = map.getFMGroup(map.groupIDs[0]);
+
+				var layer1 = new fengmap.FMTextMarkerLayer();
+				group.addLayer(layer1);
+
+				//第一层的中心点，group.x、group.y也是当前楼层的中心点
+				var gpos = group.mapCoord;
+
+				var tm = new fengmap.FMTextMarker({
+					id: '103470118',
+					y: gpos.y + 30,
+					name: "这是一个文字标注",
+					//填充色
+					fillcolor: "255,0,0",
+					//字体大小
+					fontsize: 20,
+					//边框色
+					strokecolor: "255,255,0",
+					callback: function() {
+						// 在载入完成后，设置 "一直可见"
+						tm.alwaysShow();
+					}
+				});
+
+				layer1.addMarker(tm);
+			};
+
+			//添加图片标签层
+			function addImageMar() {
+				var group = map.getFMGroup(map.groupIDs[0]);
+
+				var layer = new fengmap.FMImageMarkerLayer();
+				group.addLayer(layer);
+
+				var im = new fengmap.FMImageMarker({
+					id: '103470134',
+					name: '测试ImageMarker',
+					//图片地址
+					url: 'image/blueImageMarker.png',
+					//图片大小
+					size: 32,
+					callback: function() {
+						// 在图片载入完成后，设置 "一直可见"
+						im.alwaysShow();
+					}
+				});
+
+				layer.addMarker(im);
+			};
+
+			var aBtn = document.querySelectorAll('.btn');
+			//开启点击查询
+			aBtn[0].onclick = function() {
+				isPickMarker = true;
+				this.classList.add('btn-primary');
+			};
+
+			//关闭点击查询
+			aBtn[1].onclick = function() {
+				isPickMarker = false;
+				map.selectNull();
+				aBtn[0].classList.remove('btn-primary');
+			};
+		};
+	</script>
+</body>
+</html>

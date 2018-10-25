@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>增删多边形标注</title>
+	<link rel="stylesheet" href="lib/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div id="fengMap" ></div>
+	<!--操作按钮-->
+	<div class="operating">
+		<button class="btn btn-default" id="btn1">添加多边形标注</button>
+		<button class="btn btn-default" id="btn2">删除多边形标注</button>
+	</div>
+	<script src="lib/jquery-2.1.4.min.js"></script>
+	<script src="lib/fengmap.min.js"></script>
+	<script>
+		//获取版本号,设置title
+		document.title='增删多边形标注V'+fengmap.VERSION;
+
+		//定义全局map变量
+		var map;
+		var fmapID = '10347';
+		var groupLayer;
+		var layer = null;
+		var addMarker = true;
+
+		window.onload = function() {
+			map = new fengmap.FMMap({
+				//渲染dom
+				container: document.getElementById('fengMap'),
+				//地图数据位置
+				mapServerURL: './data/' + fmapID,
+				//主题数据位置
+				mapThemeURL: 'data/theme',
+				//设置主题
+				defaultThemeName: '3007',
+				// 默认比例尺级别设置为20级 
+				defaultMapScaleLevel: 20,
+				//开发者申请应用下web服务的key
+				key: '请输入您的KEY',
+				//开发者申请应用名称
+				appName: '请输入您的appName',
+			});
+
+			//打开Fengmap服务器的地图数据和主题
+			map.openMapById(fmapID);
+
+			var rectangleMarker, circleMaker, polygonMarker;
+
+			//创建矩形标注
+			function createRectangleMaker() {
+				rectangleMarker = new fengmap.FMPolygonMarker({
+					//设置颜色
+					color: '#9F35FF',
+					//设置透明度
+					alpha: .3,
+					//设置边框线的宽度
+					lineWidth: 1,
+					//设置高度
+					height: 6,
+					points: {
+						//设置为矩形
+						type: 'rectangle',
+						//设置此形状的中心坐标
+						center: {
+							x: 1.2961583E7,
+							y: 4861865.0
+						},
+						//设置矩形的宽度
+						width: 30,
+						//设置矩形的高度
+						height: 30
+					}
+				});
+			};
+
+			//创建圆形标注
+			function createCircleMaker() {
+				circleMaker = new fengmap.FMPolygonMarker({
+					//设置颜色
+					color: '#3CF9DF',
+					//设置透明度
+					alpha: .3,
+					//设置边框线的宽度
+					lineWidth: 3,
+					//设置高度
+					height: 6,
+					points: {
+						//设置为圆形
+						type: 'circle',
+						//设置此形状的中心坐标
+						center: {
+							x: 1.2961644E7,
+							y: 4861874.0
+						},
+						//设置半径
+						radius: 30,
+						//设置段数，默认为40段
+						segments: 40,
+					}
+				});
+			};
+
+			//创建自定义形状标注
+			function createPolygonMaker(coords) {
+				polygonMarker = new fengmap.FMPolygonMarker({
+					//设置透明度
+					alpha: .5,
+					//设置边框线的宽度
+					lineWidth: 1,
+					//设置高度
+					height: 6,
+					//设置多边形坐标点
+					points: coords
+				});
+			}
+
+			//创建PolygonMarker自定义形状的顶点数组
+			var coords = [
+				{x: 12961583, y: 4861865, z: 56},
+				{x: 12961644, y: 4861874, z: 56},
+				{x: 12961680, y: 4861854, z: 56},
+				{x: 12961637, y: 4861819, z: 56},
+				{x: 12961590, y: 4861835, z: 56}
+			];
+
+			//为第一层的模型添加多边形标注图层
+			function addPmMarker() {
+				var group = map.getFMGroup(map.groupIDs[0]);
+
+				//返回当前层中第一个polygonMarker,如果没有，则自动创建
+				layer = group.getOrCreateLayer('polygonMarker');
+
+				createRectangleMaker();
+				layer.addMarker(rectangleMarker);
+
+				createCircleMaker();
+				layer.addMarker(circleMaker);
+
+				createPolygonMaker(coords);
+				layer.addMarker(polygonMarker);
+			}
+
+			var aBtn = document.querySelectorAll('.btn');
+			//添加多边形标注
+			aBtn[0].onclick = function() {
+				if (addMarker) {
+					addPmMarker();
+					addMarker = false;
+					this.classList.add('btn-primary');
+				}
+			};
+
+			//删除多边形标注
+			aBtn[1].onclick = function() {
+				if (layer) {
+					layer.removeAll();
+					addMarker = true;
+				}
+				aBtn[0].classList.remove('btn-primary');
+			};
+		};
+	</script>
+</body>
+</html>

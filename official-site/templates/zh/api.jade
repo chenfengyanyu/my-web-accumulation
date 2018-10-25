@@ -1,0 +1,98 @@
+extends _layout
+append header
+	link(rel='stylesheet', href='/zh/assets/lib/markdown.css')
+	link(rel='stylesheet', href='/zh/assets/css/api.css')
+	style.
+		.markdown{
+		    margin-top: -80px;
+		}
+block content
+	section.api_container
+		nav#myScrollspy
+			ul#mytest.nav.menu
+				- var items = ['微信摇一摇周边','iOS SDK','Android SDK','REST API','私有协议','示例应用','配置工具','巡检工具','部署工具','云平台'];
+				li.active(data-flag='section-1')
+					a(href='#section-1') 大规模部署指南
+				each x,i in items
+					li(data-flag='section-#{i+2}')
+						a(href='#section-#{i+2}')= x
+		.empty
+		.cbox
+			include apis/s01
+			include apis/s02
+			include apis/s03
+			include apis/s04
+			include apis/s05
+			include apis/s06
+			include apis/s07
+			include apis/s08
+			include apis/s09
+			include apis/s10
+			include apis/s11
+			//- include apis/s12
+			//- include apis/s13
+	//- p#back-to-top
+	//- 	a(src='#top')
+	//- 		span
+	//- 		| 返回顶部
+block append scripts
+	script(src='/zh/assets/lib/bootstrap.min.js')
+	//- script(src='/zh/assets/js/top.js')
+	script.
+		$(document).ready(function(){ 
+			//滚动监听，暂时不需要
+			$('#mytest').affix({ 
+				offset: { 
+					top: 25,
+					bottom:310
+				} 
+			}); 
+			//- $('#mytest').on('affixed-top.bs.affix', function(){
+			//- 	//- console.log('top');
+			//- 	$(this).children().first().addClass('active');
+			//- });
+			$('.api_container').css('minHeight',window.innerHeight-50);
+			$('#section-1').css('opaticy',1);
+			$('#mytest li').click(function(){
+				var tempId = $(this).attr('data-flag');
+				$(this).siblings().removeClass('active');
+				$(this).addClass('active');
+				$('#'+tempId).siblings().hide();
+				$('#'+tempId).show();
+				//- hashScroll();
+			})
+
+			function hashScroll(){
+				if(location.hash){
+				     var target = $(location.hash);
+				     if(target.length==1){
+				         var top = target.offset().top-90;
+				         console.log(top);
+				         if(top < 0){
+				              $('html,body').animate({scrollTop : top}, 1000);
+				         }
+				     }
+				  }
+			}
+
+			$(window).scroll(function(){ 
+
+			});
+
+			function refreshPagePosition(){
+				var hash = window.location.hash || '';
+				if(hash){
+					$(hash).siblings().hide();
+					$(hash).show();
+					$('#mytest li').each(function(i){
+						$('#mytest li').removeClass('active');
+						if($(this).attr('data-flag') == hash.substr(1)){
+							$(this).addClass('active');
+						}
+					})
+				}
+			}
+
+			refreshPagePosition();
+		}); 
+

@@ -1,0 +1,12 @@
+extends _layout
+append header
+	link(rel='stylesheet', href='/zh/assets/css/about.css')
+block content
+	iframe(src='/zh/book#page/4',width='1000',height='800',style='border:none;position:relative;left:50%;margin-left:-500px;margin-top: -50px;')
+block append scripts
+	script.
+		/*
+		$(function(){
+			$('.header').css('position','initial');
+		})
+		*/

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>热力图</title>
+	<link rel="stylesheet" href="lib/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div id="fengMap" ></div>
+	<!--操作按钮-->
+	<div class="operating">
+		<button class="btn btn-default">显示随机热力图</button>
+		<button class="btn btn-default">显示数据热力图</button>
+	</div>
+	
+	<script src="lib/jquery-2.1.4.min.js"></script>
+	<script src="lib/fengmap.min.js"></script>
+	<script>
+		//获取版本号,设置title
+		document.title = '热力图V' + fengmap.VERSION;
+
+		//定义全局map变量
+		var map = null;
+		//热力图实例
+		var heatmapInstance = null;
+		var fmapID = '10347';
+		var randomHeatmap = false;
+		var dataHeatmap = false;
+		var groupLayer;
+
+		window.onload = function() {
+			map = new fengmap.FMMap({
+				//渲染dom
+				container: document.getElementById('fengMap'),
+				//地图数据位置
+				mapServerURL: './data/' + fmapID,
+				//主题数据位置
+				mapThemeURL: 'data/theme',
+				//设置主题
+				defaultThemeName: '3007',
+				// 默认比例尺级别设置为20级 
+				defaultMapScaleLevel: 20,
+				//开发者申请应用下web服务的key
+				key: '请输入您的KEY',
+				//开发者申请应用名称
+				appName: '请输入您的appName',
+			});
+
+			//打开Fengmap服务器的地图数据和主题
+			map.openMapById(fmapID);
+			
+			//添加热力图方法,根据json文件
+			function createDtataHeatmap(map, groupID, data) {
+				// 创建热力图对象
+				if (!heatmapInstance) heatmapInstance = fengmap.FMHeatMap.create(map, {
+					//热点半径
+					radius: 20,
+					//热力图透明度
+					opacity: .5,
+					//热力点value的最大值
+					max: 100,
+					//渐变色值，可配置
+					// gradient:{ 0.45: "rgb(201,135,255)", 0.55: "rgb(189,97,255)", 0.65: "rgb(155,49,255)", 0.95: "yellow", 1.0: "rgb(157,53,255)" }  
+				});
+
+				var heatmapPoints = data.points;
+				//移除热力点
+				heatmapInstance.clearPoints();
+				heatmapInstance.addPoints(data.points);
+
+				//热力图应用到哪一楼层
+				groupLayer = map.getFMGroup(groupID);
+				groupLayer.applyHeatMap(heatmapInstance);
+				return;
+			};
+
+			//随机添加热力图方法
+			function createRandomHeatmap(map, groupID) {
+				// 创建热力图对象
+				if (!heatmapInstance) heatmapInstance = fengmap.FMHeatMap.create(map, {
+					//热点半径
+					radius: 20,
+					//热力图透明度
+					opacity: .5,
+					//热力点value的最大值
+					max: 100
+				});
+				heatmapInstance.randomPoints(200);
+
+				//热力图应用到哪一楼层
+				groupLayer = map.getFMGroup(groupID);
+				groupLayer.applyHeatMap(heatmapInstance);
+			};
+
+			//移除热力图
+			function removeHeatmap() {
+				groupLayer = map.getFMGroup(map.focusGroupID);
+				groupLayer.removeHeatMap(heatmapInstance);
+			}
+
+			var aBtn = document.querySelectorAll('.btn');
+			//随机添加热力图方法
+			aBtn[0].onclick = function() {
+				randomHeatmap = !randomHeatmap;
+				if (randomHeatmap) {
+					createRandomHeatmap(map, map.focusGroupID);
+					dataHeatmap = false;
+					this.classList.add('btn-primary');
+					aBtn[1].classList.remove('btn-primary');
+				} else {
+					removeHeatmap();
+					this.classList.remove('btn-primary');
+				}
+			};
+			
+			//显示数据热力图
+			aBtn[1].onclick = function() {
+				dataHeatmap = !dataHeatmap;
+				if (dataHeatmap) {
+					$.getJSON('data/heatmap.json',function(data) {
+						createDtataHeatmap(map, map.focusGroupID, data);
+					});
+					randomHeatmap = false;
+					this.classList.add('btn-primary');
+					aBtn[0].classList.remove('btn-primary');
+				} else {
+					removeHeatmap();
+					this.classList.remove('btn-primary');
+				}
+			};
+		};
+	</script>
+</body>
+</html>

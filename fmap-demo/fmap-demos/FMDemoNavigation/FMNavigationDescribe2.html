@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>路径文字描述</title>
+	<link rel="stylesheet" href="lib/bootstrap.min.css">
+	<link href=" css/style.css" rel="stylesheet">
+</head>
+<body>
+	<div id="fengMap" ></div>
+	<!--距离时间显示-->
+	<div id="description" ></div>
+
+	<!--数据显示-->
+	<div id="path_info" >
+		<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+		<ul></ul>
+	</div>
+	<script src="lib/jquery-2.1.4.min.js"></script>
+	<script src="lib/fengmap.min.js"></script>
+	<script src="lib/bootstrap.min.js"></script>
+	<script>
+		//获取版本号,设置title
+		document.title = '路径文字描述(分段)V' + fengmap.VERSION;
+
+		//定义全局map变量
+		var map;
+		var fmapID = '10347';
+		// 导航对象
+		var navi; 
+		var groupControl;
+
+		window.onload = function() {
+			//楼层控制控件配置参数
+			var ctlOpt = new fengmap.controlOptions({
+				//默认在右上角
+				position: fengmap.controlPositon.RIGHT_TOP,
+				//默认显示楼层的个数
+				showBtnCount: 7,
+				//初始是否是多层显示，默认单层显示
+				allLayer:true,   
+				//位置x,y的偏移量
+				offset: {
+					x: 20,
+					y: 10
+				}
+			});
+
+			map = new fengmap.FMMap({
+				//渲染dom
+				container: document.getElementById('fengMap'),
+				//地图数据位置
+				mapServerURL: './data/' + fmapID,
+				//主题数据位置
+				mapThemeURL: 'data/theme',
+				//设置主题
+				defaultThemeName: '3007',
+				// 默认比例尺级别设置为20级
+				defaultMapScaleLevel: 20,
+				//对不可见图层启用透明设置 默认为true
+				focusAlphaMode: true,
+				//关闭聚焦层切换的动画显示
+				focusAnimateMode: false,
+				//对不聚焦图层启用透明设置，当focusAlphaMode = true时有效
+				focusAlpha: 0.3,
+				//开启2维，3维切换的动画显示
+				viewModeAnimateMode: true,
+				//设置倾斜角，默认倾斜角为60度
+				defaultTiltAngle: 30,
+				//开发者申请应用下web服务的key
+				key: '请输入您的KEY',
+				//开发者申请应用名称
+				appName: '请输入您的appName',
+			});
+
+			//打开Fengmap服务器的地图数据和主题
+			map.openMapById(fmapID);
+
+			//地图加载完成回调
+			map.on('loadComplete',function() {
+
+				//创建楼层(按钮型)，创建时请在地图加载后(loadComplete回调)创建。
+				//不带单/双层楼层控制按钮,初始时只有1个按钮,点击后可弹出其他楼层按钮
+				groupControl = new fengmap.buttonGroupsControl(map, ctlOpt);
+
+				//设置显示多层
+				map.visibleGroupIDs = map.groupIDs; 
+				//设置焦点层
+				map.focusGroupID = map.groupIDs[0];
+
+				//起点终点坐标
+				var points = [
+					{x: 12961647.576796599,y: 4861814.63807118,groupID: 1},
+					{x: 12961699.79823795,y: 4861826.46384646,groupID: 6}
+				];
+				// 地图加载完执行画导航路径
+				createrNavi(points); 
+
+				//楼层控件楼层切换事件
+				groupControl.onChange(function(groups, allLayer) {
+					//切换楼层时画线
+					navi.drawNaviLine();
+
+					//切换楼层时通过焦点层获取当前层的路径数据
+					cardInfo(map.focusGroupID);
+				});
+			});
+
+			//创建导航路线
+			function createrNavi(coord) {
+				//初始化导航对象
+				navi = new fengmap.FMNavigation({
+					map: map,
+					// 设置导航线的样式
+					lineStyle: {
+						//设置线为导航线样式
+						lineType: fengmap.FMLineType.FMARROW,
+						// 设置线的宽度
+						lineWidth: 6,
+						//设置线的颜色
+						// godColor: '#FF0000',  
+						//设置边线的颜色 
+						// godEdgeColor: '#920000',   
+					}
+				});
+
+				//添加起点
+				navi.setStartPoint({
+					x: coord[0].x,
+					y: coord[0].y,
+					groupID: coord[0].groupID,
+					url: 'image/start.png',
+					size: 32
+				});
+
+				//添加终点
+				navi.setEndPoint({
+					x: coord[1].x,
+					y: coord[1].y,
+					groupID: coord[1].groupID,
+					url: 'image/end.png',
+					size: 32
+				});
+
+				// 画出导航线
+				navi.drawNaviLine(); 
+
+				//根据焦点层得到路径数据
+				cardInfo(map.focusGroupID); 
+
+				//得到此导航路径的文字描述数据
+				var naviDescriptions = navi.naviDescriptions;
+				
+				//显示路径信息
+				descriptionText(naviDescriptions); 
+			};
+
+			//显示路径数据
+			function cardInfo(gid) {
+				var oDescription = document.getElementById('description');
+				
+				//获取某一层的路径数据
+
+				// 此为 2.0.0 接口
+				// var naviGroupsdistance = navi.naviGroupsDistance[gid];
+
+				//*接口变化: 导航模拟类 FMNavigation 得到路径结果中的 naviGroupsDistance (路径在每层中的长度), 返回的结果由 {groupID: 长度, ...}, 改为[{groupID:, distance:}, ...]. 原因: 因为规划完的路径在某层可能是多段的,比如. 从3层走一段下到一层后又上到3层的另一个位置继续前进,此时在3层就有了两段不相连的2条路径. 显然把这两段的长度加起来都算成3层的总长度是不合适的.
+				
+				var naviGroupsdistance = null;
+
+				for (var i = 0; i < navi.naviGroupsDistance.length; i++) {
+					var data = navi.naviGroupsDistance[i];
+					if (data.groupID === gid) {
+						naviGroupsdistance = data.distance;
+						break;
+					}
+				}
+
+				//如果是中间层，则显示0
+				if (naviGroupsdistance) {
+					//得到距离
+					var naviGroupsDistance = naviGroupsdistance.toFixed(1); 
+					//普通人每分钟走80米。
+					var time = naviGroupsDistance / 80;
+
+					var m = parseInt(time);
+
+					var s = Math.ceil((time % 1) * 60);
+
+					oDescription.innerHTML = '<p>当前层：' + gid + ' </p><p>该楼层路径距离：' + naviGroupsDistance + '  米     </p><p>大约需要：  ' + m + '  分钟   ' + s + '   秒</p>';
+				} else {
+					oDescription.innerHTML = '<p>当前层：' + gid + ' </p><p>该楼层路径距离：0  米     </p><p>大约需要： 0 分钟   0   秒</p>';
+				}
+			};
+
+			//显示文字描述信息
+			function descriptionText(describe) {
+				var oNaviInfo = document.getElementById('path_info').getElementsByTagName('ul')[0];
+				var li = '';
+				for (var i = 0; i < describe.length; i++) {
+					li += '<li>' + describe[i] + '</li>'
+				}
+				oNaviInfo.innerHTML = '<h4>起点：满记甜品</h4>' + li + '<h4>终点：六楼长安三十六坊</h4>'
+				var aLi = oNaviInfo.getElementsByTagName('li');
+				for (var i = 0; i < aLi.length; i++) { (function(i) {
+						aLi[i].onclick = function() {
+							var index = i;
+							map.tiltTo({to: 85,duration: .8}); //居中显示该路段
+							// 聚焦到点击的路段
+							navi.focusNaviLineSegment(index, {
+								extendScale: 3,
+								duration: .8,
+								callback: function() {
+									cardInfo(map.focusGroupID);
+								}
+							});
+						}
+					})(i);
+
+				}
+			};
+
+			//关闭按钮
+			var oGlyphicon = document.querySelectorAll('.glyphicon')[0];
+			oGlyphicon.onclick = function() {
+				document.getElementById('path_info').style.display = 'none';
+			};
+		};
+	</script>
+</body>
+</html>

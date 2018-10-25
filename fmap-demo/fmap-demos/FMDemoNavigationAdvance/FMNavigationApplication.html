@@ -1,0 +1,321 @@
+ <!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>导航实例</title>
+	<link rel="stylesheet" href="lib/bootstrap.min.css">
+	<link href=" css/style.css" rel="stylesheet">
+</head>
+<body>
+	<div id="fengMap" ></div>
+	<!--距离时间显示-->
+
+	<!--操作按钮-->
+	<button class="btn btn-default navigation" id="navigation">开始导航</button>	
+
+	<!--定位按钮-->
+    <div class="middle-img-div loc-img" id="locImg">
+        <img alt="" src="image/position_cilck.png" />
+    </div>
+
+    <!--第一人称和第三人称切换按钮-->
+    <div class="middle-img-div authority-img" id="authorityImg">
+        <img alt="" src="image/person_first.png" />
+    </div>
+
+    <!--距离时间显示-->
+	<div id="description" ></div>
+
+	<script src="lib/jquery-2.1.4.min.js"></script>
+	<script src="lib/fengmap.min.js"></script>
+	<script src="lib/bootstrap.min.js"></script>
+	<script>
+		//获取版本号,设置title
+		document.title='导航实例V'+fengmap.VERSION;
+
+		//定义全局map变量
+		var map;
+		var fmapID = '10347';
+		// 导航对象
+		var navi;
+		var groupControl;
+		//第一人称、第三人称控制开关；定位跟随开关
+		var others = true,follow = true;
+		//导航开关
+		var navigation = true; 
+
+		$(function() {
+			if (navi) {
+				navi.stop();
+				navi = null;
+			}
+			//楼层控制控件配置参数
+			var ctlOpt = new fengmap.controlOptions({
+				//默认在左下角
+				position: fengmap.controlPositon.LEFT_BOTTOM,
+				//默认显示楼层的个数
+				showBtnCount: 7,
+				//设置x,y的位置偏移量
+				offset: {
+					x: 20,
+					y: 80
+				}
+			});
+
+			map = new fengmap.FMMap({
+				//渲染dom
+				container: document.getElementById('fengMap'),
+				//地图数据位置
+				mapServerURL: './data/' + fmapID,
+				//主题数据位置
+				mapThemeURL: 'data/theme',
+				//设置主题
+				defaultThemeName: '3007',
+				// 默认比例尺级别设置为20级
+				defaultMapScaleLevel: 20,
+				//对不可见图层启用透明设置 默认为true
+				focusAlphaMode: true,
+				//关闭聚焦层切换的动画显示
+				focusAnimateMode: false,
+				//对不聚焦图层启用透明设置，当focusAlphaMode = true时有效
+				focusAlpha: 0,
+				//开启2维，3维切换的动画显示
+				viewModeAnimateMode: true,
+				//设置倾斜角，默认倾斜角为60度
+				defaultTiltAngle: 30,
+				//初始指北针的偏移量
+				compassOffset: [10, 20],
+				//开发者申请应用下web服务的key
+				key: '请输入您的KEY',
+				//开发者申请应用名称
+				appName: '请输入您的appName',
+			});
+
+			//打开Fengmap服务器的地图数据和主题
+			map.openMapById(fmapID);
+
+			//显示指北针
+			map.showCompass = true;
+
+			// 点击指南针事件, 使角度归0
+			map.on('mapClickCompass',function() {
+				map.rotateTo({
+					//设置角度
+					to: 0,
+					//动画持续时间，默认为。3秒                
+					duration: .3,
+					//回调函数   
+					callback: function() {
+						// console.log('rotateTo complete!');
+					}
+				})
+			});
+
+			//地图加载完成回调
+			map.on('loadComplete',function() {
+
+				//创建楼层(按钮型)，创建时请在地图加载后(loadComplete回调)创建。
+				//不带单/双层楼层控制按钮,初始时只有1个按钮,点击后可弹出其他楼层按钮
+				groupControl = new fengmap.buttonGroupsControl(map, ctlOpt);
+
+				// 2D/3D切换控件显示
+				switchviewMode();
+
+				//起点终点坐标
+				var points = [
+					{x: 12961647.576796599,y: 4861814.63807118,groupID: 1},
+					{x: 12961699.79823795,y: 4861826.46384646,groupID: 6}
+				];
+
+				// 地图加载完执行画导航路径
+				createrNavi(points);
+			});
+
+			//显示2/3D模式切换
+			function switchviewMode() {
+				var toolControl = new fengmap.toolControl(map, {
+					//初始化2D模式
+					init2D: false,
+					//设置为false表示只显示2D,3D切换按钮
+					groupsButtonNeeded: false,
+					//默认在右下角
+					position: fengmap.controlPositon.RIGHT_BOTTOM,
+					//位置x,y的偏移量
+					offset: {
+						x: 20,
+						y: 80
+					},
+					//点击按钮的回调方法,返回type表示按钮类型,value表示对应的功能值
+					clickCallBack: function(type, value) {
+						// console.log(type,value);
+					}
+				});
+			};
+
+			//创建导航路线
+			function createrNavi(coord) {
+				if (!navi) {
+					//初始化导航对象
+					navi = new fengmap.FMNavigation({
+						map: map,
+						locationMarkerUrl: 'image/pointer.png',
+						//设置Marker尺寸
+						locationMarkerSize: 43,
+						//设置跟随定位的默认为true
+						followPosition: true,
+						//设置地图是否选择，默认false	
+						followAngle: true,
+						//导航跟随倾斜角度		
+						tiltAngle: 80,
+						//导航跟随显示级别
+						scaleLevel: 0,
+						// 设置导航线的样式
+						lineStyle: {
+							// 导航线样式
+							lineType: fengmap.FMLineType.FMARROW,
+							// 设置线的宽度
+							lineWidth: 6,
+							//设置线的颜色
+							// godColor: '#FF0000',
+							//设置边线的颜色   
+							// godEdgeColor: '#920000',   
+						}
+					});
+					// 设置导航事件
+					navi.on('walking',function(data) {
+						cardInfo(data);
+					});
+
+					//导航路径结束事件
+					navi.on('complete',function() {
+						navigation = true;
+						//楼层控件可点击
+						groupControl.enableExpand=true;
+						$('#navigation').removeClass('btn-primary');
+					});
+
+					//路径跨楼层事件
+					navi.on('crossGroup',function(groupID) {});
+				}
+
+				//添加起点
+				navi.setStartPoint({
+					x: coord[0].x,
+					y: coord[0].y,
+					groupID: coord[0].groupID,
+					url: 'image/start.png',
+					size: 32
+				});
+
+				//添加终点
+				navi.setEndPoint({
+					x: coord[1].x,
+					y: coord[1].y,
+					groupID: coord[1].groupID,
+					url: 'image/end.png',
+					size: 32
+				});
+
+				// 画出导航线
+				navi.drawNaviLine();
+			};
+
+			//显示路径数据
+			function cardInfo(data) {
+				//距终点的距离
+				distance = data.remain;
+				//路线提示信息
+				var prompt = navi.naviDescriptions[data.index];
+
+				if (distance < 1) {
+					distance = 0
+					var prompt = '到达终点';
+				}
+
+				//普通人每分钟走80米。
+				var time = distance / 80;
+
+				var m = parseInt(time);
+
+				var s = Math.floor((time % 1) * 60);
+
+				$('#description').html('<p>距终点：' + distance.toFixed(1) + ' 米</p><p>大约需要：  ' + m + '  分钟   ' + s + '   秒</p><p>路线提示：' + prompt + ' </p>');
+
+				$('.layerMask').html('F' + data.groupID);
+			};
+
+			//开始导航
+			$('#navigation').on('click', function() {
+				if (navigation) {
+					navigation = false;
+					//导航开始
+					navi.simulate();
+					switchStaircase();
+
+					$(this).addClass('btn-primary');
+				}
+
+			});
+
+			//第一人称和第三人称切换,第一人称地图旋转，第三人称地图不旋转
+			$('#authorityImg').on('click', function() {
+				others = !others;
+				navi.followAngle = others;
+				switchStaircase();
+
+				if (others) {
+					$(this).find('img').attr('src', 'image/person_first.png');
+				} else {
+					$(this).find('img').attr('src', 'image/person_third.png');
+				}
+			});
+
+			//定位点跟随开关
+			$('#locImg').on('click',function() {
+				follow = !follow;
+				//设置是否跟随
+				navi.followPosition = follow;
+				switchStaircase();
+				if (follow) {
+					$(this).find('img').attr('src', 'image/position_cilck.png');
+				} else {
+					$(this).find('img').attr('src', 'image/position.png');
+				}
+
+			});
+
+			//楼梯控件点击开关,与导航功能本身无关
+			function switchStaircase() {
+				if (!navigation) {
+					if (!follow & !others) {
+						//楼层控件可点击
+						groupControl.enableExpand=true;
+					} else if (follow || others) {
+						layerMask();
+					} else {
+						layerMask();
+					}
+				}
+			};
+
+			//楼层控件是否可点击
+			function layerMask() {
+				var groupID = navi.locationMarker.groupID;
+				if (groupID !== map.focusGroupID) {
+					//设置焦点层
+					map.focusGroupID = groupID;
+					//设置可见层
+					map.visibleGroupIDs = [groupID];
+				}
+				//楼层控件不可点击
+				groupControl.enableExpand=false;
+				$('.fm-layer-list').css({
+					display: 'none'
+				});
+			};
+		});
+	</script>
+</body>
+</html>

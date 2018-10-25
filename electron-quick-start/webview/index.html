@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Jartto's blog</title>
+    <style>
+      body { margin: 0; }
+      #foo {
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <button onclick="test()">获取标题</button> -->
+    <div class="indicator"></div>
+    <webview id="foo" src="http://www.jartto.wang/"></webview>
+    
+    <script>
+      require('./index.js')
+    </script>
+  </body>
+</html>

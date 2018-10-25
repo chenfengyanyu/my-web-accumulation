@@ -1,0 +1,68 @@
+#section-6(style='display:none')
+	.markdown
+		.div80
+		h2 私有协议
+		hr
+		pre 由于 iBeacon 协议的开放性，iBeacon 设备很容易被“蹭用”，也可以通过加入一些干扰 iBeacon 来破坏现有的系统。为了解决以上问题，我们推出了自己的私有协议。
+
+		h3 工作机制
+		p iBeacon 安全性较差的主要是：
+		ul
+			li 1.广播的内容是固定的（UUID+Major+Minor）
+			li 2.可以任意伪造成特定的设备
+		p 为了解决这两个问题，我们定义了私有协议：
+		pre 每个硬件设备可以设置一个私有协议的广播密钥，如：01Y2GLh1yw3+6Aq0RsnOQ8xNvXTnDUTTLE937Yedd/DnkHESUpvQ7YvLucs9YfwGR5R/jwW8Rqp9XtGbmwbKXzXQ==。
+			| 广播内容会根据广播密钥进行加密，在广播包中会给出密钥的摘要。
+			| 在SDK中，设定同样的广播密钥，在接收到广播包后利用广播密钥进行解密。
+			p
+			| 通过这样的对称加密，我们可以实现：
+			| 1. 加密：防着他人蹭用设备。
+			| 2. 验证：防止他人伪造设备。
+
+		h3 使用步骤
+		h3 一、申请密钥
+		p 因为私有协议受广播包的限制，以及特定的生成逻辑，目前我们的私有协议密钥需要邮件申请。
+		pre 邮箱地址：service@sensoro.com 申请通过后，我们会邮件通知您。
+
+		h3 二、通过 SENSORO Cloud 查看私有协议的广播密钥
+		.images
+			img(src='/zh/assets/image/api/private/1.png',width='700')
+
+		h3 三、硬件设备设置私有协议的密钥
+		ul
+			li 1.在配置工具中添加密钥 菜单 -> 密钥 -> 输入本地管理密码 -> 扫描二维码添加密钥。
+				.images
+					img(src='/zh/assets/image/api/private/2.png',width='270')
+					img(src='/zh/assets/image/api/private/4.png',width='270')
+			li 2. 选择固件版本3.0以上的云子，并设置其密钥。
+				.images
+						img(src='/zh/assets/image/api/private/3.png',width='270')
+						img(src='/zh/assets/image/api/private/4.png',width='270')
+
+		h3 四、在配套工具中设置私有协议的密钥
+		pre 在开启私有协议后，对应的配套工具中也需要设置对应的广播密钥才能搜索到加密广播的云子。
+		p.title 配套工具包括：
+		ul
+			li 1.配置工具
+			li 2.部署工具
+			li 3.巡检工具
+
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

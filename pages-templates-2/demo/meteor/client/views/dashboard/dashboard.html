@@ -1,0 +1,168 @@
+
+
+<template name="dashboard">
+	<!-- START CONTAINER FLUID -->
+	<div class="container-fluid padding-25 sm-padding-10">
+		<!-- START ROW -->
+		<div class="row">
+			<div class="col-md-6 col-xlg-5">
+				<div class="row">
+					<div class="col-md-12 m-b-10">
+						<div class="ar-3-2 widget-1-wrapper">
+							<!-- START WIDGET widget_imageWidget-->
+							{{>widget_imageWidget}}
+							<!-- END WIDGET -->
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6 m-b-10">
+						<div class="ar-2-1">
+							<!-- START WIDGET widget_graphTile-->
+							{{>widget_graphTile}}
+							<!-- END WIDGET -->
+						</div>
+					</div>
+					<div class="col-sm-6 m-b-10">
+						<div class="ar-2-1">
+							<!-- START WIDGET widget_barTile-->
+							{{>widget_barTile}}
+							<!-- END WIDGET -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-xlg-4">
+				<div class="row">
+					<div class="col-sm-6 m-b-10">
+						<div class="ar-1-1">
+							<!-- START WIDGET widget_imageWidgetBasic-->
+							{{>widget_imageWidgetBasic}}
+							<!-- END WIDGET -->
+						</div>
+					</div>
+					<div class="col-sm-6 m-b-10">
+						<div class="ar-1-1">
+							<!-- START WIDGET widget_plainLiveWidget-->
+							{{>widget_plainLiveWidget delay=3000}}
+							<!-- END WIDGET -->
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6 m-b-10">
+						<div class="ar-1-1">
+							<!-- START WIDGET widget_plainWidget-->
+							{{>widget_plainWidget}}
+							<!-- END WIDGET -->
+						</div>
+					</div>
+					<div class="col-sm-6 m-b-10">
+						<div class="ar-1-1">
+							<!-- START WIDGET D3 widget_graphLiveWidget-->
+							{{>widget_graphLiveWidget delay=3500}}
+							<!-- END WIDGET -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Filler -->
+			<div class="visible-xlg col-xlg-3">
+				<div class="ar-2-3">
+					<!-- START WIDGET widget_tableWidget-->
+					{{>widget_tableWidget}}
+					<!-- END WIDGET -->
+				</div>
+			</div>
+		</div>
+		<!-- END ROW -->
+		<div class="row">
+			<div class="col-md-4 col-lg-3 col-xlg-2 ">
+				<div class="row">
+					<div class="col-md-12 m-b-10">
+						<!-- START WIDGET D3 widget_graphTileFlat-->
+						{{>widget_graphTileFlat}}
+						<!-- END WIDGET -->
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 m-b-10">
+						<!-- START WIDGET widget_progressTileFlat-->
+						{{>widget_progressTileFlat}}
+						<!-- END WIDGET -->
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<!-- START WIDGET widget_statTile-->
+						{{>widget_statTile}}
+						<!-- END WIDGET -->
+					</div>
+				</div>
+			</div>
+			<div class="col-md-8 col-lg-5 col-xlg-6 m-b-10">
+				<div class="row">
+					<div class="col-md-12">
+						<!-- START WIDGET D3 widget_graphWidget-->
+						{{>widget_graphWidget}}
+						<!-- END WIDGET -->
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-lg-4 hidden-xlg m-b-10">
+				<!-- START WIDGET widget_tableWidgetBasic-->
+				{{>widget_tableWidgetBasic}}
+				<!-- END WIDGET -->
+			</div>
+			<div class="col-md-6 hidden-lg visible-md visible-xlg col-xlg-4 m-b-10">
+				<!-- START WIDGET D3 widget_stackedBarWidget-->
+				{{>widget_stackedBarWidget}}
+				<!-- END WIDGET -->
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8 m-b-10">
+				<!-- START WIDGET widget_mapWidget-->
+				{{>widget_mapWidget}}
+				<!-- END WIDGET -->
+			</div>
+			<div class="col-md-4 m-b-10">
+				<!-- START WIDGET widget_realtimeWidget-->
+				{{>widget_realtimeWidget}}
+				<!-- END WIDGET -->
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-4 visible-lg hidden-xlg">
+				<!-- START WIDGET D3 widget_stackedBarWidgetBasic-->
+				{{>widget_stackedBarWidgetBasic}}
+				<!-- END WIDGET -->
+			</div>
+			<div class="col-md-4 col-lg-3 col-xlg-3 m-b-10">
+				<!-- START WIDGET D3 widget_graphOptionsWidget-->
+				{{>widget_graphOptionsWidget}}
+				<!-- END WIDGET -->
+			</div>
+			<div class="col-xlg-2 visible-xlg ">
+				<!-- START WIDGET widget_socialImageTile-->
+				{{>widget_socialImageTile}}
+				<!-- END WIDGET -->
+			</div>
+			<div class="col-xlg-2 visible-xlg ">
+				<div class="row">
+					<div class="col-xlg-12">
+						<!-- START WIDGET widget_socialPostTile-->
+						{{>widget_socialPostTile}}
+						<!-- END WIDGET -->
+					</div>
+				</div>
+			</div>
+			<div class="col-md-8 col-lg-5 col-xlg-5">
+				<!-- START WIDGET widget_weatherWidget-->
+				{{>widget_weatherWidget}}
+				<!-- END WIDGET -->
+			</div>
+		</div>
+	</div>
+	<!-- END CONTAINER FLUID -->
+</template>

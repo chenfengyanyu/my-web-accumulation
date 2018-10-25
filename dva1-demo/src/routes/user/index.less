@@ -1,0 +1,43 @@
+:global {
+	.ant-table .ant-table-tbody > tr > td {
+	    text-align: left;
+	}
+	.ant-table .ant-table-thead > tr > th {
+	    text-align: left;
+	}
+}
+.btnPos{
+  float: right;
+}
+.mixin (@color) {
+  fill: @color;
+  width: 2em;
+  height: 2em;
+  vertical-align: -0.6em;
+  overflow: hidden;
+}
+.icon{
+  .mixin(#8b8a8a);
+}
+.icon0{
+  .mixin(#fe041d);
+}
+.icon25{
+  .mixin(#108ee9);
+}
+.icon50{
+  .mixin(#ffbf00);
+}
+.icon75{
+  .mixin(#108ee9);
+}
+.icon100{
+  .mixin(#00a854);
+}
+.option{
+  i{
+    font-size: 18px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+}

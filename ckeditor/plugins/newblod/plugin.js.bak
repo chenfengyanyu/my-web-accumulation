@@ -1,0 +1,37 @@
+CKEDITOR.plugins.add('newblod', {
+  icons: 'newblod',
+  init: function (editor) {
+    editor.addCommand('resetBlod', {
+      exec: function (editor) {
+        // var now = new Date();
+        // editor.insertHtml( 'The current date and time is: <em>' + now.toString() + '</em>' );
+        var target = editor.getSelection(),
+            choose = target.getSelectedText(),
+            context = target.getStartElement().$.textContent,
+            outhtml = target.getStartElement().$.outerHTML,
+            start = target.getRanges()[0].startOffset,
+            end = target.getRanges()[0].endOffset,
+            result = '';
+        
+        if(!start || start === 0) {
+          result = '<str font-weight="bold">'+ choose +'</str>'
+                  + '<str>'+ context.replace(choose,'') +'</str>';
+        } else {
+          result = '<str>' + context.substring(0,start) + '</str>'
+                    + '<str font-weight="bold">'+ choose +'</str>'
+                    + '<str>'+ context.substring(end) +'</str>';
+        }
+
+        editor.updateElement(result);
+        // console.log(CKEDITOR.plugins.link.getSelectedLink( editor ));
+        console.log(choose,editor,context,outhtml,editor.getSelection().getRanges());
+      }
+    });
+
+    editor.ui.addButton('Newblod', {
+      label: '字体加粗',
+      command: 'resetBlod',
+      toolbar: 'insert,0'
+    });
+  }
+});

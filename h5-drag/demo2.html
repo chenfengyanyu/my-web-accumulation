@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>demo2-来回拖放</title>
+  <style type="text/css">
+    .jartto1,
+    .jartto2 {
+      float: left;
+      width: 120px;
+      height: 135px;
+      margin: 10px;
+      border-radius: 3px;
+      border: 1px solid #aaaaaa;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="jartto1" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <img id="drag1" src="img/2.png" width="120" draggable="true" ondragstart="drag(event)" />
+  </div>
+  <div class="jartto2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+</body>
+<script type="text/javascript">
+  function allowDrop(ev) {
+    ev.preventDefault();
+  }
+
+  function drag(ev) {
+    ev.dataTransfer.setData("Text", ev.target.id);
+  }
+
+  function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("Text");
+    ev.target.appendChild(document.getElementById(data));
+  }
+</script>
+</html>

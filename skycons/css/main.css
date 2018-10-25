@@ -1,0 +1,54 @@
+.box{
+  width: 100%;
+  display: flex;
+  flex-flow: wrap;
+  list-style: none;
+  padding: 5px;
+}
+.box li {
+  border: 1px solid #e4e2e2;
+  border-radius: 3px;
+  flex: 1 0 300px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 5px;
+  position: relative;
+}
+.box span {
+  position: absolute;
+  color: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  right: 5px;
+}
+.box canvas{
+  opacity: 0.6;
+}
+@media (min-width: 300px){
+  .box li {
+    flex: 0 0 calc(100% - 10px);
+  }
+}
+@media (min-width: 600px){
+  .box li {
+    flex: 0 0 calc(50% - 10px);
+  }
+}
+@media (min-width: 992px){
+  .box li {
+    flex: 0 0 calc(33.33% - 10px);
+  }
+}
+@media (min-width: 1200px){
+  .box li {
+    flex: 0 0 calc(25% - 10px);
+  }
+}
+@media (min-width: 1520px){
+  .box li {
+    flex: 0 0 calc(20% - 10px);
+  }
+}
+

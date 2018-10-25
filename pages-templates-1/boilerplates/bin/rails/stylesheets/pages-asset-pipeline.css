@@ -1,0 +1,11 @@
+[class^="pg-"], [class*=" pg-"]{
+  line-height: inherit;
+}
+
+.page-sidebar .sidebar-menu .menu-items > li > a{
+  line-height:47px;
+}
+
+.fa{
+  line-height: inherit;
+}

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://daneden.github.io/animate.css/ -->
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Animate.css</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, minimal-ui">
+  <link rel="dns-prefetch" href="http://fonts.googleapis.com/">
+  <link rel="dns-prefetch" href="http://code.jquery.com/">
+  <link rel="stylesheet" href="animate.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="magic.css"/>
+  </head>
+  <style>
+      a{text-decoration: none;}
+  </style>
+<body>
+  <header class="site_header island">
+    <div class="wrap">
+      <span id="animationSandbox" style="display: block;" class="">
+        <h1 class="site_title mega">Animate.css</h1>
+      </span>
+      <span class="beta subhead">Just-add-water CSS animations</span>
+    </div>
+  </header>
+  <!-- /.site_header -->
+  <main class="site_content island" role="content">
+    <div class="wrap">
+      <form>
+        <select class="input input-dropdown js-animations">
+          <optgroup label="Attention Seekers">
+            
+            <option value="flash">flash 忽隐忽现</option>
+            <option value="pulse">pulse 脉冲  有节奏的跳动</option>
+            <option value="rubberBand">rubberBand 橡皮筋效果</option>
+            <option value="shake">shake 摇晃</option>
+            <option value="swing">swing 摆动</option>
+            <option value="tada">tada 从小变大 到复原</option>
+            <option value="wobble">wobble 摆动  气球摆动</option>
+          </optgroup>
+
+          <optgroup label="Bouncing Entrances">
+            <option value="bounce">bounce 弹跳</option>
+            <option value="bounceIn">bounceIn 渐现变小</option>
+            <option value="bounceInDown">bounceInDown 向下滑动</option>
+            <option value="bounceInLeft">bounceInLeft 从左向右加速滑过</option>
+            <option value="bounceInRight">bounceInRight 从右向左加速滑过</option>
+            <option value="bounceInUp">bounceInUp 向上滑动</option>
+          </optgroup>
+
+          <optgroup label="Bouncing Exits">
+            <option value="bounceOut">bounceOut 缩小之后变大之后再变小渐隐</option>
+            <option value="bounceOutDown">bounceOutDown 上下滑动之后向下滑动消失</option>
+            <option value="bounceOutLeft">bounceOutLeft 左右滑动之后向左滑动消失</option>
+            <option value="bounceOutRight">bounceOutRight 左右滑动之后向右滑动消失</option>
+            <option value="bounceOutUp">bounceOutUp 上下滑动之后向上滑动消失</option>
+          </optgroup>
+
+          <optgroup label="Fading Entrances">
+            <option value="fadeIn">fadeIn 渐现</option>
+            <option value="fadeInDown">fadeInDown 从上滑下渐现</option>
+            <option value="fadeInDownBig">fadeInDownBig 滑下</option>
+            <option value="fadeInLeft">fadeInLeft 渐现向右滑动</option>
+            <option value="fadeInLeftBig">fadeInLeftBig 向右滑动</option>
+            <option value="fadeInRight">fadeInRight 从右滑左渐现</option>
+            <option value="fadeInRightBig">fadeInRightBig 向左滑动</option>
+            <option value="fadeInUp">fadeInUp 从下滑上渐现</option>
+            <option value="fadeInUpBig">fadeInUpBig 从底部滑上</option>
+          </optgroup>
+
+          <optgroup label="Fading Exits">
+            <option value="fadeOut">fadeOut 渐隐</option>
+            <option value="fadeOutDown">fadeOutDown 向下滑动渐隐</option>
+            <option value="fadeOutDownBig">fadeOutDownBig 滑到底部渐隐</option>
+            <option value="fadeOutLeft">fadeOutLeft 向左滑动渐隐</option>
+            <option value="fadeOutLeftBig">fadeOutLeftBig 快速的向左滑动</option>
+            <option value="fadeOutRight">fadeOutRight 向右滑动渐隐</option>
+            <option value="fadeOutRightBig">fadeOutRightBig 向右滑动渐隐</option>
+            <option value="fadeOutUp">fadeOutUp 向上滑动渐隐</option>
+            <option value="fadeOutUpBig">fadeOutUpBig 快速向上滑动</option>
+          </optgroup>
+
+          <optgroup label="Flippers">
+            <option value="flip">flip 快速反转</option>
+            <option value="flipInX">flipInX X轴渐现旋转</option>
+            <option value="flipInY">flipInY Y轴渐现旋转</option>
+            <option value="flipOutX">flipOutX X轴渐隐旋转</option>
+            <option value="flipOutY">flipOutY Y轴渐隐旋转</option>
+          </optgroup>
+
+          <optgroup label="Lightspeed">
+            <option value="lightSpeedIn">lightSpeedIn 渐现向左摇摇晃晃  </option>
+            <option value="lightSpeedOut">lightSpeedOut 渐现向右摇摇晃晃</option>
+          </optgroup>
+
+          <optgroup label="Rotating Entrances">
+            <option value="rotateIn">rotateIn 渐现旋转</option>
+            <option value="rotateInDownLeft">rotateInDownLeft 渐现向右旋转45度</option>
+            <option value="rotateInDownRight">rotateInDownRight 渐现向左旋转45度(右下角为基准)</option>
+            <option value="rotateInUpLeft">rotateInUpLeft 渐现向左旋转45度(左下角为基准) </option>
+            <option value="rotateInUpRight">rotateInUpRight  渐现向右旋转90度(右下角为基准)</option>
+          </optgroup>
+
+          <optgroup label="Rotating Exits">
+            <option value="rotateOut">rotateOut 渐隐旋转</option>
+            <option value="rotateOutDownLeft">rotateOutDownLeft 渐隐向右旋转45度 </option>
+            <option value="rotateOutDownRight">rotateOutDownRight 渐隐向左旋转45度(左下角为基准)</option>
+            <option value="rotateOutUpLeft">rotateOutUpLeft 渐隐向左旋转45度(右下角为基准)</option>
+            <option value="rotateOutUpRight">rotateOutUpRight 渐隐向右旋转90度(右下角为基准)</option>
+          </optgroup>
+
+          <optgroup label="Specials">
+            <option value="hinge">hinge 模仿树叶摇晃落下</option>
+            <option value="rollIn">rollIn 渐现从左到右旋转120度</option>
+            <option value="rollOut">rollOut 渐隐从左到右旋转120度</option>
+          </optgroup>
+
+          <optgroup label="Zoom Entrances">
+            <option value="zoomIn">zoomIn 渐现由小变大  </option>
+            <option value="zoomInDown">zoomInDown 渐现由小变大弹跳</option>
+            <option value="zoomInLeft">zoomInLeft 渐现向右由小变大弹跳</option>
+            <option value="zoomInRight">zoomInRight 渐现向左由小变大弹跳</option>
+            <option value="zoomInUp">zoomInUp 渐现向上由小变大弹跳</option>
+          </optgroup>
+
+          <optgroup label="Zoom Exits">
+            <option value="zoomOut">zoomOut 渐隐变小</option>
+            <option value="zoomOutDown">zoomOutDown 渐隐变小向下移动</option>
+            <option value="zoomOutLeft">zoomOutLeft 渐隐变小向左移动</option>
+            <option value="zoomOutRight">zoomOutRight 渐隐变小向右移动</option>
+            <option value="zoomOutUp">zoomOutUp 渐隐变小向上移动</option>
+          </optgroup>
+          <optgroup label="Clutter Exits">
+            <option value="loading">loading 旋转360度  </option>
+            <option value="type">type 变宽</option>
+            <option value="tip-2-anim">tip-2-anim 渐现到1.2倍后复原</option>
+            <option value="p-dount-anim">p-dount-anim 渐现旋转80度</option>
+            <option value="tip-zoom">tip-zoom 从0.6到1.1之后复原</option>
+            <option value="beat">beat 从0.6到1.5之后复原</option>
+            <option value="beat2">beat2 从1到0.8到1</option>
+            <option value="up-fade">up-fade 向上位移</option>
+            <option value="zhuan">zhuan 从0度旋转-90度之后在旋转会0度</option>
+            <option value="breathe">breathe 渐隐从1到1.8</option>
+            <option value="rotate">rotate 旋转360度</option>
+            <option value="blink2">blink2 显现到隐藏 0到1到0</option>
+            <option value="tada2">tada2 scale  0.1到1.2到1</option>
+            <option value="slideLeft">slideLeft 渐现左下角向右上角滑动</option>
+            <option value="slideRight">slideRight 渐现右上角向左下角滑动</option>
+            <option value="rise">rise 向上升</option>
+            <option value="enterUpBounce">enterUpBounce 渐现向下滑动带弹跳效果</option>
+            <option value="dance">dance 渐现小幅度弹跳  </option>
+            <option value="journal">journal 旋转变大</option>
+          </optgroup>
+        </select>
+        <button class="butt js-triggerAnimation">Animate it</button>
+      </form>
+      <hr>
+      <p class="meta">
+        <a href="javascript:;" download="animate.css">请在选择选项之后</a>
+        or
+        <a href="javascript:;">点击按钮</a>
+      </p>
+      html结构
+      <div class="htmlBox"></div>
+      css样式
+      <div class="cssBox"></div>
+    </div>
+  </main>
+  <!-- /.site__content -->
+  <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+        var styleRulesList = [],
+            keyframeRulesList = [],
+            fac = ['-webkit-', '-moz-', '-o-'],
+            facStyle = ['animation', 'animation-name'];
+        function initRules(rules) {
+            for (var o in rules) {
+                var item = rules[o];
+                if (item.type == 1) {
+                    styleRulesList.push(item);
+                } else if (item.type == 7) {
+                    keyframeRulesList.push(item);
+                }
+            }
+        }
+        window.getStyleRules = function(clsName) {
+         // console.log(styleRulesList)
+            for (var i = 0, item, len = styleRulesList.length; i < len; i++) {
+                item = styleRulesList[i];
+                console.log(item);
+                if (item.selectorText === clsName) return addStyleFactName(item.cssText);
+            }
+        }
+        window.getKeyFrameRules = function(clsName) {
+            for (var i = 0, item, len = keyframeRulesList.length; i < len; i++) {
+                item = keyframeRulesList[i];
+                if (item.name === clsName) return addFrameFactName(item.cssText);
+            }
+        }
+        function addStyleFactName(text) {
+            console.log(text);
+            var styleArr = text.split(/\{|\}/),
+                contentArr = styleArr[1].split(/\n|;/),
+                resultArr = [],
+                midContent = '',
+                combineFlag = /\n/.test(text) ? '\n' : ';',
+                reg, flag = false;
+            for (var i = 0; i < contentArr.length; i++) {
+                midContent = contentArr[i];
+                flag = false;
+                for (var j = 0; j < facStyle.length; j++) {
+                    reg = new RegExp('(-\\w+-)*' + facStyle[j] + '\\s*:');
+                    var t = '';
+                    if (reg.test(midContent)) {
+                        midContent = midContent.replace(reg, facStyle[j] + ': ');
+                        for (var k = 0; k < fac.length; k++) {
+                            t += midContent.replace(facStyle[j], fac[k] + facStyle[j]) + combineFlag;
+                        }
+                        resultArr.push(t.replace(/;$/, ''));
+                        flag = true;
+                    }
+                }
+                !flag && resultArr.push(contentArr[i]);
+            }
+            return styleArr[0] + '{' + resultArr.join(combineFlag) + '}' + styleArr[2];
+        }
+        function addFrameFactName(text) {
+            text = text.replace(/\@-\w+-keyframes/, '@keyframes');
+            var t = text;
+            for (var i = 0; i < fac.length; i++) {
+                t += '\n' + text.replace('@keyframes', '@'+fac[i]+'keyframes');
+            }
+            return t;
+        }
+        initRules(document.styleSheets[0].rules);        
+   // console.log(getStyleRules('.flash'));
+   // console.log(getKeyFrameRules('flash'));
+      console.log(document.styleSheets)
+  function testAnim(x) {
+    $('#animationSandbox').removeClass().addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+      $(this).removeClass();
+    });
+  };
+      var _html = '';
+      var _css = '';
+    $('.js-triggerAnimation').click(function(e){
+      e.preventDefault();
+      var anim = $('.js-animations').val();
+      var animationed = getKeyFrameRules(anim);
+      testAnim(anim);
+      _css ="."+anim+" {-webkit-animation: "+anim+" 1s linear 0.3s 1 ;-ms-animation: "+anim+" 1s linear 0.3s 1;-moz-animation: "+anim+" 1s linear 0.3s 1;-o-animation: "+anim+" 1s linear 0.3s 1;animation:"+anim+" 1s linear 0.3s 1;-webkit-animation-fill-mode:forwards;}<br/>"+
+      animationed;
+      _html='<h1 class="'+ anim +'">Animate.css</h1>';
+      $('.htmlBox').empty().text(_html);
+      $('.cssBox').empty().html(_css);
+    });
+    $('.js-animations').change(function(){
+      var anim = $(this).val();
+      testAnim(anim);
+    });
+   })();
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+.mixin(@bg){
+  background: url(@bg) no-repeat center center transparent;
+  width: 231px;
+  height: 231px;
+  border-radius: 50%;
+  z-index: 1;
+  position: absolute;
+}
+.box{
+  .mixin('/assets/img/box.png');
+  background-size: 75%;
+}
+.one{
+  .mixin('/assets/img/cycle1.png');
+  -webkit-animation:abc 8s infinite linear; 
+  animation:abc 8s infinite linear; 
+ }
+
+ .two{
+  .mixin('/assets/img/cycle2.png');
+  top: 0;
+  -webkit-animation:abc1 3s infinite linear; 
+  animation:abc1 3s infinite linear; 
+ }
+ 
+ @keyframes abc{
+  0% {transform:rotate(0deg);} 
+  50% {transform:rotate(180deg);} 
+  100% {transform:rotate(360deg);} 
+ }
+ @-webkit-keyframes abc{
+  0% {-webkit-transform:rotate(0deg);} 
+  50% {-webkit-transform:rotate(180deg);} 
+  100% {-webkit-transform:rotate(360deg);} 
+ }
+
+ @keyframes abc1{
+  0% {transform:rotate(360deg);} 
+  50% {transform:rotate(180deg);} 
+  100% {transform:rotate(0deg);} 
+ }
+ @-webkit-keyframes abc1{
+  0% {-webkit-transform:rotate(360deg);} 
+  50% {-webkit-transform:rotate(180deg);} 
+  100% {-webkit-transform:rotate(0deg);} 
+ }
+
+@smartphones: ~"only screen and (max-width: 1024px)";
+@media @smartphones {
+		.box {
+      display: none;
+    }
+}

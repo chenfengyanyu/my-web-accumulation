@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>demo4-angularjs-2</title>
+  <style type="text/css">
+    #div1,
+    #div2 {
+      float: left;
+      width: 120px;
+      height: 135px;
+      margin: 10px;
+      border:1px solid #aaaaaa;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+
+<body data-ng-app="myApp">
+  <div id="div1" drop-on-me>
+    <img src="img/1.png" drag-me id="drag1" width="120">
+  </div>
+
+  <div id="div2" drop-on-me></div>
+</body>
+<script src="https://cdn.bootcss.com/angular.js/1.6.5/angular.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  angular.module('myApp', []);
+
+  angular.module('myApp')
+  .directive('dragMe', dragMe)
+  .directive('dropOnMe', dropOnMe);
+
+  dragMe.$inject = [];
+  function dragMe() {
+    var DDO = {
+      restrict: 'A',
+      link: function (scope, element, attrs) {
+        element.prop('draggable', true);
+        element.on('dragstart', function (event) {
+          event.dataTransfer.setData('text', event.target.id)
+        });
+      }
+    };
+    return DDO;
+  }
+
+  dropOnMe.$inject = [];
+  function dropOnMe() {
+    var DDO = {
+      restrict: 'A',
+      link: function (scope, element, attrs) {
+        element.on('dragover', function (event) {
+          event.preventDefault();
+        });
+        element.on('drop', function (event) {
+          event.preventDefault();
+          var data = event.dataTransfer.getData("text");
+          event.target.appendChild(document.getElementById(data));
+        });
+      }
+    };
+    return DDO;
+  }
+
+</script>
+
+</html>

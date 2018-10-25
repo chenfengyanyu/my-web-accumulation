@@ -1,0 +1,331 @@
+extends _layout
+block header
+  link(rel='stylesheet', href='/zh/assets/css/order.css')
+  style.
+    .header a > img {
+      margin-top: 2px;
+    }
+
+block content
+
+  .container(style='width:980px')
+    section.pre-order.row(style="margin-top:40px;margin-bottom: 100px;padding: 32px 15px 0;")
+      .row
+        div.clear_order(style="height:42px;")
+          div(style="float:left;")
+            span(style="margin-bottom: -13px;display: inline-block;font-size:32px;") 在线订购
+        #order-items.title(style="position: absolute;padding-top: 36px;margin-top: 170px;")
+          span.n(style="top: 40px;") 1
+          span 选择产品
+        .warning-message.amount_warning(style="margin-top:10px")
+          | SENSORO 中国首家获得 Google Eddystone 官方认证。
+          br
+          | 云子、云盒、云标已支持 Eddystone，您即刻即可下单购买。
+          br
+          br
+          .notice
+            h3 注意:
+            ul
+              li 1) 自2016年1月30日起，新发货的云盒、云标将不再支持加速度传感器;
+              li 2) 购物金额低于￥2000，我方暂不能提供增值税专用发票，敬请谅解。
+        ul.commodity-list#yunzilink
+          li(style="text-align: center;font-size: 16px;font-family: 'microsoft yahei';margin-bottom:15px;height:20px;")
+            .col-xs-3 产品
+            .col-xs-2 名称
+            .col-xs-2 价格
+            .col-xs-3 数量
+          li.col-xs-12.comm-1
+            .col-xs-3.pic
+              img(src='/zh/assets/image/order/yunzi.jpg')
+            .fun-box.col-xs-2
+              p 云子
+            .fun-box.col-xs-2
+              h4 ￥
+                i#yunzi_price
+            .fun-box.col-xs-3
+              .fun
+                a.dec(href='javascript:;') -
+                input#yunzi.count(type="text",value='0',pty="Yunzi")
+                a.inc(href='javascript:;') +
+
+          li.col-xs-12.comm-2#USBLink
+            .col-xs-3.pic.usb
+              img(src='/zh/assets/image/order/usbBox.png')
+            .fun-box.col-xs-2
+              p 云标
+            .fun-box.col-xs-2
+              h4 ￥
+                i#usb_price
+            .fun-box.col-xs-3
+              .fun
+                a.dec(href='javascript:;') -
+                input#usb.count(type='text', value='0',pty="USB Box")
+                a.inc(href='javascript:;') +
+
+          li.col-xs-12.comm-3#4AALink
+            .col-xs-3.pic#caution_hot
+              img(src='/zh/assets/image/order/4AA.png')
+            .fun-box.col-xs-2
+              p 云盒
+            .fun-box.col-xs-2
+              h4 ￥
+                i#box_4aa_price
+            .fun-box.col-xs-3
+              .fun
+                a.dec(href='javascript:;') -
+                input#box_4aa.count(type='text', value='0',pty="4AA Box")
+                a.inc(href='javascript:;') +
+
+          //li.col-xs-12.comm-3#iotLink.lang_zh
+            .col-xs-3.pic
+              img(src='/zh/assets/image/order/iot.png')
+            .fun-box.col-xs-2
+              p IOT开发者套件
+            .fun-box.col-xs-2
+              h4 ￥
+                i#iot_price
+            .fun-box.col-xs-3
+              .fun
+                a.dec(href='javascript:;') -
+                input#iot.count(type='text', value='0',pty="iot")
+                a.inc(href='javascript:;') +
+      .warning-message.amount_warning.amount_mail(style="background: #fafafa;margin-left: 40px;margin-top: 20px;") 如您购买的设备总量多于 50 个，请您联系 <a href="mailto:service@sensoro.com">service@sensoro.com</a> 以批量购买
+      section.order-detail
+          .order-details-list.order-dev-list
+            .title
+              span.n 2
+              span 订单详情
+            dl
+              dt 产品
+              dd 云子
+              dd 云标
+              dd 云盒
+              //dd.lang_zh IOT开发者套件
+              dd.lang_en.hidden Alpha Node-4AA
+            dl.docenter
+              dt 数量
+                small (个)
+              dd#yunzi_qty
+              dd#usb_qty
+              dd#box_4aa_qty
+              dd#iot_qty.lang_zh
+              //dd.lang_zh#weChat_qty
+              dd.lang_en.hidden#alpha_4aa_qty
+            dl.docenter
+              dt 价格
+                small (￥)
+              dd#yunzi_pic
+                i
+              dd#usb_pic
+                i
+              dd#box_4aa_pic
+                i
+              //dd#iot_pic.lang_zh
+                i
+              //- dd.lang_zh#weChat_pic
+                i
+              dd.lang_en.hidden#alpha_4aa_pic
+                i
+            dl
+              dt 小计
+                small (￥)
+              dd#yunzi_tal
+                i
+              dd#usb_tal
+                i
+              dd#box_4aa_tal
+                i
+              //dd#iot_tal.lang_zh
+                i
+              //- dd.lang_zh#weChat_tal
+                i
+              dd.lang_en.hidden#alpha_4aa_tal ￥
+                i
+          div(style="background: #fafafa;margin-left: 40px;margin-top: 20px;padding: 10px;")
+              p(style="font-weight:bold;") 总价： 
+                small ￥
+                span#sum
+          br(clear='all')
+      div(action="/orders", method="post")
+        section.order
+          section.form#order-form
+              .title
+                span.n 3
+                span 填写收货信息
+              .col
+                table.order
+                  tr.country_selector
+                    td 国家和地区 :
+                    td
+                      div
+                        select.country(name="country")
+                        span.form-warning-message.country-empty 请选择国家和地区
+                        .shipping_info
+                          span 运费 : ￥
+                          span#shipping 0
+                          span.tax  ,  关税 :
+                          span.tax#tax 0
+                          span.tax % (￥
+                          span.tax#tax-val 0
+                          span.tax )
+                          span  , 订单总价 : ￥
+                          span#sumAll
+                  tr.abroad.not_america
+                    td 省份 :
+                    td
+                      input(type="text", name="province")
+                      span.form-warning-message.province-empty 请选择或填写省或州的名称
+                  tr.america_selector
+                    td 省份 :
+                    td
+                      div
+                        select.province.america(name="province" style="margin-top: 1px;height: 28px;")
+                        span.form-warning-message.select-province-empty 请选择或填写省或州的名称
+
+                  tr.abroad
+                    td 城市 :
+                    td
+                      input(type="text", name="city")
+                      span.form-warning-message.city-empty 请选择或填写城市名称
+                  tr.china
+                    td 所在地区：
+                    td
+                      .city_selector
+                        select.province(name="province")
+                        select.city(name="city")
+                        span.form-warning-message.select-province-empty 请选择省或直辖市的名称
+                        span.form-warning-message.select-city-empty 请选择市或区的名称
+                  tr
+                    td 街道地址：
+                    td
+                      textarea( name="address", placeholder="不需要重复填写省市区")
+                      div
+                        span.form-warning-message.address-error 请填写足够详细的街道地址
+                        span.form-warning-message.address-empty 请填写街道地址
+                  tr
+                    td 邮政编码：
+                    td
+                      input(type="text", name="postcode")
+                      span.form-warning-message.postcode-error 请填写正确格式的邮编
+                      span.form-warning-message.postcode-empty 请填写邮编
+                  tr
+                    td 收货人姓名：
+                    td
+                      input(type="text", name="consignee")
+                      span.form-warning-message.consignee-empty 请填写收货人姓名
+                  tr
+                    td 邮箱地址：
+                    td
+                      input(type="text", name="email")
+                      span.form-warning-message.email-error 请填写正确格式的邮箱地址
+                      span.form-warning-message.email-empty 请填写邮箱地址
+                  tr
+                    td 手机号码：
+                    td
+                      input(type="text", name="phone")
+                      span.form-warning-message.phone-error 请填写正确格式的电话号码
+                      span.form-warning-message.phone-empty 请填写联系电话
+                  tr
+                    td 是否需要发票：
+                    td
+                      label.radio-inline
+                        input#inlineRadio1(type="radio", name="invoiceType", value="noNeed" checked)
+                        span.radio-inline-text 无需发票
+                      label.radio-inline
+                        input#inlineRadio2(type="radio", name="invoiceType", value="regular")
+                        span.radio-inline-text 普通发票
+                      label.radio-inline.addedTaxSwitch.hide
+                        input#inlineRadio3(type="radio", name="invoiceType", value="addedTax")
+                        span.radio-inline-text 增值税发票
+                  tr.add-tax-invoice-show.ragular-invoice-show
+                    td 单位名称：
+                    td
+                      input(type="text", name="company")
+                      span.form-warning-message.company-empty 请填写单位名称
+                  tr.add-tax-invoice-show
+                    td 纳税人识别码：
+                    td
+                      input(type="text", name="taxpayerID")
+                      span.form-warning-message.taxpayerID-empty 请填写纳税人识别码
+                      span.form-warning-message.taxpayerID-error 请填写正确格式的纳税人识别码
+                  tr.add-tax-invoice-show
+                    td 注册地址：
+                    td
+                      input(type="text", name="regAddr")
+                      span.form-warning-message.regAddr-empty 请填写注册地址
+                  tr.add-tax-invoice-show
+                    td 注册电话：
+                    td
+                      input(type="text", name="regPhoneNumber")
+                      span.form-warning-message.regPhoneNumber-empty 请填写注册电话
+                      span.form-warning-message.regPhoneNumber-error 请填写正确格式的电话号码
+                  tr.add-tax-invoice-show
+                    td 开户银行：
+                    td
+                      input.add-tax-invoice-need(type="text", name="bankAccount")
+                      span.form-warning-message.bankAccount-empty 请填写开户银行
+                  tr.add-tax-invoice-show
+                    td 银行账户：
+                    td
+                      input.add-tax-invoice-need(type="text", name="bank")
+                      span.form-warning-message.bank-empty 请填写银行账户
+                      span.form-warning-message.bank-error 请填写正确格式的银行账户
+                  tr.add-tax-invoice-show
+                    td 一般纳税人
+                      icon.invoice-tips-show(style="color: blue; cursor: pointer; margin: 0px 7px; padding: 0px 4px; border: 1px solid; border-radius: 5px;") ?
+                      | ：
+                    td
+                      span.btn.btn-success.fileinput-button
+                        i.glyphicon.glyphicon-plus
+                        span 上传一般纳税人证书或证明
+                        input(id="fileupload" type="file" name="file" style="width: auto; border:none")
+                      a.image-pre(href="" target="_blank" style="margin-left: 20px; display: none") 查看
+                      span.form-warning-message.businessLicense-empty 请上传一般纳税人证书或证明
+                  tr.invoice-tips(style="display:none")
+                    td 提示信息：
+                    td
+                      p(style="margin-top: 0px;") 若您无法提供一般纳税人证书，请您提供以下其一：
+                      p ①盖有“增值税一般纳税人”章的税务登记证副本复印件；
+                      p ②国税局颁发的相关的一般纳税人税务事项通知书；
+                      p ③增值税一般纳税人申请认定表复印件；
+                      p ④国家税务局增值税一般纳税人资格认定批复件；
+                      p ⑤有效期内的一般纳税人年检通知书复印件。
+                      p 若一般纳税人证明超过有效期，请提供以上5种类型中未超过有效期的任一材料代替，如上海、浙江、四川、广东、深圳、天津、新疆、山东等地区用户以上五种类型证件都提供不了，请登录各地区的国税网查询，点击一般纳税人资格查询，并将此资格截图打印后加盖公司的公章，代替一般纳税人证书上传。
+                  tr
+                    td 订单备注：
+                    td
+                      textarea(name="desc" placeholder="订单备注信息")
+                  tr
+                    td
+                      input#terms(type="checkbox")
+                    td(style="padding-top: 15px;")
+                      span 我已阅读并同意 
+                      a(href="/zh/terms") SENSORO销售条款
+                      div.form-warning-message.terms-empty 请阅读并接受SENSORO销售条款
+                ul.errors
+          section.form#order-pay
+            .title
+              span.n 4
+              span 支付
+            .col
+              p.deliver.warning-message.abroad 在商品到达时您可能需要缴纳进口关税或其他税收
+              p.deliver 温馨提示：
+              p.deliver 1. 云子内部含有电池（不可换），只能通过顺丰陆运，预计发货后三天内可送达。
+              p.deliver 2. 云盒默认不提供电池，需自行购买。
+              p.deliver 3. 每个工作日下午五点前的订单，当天发货，五点后的订单下个工作日发货。
+              // p.deliver(style="color: brown") 3. 「云标」目前库存紧张，购买云标可能会延迟发货，建议下单前向客服咨询具体商品库存情况，客服电话：400 - 686 - 3180
+              button.submit.alipay(type="button",style="background-origin: content-box;") 
+  div#alipayForm(style="display:none")
+  div.translucent-layer
+  #tips_wrapper
+    p 如您购买的设备总量多于 50 个，请您联系 service@sensoro.com 以批量购买。
+block scripts
+  script(src="/zh/assets/js/config.js")
+  script(src="/zh/assets/js/city.js")
+  script(src="/zh/assets/js/country.js")
+  script(src="/zh/assets/js/americanStates.js")
+  script(src="/zh/assets/lib/velocity.min.js")
+  script(src="/zh/assets/lib/jquery.fileupload/jquery.ui.widget.js")
+  script(src="/zh/assets/lib/jquery.fileupload/jquery.iframe-transport.js")
+  script(src="/zh/assets/lib/jquery.fileupload/jquery.fileupload.js")
+  script(src="/zh/assets/js/order.js")

@@ -1,0 +1,255 @@
+extends _layout
+append header
+	link(rel='stylesheet', href='/zh/assets/css/usb.css')
+block content
+	section.base_pro_show
+		ul
+			li.one
+				a(href='/zh/yunzi')
+					div
+				span 云子
+			li.two
+				a(href='/zh/box')
+					div
+				span 云盒
+			li.three
+				a(href='/zh/usb')
+					div
+				span 云标
+			li.four
+				a(href='/zh/compare')
+					div
+				span 产品比较
+			.btn_item(style='margin:5% 0 0 8%;')
+				a(href='/zh/order') 马上订购
+	section.base_pro
+		img(src='/zh/assets/image/yunzi/usb.png',style='height: 408px;padding-left: 108px;margin-bottom: -120px;')
+		h3(style='font-family: "Songti SC";') 云标
+		.box
+			b iBeacon智能传感器
+			i Designed by Sensoro in China
+			strong RMB 99 / 个
+			img(src='/zh/assets/image/yunzi/temp02.png',width='80',height='80')
+		.btn_item.fix
+			a(href='/zh/order',style='margin-right:0;') 立即购买
+	section.usb_explode
+		img.verticle_animate(id='chip',data-move-y='120px',src='/zh/assets/image/usb/usb_top.png',width='100')
+		img(id='shell',src='/zh/assets/image/usb/usb_bottom.png',width='120')
+		div.chip_desc
+			i 橡胶外套
+			p 橡胶外套，防尘防震，手感舒适
+			svg
+				path(id='chip_path',stroke='rgb(17, 11, 10)',fill='#fff',stroke-width='1',d='M200,20 H400')
+				circle(id='chip_circle',cx='297',cy='20',r='3',stroke-width='1',fill='rgb(17, 11, 10)')
+		div.shell_desc
+			svg
+				path(id='shell_path',stroke='rgb(17, 11, 10)',fill='#fff',stroke-width='1',d='M50,140 V100 H0')
+				circle(id='shell_circle',cx='3',cy='100',r='3',stroke-width='1',fill='rgb(17, 11, 10)')
+			i Nordic 芯片
+			p 来自挪威的Nordic蓝牙芯片，超低功耗但反应灵敏。
+	section.pro_intro
+		ul
+			li.active
+				img(src='/zh/assets/image/yunzi/icon08.png',width='45')
+				i USB接口
+			li
+				img(src='/zh/assets/image/yunzi/icon05.png',width='45')
+				i 大规模部署
+			li
+				img(src='/zh/assets/image/yunzi/icon04.png',width='45')
+				i 企业级安全
+			li
+				img(src='/zh/assets/image/yunzi/icon06.png',width='45')
+				i 云管理平台
+			li
+				img(src='/zh/assets/image/yunzi/icon07.png',width='45')
+				i 开发者工具
+	section.pro_chip
+		.swiper-container
+			.swiper-wrapper
+				.swiper-slide.part
+					h3 USB 接口供电
+					p 
+						| 云标，采用 USB 接口直接供电，无需更换电池。
+						br
+						| 尺寸为42.77 mm ＊ 17.32 mm ＊7.37 mm，仅有普通U盘大小。
+					ul.usbshow
+						li
+							img.thick(src='/zh/assets/image/usb/usb2.png',width='210')
+							p 
+								| 7.37
+								i mm
+							span.desc 厚度
+						li
+							img.height(src='/zh/assets/image/usb/usb3.png',width='200')
+							p 
+								| 42.77
+								i mm
+							span.desc 长度
+						li
+							img.width(src='/zh/assets/image/usb/port.png',width='180')
+							p 
+								| 17.32
+								i mm
+							span.desc 宽度
+				.swiper-slide.part
+					h3 大规模部署
+					p 除了光线、加速度传感器以及防水功能，云标支持云子所提供的全部功能，包括SDK、配置工具、巡检工具、部署工具、云平台。相比于云子，云标具有更低的价格；而相比于云盒，云标具有更低的维护成本。云标适合在有供电支持的环境下大规模部署使用，常见部署场景有商户门店、灯箱广告、树莓派智能设备等。
+					dl.deployment
+						dt
+							img.one(src='/zh/assets/image/usb/yunzi.png',width='245') 
+							i ¥ 188
+						dt
+							img.two(src='/zh/assets/image/usb/usb.png',width='100')
+							i.active ¥ 99
+						dt
+							img.three(src='/zh/assets/image/usb/box.png',width='185')
+							i ¥ 99		
+				.swiper-slide.part
+					h3 企业级安全
+					p SENSORO是最早经过 Apple iBeacon 认证的设备制造商之一，认证编号：214945。云⼦，已通过 FCC、CE、TELEC 认证。所有云子均可设置密码进行加密，防止一切恶意篡改。利用配置工具，设置设备密码后，只有密码验证正确才能进行配置修改
+					ul
+						li
+							img(src='/zh/assets/image/yunzi/lock.png',width='250')
+						li
+							img(src='/zh/assets/image/yunzi/chess.png',width='250')
+				.swiper-slide.part
+					h3 云端控制系统
+					p SENSORO 设备管理云协助企业管理 iBeacon 设备核心数据，包括：电量、状态、地理位置等，极大减轻了企业综合成本。您可使用巡检工具、部署专用网络设备，或在 App 中集成 SENSORO SDK 来实现设备数据的收集。
+					img(src='/zh/assets/image/yunzi/platform.png',width='460',style='margin-top:35px;')
+				.swiper-slide.part
+					h3 开发者工具
+					p 针对 iBeacon 部署难、维护难的问题，SENSORO 依照实际项目经验为开发者设计了一套完整的工具应用，这些工具很好地解决了“批量修改配置难”、“设备工作状态检测效率低”等问题。
+					.limit_box
+						.left
+							img(src='/zh/assets/image/yunzi/tool.png',width='180')
+						.right
+							.box
+								.describe
+									img(src='/zh/assets/image/yunzi/config.png',width='80')
+									i 配置工具
+									p 移动端工具配置云子、云盒、云标的工作参数
+								.download
+									a(href='#') iOS版下载 
+									br
+									a(href='#') 安卓版下载 
+									img(src='/zh/assets/image/yunzi/config_qr.png',width='96')
+	section.base_detail
+		.left(style='padding-top: 80px;')
+			img(src='/zh/assets/image/yunzi/usb3.png',style='margin-bottom: 30px;',width='180')
+			.btn_item
+				a(href='https://iot.sensoro.com/sensoroapi/static/58255de1819a7d1ec4d44df5',target="_blank") 下载说明书
+		.right
+			h3 详细参数
+			p
+				i 芯片
+				| Nordic nRF51822
+			p
+				i 尺寸
+				| 长度：42.77 毫米；宽度：17.32 毫米；厚度：7.37 毫米
+			p
+				i 材质
+				| 白色硅胶；黑色哑光 PCB
+			p
+				i 三防
+				| 防尘 / 防震
+			p
+				i 协议标准
+				| 蓝牙 4.0 通过 iBeacon 认证
+			p
+				i 适合系统
+				| iOS 7.0 及以上；Android 4.3 及以上
+			p
+				i 升级
+				| 支持空中升级
+			p
+				i 安全性
+				| 支持密码连接
+			p
+				i 传感数据
+				| 温度
+			p
+				i LED
+				| 1颗 LED 灯
+			p
+				i 发射功率
+				| -30 dBm 至 +4 dBm 可调节优化信号覆盖范围
+			p
+				i 传输距离
+				| 15 厘米至 100 米可调节
+			p
+				i 电池
+				| USB接口供电
+		.clean
+block append scripts
+	script(src='/zh/assets/lib/jquery.smoove.min.js')
+	script(src='/zh/assets/lib/swiper.min.js')
+	script.
+		$(function(){
+			$('.verticle_animate').smoove({
+				offset  : '80%',
+				opacity : 100
+			});
+
+			setInterval(function() {
+				watchPosition('chip','-350');
+				watchPosition('shell','-350');
+			}, 100);
+
+			//监测滚动位置
+			function watchPosition(name,value){
+				var startFlag = $(window).scrollTop() - $('.usb_explode').offset().top;
+				if(startFlag > value){
+					$('.'+name+'_desc>i,.'+name+'_desc>p').css('animation','op-show 1s ease-in-out forwards');
+					$('#'+name+'_path').css('animation',name+'-go 0.8s  ease-in-out forwards');
+					$('	#'+name+'_circle').css('animation','op-show 0.3s 0.8s ease-in-out forwards');
+				}else{
+					$('#'+name+'_circle').css('animation','op-hide 0.3s ease-in-out backwards');
+					$('#'+name+'_path').css('animation',name+'-back 0.8s 0.3s ease-in-out backwards');
+					$('.'+name+'_desc>i,.'+name+'_desc>p').css('animation','op-hide 1s 0.3s  ease-in-out  backwards');
+				}
+			}
+
+			var mySwiper = new Swiper('.pro_chip .swiper-container', {
+				effect : 'fade',
+				fade: {
+				  crossFade: true,
+				},
+				autoplay: 3500,//可选选项，自动滑动
+				pagination : '.index_focus .swiper-pagination',
+				paginationClickable :true,
+				onTransitionStart:function(swiper){
+					//- console.log(swiper.activeIndex);
+					$('.pro_intro li').removeClass('active');
+					$('.pro_intro li').eq(swiper.activeIndex).addClass('active');
+					$('.swiper-wrapper>div').each(function(i,n){
+						$(this).removeClass('play');
+						if($(this).hasClass('swiper-slide-active')){
+							$(this).addClass('play');
+						}
+					})
+				},
+				onInit:function(swiper){
+					$('.pro_intro li').on('click',function(){
+						$(this).siblings().removeClass('active');
+						$(this).addClass('active');
+						$('.pro_intro li').each( function (i, n) {
+							if($(this).hasClass('active')){
+								swiper.slideTo(i);
+							}
+						});
+					})
+				}
+			})
+		})
+
+
+
+
+
+
+
+
+
+
+

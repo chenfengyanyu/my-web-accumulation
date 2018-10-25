@@ -1,0 +1,30 @@
+<template name="_boxedLayout">
+    <div class="container">
+      <!-- BEGIN SIDEBPANEL-->
+      {{>condensedSideBar}}
+      <!-- END SIDEBAR -->
+      <!-- END SIDEBPANEL-->
+      <!-- START PAGE-CONTAINER -->
+      <div class="page-container">
+        <!-- START HEADER -->
+        {{>condensedHeader}}
+        <!-- END HEADER -->
+        <!-- START PAGE CONTENT WRAPPER -->
+        <div class="page-content-wrapper">
+          <!-- START PAGE CONTENT -->
+          <div class="content">
+            {{> Template.dynamic template=main}}
+          </div>
+          <!-- END PAGE CONTENT -->
+          <!-- START COPYRIGHT -->
+          <!-- START CONTAINER FLUID -->
+          {{>footer}} 
+          <!-- END COPYRIGHT -->
+        </div>
+        <!-- END PAGE CONTENT WRAPPER -->
+      </div>
+      <!-- END PAGE CONTAINER -->
+    </div>
+  {{>quickView}}
+  {{>overlaySearch}}
+</template>

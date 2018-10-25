@@ -1,0 +1,5 @@
+.main {
+  /* 引用一张图片 */
+  background: url('images/parcel.png');
+  color: red;
+}
