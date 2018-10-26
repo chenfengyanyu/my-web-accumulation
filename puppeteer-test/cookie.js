@@ -7,16 +7,6 @@ let { timeout } = require('./tools/tools.js');
       'domain': 'shensz-t.test.17zuoye.net',
       'name': 'ssz_uid',
       'value': '508726',
-    },
-    {
-      'domain': 'shensz-t.test.17zuoye.net',
-      'name': 'uid',
-      'value': '12979349',
-    },
-    {
-      'domain': 'shensz-t.test.17zuoye.net',
-      'name': 'uid_17',
-      'value': '12979349'
     }
   ]
   const browser = await puppeteer.launch({
@@ -39,10 +29,8 @@ let { timeout } = require('./tools/tools.js');
     { waitUntil: ['domcontentloaded','networkidle0']}
   );
 
-  // localStorage.setItem('sess','e55e550587061ddd58035207997b402f');
-
   await page.waitFor('*');
-  // await timeout(3000);
+  
   await page.pdf({
     path: 'temp/new.pdf',
     format: 'letter',
