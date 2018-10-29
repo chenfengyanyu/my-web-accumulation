@@ -5,3 +5,4 @@ bower_components
 .vscode/
 *.Chromium Framework
 chromium
+kafka/kafka_2.11-2.0.0/logs/
