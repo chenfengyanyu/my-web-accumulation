@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "MyChromeExt",
+  "description": "My first chrome extension.",
+  "version": "1.0.0",
+  "icons": {
+    "16": "image/icon-16.png",
+    "128": "image/icon-128.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "image/icon-19.png",
+      "38": "image/icon-38.png"
+    },
+    "default_title": "MyChromeExt",
+    "default_popup": "index.html"
+  },
+  "permissions": [
+    "tabs"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_security_policy": "default-src 'self'; script-src 'self'; style-src * 'unsafe-inline'; img-src 'self' data:;"
+}
