@@ -1,6 +1,6 @@
 (function(){
-  /**
-   * just test for run by self
-   */
-  alert('hello jartto');
+  // console.log(1111);
+  chrome.tabs.onUpdated.addListener(function(tabId,changeInfo,tab){
+    alert(tab.url);
+  })
 })();

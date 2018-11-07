@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "MyChromeExt",
+  "name": "我的插件",
   "description": "My first chrome extension.",
   "version": "1.0.0",
   "icons": {
@@ -9,19 +9,20 @@
   },
   "browser_action": {
     "default_icon": {
-      "19": "image/icon-19.png",
-      "38": "image/icon-38.png"
+      "19": "image/icon-38.png",
+      "38": "image/icon-19.png"
     },
-    "default_title": "MyChromeExt",
+    "default_title": "我的插件",
     "default_popup": "index.html"
   },
   "permissions": [
-    "tabs"
+    "alarms", "tabs", "notifications"
   ],
   "background": {
+    "persistent": false,
     "scripts": [
       "background.js"
     ]
   },
-  "content_security_policy": "default-src 'self'; script-src 'self'; style-src * 'unsafe-inline'; img-src 'self' data:;"
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
