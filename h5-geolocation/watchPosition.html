@@ -1,0 +1,45 @@
+<html>
+  <body>
+    <div id="demo"></div>
+  </body>
+  <script>
+    var x = document.getElementById('demo');
+    window.addEventListener('load',loadDemo,true);
+
+    function loadDemo(){
+      console.log('load');
+        if(navigator.geolocation){
+            navigator.geolocation.watchPosition(
+                updateLocation,
+                handleLocationError,
+                {maximumAge:20000}
+            );
+        }
+    }
+
+    function updateLocation(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        var accuracy = position.coords.accuracy;
+        var timestamp = position.timestamp;
+        console.log(latitude, longitude, accuracy, timestamp);
+    }
+
+    function handleLocationError(error) {
+      switch(error.code) {
+        case error.PERMISSION_DENIED:
+            x.innerHTML="用户拒绝对获取地理位置的请求。"
+            break;
+        case error.POSITION_UNAVAILABLE:
+            x.innerHTML="位置信息是不可用的。"
+            break;
+        case error.TIMEOUT:
+            x.innerHTML="请求用户地理位置超时。"
+            break;
+        case error.UNKNOWN_ERROR:
+            x.innerHTML="未知错误。"
+            break;
+      }
+    }
+  </script>
+</html>

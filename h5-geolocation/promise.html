@@ -1,0 +1,72 @@
+<html>
+
+<body>
+
+</body>
+<script>
+  const getLocationLatLon = (options) => {
+    return new Promise((resolve, reject) => {
+      if (navigator.geolocation) {
+        console.log('run');
+        navigator.geolocation.getCurrentPosition((position) => {
+          console.log(position)
+          resolve({
+            isGet: true,
+            data: {
+              position
+            }
+          })
+        }, (error) => {
+          switch (error.code) {
+            case error.PERMISSION_DENIED:
+              reject({
+                isGet: false,
+                data: 'User denied the request for Geolocation'
+              })
+              break
+            case error.POSITION_UNAVAILABLE:
+              reject({
+                isGet: false,
+                data: 'Location information is unavailable'
+              })
+              break
+            case error.TIMEOUT:
+              reject({
+                isGet: false,
+                data: 'The request to get user location timed out'
+              })
+              break
+            case error.UNKNOWN_ERROR:
+              reject({
+                isGet: false,
+                data: 'An unknown error occurred'
+              })
+              break
+            default:
+              reject({
+                isGet: false,
+                data: 'other error'
+              })
+          }
+        }, options)
+      } else {
+        reject({
+          isGet: false,
+          data: 'Geolocation is not supported by this browser'
+        })
+      }
+    })
+  }
+
+  window.onload = getLocationLatLon({
+    maximumAge: 20000
+  }).then(res => {
+    // 成功获取到地理位置
+    console.log(res);
+  }).catch(error => {
+    // 获取地理位置失败或者其他错误
+    console.log(error);
+  })
+</script>
+
+</html>
