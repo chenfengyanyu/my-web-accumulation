@@ -3,5 +3,5 @@ try {
     undefined.map(v => v);
   }, 1000)
 } catch(e) {
-  console.log(e); // TypeError: Cannot read property 'map' of undefined
+  console.log(e); // Uncaught TypeError: Cannot read property 'map' of undefined
 }

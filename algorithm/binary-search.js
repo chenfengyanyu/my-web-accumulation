@@ -2,7 +2,7 @@
  * @msg: 二分查找
  * @param {Array} 数组
  * @param {String} 数值
- * @return: index
+ * @return: int
  */
 const binarySearch = (arr, val) => {
   let start = 0;
