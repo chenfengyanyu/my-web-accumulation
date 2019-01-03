@@ -1,0 +1,13 @@
+{
+  "name": "dive-into-webpack",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "webpack"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.2.2",
+    "typescript": "^2.4.2",
+    "webpack": "^3.4.0"
+  }
+}

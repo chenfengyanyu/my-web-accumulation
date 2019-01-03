@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    // 编译出的代码采用的模块规范
+    "target": "es5",
+    // 编译出的代码采用 ES 的哪个版本
+    "sourceMap": true
+    // 输出 SourceMap 方便调试
+  },
+  "exclude": [
+    // 不编译这些目录里的文件
+    "node_modules"
+  ]
+}

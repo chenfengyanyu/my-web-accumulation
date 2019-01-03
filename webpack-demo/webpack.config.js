@@ -19,6 +19,10 @@ module.exports = {
           // 转换 .css 文件需要使用的 Loader
           use: ['css-loader'], 
         })
+      },
+      {
+        test: /\.js$/,
+        use: ['babel-loader'],
       }
     ]
   },
@@ -27,5 +31,7 @@ module.exports = {
       // 从 .js 文件中提取出来的 .css 文件的名称
       filename: `[name]_[hash:8].css`,
     })
-  ]
+  ],
+  // 输出 source-map 方便直接调试 ES6 源码
+  devtool: 'source-map'
 };
