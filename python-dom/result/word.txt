@@ -1,0 +1,114 @@
+
+
+
+
+
+
+
+
+
+                    
+                    
+                    前端一年精选好文，请打包带走
+
+                                                                                
+
+原创：
+
+                                                前端
+                                            
+
+
+                        前端                      
+
+
+前端
+
+
+号
+frontshow
+
+
+功能介绍
+InfoQ大前端技术社群：囊括前端、移动、Node全栈一线技术，紧跟业界步伐。
+
+
+
+
+
+
+
+
+今天
+
+
+整理｜覃云在 2018 年的最后一天，小编为大家整理了这一年以来前端的 130 多篇精选好文，文章标题即可跳转到原文，请速速哦~一、前端动态 版本更新ECharts 4.0 了！Dart 2 了，除了 Web 外它还想搞定 App 开发Webpack 4 ，实现零配置启动Node.js 10 带着 npm 6 来了！TypeScript 3.0 ，新特性详解！Ionic 4 测试版，带来多项重大改进！Android P ，你尽快做适配了Babel 7.0 ，支持 TypeScript，JSX FragmentNode.js 11 ，Node 10 进入 LTSChrome 70 版：Windows 端将支持 PWA史上最快、最强大的 Gradle 5.0 ，新特性全解Bootstrap 4 了，可是已经过气了呀 一线新闻Uber 开源 Fusion.js：一个基于插件架构的通用 Web 框架iOS 11.3 将迎来 PWA，你做好准备了吗？iOS 关键组件 iBoot 源代码泄露React Native 将 license 修改为 MIT，与 React 保持一致谷歌确认将限制 Android 非 SDK 接口使用了现在你可以在电脑 Chrome 上使用 PWA 啦！快标准今日，开发者知道些？88 亿！Java 侵权案大逆转，Google 哭了，天地同悲Oracle 终于要向 JavaScript 动手了！Google 力推的那些前端技术，最近都有哪些进展？Node 之父 ry：Node 中的设计错误Node 之父 ry 新项目 deno：下一代 NodeFacebook 开源了移动调试平台 SonarWebAssembly 最新路线图来了！GitHub 重构页面移除了 jQuery前端要凉？微软开源 Sketch2Code，草图秒变代码周下载量过 200 万的 npm 包被注入恶意代码，Vue、Node 项目恐受影响官宣！微软宣布桌面版 Edge 将基于 Chromium 进行开发阿里开源中后台 UI 解决方案 Fusion二、编程语言推荐一些好用的 JavaScript 库你是 JavaScript 大师吗？试试这些面试题就知道了你了解的 23 种 JavaScript 设计模式我从两年的 JavaScript 函数式编程中学到了？深入了解 JavaScript 引擎精华你可能用错了 async / await！2018 年，JavaScript 的状态前端性能之 JavaScript 成本 2018 版谷歌为何会选用 TypeScript？原来 JavaScript 的闭包是这么回事！最好的 JavaScript 数据可视化库都在这里了你拆分 JS 代码的方法可能是错的！2018 年，最常见的 26 个 JavaScript 面试题和答案JavaScript 私有属性要来了，但实现方式惹争议正则表达式真的很 6，可惜你不会写ECMAScript 2016/2017/2018 新特性详解这些被同事喷的 JS 代码风格你写过多少？别骗自己了，你不用 TypeScript 的理由站不住脚JS 可以写操作系统？Windows 95 被装进 Electron App三、框架之争Vue 和 React 大比拼，你 pick 谁？我用 Vue 和 React 构建了相同的，这是它们的差别 AngularAngularJS 和 Angular 版本路线图Angular 6 ，新功能详解Angular 的这 10 个特性，你可能不知道谷歌推出最新 AngularJS 升级工具，可快速迁移至 AngularAngular 7.0 ，带来 CLI Prompts、虚拟滚动和拖放等特性 ReactReact 是 UI 的未来，你怎么看？我从 React 身上得到的那些经验教训28 个顶级的 React UI 组件库，请查收！在开始 React 之前，你学好这些 JavaScript改造 React DOM！FB 将推 React Fire 计划React 2019 年路线图！Hooks 明年第一季度上线React 将引入 Hooks，你怎么看？2019 年 React 路线图为说 ReasonReact 是编写 React 的最佳方式？ Vue推荐 21 个顶级的 Vue UI 库！如何构建出色的 Vue 组件？！Vue CLI 3.0 ，带来多项重大更新专访尤雨溪：先别管 4.0 了，Vue CLI 重构了解一下！尤雨溪 Vue 3.0 开发路线基于 Vue+Electron 构建桌面实践2019 年 Vue 路线图力荐 35 个最好用的 Vue 开源库！ 跨平台框架拥抱大前端——从 Weex 开始FB 正在大规模重构 React Native，预计今年！Google  Flutter Release Preview 1关于 Flutter，你想知道的都在这里了！用 Flutter 完整开发一个是怎样的体验？用 Flutter 重写了一个 React Native Electron 3.0 版，新特性详解Next.js 7.0 ：重新编译速度提高 42％，支持 WebAssemblyReact Native 重构路线图！Flutter 1.0 ，它还想做桌面和 Web 开发Electron 4.0 稳定版，集成 Node 10 和 Chromium 69四、小张小龙说，小是期望最大的项目百度新的智能小是东西？小的下一步：支持 NPM、小云、可视化编程、支持分包Taro 1.1 全面支持 / 百度 / 支付宝小了！京东 Taro 框架深度实践苏宁：开发百度小遇到的那些“坑”百度智能小开发方案最佳实践 移动开发滴滴出行跨地域 iOS 构建优化与持续集成蜂鸟商家版 iOS 组件化 / 模块化实践总结Facebook 构建高性能 Android 视频组件实践之路是如何将 App 的大小从 31M 减少到 2.6M 的？苏宁金融 App 全链路灰度实践七行 JSON 代码将你的网站变成移动 前端开发从分层复用到自动化测试，看美团客户端架构的演变利用深度进行前端自动化开发Pinterest 的 PWA 实践菜鸟网络前端全栈化之路有货移动 Web 端性能优化探索实践微服务下使用 GraphQL 构建 BFF 的实践京东首页改版 Nerv 实战苏宁 Nodejs 性能优化实战Weex 技术在苏宁移动办公开发中的实践太平洋保险 CIMS 系统微前端实践微前端设计理念与实践去哪儿网前后端分离实践闲鱼基于 Flutter 的移动端跨平台实践去哪儿网 React 转小实践首屏时间从 12.67s 到 1.06s，我是如何做到的？Netflix 网页性能优化实践前端黑科技：美团网页首帧优化实践图解浏览器的工作原理（史上最全）五、前端观点在 2018 年初，让再谈谈大前端的趋势前端全栈鬼？K 型人才鬼？狼叔：Node 全栈为前端带来更多可能有了 GraphQL，你可以扔掉 Redux 了为说 Flutter 让移动开发变得更好？Kotlin 使用率达 35%，Java 要退位了？为前端开发这么不稳定？进击的 WebRTC：为它？Airbnb 弃用之后，还应该用 React Native 吗？为说 WebAssembly 让 Web 开发的未来更美好？REST 将会过时，而 GraphQL 则会长存GitHub：为会弃用 jQuery？JS 之父和 JSON 之父：JavaScript 的下一站 活动推荐2019 年 4 月 25-27 日北京国际会议中心，QCon 与您相约获得启发，共同关注行业趋势与工程实践。 「阅读原文」 或识别二维码了解 QCon 十周年精心策划，早鸟 7 折立减 2640 元，有任何问题欢迎联系票务小姐姐 Ring：电话 010-53935761， qcon-0410
+
+
+                    var first_sceen__time = (+new Date());
+
+                    if ("" == 1 && document.getElementById('js_content')) {
+                        document.getElementById('js_content').addEventListener("selectstart",function(e){ e.preventDefault(); });
+                    }
+
+                    
+                    (function(){
+                        if (navigator.userAgent.indexOf("WindowsWechat") != -1){
+                            var link = document.createElement('link');
+                            var head = document.getElementsByTagName('head')[0];
+                            link.rel = 'stylesheet';
+                            link.type = 'text/css';
+                            link.href = "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/style/page/appmsg_new/winwx42cea9.css";
+                            head.appendChild(link);
+                        }
+                    })();
+                
+
+
+
+
+
+
+
+前端
+
+
+赞赏
+
+
+
+长按二维码向我转账
+
+
+受苹果公司新规定影响， iOS 版的赞赏功能被关闭，可通过二维码转账支持公众号。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+扫一扫关注该公众号
+
+
+
+
+
+
