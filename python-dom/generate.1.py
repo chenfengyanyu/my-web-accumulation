@@ -16,6 +16,7 @@ imgname1 = d + 'result/tags.jpg'
 back_coloring = imread(path.join(d, d + 'f2e-mask.png'))
 
 mytext = open(path.join(d, d + 'result/word.txt')).read()
+
 userdict_list = ['我们', '什么', '发布', '整理', '功能', 
 '介绍','已经','使用','可以','电脑','尽快','收藏','最后','公众','支持','微信','需要','这些']
 
