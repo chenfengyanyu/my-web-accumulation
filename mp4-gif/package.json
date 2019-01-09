@@ -1,0 +1,23 @@
+{
+  "name": "mp4-gif",
+  "version": "1.0.1",
+  "description": "jartto's gif demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gif",
+    "mp4"
+  ],
+  "author": "jartto",
+  "license": "ISC",
+  "dependencies": {
+    "gifify": "^2.4.2"
+  },
+  "devDependencies": {
+    "giflossy": "^3.0.41",
+    "gifsicle": "^4.0.1",
+    "gify": "^0.2.0"
+  }
+}
