@@ -1,0 +1,11 @@
+{
+  "appid": "75437",
+  "secret": "3de574ac0e90faa2e2c0ad71374968941c45affe",
+  "logdir": "/data/log/h5/info",
+  "error_log": [
+      "/data/log/h5/error/app-error-%DATE%.log"
+  ],
+  "packages": [
+      "/var/www/app_student_middle/package.json"
+  ]
+}
