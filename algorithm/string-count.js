@@ -1,3 +1,4 @@
+// 求一个字符串中出现最多的字符，以及该字符出现的次数
 function stringCount(str) {
   let flag = new Set(str.split(''));
   let arr = str.split('');

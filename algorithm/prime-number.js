@@ -1,3 +1,4 @@
+// 求 m, n之间的质数
 function primeNumber(m, n) {
   let sum = 0;
   let arr = [];
