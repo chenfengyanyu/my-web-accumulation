@@ -1,0 +1,465 @@
+<!doctype html>
+
+<!--
+  A presentation done entirely in Markdown, as found in extras/markdown/.
+  
+  By: @henrikingo
+-->
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Git 常规操作</title>
+    
+    <meta name="description" content="Authoring impress.js presentations in Markdown" />
+    <meta name="author" content="Henrik Ingo" />
+    <link rel="stylesheet" href="../../extras/highlight/styles/github.css">
+
+        
+    <!--
+        Styles specific for this example presentation. 
+    -->
+    <link href="css/markdown-slides.css" rel="stylesheet" />
+    <!-- <link href="css/devopsy.css" rel="stylesheet" />
+    <link href="css/effects.css" rel="stylesheet" /> -->
+    
+</head>
+
+<body class="impress-not-supported">
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress" data-transition-duration="1000">
+
+<div id="cover" class="step slide title" data-x="1000" data-y="1000">
+    <h1>Git 常规操作<br />
+        与基本存储原理</h1>
+    <h2>王嘉涛</h2>
+    <h3>2019.3.26</h3>
+</div>
+<div id="index" class="step slide" data-rel-x="1000" data-rel-y="0">
+    <h1>目录</h1>
+    <ul>
+        <li><a href="#step-1">一、Git or SourceTree？</a></li>
+        <li><a href="#step-2">二、Git 基本概念</a></li>
+        <li><a href="#step-3">三、常规操作</a></li>
+        <li><a href="#step-4">四、十万个为什么？</a></li>
+        <li><a href="#step-5">五、Git 权限控制</a></li>
+        <li><a href="#step-6">六、Git 提交规范</a></li>
+        <li><a href="#step-7">七、.Git 文件夹的秘密</a></li>
+        <!-- <li><a href="#addons">八、熟悉 Git-Flow 工作流</a></li> -->
+    </ul>
+    <img src="images/dir1.png" />
+</div>
+<div id="task" class="step slide">
+    <h1>目标</h1>
+    <p>1.了解 Git 命令行的基本操作</p>
+    <p>2.在工作中自如应对 Git 的各种场景</p>
+    <p>3.了解 Git 权限控制与提交规范</p>
+    <p>4.知道 Git 的基本存储原理</p>
+    <img src="images/target.jpg" />
+    <!-- <p>5.熟悉 Git-Flow 工作流</p> -->
+</div>
+
+<div id="start" class="step title"  data-x="2000" data-rel-y="2000" data-scale="4">
+    <div class="box">
+        <img src="images/logo.png" />
+    </div>
+</div>
+
+<div id="visua" class="step"  data-rel-x="-1000" data-rel-y="2000" >
+    <h1>SourceTree 可视化</h1>
+    <img src="images/git1.png" />
+</div>
+
+<div id="terminal" class="step"  data-rel-x="1000" data-rel-y="0" >
+    <h1>命令行</h1>
+    <img src="images/git2.png" />
+    <div>git log --online --graph</div>
+</div>
+
+<div id="diff" class="step"  data-rel-x="1000" data-rel-y="0" >
+    <h1>Git or SourceTree？</h1>
+    <p>SourceTree 一览无余，不用思考，直接使用。我们很容易就忽略了 Git 操作的原理。</p>
+    <p>Git 命令行更像是一个魔法盒，我们寻着线索就可以找到宝藏。</p> 
+    <p>不用纠结究竟使用 Git 还是 SourceTree，用你最擅长的方式去工作就好了。</p>   
+</div>
+
+<div id="basic" class="step"  data-rel-x="0" data-rel-y="1200" data-rotate="90" data-scale="2">
+    <h1>Git 基本概念</h1>
+    <p class="fade-in fade-out">1.Git 和 SVN 区别与联系</p>
+    <p class="fade-in fade-out" style="transition-delay: 2s">2.集中式与分布式</p> 
+    <p class="fade-in fade-out" style="transition-delay: 4s">3.Git 本地目录组成</p> 
+    <p class="fade-in fade-out" style="transition-delay: 6s">4.Git 的五种状态</p>    
+    <img src="images/book1.png" />
+</div>
+
+<div id="svn" class="step slide"  data-rel-x="-1500" data-rel-y="500" data-rotate="90" data-scale="2">
+    <h1>SVN</h1>
+    <p>1.版本库维护在服务端，必须联网才能操作</p>
+    <p>2.简单易用，对 Windows 系统和二进制文件支持很好</p>
+    <p>3.每个分支都是一个单独的副本，所以创建分支和下载代码库都非常耗时</p>
+    <img src="images/svn-git.png" />
+</div>
+
+<div id="git" class="step slide"  data-rel-x="0" data-rel-y="2000" data-rotate="90" data-scale="2">
+    <h1>Git</h1>
+    <p>1.没有服务端，每个仓库都有完整的版本库，大多数操作不需要联网</p>
+    <p>2.有一定学习成本，对 Linux 和 Mac 支持很好，对二进制文件支持不太好</p>
+    <p>3.针对文件变化记录版本，分支只是一个指针，所以速度更快</p>
+    <p>4.Git 把内容按元数据方式存储，而 SVN 是按文件</p>
+</div>
+
+<div id="jizhong" class="step slide"  data-rel-x="2000" data-rel-y="0" data-scale="2">
+    <h1>集中式</h1>
+    <p>在集中式系统中，每个开发者就像是连接在集线器上的节点，彼此的工作方式大体相像。</p>
+    <div class="one"><img  width="100" src="images/jz.png" /></div>
+</div>
+
+<div id="fenbu" class="step slide"  data-rel-x="2000" data-rel-y="0" data-scale="2">
+    <h1>分布式</h1>
+    <p>在 Git 中，每个开发者同时扮演着节点和集线器的角色。也就是说，每个开发者既可以将自己的代码贡献到其他的仓库中，同时也能维护自己的公开仓库，让其他人可以在其基础上工作并贡献代码。</p>
+    <div class="one"><img src="images/fb.png" /></div>
+</div>
+
+<div id="zucheng" class="step"  data-rel-x="0" data-rel-y="-2500" data-scale="4">
+    <h1>Git 组成</h1>
+    <img src="images/dir.png" />
+    <p>1.工作目录，它持有实际文件；</p>
+    <p>2.暂存区（Index），它像个缓存区域，临时保存改动；</p>
+    <p>3.HEAD，它指向最后一次提交的结果。</p>
+</div>
+
+<div id="status" class="step"  data-rel-x="0" data-rel-y="-2500" data-scale="3">
+    <h1>五种状态</h1>
+    <p>1.未修改(Origin)：原始文件</p>
+    <p>2.已修改(Modified)：本地修改</p>
+    <p>3.已暂存(Staged)：执行了 Add</p>
+    <p>4.已提交(Committed)：执行了 Commit</p>
+    <p>5.已推送(Pushed)：推送到远程</p>
+    <img src="images/git-status.png" />
+</div>
+
+<div id="common" class="step markdown"  data-rel-x="0" data-rel-y="-3000" data-rotate="360" data-scale="4">
+# 常规操作 - 初始化
+* 初始化 git 仓库：`git init`
+* 远程仓库
+  * 配置：`git remote add url`
+  * 查看：`git remote -v`
+  * 查看具体某一个：`git remote show origin`
+* 分支
+    * 新建分支：`git branch feature`
+    * 查看所有分支列表：`git branch -a`
+    * 删除分支：`git branch -d feature`
+    * 通过参数：`git checkout -b 'feature'`
+-----
+# 常规操作 - 撤销1
+* 查看状态：`git status -s`
+* 已修改，未暂存
+    * 撤销：`git checkout .`
+    * 或者：`git reset --hard`
+    * 简单来说，`git add .` 的反向操作就是 `git checkout .`
+* 已暂存，未提交
+    * `git reset`
+    * `git checkout .`
+-----
+
+# 常规操作 - 撤销2
+* 已提交，未推送
+    * `git reset --hard origin/master`
+* 已推送
+    * 先恢复本地库：`git reset --hard HEAD^`
+    * 再强制同步远程库：`git push -f`
+* 不小心 pull 错了分支
+    * 先 `git reflog` 查看一下提交记录
+    * 再回退到之前的版本：`git reset --hard HEAD@{n}`
+-----
+# 常规操作 - 合并
+* 尽量使用 merge 合并，避免使用 pull 来合并
+* merge：合并分支
+    * 合并分支：`git merge test`
+    * 取消合并：`git merge --abort`
+    * 继续执行：`git merge --continue`
+* pull：
+    * 相当于是从远程获取最新版本并 merge 到本地
+* fetch：
+    * 相当于是从远程获取最新版本到本地，不会自动合并
+-----
+# 常规操作 - 代码对比
+* 工作区与暂存区比较
+    * `git diff  filepath`
+* 工作区与 HEAD ( 当前工作分支) 比较
+    * `git diff HEAD filepath`
+* 暂存区与HEAD比较
+    * `git diff --staged 或 --cached  filepath` 
+* 当前分支的文件与 branchName 分支的文件进行比较
+    * `git diff branchName filepath` 
+* 与某一次提交进行比较
+    * `git diff commitId filepath` 
+-----
+# 常规操作 - 标签
+* 查看标签：`git tag`
+* 打标签：`git tag V2.1 -m 'version 1.4'`
+* 为某次提交补打标签：`git tag V2.1 f52c633`
+* 查看标签：`git show V2.1`
+* 删除标签：`git tag -d 'jartto'`
+* 提交标签：`git push origin V2.1`
+* 推送所有标签：`git push origin --tags`
+</div>
+
+<div id="result" class="step"  data-rel-x="0" data-rel-y="-2500" data-rotate="360" data-scale="2">
+    <h1>记不住怎么办？</h1>
+    <p>万能口令：git --help</p>
+    <p>具体某一个口令：git [tag] --help</p>
+    <img src="images/help.png" />
+</div>
+
+<div id="why" class="step"  data-rel-x="2000" data-rel-y="-1500" data-rotate="360" data-scale="3">
+    <h1>四、十万个为什么？</h1>
+    <p>1.为什么 gitignore 失效了？</p>
+    <p>答：git rm -r --cached .</p>
+    <p>2.切换分支后，为什么有的文件不见了？</p>
+    <p>答：git 分本地和远程，所以一定要记得切换分支后，同步远程代码</p>
+    <p>3.为什么 git 嵌套会报错，如何解决？</p>
+    <p>git submodule add [repository] [path] 添加子模块 </p>
+    <p>git submodule init 初始化子模块 </p>
+    <p>git submodule update 更新子模块 </p>
+    <p>git submodule foreach git pull 拉取所有子模块</p>
+</div>
+
+<div id="why2" class="step"  data-rel-x="2500" data-rel-y="1000" data-rotate="390" data-scale="3">
+    <p>4.我正在写 bug，你跟我谈新需求？</p>
+    <p>git stash</p>
+    <p>开始其他工作…，之后回来：</p>
+    <p>git stash pop</p>
+    <p>查看 stash </p>
+    <p>git stash list</p>
+    <p>如果临时版本存的太多，可以取出具体某一次：</p>
+    <p>git stash apply 0</p>
+</div>
+
+<div id="why3" class="step"  data-rel-x="1500" data-rel-y="2000" data-rotate="420" data-scale="3">
+    <p>5.Hello, 我想要你分支上面的某一次提交记录</p>
+    <p>git cherry-pick c2523d27</p>
+    <p>如果有冲突，先解决，然后继续：</p>
+    <p>git cherry-pick --continue</p>
+    <p>取消分支合并：</p>
+    <p>git cherry-pick --abort</p>
+</div>
+
+<div id="why4" class="step"  data-rel-x="500" data-rel-y="2200" data-rotate="450" data-scale="3">
+    <p>6.谁动了我的代码，我要把他揪出来！</p>
+    <p>程序员都有指责他人的天性</p>
+    <p>git blame</p>
+    <p>挖地三尺：</p>
+    <p>git blame package.json | grep 'build'</p>
+    <p>7.多个远程仓库如何配置呢？</p>
+    <p>git remote add origin [repository] A</p>
+    <p>git remote add temp [repository] B</p>
+</div>
+
+<div id="limit" class="step slide"  data-rel-x="500" data-rel-y="2200" data-rotate="360" data-scale="3">
+    <h1>五、Git 权限控制</h1>
+    <img src="images/limit1.png" />
+</div>
+
+<div id="limit2" class="step slide"  data-rel-x="0" data-rel-y="2200" data-rotate="360" data-scale="3">
+    <img src="images/limit2.png" />
+</div>
+
+<div id="commit" class="step"  data-rel-x="0" data-rel-y="2500" data-rotate="450" data-scale="3">
+    <h1>六、Git 提交规范</h1>
+    <p>提交规范有何意义？</p>
+    <p>1.可维护</p>
+    <p>2.提供更多的信息，方便排查与回退</p>
+    <p>3.过滤关键字，迅速定位</p>
+    <p>4.方便生成文档 Change log</p>
+</div>
+
+<div id="rule" class="step markdown"  data-rel-x="1800" data-rel-y="1800" data-rotate="450" data-scale="3">
+## 简单规则1
+* `[type]([scope]): [subject]`
+* Type：commit 的类别，只允许使用下面7个标识。</p>
+    * feat：新功能（feature）
+    * fix：修补bug
+    * docs：文档（documentation）
+    * style： 格式（不影响代码运行的变动）
+    * refactor：重构
+    * test：增加测试
+    * chore：构建过程或辅助工具的变动
+-----
+## 简单规则2
+* Scope: 用于说明 commit 影响的范围，比如数据层、控制层、视图层等等，视项目不同而不同
+* Subject：是 commit 目的的简短描述，不超过 50 个字符。
+    * 以动词开头，使用第一人称现在时，比如 change，而不是 changed 或 changes
+    * 第一个字母小写
+    * 结尾不加句号（.）
+-----
+## 简单规则3
+    "config": {
+        "validate-commit-msg": {
+            "types": [
+                "feat",
+                "fix",
+                "docs",
+                "style",
+                "refactor",
+                "test",
+                "chore"
+                ],
+            "scope": {
+                "required": false,
+                "allowed": [
+                    "view",
+                    "model",
+                    "service",
+                    "config"
+                    ],
+                "validate": true,
+                "multiple": true
+            }
+        },
+        "ghooks": {
+            "commit-msg": "validate-commit-msg"
+        }
+    },
+
+</div>
+<div id="base" class="step slide"  data-rel-x="-200" data-rel-y="2000" data-z="2000" data-rotate="450" data-scale="3">
+    <h1>七、.git 文件夹的秘密</h1>
+    <p class="fade-in fade-out">Git 相对于传统的版本控制系统，更加强大和灵活。</p>
+    <p class="fade-in fade-out" style="transition-delay: 2s">众多的命令和参数也很容易让人望而却步，如果不了解 Git 的内部原理，想用顺手就难上加难了。</p>
+    <p class="fade-in fade-out" style="transition-delay: 4s">所以，我们需要从他的存储原理出发，<br /> 深入的了解，这样才能知其所以然。</p>
+    <img src="images/secret.png" />
+</div>
+<div id="base1" class="step slide"  data-rel-x="-500" data-rel-y="3500" data-rotate="480" data-scale="3">
+    <p>Git 的本质是一个文件系统，其工作目录中的所有文件的历史版本以及提交记录( Commit )都是以文件对象的方式保存在 .git 目录中的。 </p>
+    <img src="images/git-dir.png" />
+    <p>该目录将用于保存工作区中所有的文件历史的历史版本，提交记录，branch，tag等信息。</p>
+    
+</div>
+<div id="base2" class="step markdown"  data-rel-x="-2000" data-rel-y="2800" data-rotate="510" data-scale="3">
+        .
+        ├── HEAD                     工作目录当前状态对应的commit，一般来说是当前branch的head
+        ├── config                   git配置信息，包括用户名，email，remote repository的地址，本地branch和remote
+        ├── description              该git库的描述信息
+        ├── hooks                    钩子程序，可以被用于在执行git命令时自动执行一些特定操作
+        │   ├── applypatch-msg.sample
+        │   ├── commit-msg.sample
+        │   ├── fsmonitor-watchman.sample
+        │   ├── post-update.sample
+        │   ├── pre-applypatch.sample
+        │   ├── pre-commit.sample
+        │   ├── pre-push.sample
+        │   ├── pre-rebase.sample
+        │   ├── pre-receive.sample
+        │   ├── prepare-commit-msg.sample
+        │   └── update.sample
+        ├── index
+        ├── info
+        │   └── exclude
+        ├── logs
+        │   ├── HEAD
+        │   └── refs
+        ├── objects        保存git对象的目录，包括三类对象commit,tag, tree和blob
+        │   ├── 05
+        │   ├── ...
+        │   ├── f8
+        │   ├── info
+        │   └── pack
+        ├── packed-refs
+        └── refs           保存branch和tag对应的commit
+            ├── heads      branch对应的commit
+            ├── remotes
+            └── tags       tag对应的commit
+</div>
+<div id="base3" class="step markdown"  data-rel-x="-3000" data-rel-y="1500" data-rotate="540" data-scale="3">
+        ├── objects
+        │   ├── 05
+        │   │   └── 1024e645d871316c7c121a0b679d4e28d31154
+        │   ├── 0a
+        │   │   └── ae6b80dc44dbaa0af78d5eda1d8128f2b34451
+        │   ├── f8
+        │   │   └── c7e50c201765c456ddbf21e9ea5b3e6a936920
+        │   ├── info
+        │   └── pack
+        │       ├── pack-917f72660952983275f4395c752a563a402a35a4.idx
+        │       └── pack-917f72660952983275f4395c752a563a402a35a4.pack
+
+### 查看 Git Object 存储内容
+* 通过 git cat-file 命令可以查看 Git Object 中存储的内容及对象类型，命令参数为 Git Object 的 SHA-1 哈希值，即目录名+文件名。
+-----
+### 我们来看一下 HEAD 存了什么
+* 执行 cat HEAD
+    * 屏幕会输出：ref: refs/heads/master
+* 我们得到了目前 HEAD 对应的分支
+    * 继续输入：cat .git/refs/heads/master
+* 通过分支查到了 commit 对象，输出：
+    * 60519d7143abe471a29073f2cd3f232e24f754ae
+-----
+## 杀手锏 cat-file
+![git](images/cat-file.png)
+
+* -t 查看文件类型：git cat-file -t 60519d
+* -p 查看文件内容：git cat-file -p 60519d
+* commit 对象中保存了commit 的作者、描述信息、签名信息以及该 commit 中包含 tree 对象和 blob 对象。
+
+-----
+## 查看 tree 对象
+* git cat-file -p 7b8458a
+
+![git](images/cat-file1.png)
+
+-----
+## 查看 blob 对象
+* git cat-file -p 488ffe89f
+
+![git](images/cat-file2.png)
+-----
+## 总结
+根据上述实验，其实存在三个类型：
+
+* Blob：文件对象，对应一个对象
+* Tree：目录对象，存储目录结构和文件
+* Commit：Commit 对象中保存了 Commit 的作者，描述信息，签名信息以及该 Commit 中包含哪些 Tree 对象和 Blob 对象。
+
+一个 Branch 其实只是一个 Commit 对象的应用， Git 并不会为每个 Branch 存储一份拷贝，因此在 Git 中创建 Branch 几乎没有任何代价。
+</div>
+<div id="question" class="step"  data-rel-x="-3000" data-rel-y="1500" data-rotate="540" data-scale="7">
+    <h1>Q&A</h1>
+    <img src="images/question.png" />
+</div>
+<div id="thank" class="step"  data-rel-x="0" data-rel-y="3500" data-rotate="180" data-scale="2">
+    <img src="images/thanks.png" />
+</div>
+
+
+
+
+<div id="overview" class="step" data-x="5000" data-y="4000" data-scale="10" style="pointer-events: none;" data-rotate="5">
+</div>
+
+</div>
+
+<div id="impress-toolbar"></div>
+<div id="impress-help"></div>
+
+
+<!-- Extra modules
+     Load highlight.js, mermaid.js and markdown.js from extras.
+     See also src/plugins/extras/extras.js -->
+<script type="text/javascript" src="../../extras/highlight/highlight.pack.js"></script>
+<script type="text/javascript" src="../../extras/mermaid/mermaid.min.js"></script>
+<script type="text/javascript" src="../../extras/markdown/markdown.js"></script>
+
+<!--
+    To make all described above really work, you need to include impress.js in the page.
+    You also need to call a `impress().init()` function to initialize impress.js presentation.
+    And you should do it in the end of your document. 
+-->
+<script type="text/javascript" src="../../js/impress.js"></script>
+<script>impress().init();</script>
+</body>
+</html>
