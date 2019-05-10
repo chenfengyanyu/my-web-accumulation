@@ -1,0 +1,372 @@
+/***** Fonts *****/
+
+/* @import url(http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic|Cutive+Mono); */
+@import url(fonts.css);
+
+
+/***** Fallback message *****/
+
+.fallback-message {
+    font-family: sans-serif;
+    line-height: 1.3;
+
+    width: 780px;
+    padding: 10px 10px 0;
+    margin: 20px auto;
+
+    border: 1px solid #E4C652;
+    border-radius: 10px;
+    background: #EEDC94;
+}
+
+.fallback-message p {
+    margin-bottom: 10px;
+}
+
+.impress-supported .fallback-message {
+    display: none;
+}
+
+/***** Per slide hacks *****/
+
+div#step-4 > p:last-child {
+    margin-top: 150px;
+    font-size: 0.5em;
+    text-align: right;
+}
+
+div#tilted-slide {
+    text-shadow: 20px 20px 10px rgba(0, 0, 0, .4);
+}
+div#tilted-slide h1 {
+    margin-top: 200px;
+}
+
+/***** Menu where this style is selected *****/
+.css-menu-bw {
+    border: solid 1px rgb(102, 102, 102);
+}
+
+.effects .css-menu-bw,
+.devopsy .css-menu-bw {
+    border: none;
+}
+
+/***** Presentation *****/
+
+body {
+    font-family: 'PT Sans', sans-serif;
+    min-height: 740px;
+
+    /* background: #fff; */
+    background-image: radial-gradient(rgba(255, 255, 255, 1),rgba(155, 155, 155, 0.9));
+}
+
+.step {
+    position: relative;
+    width: 900px;
+    height: 700px;
+    padding: 0px 60px;
+    margin: 20px auto;
+
+    box-sizing:         border-box;
+
+    color: rgb(102, 102, 102);
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 30px;
+    letter-spacing: -1px;
+    line-height: 1.5;
+}
+
+.slide {
+    display: block;
+
+    width: 900px;
+    height: 700px;
+    padding: 40px 60px;
+
+    background-image: url(../images/background.png);
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 30px;
+    letter-spacing: -1px;
+}
+
+#start .box {
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 100%;
+}
+.box img{
+    width: 544px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -165px 0 0 -272px;
+}
+
+/*
+    Make inactive steps a little bit transparent.
+*/
+.impress-enabled .step {
+    margin: 0;
+    opacity: 0.2;
+    transition:         opacity 1s;
+}
+.impress-enabled .step.active { opacity: 1 }
+
+.notes {
+    display: none;
+}
+
+h1, 
+h2, 
+h3 {
+    margin-bottom: 0.3em;
+    margin-top: 0.5em;
+    text-align: center;
+}
+
+p {
+    margin: 0.3em;
+}
+
+li {
+    margin: 0.2em;    
+}
+
+/* Highlight.js used for coloring pre > code blocks. */
+pre > code {
+    font-size: 14px;
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+/* Inline code, no Highlight.js */
+code {
+    font-family: "Cutive mono","Courier New", monospace;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+    padding: 0 0.1em;
+    text-shadow: -1px 1px 2px rgba(100,100,100,0.9);
+    border-radius: 0.2em;
+
+    transition:         0.5s;
+}
+a:hover,
+a:focus {
+    text-shadow: -1px 1px 2px rgba(100,100,100,0.5);
+}
+
+blockquote {
+    font-family: 'PT Serif';
+    font-style: italic;
+    font-weight: 400;    
+}
+
+em {
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .3);    
+}
+
+strong {
+    text-shadow: -1px 1px 2px rgba(100,100,100,0.5);
+}
+
+q {
+    font-family: 'PT Serif';
+    font-style: italic;
+    font-weight: 400;    
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .3);
+}
+
+strike {
+    opacity: 0.7;
+}
+#visua img, #terminal img, #zucheng img, #result img, #limit img, #base1 img, #thank img{
+    width: 100%;
+}
+#limit2, #question, #thank{
+    text-align: center;
+}
+#index img, #base img, #basic img{
+    width: 300px;
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+}
+#task img{
+    width: 390px;
+    position: absolute;
+    bottom: 1em;
+    right: 0em;  
+}
+#limit2 img{
+    height: 100%;
+}
+#question img {
+    height: 80%;
+}
+#thank{
+    display: flex;
+    align-items: center;
+}
+#jizhong .one, #fenbu .one{
+    text-align: center;
+}
+#jizhong img{
+    margin-top: 1.8em;
+    width: 308px;
+}
+#status img {
+    width: 400px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+#svn img{
+    width: 500px;
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+}
+img[alt = 'git']{
+    width: 100%;
+}
+
+img {
+    /* width: 100%; */
+}
+
+/* img {
+    width: 300px;
+    float: right;
+    margin-left:   40px;
+    margin-right:   0px;
+    margin-top:    20px;
+    margin-bottom: 20px;    
+} */
+
+
+/* 
+    Specific styles for: .title steps
+*/
+
+.title h1,
+.title h2,
+.title h3 {
+    position: absolute;
+    left: 45px; /* slide width is 900px, so this is like a 5% margin on both sides */
+    width: 90%;
+    text-align: center;    
+}
+.title h1 { top: 50px; }
+.title h2 { top: 400px; }
+.title h3 { top: 500px; }
+
+
+
+/***** Plugins ******/
+.impress-enabled div#impress-toolbar {
+    position: fixed;
+    right: 1px;
+    bottom: 1px;
+    opacity: 0.6;
+}
+.impress-enabled div#impress-toolbar > span {
+    margin-right: 10px;
+}
+body.impress-mouse-timeout div#impress-toolbar {
+    display: none;
+}
+body.impress-mouse-timeout {
+    cursor: none;
+}
+/* Help popup plugin */
+.impress-enabled #impress-help {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
+    color: #EEEEEE;
+    font-size: 80%;
+    position: fixed;
+    left: 2em;
+    bottom: 2em;
+    width: 24em;
+    border-radius: 1em;
+    padding: 1em;
+    text-align: center;
+    z-index: 100;
+    font-family: Verdana, Arial, Sans;
+}
+.impress-enabled #impress-help td {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+/*
+ fly-in class starts from a position outside the slide, then flies into it's correct position.
+*/
+.future .fly-in {
+    transform: translateY(-700px);
+    opacity: 0.0; /* Make it invisible, just so it doesn't clutter some other slide that might be in the position where we moved it */
+}
+.present .fly-in {
+    transform:         translateY(0px);
+    opacity: 1.0;
+    transition:         2s;
+}
+.past .fly-out {
+    transform:         translateY(700px);
+    opacity: 0.0;
+    transition:         2s;
+}
+
+/*
+   Fade-in/out is a straightforward fade. Give it enough seconds that all browsers render it clearly.
+*/
+.future .fade-in {
+    opacity: 0.0;
+}
+.present .fade-in {
+    opacity: 1.0;
+    transition: 3s;
+}
+.past .fade-out {
+    opacity: 0.0;
+    transition: 3s;
+}
+/*
+    Zoom-in.
+*/
+.future  .zoom-in {
+    transform:        scale(10);
+    opacity: 0.0;    
+}
+.present .zoom-in {
+    transform:         scale(1);
+    opacity: 1.0;
+    transition: 3s;
+}
+.past  .zoom-out {
+    transform:        scale(10);
+    opacity: 0.0;    
+}
+
+
+
+
+/*
+   Disable mouse clicks / focus for body
+*/
+.impress-enabled                          { pointer-events: none }
+.impress-enabled #impress                 { pointer-events: auto }
+.impress-enabled #impress-toolbar         { pointer-events: auto }
+.impress-enabled #impress-console-button  { pointer-events: auto }

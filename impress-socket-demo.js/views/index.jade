@@ -1,0 +1,23 @@
+html
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport',content='width=1024')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic',rel='stylesheet')
+    link(rel='stylesheet', href='/css/impress-demo.css')
+    link(rel='shortcut icon', href='/images/favicon.png')
+    link(rel='apple-touch-icon', href='/images/apple-touch-icon.png')
+    script(src="/js/jquery-1.4.2.min.js")
+  body
+    !{tmpl}
+    script(src="/js/impress.js")
+    script impress().init();
+    if mode !== "standard"
+      script(src="/socket.io/socket.io.js")
+      if mode == "live"
+        script(src="/js/audience_socket.js")
+        script impressiv('#{presi}');
+      else
+        script(src="/js/host_socket.js")
+        script impressiv('#{presi}','#{session}');
