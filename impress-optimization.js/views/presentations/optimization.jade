@@ -1,0 +1,301 @@
+#impress.impress-not-supported
+  .impress(data-transition-duration="1000")
+    .step#op-sign.step(data-x=1000,data-y=1000)
+        h1 签到
+        img(src="/images/opt/sign.jpg")
+    .step#op-title.step(data-x=1000,data-y=1100, data-rotate-x=-90,data-rotate-y=0)
+        div 将优化做到极致
+    .step#op-catalog.step(data-x=1000,data-y=30000, data-rotate-x=-90,data-rotate-y=0)
+        h1 目录
+        ul
+            li 一、案例展示
+            li 二、优化的意义
+            li 三、方法论：优化模型 🌟
+            li 四、通用性能指标 🌟
+            li 五、常规手段 🌟
+            li 六、新时代 🌟
+            li 七、优化性能利器 🌟
+            li 八、无障碍标准
+            li 九、研究用户心理学
+            li 十、AB 对照实验
+    .step#op-show.step(data-x=2500,data-y=30000, data-rotate-x=-90,data-rotate-y=0)
+        h1 一、案例展示
+        div
+            img(src="/images/opt/b.png")
+            img(src="/images/opt/a.png")
+            img(src="/images/opt/t.png")
+    .step#op-score1.step(data-x=4500,data-y=30000, data-rotate-x=-90,data-rotate-y=0)
+        div
+            img(src="/images/opt/score.png")
+            img(src="/images/opt/score1.png")
+            p.fly-out.fly-in(style="transition-delay: 1s") 互联网巅峰，这样的数据，品牌形象会大打折扣！
+    .step#op-mean.step(data-x=4500,data-y=30000,data-z=-1000, data-rotate-x=-90,data-rotate-y=0)
+        h1 二、优化的意义
+        .box
+            .left
+                p 用户角度
+                span 网站优化能够让页面加载得更快，响应更加及时，极大提升用户体验。
+            .right
+                p 服务商角度
+                span 优化会减少页面资源请求数，减小请求资源所占带宽大小，从而节省可观的带宽资源。
+    .step#op-relation.step(data-x=5600,data-y=30000,data-z=-1200, data-rotate=30)
+        img(src="/images/opt/rela.png")
+    .step#op-relation1.step(data-x=6500,data-y=30000,data-z=-1000, data-rotate=60, data-rotate-x=-60,data-rotate-y=0)
+        p Google 研究表明，页面加载的时间从 <span class="color">0.4</span> 秒提升到 <span class="color">0.9</span> 秒导致丢失了 <span class="color">20%</span> 流量和广告收入。
+        p 对于亚马逊，页面加载时间每增加 <span class="color">100</span> 毫秒就意味着 <span class="color">1%</span> 的销售额损失。
+    .step#op-task.step(data-x=8000,data-y=30000,data-z=-2000, data-rotate=60, data-rotate-x=-90,data-rotate-y=60)
+        h1 Web 前端开发工程师的职责？
+        p 制作标准优化的代码，增加交互动态功能，然后结合后台开发技术模拟整体效果，进行丰富互联网的 Web 开发，致力于<span class="color noticed"> 通过技术手段来提升用户体验。</span>
+    .step#op-important.step(data-x=6000,data-y=30000,data-z=-3000, data-rotate=60, data-rotate-x=-90,data-rotate-y=60)
+        h1 网站优化的目标
+        p 1. 尽可能减少网站加载时间
+        p 2. 最大程度提高用户响应速度
+        p 3. 显著提升用户体验
+        p.result 终极目标：<span class="color">将优化做到极致！</span>
+        img.zoom-out.zoom-in(src="/images/opt/important.png")
+    .step#op-modal.step(data-x=6000,data-y=28000)
+        h1 三、方法论
+        img(src="/images/opt/modal.png")
+    .step#op-desc.step(data-x=8000,data-y=26000, data-rotate-x=-90,data-rotate-y=90)
+        h1 优化模型
+        p 1. 通过 QA，RD，用户，发现站点加载慢的问题；
+        p 2. 通过性能工具，分析问题；
+        p 3. 对前端，客户端进行埋点，收集更多数据；
+        p 4. 分析性能报表，找到网站性能瓶颈；
+        p 5. 制定优化方案，实施优化过程；
+        p 6. 以 AB 实验方式，对比优化前后性能报表，产出优化效果；
+        p 7. 不断分析网站性能瓶颈，进行<span class="color">持续优化</span>；
+    .step#op-timing.step(data-x=6000,data-y=23000)
+        h1 四、通用性能指标
+        img(src="/images/opt/timing.png")
+    .step#op-common.step(data-x=6000,data-y=20000, data-rotate-x=-90,data-rotate-y=90)
+        h1 常用指标
+        p 1. <span class="color">DNS 查询耗时</span>：domainLookupEnd - domainLookupStart
+        p 2. <span class="color">TTFB（Time To First Byte）</span>: responseStart-connectStart 是指网络请求被发起到从服务器接收到第一个字节的这段时间，它包含了 TCP 连接时间、发送 HTTP 请求时间和获得响应消息第一个字节的时间。
+        p 3. <span class="color">解析 DOM 树耗时</span>： domComplete - domInteractive
+        p 4. <span class="color">首次渲染（First Paint）</span>：responseStart - navigationStart
+        p 5. <span class="color">首次有效渲染（First-Contentful-Paint）</span>：performance.getEntriesByType('paint')
+        p 6. <span class="color">页面可交互时间（domready）</span>：domContentLoadedEventEnd - navigationStart
+        p 7. <span class="color">onload 时间</span>：loadEventEnd - navigationStart
+    .step#op-compare.step(data-x=6500,data-y=19000, data-rotate-x=-90,data-rotate-y=90)
+        h1 性能评估
+        img(src="/images/opt/score2.png")
+        img(src="/images/opt/before.png")
+        img(src="/images/opt/after.png")
+    .step#op-method.step(data-x=5500,data-y=18000, data-rotate-x=-45,data-rotate-y=90)
+        h1 五、常规手段
+        p.color 《雅虎军规》《网页优化黄金法则》
+        p 1、尽量减少 HTTP 请求次数 
+        p 2、减少 DNS 查找次数
+        p 3、避免跳转，404 错误
+        p 4、推迟加载首屏外内容 
+        p 5、预加载首屏相关内容
+        p 6、减少 DOM 元素数量 
+        p 7、根据域名划分页面内容 
+        p 8、使 IFrame 的数量最小
+        p 9、使用内容分发网络 CDN 加速
+        p 10、为文件头指定 Expires 或 Cache-Control，配置 ETag
+    .step#op-method2.step(data-x=5000,data-y=17000, data-rotate-x=0,data-rotate-y=90)
+        p 11、开启 Gzip 压缩 
+        p 12、把 CSS 置于顶部，把 JS 置于页面底部
+        p 13、避免使用 CSS 表达式（Expression），避免使用滤镜
+        p 14、使用外部 JavaScript 和 CSS 
+        p 15、削减 JavaScript 和 CSS 
+        p 16、用 link 代替 @import 
+        p 17、开发智能事件处理程序-使用 Event Delegation（事件代理)
+        p 18、减小 Cookie 体积，对于页面内容使用无 Coockie 域名
+        p 19、优化图像大小，CSS Spirit，此外不要在 HTML 中缩放图像，Favicon.ico 要小而且可缓存
+        p 20、保持单个内容小于 25K
+    .step#op-new.step(data-x=5000,data-y=16000, data-rotate-x=90,data-rotate-y=0)
+        h1 六、新时代
+        img(src="/images/opt/webpack.png")
+    .step#op-webpack.step(data-x=6500,data-y=15000, data-rotate-x=90,data-rotate-y=0)
+        h1 优化 Webpack
+        p 1. <span class="color">合理使用 SourceMap</span>
+        p 本质上是映射关系（会使构建速度变慢），dev: cheap-module-eval-source-map (速度较快，且能定位到错误信息)
+        p 2. <span class="color">代码分割 Code Spliting</span>
+        p 分离业务代码和业务公共代码和第三方依赖。
+        p 3. <span class="color">Tree Shaking</span>
+        p 摇树，去掉不需要的部分，只支持 Es Module。
+        p 4. <span class="color">Scope Hoisting</span>
+        p 使代码体积更小，因为函数声明语句会产生大量代码。
+        p 代码在运行时创建的作用域变少，所以内存开销也变小。
+    .step#op-webpack2.step(data-x=7500,data-y=14000, data-rotate-x=-90,data-rotate-y=0)
+        p 5. <span class="color">使用 DllPlugin 优化打包</span>
+        p DllPlugin 和 DllReferencePlugin 提供分离包的方式可以大大提高构建时间性能。将一些不做修改的依赖文件提前打包，这样我们开发代码发布的时候就不需要再对这部分代码进行打包。
+        p 6. <span class="color">Happypack 多进程打包</span>
+        p Thread-loader(webpack 4+) 和 Parallel-Webpack 也可以进行多进程打包
+        p 更多请参考@林世玉同学 <a href="https://ebook.gaotu100.com/febook/lsy/learn5.html">Webpack 4.0 优化</a>。
+    .step#op-option.step(data-x=7500,data-y=14000, data-rotate-x=-90,data-rotate-y=90)
+        h1 M 站最佳实践
+        img(src="/images/opt/m.png")
+    .step#op-why.step(data-x=7500,data-y=12000, data-rotate-x=0,data-rotate-y=180)
+        h1 补充
+        p 1. 为什么要拆包，拆到什么程度？
+        p 在 Chrome 浏览器，对于同一个域名，最多支持 6 个请求的并发，其他的请求将会推入到队列中等待或者停滞不前，直到六个请求之一完成后，队列中新的请求才会发出。
+        p <span class="color">文件大小控制在 30 kb，文件多少控制在 6 个。</span>
+        p 2. 有哪些配置可以优化？
+        p <a href="https://webpack.js.org/configuration/optimization/">Webpack Optimization</a>
+    .step#op-content.step(data-x=7500,data-y=11000, data-rotate-x=0,data-rotate-y=180)
+        h1 优化内容效率
+        p 1. 避免不必要的下载
+        p 有多少用户在轮播器中查看多张照片？可能给大多数访问者造成了不必要的昂贵下载开销，让他们下载了很多永远不会查看的资源。
+        p 2. 消除多余的图像资源
+        p 3. 用 CSS3 效果替换图片
+        p 4. 用网页字体取代图像文字
+        p 5. 使用 SVG，压缩 SVG，并启用 GZIP 压缩；
+        p 6. 位图优化：减少「位深」，优化相邻像素，直接使用现成<a href="https://tinypng.com"> TinyPng </a>。
+        
+    .step#op-content2.step(data-x=7500,data-y=11000, data-rotate-x=-90,data-rotate-y=0)
+        p 7. 图像优化依赖有损和无损压缩来实现
+        p 使用「有损」过滤器处理图像，去除某些像素数据
+        p 使用「无损」过滤器处理图像，对像素数据进行压缩
+        p 8. 使用 WebP 格式：WebP 是 Google 最新开发的新图像格式，旨在以可接受的视觉质量为无损和有损压缩提供较小的文件大小。
+        p 9. 如果用到了 Gif， 可以通过<a href="http://www.lcdf.org/gifsicle/"> Gifsicle </a> 来优化处理，或者通过<a href="https://github.com/airbnb/lottie-web"> lottie </a>处理复杂动画
+        p 10. 提供大小合适的图片(Srcset)：尤其要密切注意大型图像，因为在调整尺寸时，这类图像占用的开销最大！
+        p ......
+    .step#op-js.step(data-x=7500,data-y=9000, data-rotate-x=-90,data-rotate-y=0)
+        h1 处理 JS 脚本
+        p Chrome DevTools（Command+Shift+Paint）打开面板
+        p 查找：<span class="color">Show Third Party Badges</span>
+        div.box
+            img.left(src="/images/opt/third.png")
+            img.right(src="/images/opt/third1.png")
+    .step#op-request.step(data-x=6000,data-y=8000, data-rotate-x=-90,data-rotate-y=0)
+        h1 请求阻塞
+        img(src="/images/opt/request.png")
+        p 开启：选中资源，鼠标右键 <span class="color">Block Request URL</span>
+        p 作用：找到不必要加载的 JS 文件
+    .step#op-async.step(data-x=6000,data-y=8000, data-rotate-x=0,data-rotate-y=0)
+        h1 Async or Defer ?
+        img(src="/images/opt/async.png")
+    .step#op-dom.step(data-x=5000,data-y=8000, data-rotate-x=0,data-rotate-y=45)
+        h1 Dom 最佳实践
+        p 大的 Dom 树会对页面产生严重的影响，主要集中在：
+        p <span class="color">A. 网络效率和负载性能</span>
+        p 如果服务器附带了一个大型 DOM 树，则可能会发送大量不必要的字节。
+        p <span class="color">B. 运行时性能</span>
+        p 当用户和脚本与页面交互时，浏览器必须不断重新计算节点的位置和样式。
+        p <span class="color">C. 内存性能</span>
+        p 如果使用常规查询选择器，我们可能会在不知不觉中存储对大量节点的引用，这可能会大量占用用户设备的内存。
+ 
+    .step#op-dom2.step(data-x=4000,data-y=7000, data-rotate-x=0,data-rotate-y=0)
+        h1 Dom 节点控制在什么范围才合理呢？
+        p 1. 总共少于 <span class="color">1500</span> 个节点
+        p 2. 最大深度为 <span class="color">32</span> 个节点
+        p 3. 不要存在子节点超过 <span class="color">60</span> 个节点的父节点
+        p.desc 通常，只在需要时查找创建 DOM 节点的方法，并在<span class="color">不再需要时销毁</span>它们。
+
+    .step#op-path.step(data-x=3000,data-y=7000, data-rotate-x=0,data-rotate-y=0)
+        h1 关键渲染路径
+        p <span class="color">1. 关键资源</span>
+        p 可能阻止网页首次渲染的资源。
+        p <span class="color">2. 关键路径长度</span>
+        p 获取所有关键资源所需的往返次数或总时间。
+        p <span class="color">3. 关键字节</span>
+        p 实现网页首次渲染所需的总字节数，它是所有关键资源传送文件大小的总和。
+
+    .step#op-path2.step(data-x=2000,data-y=7000, data-rotate-x=0,data-rotate-y=0)
+        h1 关键渲染路径三要素
+        p 1. 页面首次渲染需要的关键资源数量
+        p 2. 关键资源的大小
+        p 3. 关键渲染路径的往返次数（Roundtrip）
+        p.desc 我们的策略也非常简单，就是<span class="color">减少关键资源数量，降低资源大小，减少关键路径的往返次数</span>。
+    .step#op-process.step(data-x=2000,data-y=7000, data-rotate-x=90,data-rotate-y=0)
+        h1 JS 解析过程
+        div.box
+            div.left
+                p 当 HTML 解析过程中遇到一个 Script 标记时，它会暂停 DOM 构建，将控制权移交给 JS 引擎，等 JS 引擎运行完毕，浏览器再从中断的地方恢复 DOM 构建。
+                p 也就是说，<span class="color">执行内联的 JS 会阻塞页面的首次渲染</span>。
+            div.right
+                img(src="/images/opt/process.png")
+    .step#op-dns.step(data-x=2000,data-y=6000, data-rotate-x=0,data-rotate-y=0)
+        h1 最优配置 DNS
+        p DNS（Domain Name System，域名系统），作为域名和 IP 地址相互映射的一个<span class="color">分布式数据库</span>，能够使用户更方便的访问互联网，而不用去记住 IP 数串。
+        img(src="/images/opt/dns.png")
+    .step#op-dns2.step(data-x=3000,data-y=6000, data-rotate-x=0,data-rotate-y=0)
+        h1 DNS 优化点
+        p <span class="color">1. 设置 TTL（Time-To-Live）</span>
+        p 域名解析记录在 DNS 服务器中的存留时间。
+        img.block(src="/images/opt/ttl.jpg")
+        p <span class="color">2. DNS 预加载（DNS Prefetch）</span>
+        p  DNS 预解析技术，当你浏览网页时，浏览器会在加载网页时对网页中的域名进行解析缓存，这样在你单击当前网页中的连接时就无需进行 DNS 的解析。
+    .step#op-http2.step(data-x=3000,data-y=5000, data-rotate-x=0,data-rotate-y=0)
+        h1 拥抱 HTTP2
+        p 优化相关的三部分：<span class="color">多路复用，首部压缩，服务端推送</span>。
+        img(src="/images/opt/http2.gif")
+    .step#op-mobile.step(data-x=3000,data-y=4000, data-rotate-x=90,data-rotate-y=0)
+        h1 移动端 H5 - 加载原理
+        img(src="/images/opt/mobile.png")
+    .step#op-mobile2.step(data-x=2500,data-y=3000, data-rotate-x=90,data-rotate-y=0)
+        h1 移动端 H5 - 优化策略
+        img(src="/images/opt/mobile2.png")
+    .step#op-tools.step(data-x=1500,data-y=3000, data-rotate-x=0,data-rotate-y=0)
+        h1 七、优化性能利器
+        p 1. Lighthouse 和 PageSpeed
+        img(src="/images/opt/score2.png")
+        p 2. Coverage
+        img(src="/images/opt/coverage.png")
+    .step#op-tools2.step(data-x=1500,data-y=2000, data-rotate-x=0,data-rotate-y=0)
+        p 3. Performance
+        img(src="/images/opt/performance.png")
+    .step#op-tools3.step(data-x=2500,data-y=2000, data-rotate-x=0,data-rotate-y=0)
+        p 4. Rendering
+        p 绿色区域越重，说明<span class="color">重复渲染的次数越多</span>，通过优化 DOM 来减少无效渲染。
+        img(src="/images/opt/render2.png")
+        img(src="/images/opt/render.png")
+        
+    .step#op-tools4.step(data-x=3500,data-y=2000, data-rotate-x=0,data-rotate-y=0)
+        p 5. Request Blocking
+        p 控制变量，剔除页面无效加载内容，或延后加载。
+        img(src="/images/opt/request.png")
+    .step#op-tools5.step(data-x=4500,data-y=2000, data-rotate-x=0,data-rotate-y=0)
+        p 6. Layers
+        p 确定是否有首屏之外的元素加载内容。
+        img(src="/images/opt/layer.png")
+    .step#op-tools6.step(data-x=5500,data-y=2000, data-rotate-x=0,data-rotate-y=0)
+        p 7. Web Disability Simulator
+        img(src="/images/opt/disability.png")
+        p 8. Siteimprove Accessibility Checker
+        img(src="/images/opt/access.png")
+    .step#op-tools7.step(data-x=6500,data-y=2000, data-rotate-x=0,data-rotate-y=0)
+        p 9. Website SEO Checker
+        img(src="/images/opt/seo.png")
+    .step#op-tools8.step(data-x=7500,data-y=2000, data-rotate-x=0,data-rotate-y=0)
+        p 10. Colour Contrast Analyser
+        p 最佳对比度调色板 <a href="https://developer.paciellogroup.com/resources/contrastanalyser/">Colour Contrast Analyser</a>
+        img(src="/images/opt/contrast.png")
+    .step#op-solves.step(data-x=7500,data-y=1000, data-rotate-x=0,data-rotate-y=0)
+        p 八、无障碍标准
+        img(src="/images/opt/solves.jpg")
+    .step#op-heart.step(data-x=7500,data-y=0, data-rotate-x=0,data-rotate-y=45)
+        p 九、研究用户心理学
+        p <span class="color">1.举例</span>
+        p - 淘宝式骨架图，恍惚间以为样式都加载出来了
+        p - 懒加载的大敌「图片露头」；
+        p - 奇妙的 Loading；
+        p <span class="color">2.用户心理</span>
+        p - 韦伯定律：差别阈限
+        p - 知觉定势：尊重大多数人的习惯
+        p - 颜色对性别的差异
+        p - 短时记忆的 7±2 效应
+    .step#op-color.step(data-x=5000,data-y=0, data-rotate-x=0,data-rotate-y=45)
+        p 性别颜色偏向
+        img(src="/images/opt/color.png")
+        img(src="/images/opt/color2.png")
+    .step#op-ab.step(data-x=3000,data-y=0, data-rotate-x=0,data-rotate-y=45)
+        h1 十、AB 对照实验
+        p 一定要养成记录的好习惯，<span class="color">方便对照，得出结论</span>。
+        div.compare
+            img.left(src="/images/opt/before.gif")
+            img.right(src="/images/opt/after.gif")
+    .step#op-qa.step(data-x=1500,data-y=0, data-rotate-x=0,data-rotate-y=45)
+        h1 Q&A
+        img(src="/images/opt/question.png")
+    .step#op-thanks.step(data-x=1500,data-y=-1000, data-rotate-x=0,data-rotate-y=45)
+        img(src="/images/opt/thanks.png")
+    .step#op-feedback.step(data-x=2500,data-y=-1000, data-rotate-x=45,data-rotate-y=45)
+        h1 培训反馈
+        img(src="/images/opt/feedback.jpg")
+
+    .step#overview(data-x="3000", data-y="1500", data-scale="6")
