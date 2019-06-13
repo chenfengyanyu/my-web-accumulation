@@ -14,6 +14,7 @@
     "ink": "^2.2.0",
     "ink-big-text": "^1.0.1",
     "ink-box": "^1.0.0",
+    "ink-color-pipe": "^0.2.0",
     "ink-gradient": "^1.0.0",
     "ink-image": "^2.0.0",
     "ink-link": "^1.0.0",
