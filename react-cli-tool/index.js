@@ -4,4 +4,4 @@ require("@babel/register")({
     presets: ["@babel/preset-env", "@babel/preset-react"]
 });
 
-require('import-jsx')('./demo/box1');
+require('import-jsx')('./demo/gradient');
