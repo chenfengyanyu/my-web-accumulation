@@ -7,7 +7,6 @@ class BoxDemo extends React.Component {
     render() {
         return (
             <Box>
-                <div style="background: green;width: 50px;height: 30px;"></div>
                 <Static>
                     <Text bold>I am bold</Text>
 	            </Static>
