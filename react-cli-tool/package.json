@@ -16,6 +16,7 @@
     "ink-box": "^1.0.0",
     "ink-color-pipe": "^0.2.0",
     "ink-divider": "^2.0.0",
+    "ink-figlet": "^1.0.3",
     "ink-gradient": "^1.0.0",
     "ink-image": "^2.0.0",
     "ink-link": "^1.0.0",
