@@ -1,8 +1,8 @@
 #impress.impress-not-supported
   .impress(data-transition-duration="1000")
     .step#op-sign.step(data-x=1000,data-y=1000)
-        h1 签到
-        img(src="/images/opt/sign.jpg")
+        h1 性能优化小组
+        img(src="/images/opt/team.png")
     .step#op-title.step(data-x=1000,data-y=1100, data-rotate-x=-90,data-rotate-y=0)
         div 将优化做到极致
     .step#op-catalog.step(data-x=1000,data-y=30000, data-rotate-x=-90,data-rotate-y=0)
@@ -105,7 +105,7 @@
         p 17、开发智能事件处理程序-使用 Event Delegation（事件代理)
         p 18、减小 Cookie 体积，对于页面内容使用无 Coockie 域名
         p 19、优化图像大小，CSS Spirit，此外不要在 HTML 中缩放图像，Favicon.ico 要小而且可缓存
-        p 20、保持单个内容小于 25K
+        p 20、保持单个内容小于 35K
     .step#op-new.step(data-x=5000,data-y=16000, data-rotate-x=90,data-rotate-y=0)
         h1 六、新时代
         img(src="/images/opt/webpack.png")
@@ -133,7 +133,7 @@
         h1 补充
         p 1. 为什么要拆包，拆到什么程度？
         p 在 Chrome 浏览器，对于同一个域名，最多支持 6 个请求的并发，其他的请求将会推入到队列中等待或者停滞不前，直到六个请求之一完成后，队列中新的请求才会发出。
-        p <span class="color">文件大小控制在 30 kb，文件多少控制在 6 个。</span>
+        p <span class="color">文件大小控制在 35 kb，文件数量控制在 6 个。</span>
         p 2. 有哪些配置可以优化？
         p <a href="https://webpack.js.org/configuration/optimization/">Webpack Optimization</a>
     .step#op-content.step(data-x=7500,data-y=11000, data-rotate-x=0,data-rotate-y=180)
@@ -254,8 +254,10 @@
         p 确定是否有首屏之外的元素加载内容。
         img(src="/images/opt/layer.png")
     .step#op-tools6.step(data-x=5500,data-y=2000, data-rotate-x=0,data-rotate-y=0)
+        h1 无障碍
         p 7. Web Disability Simulator
         img(src="/images/opt/disability.png")
+        p <span class="color">信息，交互无障碍，让所有人都平等方便的获取信息</span>
         p 8. Siteimprove Accessibility Checker
         img(src="/images/opt/access.png")
     .step#op-tools7.step(data-x=6500,data-y=2000, data-rotate-x=0,data-rotate-y=0)
@@ -275,10 +277,14 @@
         p - 懒加载的大敌「图片露头」；
         p - 奇妙的 Loading；
         p <span class="color">2.用户心理</span>
-        p - 韦伯定律：差别阈限
+        p - 韦伯定律：差别阈值
         p - 知觉定势：尊重大多数人的习惯
         p - 颜色对性别的差异
         p - 短时记忆的 7±2 效应
+    .step#taobao.step(data-x=6000,data-y=0, data-rotate-x=0,data-rotate-y=45)
+        p 淘宝骨架屏 VS 普通骨架屏
+        img.right(src="/images/opt/normal.png")
+        img.left(src="/images/opt/tb.png")
     .step#op-color.step(data-x=5000,data-y=0, data-rotate-x=0,data-rotate-y=45)
         p 性别颜色偏向
         img(src="/images/opt/color.png")
@@ -295,7 +301,7 @@
     .step#op-thanks.step(data-x=1500,data-y=-1000, data-rotate-x=0,data-rotate-y=45)
         img(src="/images/opt/thanks.png")
     .step#op-feedback.step(data-x=2500,data-y=-1000, data-rotate-x=45,data-rotate-y=45)
-        h1 培训反馈
-        img(src="/images/opt/feedback.jpg")
+        h1 加入我们 
+        img(src="/images/opt/team.png")
 
     .step#overview(data-x="3000", data-y="1500", data-scale="6")

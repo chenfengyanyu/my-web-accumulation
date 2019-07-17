@@ -858,7 +858,7 @@ h1 {
     flex-direction: column-reverse;
 }
 #op-method .color , #op-webpack .color, #op-webpack2 .color, 
-#op-js .color, #op-dom2 .color, #op-heart .color{
+#op-js .color, #op-dom2 .color, #op-heart .color, #op-tools6 .color{
     color: rgba(25, 160, 31, 0.85);
 }
 #op-path .color, #op-process .color, #op-dns .color, #op-dns2 .color,
@@ -948,4 +948,17 @@ h1 {
 #op-important .result{
     margin-top: 30px;
 }
+#taobao {
+    padding: 0 30px;
+}
+#taobao p{
+    text-align: center;
+    margin-bottom: 20px;
+}
+#taobao .left{
+   float: left;
+}
+#taobao .right{
+    float: right;
+ }
 
