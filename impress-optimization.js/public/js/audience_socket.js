@@ -1,5 +1,5 @@
 var impressiv = function(presi) {
-  var socket = io.connect("http://172.24.61.67:3000");
+  var socket = io.connect("172.20.80.160:3000");
   socket.on('connect', function(data) {
     socket.emit('join', {presi: presi});
   });
