@@ -1,6 +1,10 @@
 impressiv.js
 ============
 
+访问地址：
+http://localhost:3000/host/optimization#/op-sign
+
+
 impressiv.js is node.js app that allows you to host your impress.js
 presentation to an online audience.
 
@@ -43,16 +47,4 @@ It is based to on impress.js so...
 
 VERSION HISTORY
 -----------------
-
-See the first release
-[video](http://www.youtube.com/watch?v=c5fKlqcEcOo).
-
-First release.
-
-Just scrambled together...  works but needs work.
-
-LICENSE
----------
-
-Copyright 2012 David Bankier. Released under MIT License.
 
