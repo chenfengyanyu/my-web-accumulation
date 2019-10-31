@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/barrager.css">
+    <link rel="stylesheet" type="text/css" href="css/pick-a-color-1.2.3.min.css">
+</head>
+
+<body>
+    <section id="custom" class="bb-section">
+        <div class="page-header">
+            <h2>Barrager Demo</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">文字</label>
+                        <div class="col-sm-6">
+                            <input class="form-control" name="info" type="text" placeholder="弹幕文字信息" />
+                        </div>
+                    </div>
+                    <!-- <div class="form-group">
+                        <label class="col-sm-2 control-label">链接</label>
+                        <div class="col-sm-6">
+                            <input class="form-control" name="href" type="text" placeholder="https://m.gaotu.com" />
+                        </div>
+                    </div> -->
+                    <!-- <div class="form-group">
+                        <label class="col-sm-2 control-label">延迟</label>
+                        <div class="col-sm-2">
+                            <input class="form-control" name="speed" type="text" placeholder="6" value="6" />
+                        </div>
+
+                        <label class="col-sm-2 control-label">关闭按钮</label>
+                        <div class="col-sm-2">
+                            <input class="form-control" name="close" type="checkbox" checked>
+                        </div>
+
+                    </div> -->
+                    <!-- <div class="form-group">
+                        <label class="col-sm-2 control-label">高度</label>
+                        <div class="col-sm-4">
+                            <label class="radio-inline">
+                                <input type="radio" name="bottomradio" value="0" checked="checked"> 随机
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="bottomradio" value="1"> 设置
+                            </label>
+                        </div>
+                        <div class="col-sm-2">
+                            <input class="form-control" name="bottom" type="text" placeholder="70" value="70" />
+                        </div>
+                    </div> -->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">图片</label>
+                        <div class="col-sm-6">
+                            <label class="radio-inline">
+                                <input type="radio" name="img" value="cute.png" checked=""> cute.png
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="img" value="haha.gif"> haha.gif
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="img" value="none"> 无图
+                            </label>
+                        </div>
+                    </div>
+                    <!-- <div class="form-group">
+                        <label class="col-sm-2 control-label">颜色</label>
+                        <div class="col-sm-6">
+                            <input type="text" value="fff" name="color" class="pick-a-color form-control">
+                        </div>
+                    </div> -->
+                </form>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"></label>
+                    <div class="col-sm-3">
+                        <button class="btn btn-primary   bb-light-blue" onclick="run()"> 运行</button>
+                    </div>
+                    <div class="col-sm-3">
+                        <button class="btn btn-warning" onclick="clear_barrage()"> 清除</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/tinycolor-0.9.15.min.js"></script>
+    <script type="text/javascript" src="js/jquery.barrager.min.js"></script>
+    <script type="text/javascript" src="js/pick-a-color-1.2.3.min.js"></script>
+    <script type="text/javascript">
+        String.prototype.format = function (args) {
+            var result = this;
+            if (arguments.length < 1) {
+                return result;
+            }
+            var data = arguments;
+            if (arguments.length == 1 && typeof (args) == "object") {
+                data = args;
+            }
+            for (var key in data) {
+                var value = data[key];
+                if (undefined != value) {
+                    result = result.replace("{" + key + "}", value);
+                }
+            }
+            return result;
+        }
+        var barrager_code =
+            'var item={\n' +
+            "   img:'{img}', //图片 \n" +
+            "   info:'{info}', //文字 \n" +
+            "   href:'{href}', //链接 \n" +
+            "   close:{close}, //显示关闭按钮 \n" +
+            "   speed:{speed}, //延迟,单位秒,默认6 \n" +
+            "   bottom:{bottom}, //距离底部高度,单位px,默认随机 \n" +
+            "   color:'{color}', //颜色,默认白色 \n" +
+            "   old_ie_color:'{old_ie_color}', //ie低版兼容色,不能与网页背景相同,默认黑色 \n" +
+            " }\n" +
+            "$('body').barrager(item);"
+            ;
+
+        $(function () {
+
+            // SyntaxHighlighter.all();
+            $(".pick-a-color").pickAColor();
+
+            var default_item = {
+                'img': 'img/heisenberg.png',
+                'info': '弹幕文字信息',
+                // 'href': 'https://m.gaotu.com',
+                'close': true,
+                'speed': 6,
+                'bottom': 70,
+                'color': '#fff',
+                'old_ie_color': '#000000'
+            };
+            var item = { 'img': 'img/heisenberg.png', 'href': 'https://m.gaotu.com', 'info': '这是一条字幕' };
+            $('#barrager-code').val(barrager_code.format(default_item));
+            $('body').barrager(item);
+
+
+
+            //每条弹幕发送间隔
+            var looper_time = 3 * 1000;
+            //是否首次执行
+            var run_once = true;
+            // do_barrager();
+
+            function do_barrager() {
+                if (run_once) {
+                    //如果是首次执行,则设置一个定时器,并且把首次执行置为false
+                    looper = setInterval(do_barrager, looper_time);
+                    run_once = false;
+                }
+                //获取
+                $.getJSON('server.php?mode=1', function (data) {
+                    //是否有数据
+                    if (data.info) {
+
+                        $('body').barrager(data);
+                    }
+
+                });
+            }
+
+            function barrager() { }
+
+        });
+
+        function run() {
+
+            var info = $('input[name=info]').val();
+            (info == '') ? info = '请填写弹幕文字' : info = info;
+            // var speed = parseInt($('input[name=speed]').val());
+            var bottom = parseInt($('input[name=bottom]').val());
+            var code = barrager_code;
+            var window_height = $(window).height();
+            // var window_height = $(window).height() - 250;
+            bottom = Math.floor(Math.random() * window_height + 40);
+            code = code.replace("   top:{bottom}, //距离底部高度,单位px,默认随机 \n", '');
+
+            var img = $('input:radio[name=img]:checked').val();
+            if (img == 'none') {
+                code = code.replace("   img:'{img}', //图片 \n", '');
+            }
+
+
+
+
+            var item = {
+                'img': 'img/' + img,
+                'info': info,
+                // 'href': href,
+                'close': true,
+                'speed': 8 + Math.floor(Math.random() * 20),
+                'bottom': bottom,
+                // 'color': '#' + $('input[name=color').val(),
+                'color': '#'+('00000'+(Math.random()*0x1000000<<0).toString(16)).substr(-6),
+                'old_ie_color': '#' + $('input[name=color').val()
+
+
+
+            };
+
+            if (!$('input[name=close]').is(':checked')) {
+                item.close = false;
+            }
+
+
+            code = code.format(item);
+            console.log(code);
+            $('#barrager-code').val(code);
+            eval(code);
+        }
+
+        function clear_barrage() {
+            $.fn.barrager.removeAll();
+        }
+
+    </script>
+</body>
+
+</html>

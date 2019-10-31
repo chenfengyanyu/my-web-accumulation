@@ -1,0 +1,17 @@
+@import '~antd/dist/antd.css';
+
+.app-box {
+  height: 100vh;
+  background: url(img/bg.jpg);
+  background-size: cover;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-box {
+  width: 80%;
+}
+.btns {
+  margin: 0 30px 0 0;
+}
