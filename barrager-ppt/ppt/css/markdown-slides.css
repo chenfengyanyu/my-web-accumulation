@@ -203,6 +203,14 @@ strike {
     margin: -100px 0 0 -300px;
 }
 
+#cover img{
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -250px 0 0 -220px;
+}
+
 /* img {
     width: 300px;
     float: right;

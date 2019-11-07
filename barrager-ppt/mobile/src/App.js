@@ -21,15 +21,21 @@ class WrappedForm extends React.Component {
       if (!err) {
         console.info('success', values);
         
+        let temp = values.msg.replace(/<[^>]+>/g, '');
 
-        if(values.msg.length > 15) {
+        if(temp.length > 15) {
           message.error('话有点多了～');
+          this.props.form.setFieldsValue({
+            msg: '',
+          });
           window.scrollTo(0, 0);
           return;
         }
         
         Axios.post(`http://172.24.61.18:4000/api/send`, { 
-            msg: values.msg 
+            time: new Date().getTime(),
+            msg: temp,
+            ua: navigator.userAgent || '-'
         })
         .then(function (response) {
           // handle success
@@ -91,8 +97,8 @@ class WrappedForm extends React.Component {
             })(<Input size="large" placeholder="发送消息，嗨起来～" />)}
           </Form.Item>
           <Form.Item {...formTailLayout} >
-            <Button className="btns" type="primary" shape="round" icon="check" size="large" onClick={this.check}>发送</Button>
-            <Button  shape="round" icon="close" size="large" onClick={this.cancle}>取消</Button>
+            <Button className="btns"  shape="round" icon="close" size="large" onClick={this.cancle}>取消</Button>
+            <Button   type="primary" shape="round" icon="check" size="large" onClick={this.check}>发送</Button>
           </Form.Item>
         </div>
       </div>

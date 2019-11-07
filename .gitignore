@@ -6,3 +6,4 @@ bower_components
 *.Chromium Framework
 chromium
 kafka/kafka_2.11-2.0.0/logs/*
+*/node_modules
