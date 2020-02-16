@@ -60,7 +60,7 @@ body {
 
     /* background: #fff; */
     /* background-image: radial-gradient(rgba(255, 255, 255, 1),rgba(155, 155, 155, 0.9)); */
-    background: url(../images/bg.png) no-repeat 0 0 ;
+    background: url(../images/bg.jpg) no-repeat 0 0 ;
     background-size: cover;
 }
 
@@ -204,11 +204,11 @@ strike {
 }
 
 #cover img{
-    width: 500px;
+    width: 300px;
     position: absolute;
     top: 50%;
     left: 50%;
-    margin: -250px 0 0 -220px;
+    margin: -150px 0 0 -110px;
 }
 
 /* img {

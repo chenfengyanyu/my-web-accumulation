@@ -32,7 +32,7 @@ class WrappedForm extends React.Component {
           return;
         }
         
-        Axios.post(`http://172.24.61.18:4000/api/send`, { 
+        Axios.post(`http://192.168.1.53:4000/api/send`, { 
             time: new Date().getTime(),
             msg: temp,
             ua: navigator.userAgent || '-'

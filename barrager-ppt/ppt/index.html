@@ -50,7 +50,7 @@
 </div>
 
 <div id="award" class="step slide" data-x="2000" data-y="3000">
-    <h1>颁奖</h1>
+    <h1>请开始你的表演～</h1>
 </div>
 
 <div id="thank" class="step slide"  data-rel-x="0" data-rel-y="3000" data-rotate="180" data-scale="2">
@@ -70,7 +70,7 @@
 <script type="text/javascript" src="temp/js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="temp/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="temp/js/jquery.barrager.min.js"></script>
-<script type="text/javascript" src="http://172.24.61.18:4000/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="http://192.168.1.53:4000/socket.io/socket.io.js"></script>
 <script>impress().init();</script>
 <script type="text/javascript">
     String.prototype.format = function (args) {
@@ -104,7 +104,7 @@
         "$('body').barrager(item);"
         ;
 
-    var socket = io('http://172.24.61.18:4000');
+    var socket = io('http://192.168.1.53:4000');
     $(function () {
 
         // SyntaxHighlighter.all();
@@ -112,7 +112,7 @@
 
         var default_item = {
             'img': 'temp/img/heisenberg.png',
-            'info': '弹幕就绪，准备发射～',
+            'info': '扫描屏幕二维码，发送弹幕～',
             // 'href': 'https://m.gaotu.com',
             'close': true,
             'speed': 6,
@@ -120,7 +120,7 @@
             'color': '#fff',
             'old_ie_color': '#000000'
         };
-        var item = { 'img': 'temp/img/haha.gif', 'href': 'https://m.gaotu.com', 'info': default_item.info };
+        var item = { 'img': 'temp/img/logo.png', 'href': 'https://m.gaotu.com', 'info': default_item.info };
         $('#barrager-code').val(barrager_code.format(default_item));
         $('body').barrager(item);
 
